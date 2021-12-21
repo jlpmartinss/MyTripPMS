@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
         padding: 0,
         backgroundColor: 'pink',
         fontSize: 24,
+        
     },
     image: {
         flex: 1,

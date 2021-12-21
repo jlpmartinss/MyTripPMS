@@ -1,25 +1,53 @@
 import React from "react";
-import {View, Text, Button, StyleSheet} from 'react-native';
+import { View, Text, Button, StyleSheet, FlatList, Dimensions } from 'react-native';
+import ListItem from "../../ListItem";
+
+const ITEM_WIDTH = Dimensions.get('window').width
+
+export default class Home extends React.Component {
+    state = {columns:2}
 
 
-export default function Home(){
-    return(
-        <View style ={styles.container}>
-            <Text> Home Screen </Text>
-            <Button
-                title="Click here"
-                onPress={()=> alert('Button Cliked!')}
-            />
-        </View>
-    );
+    render() {
+        const {columns} = this.state
+        return (
+            <View style={styles.container}>
+                <FlatList
+                numColumns={columns}
+                    data={[
+                        require("../../assets/whale.jpg"),
+                        require("../../assets/whale.jpg"),
+                        require("../../assets/whale.jpg"),
+                        require("../../assets/whale.jpg"),
+                        require("../../assets/whale.jpg"),
+                        require("../../assets/whale.jpg"),
+                        require("../../assets/whale.jpg"),
+                        require("../../assets/whale.jpg"),
+                        require("../../assets/whale.jpg"),
+                        require("../../assets/whale.jpg"),
+                        require("../../assets/whale.jpg"),
+                        require("../../assets/whale.jpg"),
+                        require("../../assets/whale.jpg"),
+                       
+                    ]}
+                    renderItem={({item}) => {
+                        return <ListItem itemWidth={ITEM_WIDTH/columns} image={item} />
+                    }}
+                    keyExtractor={
+                        (index)=> {return index}
+                    }
+                />
+            </View >
+        );
 
+    }
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        flexDirection: 'column',
         backgroundColor: '#8fcbbc'
     },
+   
 })
