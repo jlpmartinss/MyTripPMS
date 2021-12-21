@@ -6,6 +6,7 @@ import WhalesScreen from './screens/WhalesScreen';
 import DolphinsScreen from './screens/DolphinsScreen';
 import SeabirdsScreen from './screens/SeabirdsScreen';
 import OthersScreen from './screens/OthersScreen';
+import Whale1 from './screens/Whale1';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Entypo, Feather,Ionicons} from '@expo/vector-icons'
@@ -22,10 +23,12 @@ export default function Routes() {
         <Tab.Screen name="Species" component={SpeciesScreen} options={{tabBarIcon: ({size, color}) => <Feather name="search" size={size} color={color}/>, }}/>
         <Tab.Screen name="Add Trip" component={AddTripScreen} options={{tabBarIcon: ({size, color}) => <Ionicons name="add-circle" size={size} color={color}/>, }}/>
 
+
         <Tab.Screen name="WhalesScreen" component={WhalesScreen}/>
         <Tab.Screen name="DolphinsScreen" component={DolphinsScreen}/>        
         <Tab.Screen name="SeabirdsScreen" component={SeabirdsScreen}/>
-        <Tab.Screen name="OthersScreen" component={OthersScreen}/>
+        <Tab.Screen name="OthersScreen" component={OthersScreen}/>        
+        <Tab.Screen name="Whale1" component={Whale1}/>
       </Tab.Navigator>
 
   );
