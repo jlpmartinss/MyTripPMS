@@ -1,7 +1,7 @@
 import React from 'react';
 import HomeScreen from './screens/HomeScreen';
 import SpeciesScreen from './screens/SpeciesScreen';
-import AddTripScreen from './screens/SpeciesScreen';
+import AddTripScreen from './screens/AddTripScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Entypo, Feather,Ionicons} from '@expo/vector-icons'
 
