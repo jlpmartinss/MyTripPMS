@@ -12,24 +12,18 @@ export default class ListItem extends React.Component{
     render() {
         const {itemWidth} = this.props
         return (
-
                 <View>
-                    <Image style={{ flex:1, width: itemWidth -10, height: 100, margin:5, }} source={this.props.image}></Image>
+                    <Image style={{ flex:1, width: itemWidth -10, height: 200, margin:5, }} source={this.props.image}></Image>
                     <Text style={styles.viewTextStyle}> Whale </Text>
                 </View>
-
         )
-    }
-
-   
+    }   
 }
 const styles = StyleSheet.create({
     viewTextStyle: {
         position: 'absolute',
+        padding: 10,
         justifyContent: 'center',
-        alignItems: 'center',
-
+        alignItems: 'center'
     }
-    
-
 })

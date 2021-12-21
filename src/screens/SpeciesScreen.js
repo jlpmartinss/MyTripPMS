@@ -1,27 +1,40 @@
 import React from "react";
-import {View, Text, Button, ScrollView, StyleSheet, Image} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableHighlight} from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function SpeciesScreen(){
+export default function SpeciesScreen({ navigation }){
     
     return(
         <View style ={styles.container}>
-            <ScrollView>                
+            <ScrollView> 
+                <TouchableHighlight onPress={() => navigation.navigate('WhalesScreen')}>       
                 <View style ={styles.item}>
                     <Text style = {styles.item}>Whales</Text>
                         <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg")}/>
                 </View>
+                </TouchableHighlight>
+
+                <TouchableHighlight onPress={() => navigation.navigate('DolphinsScreen')}>
                 <View style ={styles.item}>
                     <Text style = {styles.item}>Dolphins</Text>
                         <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg")}/>
                 </View>
+                </TouchableHighlight>
+
+                <TouchableHighlight onPress={() => navigation.navigate('SeabirdsScreen')}>
                 <View style ={styles.item}>
                     <Text style = {styles.item}>Seabirds</Text>
                         <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg")}/>
                 </View>
+                </TouchableHighlight>
+
+                <TouchableHighlight onPress={() => navigation.navigate('OthersScreen')}>
                 <View style ={styles.item}>
                     <Text style = {styles.item}>Others</Text>
                         <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg")}/>
-                </View>                                
+                </View>  
+                </TouchableHighlight>                              
             </ScrollView>
         </View>
     );

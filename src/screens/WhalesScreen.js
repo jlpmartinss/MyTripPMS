@@ -4,7 +4,7 @@ import ListItem from "../../ListItem";
 
 const ITEM_WIDTH = Dimensions.get('window').width
 
-export default class Home extends React.Component {
+export default class WhalesScreen extends React.Component {
     state = {columns:2}
 
 
@@ -31,7 +31,7 @@ export default class Home extends React.Component {
                        
                     ]}
                     renderItem={({item}) => {
-                        return <ListItem itemWidth={ITEM_WIDTH} image={item} />
+                        return <ListItem itemWidth={ITEM_WIDTH/columns} image={item} />
                     }}
                     keyExtractor={
                         (index)=> {return index}
