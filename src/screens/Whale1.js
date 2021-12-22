@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, Dimensions, Image } from 'react-native';
-import Data from "../../jsons/WhalesData.json"
+import Data from "./../../jsons/WhalesData.json"
 import { ScrollView } from "react-native-gesture-handler";
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
 
