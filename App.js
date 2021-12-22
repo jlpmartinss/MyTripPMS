@@ -32,7 +32,7 @@ const AddTripStack = createStackNavigator();
 
 //Navegação da página HomeScreen
 const HomeStackScreen = () => (
-  <HomeStack.Navigator>
+  <HomeStack.Navigator screenOptions={{ headerShown: false}}>
     <HomeStack.Screen name="Home" component={HomeScreen} />
      
   </HomeStack.Navigator>
@@ -40,7 +40,7 @@ const HomeStackScreen = () => (
 
 //Navegação da página SpeciesScreen
 const SpeciesStackScreen = () => (
-  <SpeciesStack.Navigator>
+  <SpeciesStack.Navigator screenOptions={{ headerShown: false}}>
     <SpeciesStack.Screen name="Species" component={SpeciesScreen} />
     <SpeciesStack.Screen name="Whales" component={WhalesScreen} />
     <SpeciesStack.Screen name="Dolphins" component={DolphinsScreen} />
@@ -51,7 +51,7 @@ const SpeciesStackScreen = () => (
 
 //Navegação da página WhaleScreen
 const WhaleStackScreen = () => (
-  <WhalesStack.Navigator>
+  <WhalesStack.Navigator screenOptions={{ headerShown: false}}>
     <WhalesStack.Screen name="Species" component={WhalesScreen} />
     <WhalesStack.Screen name="Whale1" component={Whale1} /*Whale 1 *//>
     <WhalesStack.Screen name="Dolphins" component={DolphinsScreen} /*Whale 2 *//>
@@ -62,7 +62,7 @@ const WhaleStackScreen = () => (
 
 //Navegação da página DolphinsScreen
 const DolphinsStackScreen = () => (
-  <DolphinsStack.Navigator>
+  <DolphinsStack.Navigator screenOptions={{ headerShown: false}}>
     <DolphinsStack.Screen name="Species" component={WhalesScreen} />
     <DolphinsStack.Screen name="Whales" component={Whale1} /*Dolphin 1 *//>
     <DolphinsStack.Screen name="Dolphins" component={DolphinsScreen} /*Dolphin 2 *//>
@@ -74,7 +74,7 @@ const DolphinsStackScreen = () => (
 
 //Navegação da página AddTrip
 const AddTripStackScreen = () => (
-  <AddTripStack.Navigator>
+  <AddTripStack.Navigator screenOptions={{ headerShown: false}}>
     <AddTripStack.Screen name="Add Trip" component={AddTripScreen} />
   </AddTripStack.Navigator>
 )
@@ -84,11 +84,11 @@ const AddTripStackScreen = () => (
 
 //Navegação default em todas as páginas (bottoms tabs)
 export default () => (
-    <NavigationContainer>
+    <NavigationContainer screenOptions={{ headerShown: false}}>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeStackScreen} />
-        <Tab.Screen name="Species" component={SpeciesStackScreen} />
-        <Tab.Screen name="Add Trip" component={AddTripStackScreen} />
+        <Tab.Screen name="Home" component={HomeStackScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
+        <Tab.Screen name="Species" component={SpeciesStackScreen} options={{tabBarIcon: ({size,color}) => (<Feather name="search" size={size} color={color} /> )}}/>
+        <Tab.Screen name="Add Trip" component={AddTripStackScreen} options={{tabBarIcon: ({size,color}) => (<Ionicons name="add-circle" size={size} color={color} /> )}}/>
       </Tab.Navigator>
     </NavigationContainer>
 
