@@ -12,16 +12,16 @@ const ITEM_WIDTH = Dimensions.get('window').width
 
 
 export default class WhalesScreen extends React.Component {
-    state = {columns:2}
+    state = { columns: 2 }
 
-    
+
     render() {
-        const {navigation} = useNavigation;
-        const {columns} = this.state
+        const { navigation } = useNavigation;
+        const { columns } = this.state
         return (
             <View style={styles.container}>
                 <FlatList
-                numColumns={columns}
+                    numColumns={columns}
                     data={[
                         require("../../assets/whale.jpg"),
                         require("../../assets/whale.jpg"),
@@ -36,26 +36,27 @@ export default class WhalesScreen extends React.Component {
                         require("../../assets/whale.jpg"),
                         require("../../assets/whale.jpg"),
                         require("../../assets/whale.jpg"),
-                       
+
                     ]}
-                    renderItem={({item}) => {
-                        return <ListItem itemWidth={ITEM_WIDTH/columns} image={item} />
+                    renderItem={({ item }) => {
+                        return <ListItem itemWidth={ITEM_WIDTH / columns} image={item} />
                     }}
                     keyExtractor={
-                        (index)=> {return index}
+                        (index) => { return index }
                     }
                 />
                 <Button title="whale1" onPress={() => this.props.navigation.navigate("Whale1")} />
-                <TouchableOpacity style={styles.container} 
-                onPress = {() => this.props.navigation.navigate('Whale1') }>  
-                <Text> ddwd </Text> </TouchableOpacity>   
+                <TouchableOpacity style={styles.container}
+                    onPress={() => this.props.navigation.navigate('Whale1')}>
+                    <Text style={styles.text}> ddwd </Text> 
+                </TouchableOpacity>
             </View >
         );
 
-            
+
     }
-  
-                 
+
+
 }
 
 
@@ -65,5 +66,10 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: '#8fcbbc'
     },
-   
+    text: {
+        flex: 1,
+        flexDirection: 'column',
+        backgroundColor: 'red',
+    },
+
 })
