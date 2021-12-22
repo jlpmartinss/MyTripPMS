@@ -16,7 +16,7 @@ export default class Whale1 extends React.Component {
         const {columns} = this.state
 
         var path = Data[id].imgPath.toString();        
-        var impath = require('../../assets/whale.jpg'); //HardCoded...Fix! //Supostament require (path) devia dar mas não dá
+        var impath = require('./../../assets/whale.jpg'); //HardCoded...Fix! //Supostament require (path) devia dar mas não dá
 
         console.log("path = " + path); 
         console.log("impath = " + impath);

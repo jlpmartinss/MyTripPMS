@@ -53,7 +53,7 @@ const SpeciesStackScreen = () => (
 const WhaleStackScreen = () => (
   <WhalesStack.Navigator>
     <WhalesStack.Screen name="Species" component={WhalesScreen} />
-    <WhalesStack.Screen name="Whales" component={Whale1} /*Whale 1 *//>
+    <WhalesStack.Screen name="Whale1" component={Whale1} /*Whale 1 *//>
     <WhalesStack.Screen name="Dolphins" component={DolphinsScreen} /*Whale 2 *//>
     <WhalesStack.Screen name="Sea Birds" component={SeabirdsScreen}/*Whale 3 */ />
     <WhalesStack.Screen name="Others" component={OthersScreen} /*Whale 4 */ />
