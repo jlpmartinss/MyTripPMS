@@ -11,6 +11,7 @@ import Whale1 from './screens/Whale1';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Entypo, Feather,Ionicons} from '@expo/vector-icons'
 import {createStackNavigator} from '@react-navigation/stack'
+import SelectedPictureScreen from './screens/SelectPictureScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -29,6 +30,9 @@ export default function Routes() {
         <Tab.Screen name="SeabirdsScreen" component={SeabirdsScreen}/>
         <Tab.Screen name="OthersScreen" component={OthersScreen}/>        
         <Tab.Screen name="Whale1" component={Whale1}/>
+
+        
+        <Tab.Screen name="Testing" component={SelectedPictureScreen}/>
       </Tab.Navigator>
 
   );
