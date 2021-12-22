@@ -53,8 +53,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         padding: 0,
         backgroundColor: 'pink',
-        fontSize: 24,
-        
+        fontSize: 24,        
     },
     image: {
         flex: 1,
