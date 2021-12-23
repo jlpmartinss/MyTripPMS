@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Dimensions, Image } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Image, Button } from 'react-native';
 import Data from "./../../jsons/WhalesData.json"
 import { ScrollView } from "react-native-gesture-handler";
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
@@ -23,6 +23,7 @@ export default class Whale1 extends React.Component {
         
 
         return (
+            
             <View style={styles.container}>
                  <ImageBackground blurRadius = {50} source={impath} resizeMode="cover" style={styles.imageBackground}>            
                     <ScrollView>
@@ -43,6 +44,11 @@ export default class Whale1 extends React.Component {
                             <Text style={styles.textNormal}>{Data[id].curiostity}</Text>
                     </ScrollView>
                 </ImageBackground>
+                <Button
+                    title="Back"
+                    onPress={() => { this.props.navigation.goBack()}}
+                    
+                />
             </View >            
         );        
     }
