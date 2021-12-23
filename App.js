@@ -43,7 +43,7 @@ const SpeciesStackScreen = () => (
   <SpeciesStack.Navigator screenOptions={{ headerShown: false}}>
     <SpeciesStack.Screen name="Species" component={SpeciesScreen} />
     <SpeciesStack.Screen name="Whales" component={WhaleStackScreen} />
-    <SpeciesStack.Screen name="Dolphins" component={DolphinsScreen} />
+    <SpeciesStack.Screen name="Dolphins" component={DolphinsStackScreen} />
     <SpeciesStack.Screen name="Seabirds" component={SeabirdsScreen} />
     <SpeciesStack.Screen name="Others" component={OthersScreen} />
   </SpeciesStack.Navigator>
@@ -53,10 +53,12 @@ const SpeciesStackScreen = () => (
 const WhaleStackScreen = () => (
   <WhalesStack.Navigator screenOptions={{ headerShown: false}}>
     <WhalesStack.Screen name="Species" component={WhalesScreen} />
-    <WhalesStack.Screen name="Whale1" component={Whale1} /*Whale 1 *//>
-    <WhalesStack.Screen name="Dolphins" component={DolphinsScreen} /*Whale 2 *//>
-    <WhalesStack.Screen name="Sea Birds" component={SeabirdsScreen}/*Whale 3 */ />
-    <WhalesStack.Screen name="Others" component={OthersScreen} /*Whale 4 */ />
+    <WhalesStack.Screen name="Dolphins" component={DolphinsScreen} />
+    <WhalesStack.Screen name="Sea Birds" component={SeabirdsScreen} />
+    <WhalesStack.Screen name="Others" component={OthersScreen}  />
+
+    
+    <WhalesStack.Screen name="Whale1" component={Whale1} />
   </WhalesStack.Navigator>
 )
 
@@ -64,10 +66,12 @@ const WhaleStackScreen = () => (
 const DolphinsStackScreen = () => (
   <DolphinsStack.Navigator screenOptions={{ headerShown: false}}>
     <DolphinsStack.Screen name="Species" component={WhalesScreen} />
-    <DolphinsStack.Screen name="Whales" component={Whale1} /*Dolphin 1 *//>
-    <DolphinsStack.Screen name="Dolphins" component={DolphinsScreen} /*Dolphin 2 *//>
-    <DolphinsStack.Screen name="Sea Birds" component={SeabirdsScreen}/*Dolphin 3 */ />
-    <DolphinsStack.Screen name="Others" component={OthersScreen} /*Dolphin 4 */ />
+    <DolphinsStack.Screen name="Dolphins" component={DolphinsScreen} />
+    <DolphinsStack.Screen name="Sea Birds" component={SeabirdsScreen} />
+    <DolphinsStack.Screen name="Others" component={OthersScreen}  />
+
+
+    <DolphinsStack.Screen name="Whale1" component={Whale1} /*Teste Mudar para dolphin1*//>
   </DolphinsStack.Navigator>
 )
 
