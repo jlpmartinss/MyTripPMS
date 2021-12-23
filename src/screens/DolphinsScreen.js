@@ -1,53 +1,120 @@
 import React from "react";
-import { View, Text, Button, StyleSheet, FlatList, Dimensions } from 'react-native';
-import ListItem from "../../ListItem";
+import { NavigationContainer } from '@react-navigation/native';
+import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableOpacity, ImageBackground} from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const ITEM_WIDTH = Dimensions.get('window').width
+export default function DolphisScreen({ navigation }){
+    
+    return(
+        <ScrollView>
+            <ImageBackground blurRadius = {50} source={require("../../assets/586396-dophin-animals.jpg") } resizeMode="cover" style={styles.imageBackground}> 
+            <View style ={styles.container}>      
 
-export default class DolphinsScreen extends React.Component {
-    state = {columns:2}
+                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                    <View style ={styles.item}>
+                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Dolphin 1</Text>                            
+                    </View>
+                </TouchableOpacity>
+                
+                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                    <View style ={styles.item}>
+                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Dolphin 1</Text>                            
+                    </View>
+                </TouchableOpacity>
+                
+                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                    <View style ={styles.item}>
+                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Dolphin 1</Text>                            
+                    </View>
+                </TouchableOpacity>
+                
+                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                    <View style ={styles.item}>
+                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Dolphin 1</Text>                            
+                    </View>
+                </TouchableOpacity>
+                
+                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                    <View style ={styles.item}>
+                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Dolphin 1</Text>                            
+                    </View>
+                </TouchableOpacity>
+                
+                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                    <View style ={styles.item}>
+                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Dolphin 1</Text>                            
+                    </View>
+                </TouchableOpacity>
+                
+                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                    <View style ={styles.item}>
+                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Dolphin 1</Text>                            
+                    </View>
+                </TouchableOpacity>
+                
+                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                    <View style ={styles.item}>
+                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Dolphin 1</Text>                            
+                    </View>
+                </TouchableOpacity>
+                
+                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                    <View style ={styles.item}>
+                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Dolphin 1</Text>                            
+                    </View>
+                </TouchableOpacity>
 
-
-    render() {
-        const {columns} = this.state
-        return (
-            <View style={styles.container}>
-                <FlatList
-                numColumns={columns}
-                    data={[
-                        require("../../assets/whale.jpg"),
-                        require("../../assets/whale.jpg"),
-                        require("../../assets/whale.jpg"),
-                        require("../../assets/whale.jpg"),
-                        require("../../assets/whale.jpg"),
-                        require("../../assets/whale.jpg"),
-                        require("../../assets/whale.jpg"),
-                        require("../../assets/whale.jpg"),
-                        require("../../assets/whale.jpg"),
-                        require("../../assets/whale.jpg"),
-                        require("../../assets/whale.jpg"),
-                        require("../../assets/whale.jpg"),
-                        require("../../assets/whale.jpg"),
-                       
-                    ]}
-                    renderItem={({item}) => {
-                        return <ListItem itemWidth={ITEM_WIDTH/columns} image={item} />
-                    }}
-                    keyExtractor={
-                        (index)=> {return index}
-                    }
-                />
-            </View >
-        );
-
-    }
+            </View>    
+            </ImageBackground>
+                                 
+            
+             
+        </ScrollView>
+    );
 }
 
 const styles = StyleSheet.create({
     container: {
+        paddingTop: 20,
+        paddingBottom: 20,
         flex: 1,
-        flexDirection: 'column',
-        backgroundColor: '#8fcbbc'
+        //alignItems: 'center',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+      
     },
-   
+    item: {
+        padding:5,
+        flex:1,
+        fontSize: 20,
+        
+    },
+    textSubTitle: {
+        position:'absolute',
+        color: 'white',
+        fontSize: 20,
+        marginHorizontal: 10,
+        marginVertical: 10,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8
+    },
+    image: {
+        flex: 1,
+        width: 185,
+        height: 185,
+        backgroundColor: 'white',
+        borderRadius: 15
+    },
+    imageBackground: {
+        flex: 1
+    },
 })
