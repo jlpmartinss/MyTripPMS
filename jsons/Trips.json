@@ -1,0 +1,24 @@
+[
+	{
+		"id"          : "0",
+		"name"        : "Catamaran",
+		"hours"       : "Thu Dec 23 11:00:00 2021",
+		"imgPath"     : "'../../assets/whale.jpg'",
+		"length"      : "5.2 m",
+		"weight"      : "5250 kg",
+		"color"       : "Black with grey stripes",
+		"description" : "The whalus ums bla blentus derives from blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla",
+		"curiostity"  : "Did you know that the whale1 usualy blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla"
+	},
+	{
+		"id"          : "1",
+		"name"        : "whale2",
+		"cName"       : "whale2",
+		"imgPath"     : "whale2",
+		"length"      : "whale2",
+		"weight"      : "whale2",
+		"color"       : "whale2",
+		"description" : "whale2",
+		"curiostity"  : "whale2"
+	}
+]
