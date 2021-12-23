@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableHighlight, TextInput} from 'react-native';
 import {Rating, RatingProps} from 'react-native-elements';
-
+import { Entypo, Feather, Ionicons, Icon, AntDesign, FontAwesome } from '@expo/vector-icons'
+import { RectButton } from 'react-native-gesture-handler';
 
 
 function PostCardPreview(props) {
@@ -10,7 +11,7 @@ function PostCardPreview(props) {
     return (
         <View>
             <ScrollView>
-                <Text>
+                <Text style={styles.textTitles}>
                     Localização
                 </Text>
 
@@ -26,7 +27,7 @@ function PostCardPreview(props) {
                 <Text>
                     Nome, data e rating
                     <Rating
-                    onClose={() => setOpenRating(false)}
+                    onClose={() => setOpenRating(false)} /* não está a fazer nada */
                     visible={isOpenRating}
                     showRating
                     type= "star"
@@ -44,46 +45,52 @@ function PostCardPreview(props) {
             </ScrollView>
             <ScrollView>
                 <Text>
-                    butões de partilha
+                    Share your PostCard Online
+                    <AntDesign name="facebook-square" size={32} color="#4267B2" />
+                    <AntDesign name="instagram" size={32} color="black" />
+                </Text>
+                
+
+            </ScrollView>
+            <ScrollView>
+                <Text>
+                    Imagem? (No exemplo tem uma imagem do por do sol)
                 </Text>
 
             </ScrollView>
             <ScrollView>
                 <Text>
-                    Imagem?
-                </Text>
-
-            </ScrollView>
-            <ScrollView>
-                <Text>
-                    Comentário:
+                    Comment:
                 </Text>
                 <Text>
                     Que bela Viagem!
                 </Text>
             </ScrollView>
             <ScrollView>
-                <Button title="Edit PostCard" options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color}/> )}}/>
-
+            <Text>Edit PostCard</Text>
+                <FontAwesome name="edit" size={32} color="blue" />
             </ScrollView>
             <ScrollView>
-                <Text>
+                <Text style={styles.textTitles}>
                     Sighted Species
                     </Text>
                     <Text>
-                    Nome da espécie
+                        (Specie Name)
                     </Text>
 
                     <Image  /*Insert specie image*//>
                     <Text>
-                    Hora de avistamento
-                    Descrição
+                    Sighted at: (eg. 10:23 AM)
+                    
                     </Text>
-                
+                    <Text style={styles.textTitles}>
+                    Description
+                    </Text>
+                    
             </ScrollView>
 
             <ScrollView>
-                <Text>
+                <Text style={styles.textTitles}>
                     Route :
                 </Text>
                 <Image  /*Insert route image*//>
@@ -98,3 +105,12 @@ function PostCardPreview(props) {
 }
 
 export default PostCardPreview;
+
+const styles = StyleSheet.create({
+    textTitles: {
+        color: 'black',
+        fontSize: 32,
+        marginHorizontal: 10,
+        marginTop: 10,
+    },
+})
