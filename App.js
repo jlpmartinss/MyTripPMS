@@ -42,7 +42,7 @@ const HomeStackScreen = () => (
 const SpeciesStackScreen = () => (
   <SpeciesStack.Navigator screenOptions={{ headerShown: false}}>
     <SpeciesStack.Screen name="Species" component={SpeciesScreen} />
-    <SpeciesStack.Screen name="Whales" component={WhalesScreen} />
+    <SpeciesStack.Screen name="Whales" component={WhaleStackScreen} />
     <SpeciesStack.Screen name="Dolphins" component={DolphinsScreen} />
     <SpeciesStack.Screen name="Seabirds" component={SeabirdsScreen} />
     <SpeciesStack.Screen name="Others" component={OthersScreen} />
