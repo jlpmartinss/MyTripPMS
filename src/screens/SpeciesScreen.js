@@ -66,5 +66,8 @@ const styles = StyleSheet.create({
         height: 300,
         resizeMode: 'stretch',
         backgroundColor: 'white'
-    }
+    },
+    imageBackground: {
+        flex: 1
+    },
 })

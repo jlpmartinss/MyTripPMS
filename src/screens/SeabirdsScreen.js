@@ -11,7 +11,7 @@ export default function SeabirdsScreen({ navigation }){
     
     return(
         <ScrollView>
-            <ImageBackground blurRadius = {50} source={require("../../assets/586396-dophin-animals.jpg") } resizeMode="cover" style={styles.imageBackground}> 
+            <ImageBackground blurRadius = {50} source={require("./../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg") } resizeMode="cover" style={styles.imageBackground}> 
             <View style ={styles.container}>      
 
                 <TouchableOpacity onPress={() => navigation.push("Whales")}>       
