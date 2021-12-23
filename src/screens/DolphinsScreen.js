@@ -5,8 +5,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 
 let ITEM_WIDTH = Dimensions.get('window').width;
+
 export default function DolphinsScreen({ navigation }){
-    
+    console.log("I'm in DolphinsScreen");
+
     return(
         <ScrollView>
             <ImageBackground blurRadius = {50} source={require("../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg") } resizeMode="cover" style={styles.imageBackground}> 
@@ -63,9 +65,6 @@ export default function DolphinsScreen({ navigation }){
                 
             </View>    
             </ImageBackground>
-                                 
-            
-             
         </ScrollView>
     );
 }
@@ -77,14 +76,12 @@ const styles = StyleSheet.create({
         flex: 1,
         //alignItems: 'center',
         flexDirection: 'row',
-        flexWrap: 'wrap',
-      
+        flexWrap: 'wrap'      
     },
     item: {
         padding:5,
         flex:1,
-        fontSize: 20,
-        
+        fontSize: 20        
     },
     textSubTitle: {
         position:'absolute',

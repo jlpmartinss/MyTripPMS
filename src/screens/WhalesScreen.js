@@ -5,7 +5,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 
 let ITEM_WIDTH = Dimensions.get('window').width;
+
 export default function WhalesScreen({ navigation }){
+    console.log("I'm in WhalesScreen");
     
     return(
         <ScrollView>
@@ -19,7 +21,7 @@ export default function WhalesScreen({ navigation }){
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whale2")}/*Whale2*/>       
+                <TouchableOpacity onPress={() => navigation.push("Whales")}/*Whale2*/>       
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/2Blue_Whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Blue Whale</Text>                            

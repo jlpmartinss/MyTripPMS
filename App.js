@@ -75,7 +75,6 @@ const DolphinsStackScreen = () => (
   </DolphinsStack.Navigator>
 )
 
-
 //Navegação da página AddTrip
 const AddTripStackScreen = () => (
   <AddTripStack.Navigator screenOptions={{ headerShown: false}}>

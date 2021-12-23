@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 
 export default function SpeciesScreen({ navigation }){
+    console.log("I'm in SpeciesScreen");
     
     return(
         <View style ={styles.container}>
