@@ -32,7 +32,7 @@ const AddTripStack = createStackNavigator();
 
 //Navegação da página HomeScreen
 const HomeStackScreen = () => (
-  <HomeStack.Navigator screenOptions={{ headerShown: false}}>
+  <HomeStack.Navigator>
     <HomeStack.Screen name="Home" component={HomeScreen} />
      
   </HomeStack.Navigator>
@@ -40,7 +40,7 @@ const HomeStackScreen = () => (
 
 //Navegação da página SpeciesScreen
 const SpeciesStackScreen = () => (
-  <SpeciesStack.Navigator screenOptions={{ headerShown: false}}>
+  <SpeciesStack.Navigator >
     <SpeciesStack.Screen name="Species" component={SpeciesScreen} />
     <SpeciesStack.Screen name="Whales" component={WhaleStackScreen} />
     <SpeciesStack.Screen name="Dolphins" component={DolphinsStackScreen} />
@@ -77,7 +77,7 @@ const DolphinsStackScreen = () => (
 
 //Navegação da página AddTrip
 const AddTripStackScreen = () => (
-  <AddTripStack.Navigator screenOptions={{ headerShown: false}}>
+  <AddTripStack.Navigator >
     <AddTripStack.Screen name="Add Trip" component={AddTripScreen} />
   </AddTripStack.Navigator>
 )
@@ -88,7 +88,9 @@ const AddTripStackScreen = () => (
 //Navegação default em todas as páginas (bottoms tabs)
 export default () => (
     <NavigationContainer screenOptions={{ headerShown: false}}>
-      <Tab.Navigator>
+      <Tab.Navigator screenOptions={{
+    headerShown: false
+  }}>
         <Tab.Screen name="Home" component={HomeStackScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
         <Tab.Screen name="Species" component={SpeciesStackScreen} options={{tabBarIcon: ({size,color}) => (<Feather name="search" size={size} color={color} /> )}}/>
         <Tab.Screen name="Add Trip" component={AddTripStackScreen} options={{tabBarIcon: ({size,color}) => (<Ionicons name="add-circle" size={size} color={color} /> )}}/>
