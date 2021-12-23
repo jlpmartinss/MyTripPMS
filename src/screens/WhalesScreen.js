@@ -1,7 +1,11 @@
 import React from "react";
 import { NavigationContainer } from '@react-navigation/native';
-import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableOpacity, ImageBackground} from 'react-native';
+import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableOpacity, ImageBackground, Dimensions} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
+
+
+let ITEM_WIDTH = Dimensions.get('window').width;
+let ITEM_HEIGHT = Dimensions.get('window').height;
 
 export default function WhalesScreen({ navigation }){
     
@@ -75,6 +79,9 @@ export default function WhalesScreen({ navigation }){
 
             </View>    
             </ImageBackground>
+                                 
+            
+             
         </ScrollView>
     );
 }
@@ -106,8 +113,8 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        width: 185,
-        height: 185,
+        width: ITEM_WIDTH/2.15,
+        height: ITEM_WIDTH/2.15,
         backgroundColor: 'white',
         borderRadius: 15
     },
