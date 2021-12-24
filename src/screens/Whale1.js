@@ -34,22 +34,22 @@ export default function Whale1({ route, navigation}) {
                     <Image style={styles.image} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} />
 
                     {summary != "" ? <Text style={styles.textSubTitle}>Summary:</Text> : null}
-                    {summary != "" ? <Text style={styles.textNormal}>{summary}</Text> : null}
+                        {summary != "" ? <Text style={styles.textNormal}>{summary}</Text> : null}
 
                     {identify != "" ? <Text style={styles.textSubTitle}>How to identify:</Text> : null}
-                    {identify != "" ? <Text style={styles.textNormal}>{identify}</Text> : null}
+                        {identify != "" ? <Text style={styles.textNormal}>{identify}</Text> : null}
 
                     {curiostity != "" ? <Text style={styles.textSubTitle}>Curiosities:</Text> : null}
-                    {curiostity != "" ? <Text style={styles.textNormal}>{curiostity}</Text> : null}
+                        {curiostity != "" ? <Text style={styles.textNormal}>{curiostity}</Text> : null}
 
                     {length != "" ? <Text style={styles.textSubTitle}>Average Length:</Text> : null}
-                    {length != "" ? <Text style={styles.textNormal}>{length}</Text> : null}
+                        {length != "" ? <Text style={styles.textNormal}>{length}</Text> : null}
 
                     {weight != "" ? <Text style={styles.textSubTitle}>Average Weight:</Text> : null}
-                    {weight != "" ? <Text style={styles.textNormal}>{weight}</Text> : null}
+                     {weight != "" ? <Text style={styles.textNormal}>{weight}</Text> : null}
 
                     {color != "" ? <Text style={styles.textSubTitle}>Color:</Text> : null}
-                    {color != "" ? <Text style={styles.textNormal}>{color}</Text> : null}
+                        {color != "" ? <Text style={styles.textNormal}>{color}</Text> : null}
 
                 </ScrollView>
             </ImageBackground>

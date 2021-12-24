@@ -43,112 +43,112 @@ export default function WhalesScreen({ navigation }){
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[4].id)}/*Whale5*/>      
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[4])}/*Whale5*/>      
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/5False_killer_whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>False Killer Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[5].id)}/*Whale6*/>       
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[5])}/*Whale6*/>       
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/6Fin_Whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Fin Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[6].id)}/*Whale7*/>       
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[6])}/*Whale7*/>       
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/7Gervaiss_beaked_whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Gervaiss Beaked Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[7].id)}/*Whale8*/>      
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[7])}/*Whale8*/>      
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/8Harbour_porpoise_whale.png") }/>
                         <Text style = {styles.textSubTitle}>Harbour Porpoise Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[8].id )}/*Whale9*/>      
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[8] )}/*Whale9*/>      
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/9humpback_whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Humpback Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[9].id)}/*Whale10*/>       
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[9])}/*Whale10*/>       
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
                         <Text style = {styles.textSubTitle}>Killer Whale(Orca)</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[10].id)}/*Whale11*/>       
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[10])}/*Whale11*/>       
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/11Long-finned_pilot_whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Long-finned Pilot Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[11].id)}/*Whale12*/>       
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[11])}/*Whale12*/>       
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/12Melon-headed_whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Melon Headed Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[12].id)}/*Whale13*/>       
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[12])}/*Whale13*/>       
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/13Minke_Whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Minke Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[13].id)}/*Whale14*/>      
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[13])}/*Whale14*/>      
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/14North_Atlantic_Right_Whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Northern Bottlenose Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[14].id)}/*Whale15*/>       
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[14])}/*Whale15*/>       
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/15Northern_bottlenose_whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Northern Bottlenose Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[15].id)}/*Whale16*/>       
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[15])}/*Whale16*/>       
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/16Sei_Whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Sei Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[16].id)}/*Whale17*/>      
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[16])}/*Whale17*/>      
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/17Short-finned_pilot_whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Short-finned Pilot Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[17].id)}/*Whale18*/>      
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[17])}/*Whale18*/>      
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/18Sowerbys_beaked_whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Sowerbys Beaked Whale</Text>                            
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[18].id)}/*Whale19*/>      
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[18])}/*Whale19*/>      
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/19Sperm_Whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Sperm Whale</Text>                            
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[19].id)}/*Whale20*/>      
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1", Data[19])}/*Whale20*/>      
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/20Trues_beaked_whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Trues Beaked Whale</Text>                            
