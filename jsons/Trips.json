@@ -1,14 +1,15 @@
 [
 	{
 		"id"          : "0",
+		"location" : "Madeira, Câmara de lobos",
 		"name"        : "Catamaran",
+		"imagecollection" : "/trip1collection",
 		"hours"       : "Thu Dec 23 11:00:00 2021",
 		"imgPath"     : "'../../assets/whale.jpg'",
-		"length"      : "5.2 m",
-		"weight"      : "5250 kg",
-		"color"       : "Black with grey stripes",
-		"description" : "The whalus ums bla blentus derives from blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla",
-		"curiostity"  : "Did you know that the whale1 usualy blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla"
+		"Rating"      : "5.0",
+		"Comment"      : "Amazing Trip",
+		"sightedSpecies"       : "[whale,dolphin]",
+		"route" : "./"
 	},
 	{
 		"id"          : "1",
