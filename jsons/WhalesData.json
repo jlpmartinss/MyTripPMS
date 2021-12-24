@@ -9,7 +9,7 @@
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "./../../assets/Whales/1Blainvilles_beaked_whale.jpg"
     },
 	{
         "id"            : "2",
