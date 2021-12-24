@@ -1,7 +1,7 @@
 [
 	{
         "id"            : "1",
-        "name"          : "Blainvilles beaked",
+        "name"          : "Blainvilles beaked Whale",
         "cientificName" : "Mesoplodon densirostris",
         "summary"       : ".",
         "identify"      : ".",
@@ -13,7 +13,7 @@
     },
 	{
         "id"            : "2",
-        "name"          : "Blue",
+        "name"          : "Blue Whale",
         "cientificName" : "Balaenoptera musculus",
         "summary"       : ".",
         "identify"      : ".",
@@ -25,7 +25,7 @@
     },
 	{
         "id"            : "3",
-        "name"          : "Bryde's",
+        "name"          : "Bryde's Whale",
         "cientificName" : "Balaenoptera brydei",
         "summary"       : ".",
         "identify"      : ".",
@@ -37,7 +37,7 @@
     },
 	{
         "id"            : "4",
-        "name"          : "Cuvier's beaked",
+        "name"          : "Cuvier's beaked Whale",
         "cientificName" : "Ziphius cavirostris",
         "summary"       : ".",
         "identify"      : ".",
@@ -49,7 +49,7 @@
     },
 	{
         "id"            : "5",
-        "name"          : "False killer",
+        "name"          : "False killer Whale",
         "cientificName" : "Pseudorca crassidens",
         "summary"       : ".",
         "identify"      : ".",
@@ -61,7 +61,7 @@
     },
 	{
         "id"            : "6",
-        "name"          : "Fin",
+        "name"          : "Fin Whale",
         "cientificName" : "Balaenoptera physalus",
         "summary"       : ".",
         "identify"      : ".",
@@ -73,7 +73,7 @@
     },
 	{
         "id"            : "7",
-        "name"          : "Gervais s beaked",
+        "name"          : "Gervais's beaked Whale",
         "cientificName" : "Mesoplodon europaeus",
         "summary"       : ".",
         "identify"      : ".",
@@ -97,7 +97,7 @@
     },
 	{
         "id"            : "9",
-        "name"          : "Humpback",
+        "name"          : "Humpback Whale",
         "cientificName" : "Megaptera novaeangliae",
         "summary"       : ".",
         "identify"      : ".",
@@ -109,7 +109,7 @@
     },
 	{
         "id"            : "10",
-        "name"          : "Killer or Orca",
+        "name"          : "Killer or Orca Whale",
         "cientificName" : "Orcinus orca",
         "summary"       : ".",
         "identify"      : ".",
@@ -121,7 +121,7 @@
     },
 	{
         "id"            : "11",
-        "name"          : "Long-finned pilot",
+        "name"          : "Long-finned pilot Whale",
         "cientificName" : "Globicephala melas",
         "summary"       : ".",
         "identify"      : ".",
@@ -133,7 +133,7 @@
     },
 	{
         "id"            : "12",
-        "name"          : "Melon-headed",
+        "name"          : "Melon-headed Whale",
         "cientificName" : "Peponocephala electra",
         "summary"       : ".",
         "identify"      : ".",
@@ -145,7 +145,7 @@
     },
 	{
         "id"            : "13",
-        "name"          : "Minke",
+        "name"          : "Minke Whale",
         "cientificName" : "Balaenoptera acutorostrata",
         "summary"       : ".",
         "identify"      : ".",
@@ -157,7 +157,7 @@
     },
 	{
         "id"            : "14",
-        "name"          : "North Atlantic Right",
+        "name"          : "North Atlantic Right Whale",
         "cientificName" : "Eubalaena glacialis",
         "summary"       : ".",
         "identify"      : ".",
@@ -169,7 +169,7 @@
     },
 	{
         "id"            : "15",
-        "name"          : "Northern bottlenose",
+        "name"          : "Northern bottlenose Whale",
         "cientificName" : "Hyperoodon ampullatus",
         "summary"       : ".",
         "identify"      : ".",
@@ -181,7 +181,7 @@
     },
 	{
         "id"            : "16",
-        "name"          : "Sei",
+        "name"          : "Sei Whale",
         "cientificName" : "Balaenoptera borealis",
         "summary"       : ".",
         "identify"      : ".",
@@ -193,7 +193,7 @@
     },
 	{
         "id"            : "17",
-        "name"          : "Short-finned pilot",
+        "name"          : "Short-finned pilot Whale",
         "cientificName" : "Globicephala macrorhyncus",
         "summary"       : ".",
         "identify"      : ".",
@@ -205,7 +205,7 @@
     },
 	{
         "id"            : "18",
-        "name"          : "Sowerbys beaked",
+        "name"          : "Sowerbys beaked Whale",
         "cientificName" : "Mesoplodon bidens",
         "summary"       : ".",
         "identify"      : ".",
@@ -217,7 +217,7 @@
     },
 	{
         "id"            : "19",
-        "name"          : "Sperm",
+        "name"          : "Sperm Whale",
         "cientificName" : "Physeter macrocephalus",
         "summary"       : ".",
         "identify"      : ".",
@@ -229,7 +229,7 @@
     },
 	{
         "id"            : "20",
-        "name"          : "Trues beaked",
+        "name"          : "Trues beaked Whale",
         "cientificName" : "Mesoplodon mirus",
         "summary"       : ".",
         "identify"      : ".",
