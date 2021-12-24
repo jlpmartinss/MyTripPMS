@@ -76,6 +76,7 @@ export default function WhalesScreen({ navigation }){
                         <Text style = {styles.textSubTitle}>Humpback Whale</Text>                            
                     </View>
                 </TouchableOpacity>
+                
                 <TouchableOpacity onPress={() => navigation.push("Whale1")}/*Whale10*/>       
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
@@ -85,57 +86,64 @@ export default function WhalesScreen({ navigation }){
                 
                 <TouchableOpacity onPress={() => navigation.push("Whales")}/*Whale11*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/Whales/11Melon-headed_whale.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Melon Headed Whale</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Whales/11Long-finned_pilot_whale.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Long-finned Pilot Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
                 <TouchableOpacity onPress={() => navigation.push("Whales")}/*Whale12*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/Whales/12Minke_Whale.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Minke Whale</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Whales/12Melon-headed_whale.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Melon Headed Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
                 <TouchableOpacity onPress={() => navigation.push("Whales")}/*Whale13*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/Whales/13North_Atlantic_Right_Whale.jpg") }/>
-                        <Text style = {styles.textSubTitle}>North Atlantic Right Whale</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Whales/13Minke_Whale.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Minke Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
                 <TouchableOpacity onPress={() => navigation.push("Whales")}/*Whale14*/>      
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/Whales/14Northern_bottlenose_whale.jpg") }/>
+                        <Image style = {styles.image} source={require("../../assets/Whales/14North_Atlantic_Right_Whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Northern Bottlenose Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
                 <TouchableOpacity onPress={() => navigation.push("Whales")}/*Whale15*/>       
                     <View style ={styles.item}>
+                        <Image style = {styles.image} source={require("../../assets/Whales/15Northern_bottlenose_whale.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Northern Bottlenose Whale</Text>                            
+                    </View>
+                </TouchableOpacity>
+                
+                <TouchableOpacity onPress={() => navigation.push("Whales")}/*Whale16*/>       
+                    <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/16Sei_Whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Sei Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}/*Whale16*/>       
+                <TouchableOpacity onPress={() => navigation.push("Whales")}/*Whale17*/>      
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Whales/17Short-finned_pilot_whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Short-finned Pilot Whale</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}/*Whale17*/>      
-                    <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/Whales/18Sowerbys_beaked_whale.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Short-finned Pilot Whale</Text>                            
-                    </View>
-                </TouchableOpacity>
-                
                 <TouchableOpacity onPress={() => navigation.push("Whales")}/*Whale18*/>      
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/Whales/19Sperm_Whale.jpg") }/>
+                        <Image style = {styles.image} source={require("../../assets/Whales/18Sowerbys_beaked_whale.jpg") }/>
                         <Text style = {styles.textSubTitle}>Sowerbys Beaked Whale</Text>                            
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => navigation.push("Whales")}/*Whale19*/>      
+                    <View style ={styles.item}>
+                        <Image style = {styles.image} source={require("../../assets/Whales/19Sperm_Whale.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Sperm Whale</Text>                            
                     </View>
                 </TouchableOpacity>
 
