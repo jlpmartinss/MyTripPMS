@@ -2,40 +2,25 @@ import React from "react";
 import { View, Text, StyleSheet, Dimensions, Image, Button, TouchableOpacity } from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
-import data from "./../../jsons/WhalesData.json";
 
 const ITEM_WIDTH = Dimensions.get('window').width
 
-var speciesId = 3;
-
-const id = data[speciesId].id; console.log("id: " + id);
-const name = data[speciesId].name; console.log(name);
-const cientificName = data[speciesId].cientificName; console.log("cientificName: " + cientificName);
-const summary = data[speciesId].summary; console.log("summary: " + summary);
-const identify = data[speciesId].identify; console.log("identify: " + identify);
-const curiostity = data[speciesId].curiostity; console.log("curiostity: " + curiostity);
-const length = data[speciesId].length; console.log("length: " + length);
-const weight = data[speciesId].weight; console.log("weight: " + weight);
-const color = data[speciesId].color; console.log("color: " + color);
-const imgPath = data[speciesId].imgPath; console.log("imgPath: " + imgPath);
-
 export default function Whale1({ route, navigation}) {
-    
-    var speciesId = route.params.msg - 1;
 
-    const id = data[speciesId].id; console.log("id: " + id);
-    const name = data[speciesId].name; console.log(name);
-    const cientificName = data[speciesId].cientificName; console.log("cientificName: " + cientificName);
-    const summary = data[speciesId].summary; console.log("summary: " + summary);
-    const identify = data[speciesId].identify; console.log("identify: " + identify);
-    const curiostity = data[speciesId].curiostity; console.log("curiostity: " + curiostity);
-    const length = data[speciesId].length; console.log("length: " + length);
-    const weight = data[speciesId].weight; console.log("weight: " + weight);
-    const color = data[speciesId].color; console.log("color: " + color);
-    const imgPath = data[speciesId].imgPath; console.log("imgPath: " + imgPath);
+    let data = route.params;
 
-    console.log(speciesId.msg);
-    
+    const id = data.id; console.log("id: " + id);
+    const name = data.name; console.log(name);
+    const cientificName = data.cientificName; console.log("cientificName: " + cientificName);
+    const summary = data.summary; console.log("summary: " + summary);
+    const identify = data.identify; console.log("identify: " + identify);
+    const curiostity = data.curiostity; console.log("curiostity: " + curiostity);
+    const length = data.length; console.log("length: " + length);
+    const weight = data.weight; console.log("weight: " + weight);
+    const color = data.color; console.log("color: " + color);
+    const imgPath = data.imgPath; console.log("imgPath: " + imgPath);
+
+  
     //state = {columns:2}
     //const {columns} = this.state
 
