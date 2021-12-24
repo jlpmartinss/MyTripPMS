@@ -34,10 +34,7 @@ const HomeScreenNavigator = () => {
                 name="AddTrip"
                 component={AddTripScreen}
             />
-            <Stack.Screen
-                name="Whale1"
-                component={Whale1}
-            />
+
         </Stack.Navigator>
     );
 }
@@ -57,6 +54,10 @@ const SpeciesScreenNavigator = () => {
              <Stack.Screen
                 name="Dolphins"
                 component={DolphinsScreen}
+            />
+            <Stack.Screen
+                name="Whale1"
+                component={Whale1}
             />
 
         </Stack.Navigator>
