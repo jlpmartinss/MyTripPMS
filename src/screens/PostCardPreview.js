@@ -84,7 +84,7 @@ function PostCardPreview(props) {
             </ScrollView>
             <ScrollView>
             <Text>Edit PostCard</Text>
-                <FontAwesome name="edit" size={32} color="blue" />
+                <FontAwesome name="edit" size={32} color="blue" onPress={() => navigation.push("EditScreen") } /* onpress por implementar*/ />
             </ScrollView>
             <ScrollView>
                 <Text style={styles.textTitles}>
