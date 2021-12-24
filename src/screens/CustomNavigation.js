@@ -11,6 +11,7 @@ import SeabirdsScreen from './SeabirdsScreen';
 import OthersScreen from './OthersScreen';
 import SelectPictureScreen from './SelectPictureScreen';
 import Whale1 from './Whale1';
+import Dolphin1 from './Dolphin1';
 
 
 
@@ -34,7 +35,10 @@ const HomeScreenNavigator = () => {
                 name="AddTrip"
                 component={AddTripScreen}
             />
-
+            <Stack.Screen
+                name="Whale1"
+                component={Whale1}
+            />
         </Stack.Navigator>
     );
 }
@@ -58,6 +62,10 @@ const SpeciesScreenNavigator = () => {
             <Stack.Screen
                 name="Whale1"
                 component={Whale1}
+            />
+            <Stack.Screen
+                name="Dolphin1"
+                component={Dolphin1}
             />
 
         </Stack.Navigator>
@@ -103,7 +111,7 @@ const DolphinsScreenNavigator = () => {
                 component={DolphinsScreen}
             />
             <Stack.Screen
-                name="Whale1"
+                name="Dolphin1"
                 component={Whale1}
             />
         </Stack.Navigator>

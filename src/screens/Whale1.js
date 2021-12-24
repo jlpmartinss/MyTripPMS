@@ -4,26 +4,24 @@ import { ScrollView } from "react-native-gesture-handler";
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
 import data from "./../../jsons/WhalesData.json";
 
-
 const ITEM_WIDTH = Dimensions.get('window').width
 
-var speciesId = 3;
+export default function Whale1({ route, navigation}) {
 
-const id = data[speciesId].id; console.log("id: " + id);
-const name = data[speciesId].name; console.log(name);
-const cientificName = data[speciesId].cientificName; console.log("cientificName: " + cientificName);
-const summary = data[speciesId].summary; console.log("summary: " + summary);
-const identify = data[speciesId].identify; console.log("identify: " + identify);
-const curiostity = data[speciesId].curiostity; console.log("curiostity: " + curiostity);
-const length = data[speciesId].length; console.log("length: " + length);
-const weight = data[speciesId].weight; console.log("weight: " + weight);
-const color = data[speciesId].color; console.log("color: " + color);
-const imgPath = data[speciesId].imgPath; console.log("imgPath: " + imgPath);
+    var speciesId = route.params.pressedId - 1;
 
-export default function Whale1({ navigation }) {
-    //state = {columns:2}
+    const id            = data[speciesId].id;
+    const name          = data[speciesId].name;
+    const cientificName = data[speciesId].cientificName;
+    const summary       = data[speciesId].summary;
+    const identify      = data[speciesId].identify;
+    const curiostity    = data[speciesId].curiostity;
+    const length        = data[speciesId].length;
+    const weight        = data[speciesId].weight;
+    const color         = data[speciesId].color;
+    const imgPath       = data[speciesId].imgPath;
 
-    //const {columns} = this.state
+    console.log("I'm in Whale1: " + id + " " + name);
 
     return (
 
@@ -35,22 +33,22 @@ export default function Whale1({ navigation }) {
                     <Image style={styles.image} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} />
 
                     {summary != "" ? <Text style={styles.textSubTitle}>Summary:</Text> : null}
-                    {summary != "" ? <Text style={styles.textNormal}>{summary}</Text> : null}
+                        {summary != "" ? <Text style={styles.textNormal}>{summary}</Text> : null}
 
                     {identify != "" ? <Text style={styles.textSubTitle}>How to identify:</Text> : null}
-                    {identify != "" ? <Text style={styles.textNormal}>{identify}</Text> : null}
+                        {identify != "" ? <Text style={styles.textNormal}>{identify}</Text> : null}
 
                     {curiostity != "" ? <Text style={styles.textSubTitle}>Curiosities:</Text> : null}
-                    {curiostity != "" ? <Text style={styles.textNormal}>{curiostity}</Text> : null}
+                        {curiostity != "" ? <Text style={styles.textNormal}>{curiostity}</Text> : null}
 
                     {length != "" ? <Text style={styles.textSubTitle}>Average Length:</Text> : null}
-                    {length != "" ? <Text style={styles.textNormal}>{length}</Text> : null}
+                        {length != "" ? <Text style={styles.textNormal}>{length}</Text> : null}
 
                     {weight != "" ? <Text style={styles.textSubTitle}>Average Weight:</Text> : null}
-                    {weight != "" ? <Text style={styles.textNormal}>{weight}</Text> : null}
+                     {weight != "" ? <Text style={styles.textNormal}>{weight}</Text> : null}
 
                     {color != "" ? <Text style={styles.textSubTitle}>Color:</Text> : null}
-                    {color != "" ? <Text style={styles.textNormal}>{color}</Text> : null}
+                        {color != "" ? <Text style={styles.textNormal}>{color}</Text> : null}
 
                 </ScrollView>
             </ImageBackground>
