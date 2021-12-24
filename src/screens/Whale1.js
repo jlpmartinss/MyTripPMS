@@ -7,18 +7,18 @@ import data from "./../../jsons/WhalesData.json";
 
 const ITEM_WIDTH = Dimensions.get('window').width
 
-var speciesId = 1;
+var speciesId = 3;
 
-const id = data[speciesId].id; console.log("id: " + id);
-const name = data[speciesId].name; console.log(name);
+const id            = data[speciesId].id; console.log("id: " + id);
+const name          = data[speciesId].name; console.log(name);
 const cientificName = data[speciesId].cientificName; console.log("cientificName: " + cientificName);
-const summary = data[speciesId].summary; console.log("summary: " + summary);
-const identify = data[speciesId].identify; console.log("identify: " + identify);
-const curiostity = data[speciesId].curiostity; console.log("curiostity: " + curiostity);
-const length = data[speciesId].length; console.log("length: " + length);
-const weight = data[speciesId].weight; console.log("weight: " + weight);
-const color = data[speciesId].color; console.log("color: " + color);
-const imgPath = data[speciesId].imgPath; console.log("imgPath: " + imgPath);
+const summary       = data[speciesId].summary; console.log("summary: " + summary);
+const identify      = data[speciesId].identify; console.log("identify: " + identify);
+const curiostity    = data[speciesId].curiostity; console.log("curiostity: " + curiostity);
+const length        = data[speciesId].length; console.log("length: " + length);
+const weight        = data[speciesId].weight; console.log("weight: " + weight);
+const color         = data[speciesId].color; console.log("color: " + color);
+const imgPath       = data[speciesId].imgPath; console.log("imgPath: " + imgPath);
 
 export default class Whale1 extends React.Component {    
     state = {columns:2}
