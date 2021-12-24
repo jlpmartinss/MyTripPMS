@@ -1,9 +1,27 @@
 import React, {useState} from 'react';
-import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableHighlight, TextInput} from 'react-native';
+import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableHighlight, TextInput, ImageBackground, Dimensions} from 'react-native';
 import {Rating, RatingProps} from 'react-native-elements';
 import { Entypo, Feather, Ionicons, Icon, AntDesign, FontAwesome } from '@expo/vector-icons'
 import { RectButton } from 'react-native-gesture-handler';
 
+
+import data from "./../../jsons/Trips.json";
+
+var tripId = 0;
+
+const id = data[tripId].id;
+const ongoing = data[tripId].ongoing;
+const location = data[tripId].location;
+const name = data[tripId].name;
+const imagecollection = data[tripId].imagecollection;
+const hours = data[tripId].hours;
+const imgPath = data[tripId].imgPath;
+const rating = data[tripId].rating;
+const comment = data[tripId].comment;
+const sightedSpecies = data[tripId].sightedSpecies;
+const route = data[tripId].route;
+
+let ITEM_WIDTH = Dimensions.get('window').width;
 
 function PostCardPreview(props) {
     const [isOpenRating, setOpenRating] = useState(true);
@@ -12,20 +30,21 @@ function PostCardPreview(props) {
         <View>
             <ScrollView>
                 <Text style={styles.textTitles}>
-                    Localização
+                    Localização {location}
                 </Text>
 
             </ScrollView>
 
-            <ScrollView>
+            <ScrollView /*horizontal = {true} */>
                 <Text /* */>
                     Todas as imagens da viagem em side scroll
+                    <Image style = {styles.image} source={require("../../assets/Seabirds/worldseabirdday.jpg")}/>
                 </Text>
 
             </ScrollView>
             <ScrollView>
                 <Text>
-                    Nome, data e rating
+                    Nome, data e rating | {name} , {hours}
                     <Rating
                     onClose={() => setOpenRating(false)} /* não está a fazer nada */
                     visible={isOpenRating}
@@ -60,10 +79,7 @@ function PostCardPreview(props) {
             </ScrollView>
             <ScrollView>
                 <Text>
-                    Comment:
-                </Text>
-                <Text>
-                    Que bela Viagem!
+                    Comment: {comment}
                 </Text>
             </ScrollView>
             <ScrollView>
@@ -75,7 +91,7 @@ function PostCardPreview(props) {
                     Sighted Species
                     </Text>
                     <Text>
-                        (Specie Name)
+                        (Specie Name) {sightedSpecies}
                     </Text>
 
                     <Image  /*Insert specie image*//>
@@ -84,14 +100,14 @@ function PostCardPreview(props) {
                     
                     </Text>
                     <Text style={styles.textTitles}>
-                    Description
+                    Description 
                     </Text>
                     
             </ScrollView>
 
             <ScrollView>
                 <Text style={styles.textTitles}>
-                    Route :
+                    Route : {route}
                 </Text>
                 <Image  /*Insert route image*//>
 
@@ -112,5 +128,14 @@ const styles = StyleSheet.create({
         fontSize: 32,
         marginHorizontal: 10,
         marginTop: 10,
+    },image: {
+        flex: 1,
+        width: ITEM_WIDTH/20,
+        height: ITEM_WIDTH/20,
+        backgroundColor: 'white',
+        borderRadius: 2
+    },
+    imageBackground: {
+        flex: 1
     },
 })
