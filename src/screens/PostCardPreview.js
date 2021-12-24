@@ -48,6 +48,7 @@ function PostCardPreview(props) {
                     <Rating
                     onClose={() => setOpenRating(false)} /* não está a fazer nada */
                     visible={isOpenRating}
+                    readonly
                     showRating
                     type= "star"
                     fractions ={1}
@@ -84,7 +85,7 @@ function PostCardPreview(props) {
             </ScrollView>
             <ScrollView>
             <Text>Edit PostCard</Text>
-                <FontAwesome name="edit" size={32} color="blue" onPress={() => navigation.push("EditScreen") } /* onpress por implementar*/ />
+                <FontAwesome name="edit" size={32} color="blue" onPress={() => navigation.navigate("EditPostCard", { msg: "testing" })}  /* onpress por implementar*/ />
             </ScrollView>
             <ScrollView>
                 <Text style={styles.textTitles}>
