@@ -76,7 +76,8 @@ const styles = StyleSheet.create({
         flex: 1,
         width: ITEM_WIDTH - 35,
         height: ITEM_WIDTH/1.5,
-        borderRadius: 15
+        borderRadius: 15,
+        bord,
     },
     imageBackground: {
         flex: 1

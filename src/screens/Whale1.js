@@ -2,10 +2,24 @@ import React from "react";
 import { View, Text, StyleSheet, Dimensions, Image, Button } from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
+import data from "./../../jsons/WhalesData.json";
+
 
 const ITEM_WIDTH = Dimensions.get('window').width
 
-const id = 0;// Replace with desired id
+var speciesId = 0;
+
+const id = data[speciesId].id;
+const name = data[speciesId].name;
+const cientificName = data[speciesId].cientificName;
+const summary = data[speciesId].summary;
+const identify = data[speciesId].identify;
+const curiostity = data[speciesId].curiostity;
+const length = data[speciesId].length;
+const weight = data[speciesId].weight;
+const color = data[speciesId].color;
+const imgPath = data[speciesId].imgPath;
+
 
 export default class Whale1 extends React.Component {
     
@@ -21,25 +35,25 @@ export default class Whale1 extends React.Component {
             <View style={styles.container}>
                  <ImageBackground blurRadius = {50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}>            
                     <ScrollView>
-                        <Text style={styles.textTitle}>Blainvilles Beaked Whale</Text>
-                        <Text style={styles.textNormal, styles.textCientific}>Cientific name: Mesoplodon densirostris</Text>  
+                        <Text style={styles.textTitle}>{name}</Text>
+                        <Text style={styles.textNormal, styles.textCientific}>Cientific name: {cientificName}</Text>  
                             <Image style={styles.image} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")}/>
                         <Text style={styles.textSubTitle}>Summary:</Text>
-                            <Text style={styles.textNormal}>Ocasional, seen throughout the whole year in Madeira, particularly in July and August.</Text>
+                            <Text style={styles.textNormal}>{summary}</Text>
 
                         <Text style={styles.textSubTitle}>How to identify:</Text>
-                            <Text style={styles.textNormal}>Their body has a yellowish tint due to a parasite. Their small and flat forehead (melon) extends into a long beak with distinctive arched mouthline. The bodies of males are often covered with scars (some of which are circular, believed to be made by the cookie-cutter shark) and white spots. They surface with their beaks pointing up and emit a small spout.</Text>
+                            <Text style={styles.textNormal}>{identify}</Text>
 
                         <Text style={styles.textSubTitle}>Curiosities:</Text>
-                            <Text style={styles.textNormal}>These are deep divers and can go down to depths up to 700m and hold their breath for about 50 min. Naval exercises are now forbidden in the Canary Islands because the sounds produced by the military sonar cause the sudden interruption of their long dives, resulting in decompression illness, acoustic trauma and embolism, and eventually death.</Text>
+                            <Text style={styles.textNormal}>{curiostity}</Text>
 
 
                         <Text style={styles.textSubTitle}>Average Length:</Text>
-                            <Text style={styles.textNormal}></Text>
+                            <Text style={styles.textNormal}>{length}</Text>
                         <Text style={styles.textSubTitle}>Average Weight:</Text>
-                            <Text style={styles.textNormal}></Text>
+                            <Text style={styles.textNormal}>{weight}</Text>
                         <Text style={styles.textSubTitle}>Color:</Text>
-                            <Text style={styles.textNormal}></Text>
+                            <Text style={styles.textNormal}>{color}</Text>
                     </ScrollView>
                 </ImageBackground>                
             </View >            
@@ -56,7 +70,6 @@ const styles = StyleSheet.create({
     },
     image: {
         marginTop: 15,
-        height: 300,
         margin: 15,
         flex: 1,
         width: ITEM_WIDTH - 30,
