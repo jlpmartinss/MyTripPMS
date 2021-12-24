@@ -1,13 +1,14 @@
 [
 	{
 		"id"          : "0",
+		"ongoing"          : "false",
 		"location" : "Madeira, Câmara de lobos",
 		"name"        : "Catamaran",
 		"imagecollection" : "/trip1collection",
 		"hours"       : "Thu Dec 23 11:00:00 2021",
 		"imgPath"     : "'../../assets/whale.jpg'",
-		"Rating"      : "5.0",
-		"Comment"      : "Amazing Trip",
+		"rating"      : "5.0",
+		"comment"      : "Amazing Trip",
 		"sightedSpecies"       : "[whale,dolphin]",
 		"route" : "./"
 	},

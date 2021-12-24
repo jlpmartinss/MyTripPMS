@@ -3,13 +3,13 @@
         "id"            : "1",
         "name"          : "Blainvilles beaked Whale",
         "cientificName" : "Mesoplodon densirostris",
-        "summary"       : ".",
-        "identify"      : ".",
-        "curiostity"    : ".",
+        "summary"       : "Ocasional, seen throughout the whole year in Madeira, particularly in July and August.",
+        "identify"      : "Their body has a yellowish tint due to a parasite. Their small and flat forehead (melon) extends into a long beak with distinctive arched mouthline. The bodies of males are often covered with scars (some of which are circular, believed to be made by the cookie-cutter shark) and white spots. They surface with their beaks pointing up and emit a small spout.",
+        "curiostity"    : "These are deep divers and can go down to depths up to 700m and hold their breath for about 50 min. Naval exercises are now forbidden in the Canary Islands because the sounds produced by the military sonar cause the sudden interruption of their long dives, resulting in decompression illness, acoustic trauma and embolism, and eventually death.",
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "./../../assets/Whales/1Blainvilles_beaked_whale.jpg"
+        "imgPath"       : "assets/Whales/1Blainvilles_beaked_whale.jpg"
     },
 	{
         "id"            : "2",
@@ -21,55 +21,55 @@
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/2Blue_Whale.jpg"
     },
 	{
         "id"            : "3",
         "name"          : "Bryde's Whale",
         "cientificName" : "Balaenoptera brydei",
-        "summary"       : ".",
-        "identify"      : ".",
-        "curiostity"    : ".",
+        "summary"       : "The Bryde's whale is usually seen  in Madeira from April to December. It's very common to see them feeding alongside dolphins and sea birds at this time of the year.",
+        "identify"      : "Unlike other rorquals, which have a single ridge on their rostrum, Bryde’s whales have three prominent ridges in front of their blowhole.Their bodies are sleek and their flippers are slender and pointed.",
+        "curiostity"    : "Bryde’s whales are named for Johan Bryde, a Norwegian who built the first whaling stations in South Africa in the early 20th century. They can hold their breath for a maximum of 20 minutes.",
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/3Brydes_Whale.jpg"
     },
 	{
         "id"            : "4",
         "name"          : "Cuvier's beaked Whale",
         "cientificName" : "Ziphius cavirostris",
-        "summary"       : ".",
-        "identify"      : ".",
-        "curiostity"    : ".",
+        "summary"       : "In Madeira the species is occasionaly encountered in the summer, May to July.",
+        "identify"      : "They can be distinguished by their pale or almost white head coloration and a distinctive “dip” between melon and back. Their relatively tiny and triangular dorsal fin is set further towards their flukes.",
+        "curiostity"    : "Very deep divers. The deepest documented dive was almost 3000m.",
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/4Cuviers_beaked_whale.jpg"
     },
 	{
         "id"            : "5",
         "name"          : "False killer Whale",
         "cientificName" : "Pseudorca crassidens",
-        "summary"       : ".",
-        "identify"      : ".",
-        "curiostity"    : ".",
+        "summary"       : "Sightings are occasional in Madeira but most sightings of False Killer whales occur from July to November.",
+        "identify"      : "The species is drak-grey with a black appearence. They are large and slender, and they can be dsitingished by their small conical head without a beak. The pectoral fins or flippers have a distinct central hump creating an S-shape along the outer edge.",
+        "curiostity"    : "They move very fast, energetic and acrobatic.When surfacing may raise head and much of body out of the water. Often approaches boats and bow-rides.",
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/5False_killer_whale.jpg"
     },
 	{
         "id"            : "6",
         "name"          : "Fin Whale",
         "cientificName" : "Balaenoptera physalus",
-        "summary"       : ".",
-        "identify"      : ".",
-        "curiostity"    : ".",
+        "summary"       : "Usually seen in Madeira from March to October, mainly in the summer months.",
+        "identify"      : "Fin whales have sleek, streamlined bodies with V-shaped heads and can be  distinguished  asymmetric colouring on their heads; the oral cavity, lower lip and baleen which are white on the right side while on the left they are uniformly grey.",
+        "curiostity"    : "The fin whale is the second-largest whale species on earth, second only to the blue whale. It is found throughout the world’s oceans. It gets its name from an easy-to-spot fin on its back, near its tail.",
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/6Fin_Whale.jpg"
     },
 	{
         "id"            : "7",
@@ -81,7 +81,7 @@
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/7Gervaiss_beaked_whale.jpg"
     },
 	{
         "id"            : "8",
@@ -93,43 +93,43 @@
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/8Harbour_porpoise_whale.png"
     },
 	{
         "id"            : "9",
         "name"          : "Humpback Whale",
         "cientificName" : "Megaptera novaeangliae",
-        "summary"       : ".",
-        "identify"      : ".",
-        "curiostity"    : ".",
+        "summary"       : "It is very ocasionally seen in Madeira. Sighting have occured mostly in April, May, October and November. Humpback whales live in all oceans around the world; large populations can be found in the Northern Atlantic and Pacific, as well as the Indian Ocean.",
+        "identify"      : "The humpback whale gets its common name from the distinctive hump on its back. Theycan also be easily disntinguish by their very long white pectoral fins. The underside of their flukes (tails) is also white whose pattern, together with other markings allows to identify individuals through photo-ID.",
+        "curiostity"    : "They travel great distances every year and have one of the longest migrations of any mammal on the planet. Some populations swim 10 000Km from tropical breeding grounds to colder, more productive feeding grounds. Males sing songs that can be heard 30km away.",
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/9humpback_whale.jpg"
     },
 	{
         "id"            : "10",
         "name"          : "Killer or Orca Whale",
         "cientificName" : "Orcinus orca",
-        "summary"       : ".",
-        "identify"      : ".",
-        "curiostity"    : ".",
+        "summary"       : "Orcas have ocasional presence in Madeira, mostly from Spring to Summer.Killer whales are found in all oceans. While they are most abundant in colder waters like Antarctica, Norway,Iceland and Alaska, they are also found in tropical and subtropical waters.",
+        "identify"      : "These dolphins can be easily identified by their rounded body, mostly black with a white patch behind each eye and flanks and white undersides, from throat to abdomen. Big conical head and large paddle-shaped flippers. Very tall dorsal fin centrally positioned in body length.",
+        "curiostity"    : "It's the largest dolphin in the world. Killer whales often use a coordinated hunting strategy and work as a team to catch prey. They are considered an apex predator, eating at the top of the food chain.",
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/10Killer_whale_or_Orca.jpg"
     },
 	{
         "id"            : "11",
         "name"          : "Long-finned pilot Whale",
         "cientificName" : "Globicephala melas",
-        "summary"       : ".",
-        "identify"      : ".",
-        "curiostity"    : ".",
+        "summary"       : "Although it is claimed to have occured in Madeira, the sighting has not been confirmed. The long-finned pilot whale has an antitropical distribution. This means that it occurs in temperate and subpolar waters of the North Atlantic ocean and the oceans of the southern hemisphere.",
+        "identify"      : "They are very similar to the short finned pilot whale. The main difference remains on the size of the flipper which are longer on this species.",
+        "curiostity"    : "Long-finned pilot whales are very social, living in large schools of hundreds of animals separated into close-knit pods of 10 to 20 individuals. This structure made them easy targets for whaling in the 19th and 20th centuries. Whalers would drive and herd pilot whales together into tight groups to harpoon them, hunting them for their meat, oil, and blubbe.",
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/11Long-finned_pilot_whale.jpg"
     },
 	{
         "id"            : "12",
@@ -141,7 +141,7 @@
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/12Melon-headed_whale.jpg"
     },
 	{
         "id"            : "13",
@@ -153,7 +153,7 @@
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/13Minke_Whale.jpg"
     },
 	{
         "id"            : "14",
@@ -165,7 +165,7 @@
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/14North_Atlantic_Right_Whale.jpg"
     },
 	{
         "id"            : "15",
@@ -177,7 +177,7 @@
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/15Northern_bottlenose_whale.jpg"
     },
 	{
         "id"            : "16",
@@ -189,19 +189,19 @@
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/16Sei_Whale.jpg"
     },
 	{
         "id"            : "17",
         "name"          : "Short-finned pilot Whale",
         "cientificName" : "Globicephala macrorhyncus",
-        "summary"       : ".",
-        "identify"      : ".",
-        "curiostity"    : ".",
+        "summary"       : "In the Madeira Archipelago it occurs all year round.Groups with calves, feeding, resting or socializing are frequently sighted. Short-finned pilot whales prefer warmer tropical and temperate waters. They can be found at varying distances from shore, but typically prefer deeper waters. Areas with a high density of squid are their main foraging habitats.",
+        "identify"      : "The short-finned pilot whale has a bulbous melon head with no obvious rostrum.  The body is black or dark brown, with a large gray saddle behind the dorsal fin.",
+        "curiostity"    : "They are known as the “cheetahs of the deep sea” for their deep, high-speed dives to chase and capture large squid.",
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/17Short-finned_pilot_whale.jpg"
     },
 	{
         "id"            : "18",
@@ -213,19 +213,19 @@
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/18Sowerbys_beaked_whale.jpg"
     },
 	{
         "id"            : "19",
         "name"          : "Sperm Whale",
         "cientificName" : "Physeter macrocephalus",
-        "summary"       : ".",
-        "identify"      : ".",
-        "curiostity"    : ".",
+        "summary"       : "Sperm whales can be observed in Madeira throughout the year, but mostly from March to September. Sperm whales inhabit all oceans and are usually encountered in deep pelagic waters. They migrate to the poles in the summer, with older males travelling across entire oceans and  the equator. Females remain in tropical, sub-tropical latitudes.",
+        "identify"      : "One of the distinct characteristics that thelp in the identification of Sperm Whales is a single blowhole y situated on the left side of the crown of the head, hence, their blow is directed forward to the left. Their heads are extremely large, accounting for about one-third of their total body length.",
+        "curiostity"    : "It's the species of Moby Dick. They produce Ambergris, a solid substance consisting of the residues of the undigested remains of squid.This can be found floating in tropical seas and  it's used in the perfume industry.",
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/19Sperm_Whale.jpg"
     },
 	{
         "id"            : "20",
@@ -237,7 +237,7 @@
         "length"        : "x m",
         "weight"        : "x kg",
         "color"         : "x",        
-        "imgPath"       : "../../assets/x.jpg"
+        "imgPath"       : "assets/Whales/20Trues_beaked_whale.jpg"
     }
 
 ]
