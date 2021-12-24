@@ -238,6 +238,6 @@
         "weight"        : "x kg",
         "color"         : "x",        
         "imgPath"       : "../../assets/x.jpg"
-    },
+    }
 
 ]
