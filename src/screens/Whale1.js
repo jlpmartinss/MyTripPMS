@@ -9,16 +9,16 @@ export default function Whale1({ route, navigation}) {
 
     let data = route.params;
 
-    const id = data.id; console.log("id: " + id);
-    const name = data.name; console.log(name);
-    const cientificName = data.cientificName; console.log("cientificName: " + cientificName);
-    const summary = data.summary; console.log("summary: " + summary);
-    const identify = data.identify; console.log("identify: " + identify);
-    const curiostity = data.curiostity; console.log("curiostity: " + curiostity);
-    const length = data.length; console.log("length: " + length);
-    const weight = data.weight; console.log("weight: " + weight);
-    const color = data.color; console.log("color: " + color);
-    const imgPath = data.imgPath; console.log("imgPath: " + imgPath);
+    const id = data.id; 
+    const name = data.name; 
+    const cientificName = data.cientificName; 
+    const summary = data.summary; 
+    const identify = data.identify; 
+    const curiostity = data.curiostity; 
+    const length = data.length; 
+    const weight = data.weight; 
+    const color = data.color; 
+    const imgPath = data.imgPath; 
 
   
     //state = {columns:2}
