@@ -13,28 +13,28 @@ export default function SpeciesScreen({ navigation }){
         <View style ={styles.container}>
             <ImageBackground blurRadius = {50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}> 
                 <ScrollView> 
-                    <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                    <TouchableOpacity onPress={() => navigation.navigate("Whales")}>       
                         <View style ={styles.item}>                    
                             <Image style = {styles.image} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
                                 <Text style = {styles.textSubTitle}>Whales</Text>
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => navigation.push("Dolphins")}>
+                    <TouchableOpacity onPress={() => navigation.navigate("Dolphins")}>
                         <View style ={styles.item}>
                             <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg")}/>
                                 <Text style = {styles.textSubTitle}>Dolphins</Text>
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => navigation.push("Seabirds")}>
+                    <TouchableOpacity onPress={() => navigation.navigate("Seabirds")}>
                         <View style ={styles.item}>
                             <Image style = {styles.image} source={require("../../assets/Seabirds/worldseabirdday.jpg")}/>
                                 <Text style = {styles.textSubTitle}>Seabirds</Text>
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => navigation.push("Others")}>
+                    <TouchableOpacity onPress={() => navigation.navigate("Others")}>
                         <View style ={styles.item}>
                             <Image style = {styles.image} source={require("../../assets/Others/1Others.jpg")}/>
                                 <Text style = {styles.textSubTitle}>Others</Text>

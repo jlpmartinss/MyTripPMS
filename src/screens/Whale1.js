@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Dimensions, Image, Button } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Image, Button,TouchableOpacity } from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
 import data from "./../../jsons/WhalesData.json";
@@ -20,44 +20,41 @@ const weight = data[speciesId].weight; console.log("weight: " + weight);
 const color = data[speciesId].color; console.log("color: " + color);
 const imgPath = data[speciesId].imgPath; console.log("imgPath: " + imgPath);
 
-export default class Whale1 extends React.Component {    
-    state = {columns:2}
-    
+export default function Whale1({ navigation }) {
+    //state = {columns:2}
 
-    
-    render() {
-        const {columns} = this.state
+    //const {columns} = this.state
 
-        return (
-            
-            <View style={styles.container}>
-                 <ImageBackground blurRadius = {50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}>            
-                    <ScrollView>
-                        <Text style={styles.textTitle}>{name}</Text>
-                        <Text style={styles.textNormal, styles.textCientific}>Cientific name: {cientificName}</Text>  
-                            <Image style={styles.image} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")}/>
-                        <Text style={styles.textSubTitle}>Summary:</Text>
-                            <Text style={styles.textNormal}>{summary}</Text>
+    return (
 
-                        <Text style={styles.textSubTitle}>How to identify:</Text>
-                            <Text style={styles.textNormal}>{identify}</Text>
+        <View style={styles.container}>
+            <ImageBackground blurRadius={50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}>
+                <ScrollView>
+                    <Text style={styles.textTitle}>{name}</Text>
+                    <Text style={styles.textNormal, styles.textCientific}>Cientific name: {cientificName}</Text>
+                    <Image style={styles.image} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} />
+                    <Text style={styles.textSubTitle}>Summary:</Text>
+                    <Text style={styles.textNormal}>{summary}</Text>
 
-                        <Text style={styles.textSubTitle}>Curiosities:</Text>
-                            <Text style={styles.textNormal}>{curiostity}</Text>
+                    <Text style={styles.textSubTitle}>How to identify:</Text>
+                    <Text style={styles.textNormal}>{identify}</Text>
+
+                    <Text style={styles.textSubTitle}>Curiosities:</Text>
+                    <Text style={styles.textNormal}>{curiostity}</Text>
 
 
-                        <Text style={styles.textSubTitle}>Average Length:</Text>
-                            <Text style={styles.textNormal}>{length}</Text>
-                        <Text style={styles.textSubTitle}>Average Weight:</Text>
-                            <Text style={styles.textNormal}>{weight}</Text>
-                        <Text style={styles.textSubTitle}>Color:</Text>
-                            <Text style={styles.textNormal}>{color}</Text>
-                    </ScrollView>
-                </ImageBackground>                
-            </View >            
-        );        
-    }
-    
+                    <Text style={styles.textSubTitle}>Average Length:</Text>
+                    <Text style={styles.textNormal}>{length}</Text>
+                    <Text style={styles.textSubTitle}>Average Weight:</Text>
+                    <Text style={styles.textNormal}>{weight}</Text>
+                    <Text style={styles.textSubTitle}>Color:</Text>
+                    <Text style={styles.textNormal}>{color}</Text>
+                </ScrollView>
+            </ImageBackground>
+        </View >
+    );
+
+
 }
 
 const styles = StyleSheet.create({
@@ -71,9 +68,9 @@ const styles = StyleSheet.create({
         margin: 15,
         flex: 1,
         width: ITEM_WIDTH - 30,
-        height: ITEM_WIDTH/1.5,
+        height: ITEM_WIDTH / 1.5,
         borderRadius: 15,
-        
+
     },
     imageBackground: {
         flex: 1
@@ -94,7 +91,7 @@ const styles = StyleSheet.create({
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 8
     },
-    textNormal: {        
+    textNormal: {
         marginLeft: 20,
         marginHorizontal: 10,
         color: 'white',
@@ -102,18 +99,18 @@ const styles = StyleSheet.create({
         textShadowRadius: 8,
         marginBottom: 20,
         marginRight: 20,
-        textAlign:'justify',
+        textAlign: 'justify',
         fontSize: 15,
     },
-    textCientific: {        
+    textCientific: {
         marginLeft: 20,
         marginHorizontal: 10,
         color: 'white',
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 8,
-        textAlign:'justify',
+        textAlign: 'justify',
         fontSize: 15,
     },
-    
+
 
 })

@@ -14,7 +14,7 @@ export default function DolphinsScreen({ navigation }){
             <ImageBackground blurRadius = {50} source={require("../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg") } resizeMode="cover" style={styles.imageBackground}> 
             <View style ={styles.container}>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whale1")}/*Dolphin1*/>       
+                <TouchableOpacity onPress={() => navigation.navigate("Whale1")}/*Dolphin1*/>       
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg") }/>
                         <Text style = {styles.textSubTitle}>Atlantic Spotted Dolphin</Text>                            
