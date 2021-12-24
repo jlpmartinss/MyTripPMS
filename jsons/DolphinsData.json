@@ -6,9 +6,9 @@
         "summary"       : "Sightings of this species in Madeira occur all year but mostly from March to November. Atlantic spotted dolphins are found in warm temperate and tropical waters of the Atlantic Ocean.",
         "identify"      : "These dolphins can be identified by the presence of dark spots on the belly and light  spots on the sides and back. Calves are born without spots and spotting becomes more intense with age.",
         "curiostity"    : "Atlantic spotted dolphins are often described as “acrobatic” swimmers, frequently leaping out of the water or jumping at the water’s surface. They can also swim very quickly and often “surf” in the waves created by vessels.",
-        "length"        : "x m",
-        "weight"        : "x kg",
-        "color"         : "x",        
+        "length"        : "",
+        "weight"        : "",
+        "color"         : "",        
         "imgPath"       : "assets/Dolphins/1Atlantic_spotted_dolphin.jpg"
     },
 	{
@@ -17,10 +17,10 @@
         "cientificName" : "Tursiops",
         "summary"       : "They occur in Madeira all year around. Very active and playful at the surface. They often curiously approach boats and leap, bowride and stick their heads out of the water. The population of this species in Madeira consists of two ecotypes; the larger, pelagic offshore type and the smaller, coastal type with the latter community even containing resident groups.",
         "identify"      : "Common bottlenose dolphins get their name from their short, thick snout (or rostrum). They are generally gray in color. They can range from light gray to almost black on top near their dorsal fin and light gray to almost white on their belly.",
-        "curiostity"    : "They communicate through sounds and use whistles to identify individuals like a name. It's the species of the famous /"Flipper/".",
-        "length"        : "x m",
-        "weight"        : "x kg",
-        "color"         : "x",        
+        "curiostity"    : "They communicate through sounds and use whistles to identify individuals like a name. It's the species of the famous \"Flipper\" ",
+        "length"        : "",
+        "weight"        : "",
+        "color"         : "",        
         "imgPath"       : "assets/Dolphins/2Bottlenose_dolphin.jpg"
     },
 	{
@@ -28,11 +28,11 @@
         "name"          : "Common Dolphin",
         "cientificName" : "Delphinus delphis",
         "summary"       : "Common dolphins can be seen from December to May in Madeira. These dolphins can be found Worldwide in warm temperate, subtropical and tropical waters.",
-        "identify"      : "Short-beaked common dolphins can be identified by their distinctive color pattern, called “hourglass pattern.” A dark gray cape extends along the back from the head to just below the dorsal fin where  a /"V/" is visible on either side of the body.",
+        "identify"      : "Short-beaked common dolphins can be identified by their distinctive color pattern, called “hourglass pattern.” A dark gray cape extends along the back from the head to just below the dorsal fin where  a \"V\" is visible on either side of the body.",
         "curiostity"    : "They are fast swimmer and acrobats, usually associating with other dolphins and whales or seabirds on a feeding frenzy. Like other cetaceans they communicate through sound and this species is highly vocal, sometimes tey can be heard above the surface.",
-        "length"        : "x m",
-        "weight"        : "x kg",
-        "color"         : "x",        
+        "length"        : "",
+        "weight"        : "",
+        "color"         : "",        
         "imgPath"       : "assets/Dolphins/3Common_dolphin.jpg"
     },
 	{
@@ -42,9 +42,9 @@
         "summary"       : ".",
         "identify"      : ".",
         "curiostity"    : ".",
-        "length"        : "x m",
-        "weight"        : "x kg",
-        "color"         : "x",        
+        "length"        : "",
+        "weight"        : "",
+        "color"         : "",        
         "imgPath"       : "assets/Dolphins/4Frasers_dolphin.jpg"
     },
 	{
@@ -54,9 +54,9 @@
         "summary"       : "This species is mostly seen in Madeira from June to October. They can be found in the temperate and tropical zones of all the world’s oceans. They prefer deeper offshore waters, especially near the continental shelf edge and slope, where they can dive to at least 500m and hold their breath for 30 minutes.",
         "identify"      : "As Risso's dolphins age, their coloration lightens from black, dark gray, or brown to pale gray or almost white and they have a bulbous head with a vertical crease whis is thought to be related toto the angle of their echolocation beam.",
         "curiostity"    : "The white colouration is caused by scars. The  scratches result from teeth raking between dolphins, as well as circular markings from prey (e.g., squid), cookie-cutter sharks, and lampreys.",
-        "length"        : "x m",
-        "weight"        : "x kg",
-        "color"         : "x",        
+        "length"        : "",
+        "weight"        : "",
+        "color"         : "",        
         "imgPath"       : "assets/Dolphins/5Rissos_Dolphin.jpg"
     },
 	{
@@ -66,9 +66,9 @@
         "summary"       : "Rough-toothed dolphins can be seen in Madeira from July to September. Rough-toothed dolphins are found in deep oceanic waters throughout tropical and warmer temperate areas of the world. They are generally found in the Atlantic, Indian, and Pacific Oceans.",
         "identify"      : "They have a small head with a long rostrum, and no demarcation between their melon (or forehead) and rostrum. Their dorsal fin and pectoral fins are distinctively large having a “reptilian” appearance which is distinct and unique among dolphins.",
         "curiostity"    : "Fast swimming, sometimes with tip of beak and chin out of the water.Often several individuals swim shoulder to shoulder, making a line (phalanx). Very common to see them chasing up flying fish.",
-        "length"        : "x m",
-        "weight"        : "x kg",
-        "color"         : "x",        
+        "length"        : "",
+        "weight"        : "",
+        "color"         : "",        
         "imgPath"       : "assets/Dolphins/6Rough_toothed_dolphin.jpg"
     },
 	{
@@ -78,10 +78,9 @@
         "summary"       : "They can be seen in Madeira from February to May and July to September.Striped dolphins prefer tropical to warm temperate waters  that are oceanic and deep.",
         "identify"      : "Striped dolphins are known for their distinct and striking coloration pattern, which includes bold, thin stripes that extend from the eye to the flipper and another set of stripes down the side of the body to the anal region.",
         "curiostity"    : "Striped dolphins are usually found in tight, cohesive groups averaging between 25 and 100 individuals, but they have occasionally been seen in larger groups of up to several hundred and even thousands of animals.",
-        "length"        : "x m",
-        "weight"        : "x kg",
-        "color"         : "x",        
+        "length"        : "",
+        "weight"        : "",
+        "color"         : "",        
         "imgPath"       : "assets/Dolphins/7Stripped_dolphin.jpg"
     }
-
 ]

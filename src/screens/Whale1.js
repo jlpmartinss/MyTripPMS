@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Dimensions, Image, Button,TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Image, Button, TouchableOpacity } from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
 import data from "./../../jsons/WhalesData.json";
@@ -7,7 +7,7 @@ import data from "./../../jsons/WhalesData.json";
 
 const ITEM_WIDTH = Dimensions.get('window').width
 
-var speciesId = 10;
+var speciesId = 3;
 
 const id = data[speciesId].id; console.log("id: " + id);
 const name = data[speciesId].name; console.log(name);
@@ -33,29 +33,31 @@ export default function Whale1({ navigation }) {
                     <Text style={styles.textTitle}>{name}</Text>
                     <Text style={styles.textNormal, styles.textCientific}>Cientific name: {cientificName}</Text>
                     <Image style={styles.image} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} />
-                    <Text style={styles.textSubTitle}>Summary:</Text>
-                    <Text style={styles.textNormal}>{summary}</Text>
 
-                    <Text style={styles.textSubTitle}>How to identify:</Text>
-                    <Text style={styles.textNormal}>{identify}</Text>
+                    {summary != "" ? <Text style={styles.textSubTitle}>Summary:</Text> : null}
+                    {summary != "" ? <Text style={styles.textNormal}>{summary}</Text> : null}
 
-                    <Text style={styles.textSubTitle}>Curiosities:</Text>
-                    <Text style={styles.textNormal}>{curiostity}</Text>
+                    {identify != "" ? <Text style={styles.textSubTitle}>How to identify:</Text> : null}
+                    {identify != "" ? <Text style={styles.textNormal}>{identify}</Text> : null}
 
+                    {curiostity != "" ? <Text style={styles.textSubTitle}>Curiosities:</Text> : null}
+                    {curiostity != "" ? <Text style={styles.textNormal}>{curiostity}</Text> : null}
 
-                    <Text style={styles.textSubTitle}>Average Length:</Text>
-                    <Text style={styles.textNormal}>{length}</Text>
-                    <Text style={styles.textSubTitle}>Average Weight:</Text>
-                    <Text style={styles.textNormal}>{weight}</Text>
-                    <Text style={styles.textSubTitle}>Color:</Text>
-                    <Text style={styles.textNormal}>{color}</Text>
+                    {length != "" ? <Text style={styles.textSubTitle}>Average Length:</Text> : null}
+                    {length != "" ? <Text style={styles.textNormal}>{length}</Text> : null}
+
+                    {weight != "" ? <Text style={styles.textSubTitle}>Average Weight:</Text> : null}
+                    {weight != "" ? <Text style={styles.textNormal}>{weight}</Text> : null}
+
+                    {color != "" ? <Text style={styles.textSubTitle}>Color:</Text> : null}
+                    {color != "" ? <Text style={styles.textNormal}>{color}</Text> : null}
+
                 </ScrollView>
             </ImageBackground>
         </View >
     );
-
-
 }
+
 
 const styles = StyleSheet.create({
     container: {
