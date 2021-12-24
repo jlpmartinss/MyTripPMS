@@ -4,14 +4,13 @@ import { ScrollView } from "react-native-gesture-handler";
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
 import data from "./../../jsons/WhalesData.json";
 
-
 const ITEM_WIDTH = Dimensions.get('window').width
 
 export default function Whale1({ route, navigation}) {
 
     var speciesId = route.params.pressedId - 1;
 
-    const id            = data[speciesId].id; 
+    const id            = data[speciesId].id;
     const name          = data[speciesId].name;
     const cientificName = data[speciesId].cientificName;
     const summary       = data[speciesId].summary;

@@ -257,14 +257,14 @@ const styles = StyleSheet.create({
 //                     ]}
 //                     renderItem={({ item }) => {
 //                         return <ListItem itemWidth={ITEM_WIDTH / columns} image={item} />
-//                     }}
+//                     })}
 //                     keyExtractor={
 //                         (index) => { return index }
 //                     }
 //                 /> */
 //                     Images.map((image, index) => (
 //                         <TouchableOpacity key={index} onPress={() => navigation.navigate('Whale1')}>
-//                             <Image source={image.url} style={{ height: ITEM_HEIGHT / 3, width: ITEM_WIDTH / 3 - 6, borderRadius: 10, margin: 2 }} />
+//                             <Image source={image.url} style={{ height: ITEM_HEIGHT / 3, width: ITEM_WIDTH / 3 - 6, borderRadius: 10, margin: 2 })} />
 
 //                         </TouchableOpacity>
 //                     ))
