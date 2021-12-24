@@ -1,45 +1,47 @@
 import React from "react";
 import { NavigationContainer } from '@react-navigation/native';
-import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableHighlight} from 'react-native';
+import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableOpacity, Dimensions, ImageBackground} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 
-
+let ITEM_WIDTH = Dimensions.get('window').width;
 
 export default function SpeciesScreen({ navigation }){
     console.log("I'm in SpeciesScreen");
     
     return(
         <View style ={styles.container}>
-            <ScrollView> 
-                <TouchableHighlight onPress={() => navigation.push("Whales")}>       
-                <View style ={styles.item}>
-                    <Text style = {styles.item}>Whales</Text>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                </View>
-                </TouchableHighlight>
+            <ImageBackground blurRadius = {50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}> 
+                <ScrollView> 
+                    <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                        <View style ={styles.item}>                    
+                            <Image style = {styles.image} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
+                                <Text style = {styles.textSubTitle}>Whales</Text>
+                        </View>
+                    </TouchableOpacity>
 
-                <TouchableHighlight onPress={() => navigation.push("Dolphins")}>
-                <View style ={styles.item}>
-                    <Text style = {styles.item}>Dolphins</Text>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg")}/>
-                </View>
-                </TouchableHighlight>
+                    <TouchableOpacity onPress={() => navigation.push("Dolphins")}>
+                        <View style ={styles.item}>
+                            <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg")}/>
+                                <Text style = {styles.textSubTitle}>Dolphins</Text>
+                        </View>
+                    </TouchableOpacity>
 
-                <TouchableHighlight onPress={() => navigation.push("Seabirds")}>
-                <View style ={styles.item}>
-                    <Text style = {styles.item}>Seabirds</Text>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg")}/>
-                </View>
-                </TouchableHighlight>
+                    <TouchableOpacity onPress={() => navigation.push("Seabirds")}>
+                        <View style ={styles.item}>
+                            <Image style = {styles.image} source={require("../../assets/Seabirds/worldseabirdday.jpg")}/>
+                                <Text style = {styles.textSubTitle}>Seabirds</Text>
+                        </View>
+                    </TouchableOpacity>
 
-                <TouchableHighlight onPress={() => navigation.push("Others")}>
-                <View style ={styles.item}>
-                    <Text style = {styles.item}>Others</Text>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg")}/>
-                </View>  
-                </TouchableHighlight>                              
-            </ScrollView>
+                    <TouchableOpacity onPress={() => navigation.push("Others")}>
+                        <View style ={styles.item}>
+                            <Image style = {styles.image} source={require("../../assets/Others/1Others.jpg")}/>
+                                <Text style = {styles.textSubTitle}>Others</Text>
+                        </View>  
+                    </TouchableOpacity>                              
+                </ScrollView>
+            </ImageBackground>
         </View>
     );
 }
@@ -47,26 +49,34 @@ export default function SpeciesScreen({ navigation }){
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingHorizontal: 20,
-        backgroundColor: 'cyan',
         //alignItems: 'center',
-        justifyContent: 'center',
-      
+        flexDirection: 'row',
+        flexWrap: 'wrap',      
     },
     item: {
+        marginTop: 15,
+        padding:5,
         flex:1,
-        marginTop: 10,
-        padding: 0,
-        backgroundColor: 'pink',
-        fontSize: 24,
+        fontSize: 20,
         
     },
+    textSubTitle: {
+        position:'absolute',
+        color: 'white',
+        fontSize: 20,
+        marginHorizontal: 10,
+        marginVertical: 25,
+        marginLeft: 30,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8
+    },
     image: {
+        marginTop: 15,
+        marginLeft: 15,
         flex: 1,
-        width: '100%',
-        height: 300,
-        resizeMode: 'stretch',
-        backgroundColor: 'white'
+        width: ITEM_WIDTH - 35,
+        height: ITEM_WIDTH/1.5,
+        borderRadius: 15
     },
     imageBackground: {
         flex: 1
