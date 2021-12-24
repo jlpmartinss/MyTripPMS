@@ -2,12 +2,12 @@ import React from "react";
 import { View, Text, StyleSheet, Dimensions, Image, Button } from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
-import data from "./../../jsons/WhalesData.json";
+import data from "../../jsons/DolphinsData.json";
 
 
 const ITEM_WIDTH = Dimensions.get('window').width
 
-var speciesId = 1;
+var speciesId = 4;
 
 const id = data[speciesId].id; console.log("id: " + id);
 const name = data[speciesId].name; console.log(name);
@@ -20,7 +20,7 @@ const weight = data[speciesId].weight; console.log("weight: " + weight);
 const color = data[speciesId].color; console.log("color: " + color);
 const imgPath = data[speciesId].imgPath; console.log("imgPath: " + imgPath);
 
-export default class Whale1 extends React.Component {    
+export default class Dolphin1 extends React.Component {    
     state = {columns:2}
     
 
@@ -31,12 +31,12 @@ export default class Whale1 extends React.Component {
         return (
             
             <View style={styles.container}>
-                 <ImageBackground blurRadius = {50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}>            
+                 <ImageBackground blurRadius = {50} source={require("../../assets/Dolphins/2Bottlenose_dolphin.jpg")} resizeMode="cover" style={styles.imageBackground}>            
                     <ScrollView>
                         <Text style={styles.textTitle}>{name}</Text>
                         <Text style={styles.textNormal, styles.textCientific}>Cientific name: {cientificName}</Text>  
-                            <Image style={styles.image} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")}/>
-                            
+                            <Image style={styles.image} source={require("../../assets/Dolphins/2Bottlenose_dolphin.jpg")}/>
+                             
                             {summary != ""? <Text style={styles.textSubTitle}>Summary:</Text>:null}
                                 {summary != ""? <Text style={styles.textNormal}>{summary}</Text>:null}
 
@@ -54,7 +54,7 @@ export default class Whale1 extends React.Component {
 
                             {color != ""? <Text style={styles.textSubTitle}>Color:</Text>:null}
                                 {color != ""? <Text style={styles.textNormal}>{color}</Text>:null}
-
+                                
                     </ScrollView>
                 </ImageBackground>                
             </View >            
