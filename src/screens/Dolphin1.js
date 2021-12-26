@@ -3,25 +3,23 @@ import React from "react";
 import { View, Text, StyleSheet, Dimensions, Image, Button } from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
-import data from "../../jsons/DolphinsData.json";
-
 
 const ITEM_WIDTH = Dimensions.get('window').width
 
 export default function Dolphin1({ route, navigation}) {
 
-    var speciesId = route.params.pressedId - 1;
+    let data = route.params;
 
-    const id            = data[speciesId].id;
-    const name          = data[speciesId].name;
-    const cientificName = data[speciesId].cientificName;
-    const summary       = data[speciesId].summary;
-    const identify      = data[speciesId].identify;
-    const curiostity    = data[speciesId].curiostity;
-    const length        = data[speciesId].length;
-    const weight        = data[speciesId].weight;
-    const color         = data[speciesId].color;
-    const imgPath       = data[speciesId].imgPath;
+    const id            = data.id;
+    const name          = data.name;
+    const cientificName = data.cientificName;
+    const summary       = data.summary;
+    const identify      = data.identify;
+    const curiostity    = data.curiostity;
+    const length        = data.length;
+    const weight        = data.weight;
+    const color         = data.color;
+    const imgPath       = data.imgPath;
 
     console.log("I'm in Dolphin1: " + id + " " + name);
 
