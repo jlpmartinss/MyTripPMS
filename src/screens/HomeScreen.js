@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Button, StyleSheet, FlatList, Dimensions, Image } from 'react-native';
 import { TouchableOpacity } from "react-native-gesture-handler";
-import Images from "./Images"
+import Images from "../Images"
 
 //const ITEM_WIDTH = Dimensions.get('window').width
 
