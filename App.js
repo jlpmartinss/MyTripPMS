@@ -15,11 +15,8 @@ import OthersScreen from './src/screens/OthersScreen';
 import SelectPictureScreen from './src/screens/SelectPictureScreen';
 import Whale1 from './src/screens/Whale1';
 import { AddTripScreenNavigator, HomeScreenNavigator, SpeciesScreenNavigator, PostCardNavigator } from './src/screens/CustomNavigation';
-<<<<<<< HEAD
 import TripListScreen from './src/screens/TripListScreen';
-=======
 import { StatusBar } from 'expo-status-bar';
->>>>>>> e2de640d0f9d68bc36367250fa1db3071111e3d1
 
 
 const Tab = createBottomTabNavigator();
@@ -99,6 +96,7 @@ export default () => (
         <Tab.Screen name="Home" component={HomeScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
         <Tab.Screen name="Species" component={SpeciesScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Feather name="search" size={size} color={color} /> )}}/>
         <Tab.Screen name="Add Trip" component={AddTripScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Ionicons name="add-circle" size={size} color={color} /> )}}/>
+        <Tab.Screen name="TripListScreen" component={TripListScreen} options={{tabBarIcon: ({size,color}) => (<Ionicons name="add-circle" size={size} color={color} /> )}}/>
       </Tab.Navigator>
     </NavigationContainer>
 
