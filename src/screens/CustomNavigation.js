@@ -38,6 +38,11 @@ const HomeScreenNavigator = () => {
                 name="Whale1"
                 component={Whale1}
             />
+            <Stack.Screen
+                name="PostCard"
+                component={PostCardPreview}
+            />
+
         </Stack.Navigator>
     );
 }

@@ -5,4 +5,5 @@ export default Images = {
     trip3: require("../assets/whale.jpg"),
     trip4: require("../assets/whale.jpg"),
 
+
 }
