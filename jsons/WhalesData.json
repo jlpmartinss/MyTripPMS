@@ -9,7 +9,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/1Blainvilles_beaked_whale.jpg"
+        "imgPath"       : "../assets/Whales/1Blainvilles_beaked_whale.jpg"
     },
 	{
         "id"            : "2",
@@ -21,7 +21,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/2Blue_Whale.jpg"
+        "imgPath"       : "../assets/Whales/2Blue_Whale.jpg"
     },
 	{
         "id"            : "3",
@@ -33,7 +33,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/3Brydes_Whale.jpg"
+        "imgPath"       : "../assets/Whales/3Brydes_Whale.jpg"
     },
 	{
         "id"            : "4",
@@ -45,7 +45,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/4Cuviers_beaked_whale.jpg"
+        "imgPath"       : "../assets/Whales/4Cuviers_beaked_whale.jpg"
     },
 	{
         "id"            : "5",
@@ -57,7 +57,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/5False_killer_whale.jpg"
+        "imgPath"       : "../assets/Whales/5False_killer_whale.jpg"
     },
 	{
         "id"            : "6",
@@ -69,7 +69,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/6Fin_Whale.jpg"
+        "imgPath"       : "../assets/Whales/6Fin_Whale.jpg"
     },
 	{
         "id"            : "7",
@@ -81,7 +81,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/7Gervaiss_beaked_whale.jpg"
+        "imgPath"       : "../assets/Whales/7Gervaiss_beaked_whale.jpg"
     },
 	{
         "id"            : "8",
@@ -93,7 +93,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/8Harbour_porpoise_whale.png"
+        "imgPath"       : "../assets/Whales/8Harbour_porpoise_whale.png"
     },
 	{
         "id"            : "9",
@@ -105,7 +105,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/9humpback_whale.jpg"
+        "imgPath"       : "../assets/Whales/9humpback_whale.jpg"
     },
 	{
         "id"            : "10",
@@ -117,7 +117,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/10Killer_whale_or_Orca.jpg"
+        "imgPath"       : "../assets/Whales/10Killer_whale_or_Orca.jpg"
     },
 	{
         "id"            : "11",
@@ -129,7 +129,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/11Long-finned_pilot_whale.jpg"
+        "imgPath"       : "../assets/Whales/11Long-finned_pilot_whale.jpg"
     },
 	{
         "id"            : "12",
@@ -141,7 +141,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/12Melon-headed_whale.jpg"
+        "imgPath"       : "../assets/Whales/12Melon-headed_whale.jpg"
     },
 	{
         "id"            : "13",
@@ -153,7 +153,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/13Minke_Whale.jpg"
+        "imgPath"       : "../assets/Whales/13Minke_Whale.jpg"
     },
 	{
         "id"            : "14",
@@ -165,7 +165,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/14North_Atlantic_Right_Whale.jpg"
+        "imgPath"       : "../assets/Whales/14North_Atlantic_Right_Whale.jpg"
     },
 	{
         "id"            : "15",
@@ -177,7 +177,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/15Northern_bottlenose_whale.jpg"
+        "imgPath"       : "../assets/Whales/15Northern_bottlenose_whale.jpg"
     },
 	{
         "id"            : "16",
@@ -189,7 +189,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/16Sei_Whale.jpg"
+        "imgPath"       : "../assets/Whales/16Sei_Whale.jpg"
     },
 	{
         "id"            : "17",
@@ -201,7 +201,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/17Short-finned_pilot_whale.jpg"
+        "imgPath"       : "../assets/Whales/17Short-finned_pilot_whale.jpg"
     },
 	{
         "id"            : "18",
@@ -213,7 +213,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/18Sowerbys_beaked_whale.jpg"
+        "imgPath"       : "../assets/Whales/18Sowerbys_beaked_whale.jpg"
     },
 	{
         "id"            : "19",
@@ -225,7 +225,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/19Sperm_Whale.jpg"
+        "imgPath"       : "../assets/Whales/19Sperm_Whale.jpg"
     },
 	{
         "id"            : "20",
@@ -237,7 +237,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Whales/20Trues_beaked_whale.jpg"
+        "imgPath"       : "../assets/Whales/20Trues_beaked_whale.jpg"
     }
 
 ]

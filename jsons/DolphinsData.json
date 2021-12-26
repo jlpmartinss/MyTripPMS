@@ -9,7 +9,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Dolphins/1Atlantic_spotted_dolphin.jpg"
+        "imgPath"       : "../assets/Dolphins/1Atlantic_spotted_dolphin.jpg"
     },
 	{
         "id"            : "2",
@@ -21,7 +21,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Dolphins/2Bottlenose_dolphin.jpg"
+        "imgPath"       : "../assets/Dolphins/2Bottlenose_dolphin.jpg"
     },
 	{
         "id"            : "3",
@@ -33,7 +33,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Dolphins/3Common_dolphin.jpg"
+        "imgPath"       : "../assets/Dolphins/3Common_dolphin.jpg"
     },
 	{
         "id"            : "4",
@@ -45,7 +45,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Dolphins/4Frasers_dolphin.jpg"
+        "imgPath"       : "../assets/Dolphins/4Frasers_dolphin.jpg"
     },
 	{
         "id"            : "5",
@@ -57,7 +57,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Dolphins/5Rissos_Dolphin.jpg"
+        "imgPath"       : "../assets/Dolphins/5Rissos_Dolphin.jpg"
     },
 	{
         "id"            : "6",
@@ -69,7 +69,7 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Dolphins/6Rough_toothed_dolphin.jpg"
+        "imgPath"       : "../assets/Dolphins/6Rough_toothed_dolphin.jpg"
     },
 	{
         "id"            : "7",
@@ -81,6 +81,6 @@
         "length"        : "",
         "weight"        : "",
         "color"         : "",        
-        "imgPath"       : "assets/Dolphins/7Stripped_dolphin.jpg"
+        "imgPath"       : "../assets/Dolphins/7Stripped_dolphin.jpg"
     }
 ]

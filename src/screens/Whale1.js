@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, Dimensions, Image, Button, TouchableOpacity } from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
+import Images from "../Images";
 
 const ITEM_WIDTH = Dimensions.get('window').width
 
@@ -9,29 +10,93 @@ export default function Whale1({ route, navigation}) {
 
     let data = route.params;
 
-    const id = data.id; 
-    const name = data.name; 
+    const id            = data.id; 
+    const name          = data.name; 
     const cientificName = data.cientificName; 
-    const summary = data.summary; 
-    const identify = data.identify; 
-    const curiostity = data.curiostity; 
-    const length = data.length; 
-    const weight = data.weight; 
-    const color = data.color; 
-    const imgPath = data.imgPath; 
+    const summary       = data.summary; 
+    const identify      = data.identify; 
+    const curiostity    = data.curiostity; 
+    const length        = data.length; 
+    const weight        = data.weight; 
+    const color         = data.color;     
+    var imgPath         = "";
 
-  
-    //state = {columns:2}
-    //const {columns} = this.state
+    console.log("I'm in Whale1: " + id + " " + name);
+
+    switch (id){
+        case '1':
+            imgPath = Images.whale1;
+            break;
+        case '2':
+            imgPath = Images.whale2;
+            break;
+        case '3':
+            imgPath = Images.whale3;
+            break;
+        case '4':
+            imgPath = Images.whale4;
+            break;
+        case '5':
+            imgPath = Images.whale5;
+            break;
+        case '6':
+            imgPath = Images.whale6;
+            break;
+        case '7':
+            imgPath = Images.whale7;
+            break;
+        case '8':
+            imgPath = Images.whale8;
+            break;
+        case '9':
+            imgPath = Images.whale9;
+            break;
+        case '10':
+            imgPath = Images.whale10;
+            break;
+        case '11':
+            imgPath = Images.whale11;
+            break;
+        case '12':
+            imgPath = Images.whale12;
+            break;
+        case '13':
+            imgPath = Images.whale13;
+            break;
+        case '14':
+            imgPath = Images.whale14;
+            break;
+        case '15':
+            imgPath = Images.whale15;
+            break;
+        case '16':
+            imgPath = Images.whale16;
+            break;
+        case '17':
+            imgPath = Images.whale17;
+            break;
+        case '18':
+            imgPath = Images.whale18;
+            break;
+        case '19':
+            imgPath = Images.whale19;
+            break;
+        case '20':
+            imgPath = Images.whale20;
+            break;
+
+        default:
+            console.log("something went wrong with image id!!!!");
+    }    
 
     return (
 
         <View style={styles.container}>
-            <ImageBackground blurRadius={50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}>
+            <ImageBackground blurRadius={50} source={imgPath} resizeMode="cover" style={styles.imageBackground}>
                 <ScrollView>
                     <Text style={styles.textTitle}>{name}</Text>
                     <Text style={styles.textNormal, styles.textCientific}>Cientific name: {cientificName}</Text>
-                    <Image style={styles.image} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} />
+                    <Image style={styles.image} source={imgPath} />
 
                     {summary != "" ? <Text style={styles.textSubTitle}>Summary:</Text> : null}
                         {summary != "" ? <Text style={styles.textNormal}>{summary}</Text> : null}
@@ -46,7 +111,7 @@ export default function Whale1({ route, navigation}) {
                         {length != "" ? <Text style={styles.textNormal}>{length}</Text> : null}
 
                     {weight != "" ? <Text style={styles.textSubTitle}>Average Weight:</Text> : null}
-                     {weight != "" ? <Text style={styles.textNormal}>{weight}</Text> : null}
+                        {weight != "" ? <Text style={styles.textNormal}>{weight}</Text> : null}
 
                     {color != "" ? <Text style={styles.textSubTitle}>Color:</Text> : null}
                         {color != "" ? <Text style={styles.textNormal}>{color}</Text> : null}
