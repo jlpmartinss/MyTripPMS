@@ -36,7 +36,13 @@ export default Images = {
     whale17: require("../assets/Whales/17Short-finned_pilot_whale.jpg"),
     whale18: require("../assets/Whales/18Sowerbys_beaked_whale.jpg"),
     whale19: require("../assets/Whales/19Sperm_Whale.jpg"),
-    whale20: require("../assets/Whales/20Trues_beaked_whale.jpg")  
+    whale20: require("../assets/Whales/20Trues_beaked_whale.jpg"),
+
+    whalewatching: require("../assets/Trips/mapasVMT_cetaceos.png"),
+    desertas: require("../assets/Trips/mapasVMT_desertas-1.png"),
+    sunset: require("../assets/Trips/mapa_por-do-sol.png"),
+    faja: require("../assets/Trips/mapa_fajas.png"),
+    fireworks: require("../assets/Trips/F.Atlantico-Polonia-75-1220x817-1220x817.jpg")
     
 
 }

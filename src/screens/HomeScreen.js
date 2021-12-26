@@ -1,56 +1,113 @@
 import React from "react";
-import { View, Text, Button, StyleSheet, FlatList, Dimensions, Image } from 'react-native';
+import { View, Text, Button, StyleSheet, FlatList, Dimensions, Image, ScrollView, ImageBackground } from 'react-native';
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Images from "../Images"
 
-//const ITEM_WIDTH = Dimensions.get('window').width
+const ITEM_WIDTH = Dimensions.get('window').width
+import data from "./../../jsons/Trips.json";
+var tripId = 0;
+const id = data[tripId].id;
+const ongoing = data[tripId].ongoing;
+const location = data[tripId].location;
+const name = data[tripId].name;
+const imagecollection = data[tripId].imagecollection;
+const date = data[tripId].date;
+const imgPath = data[tripId].imgPath;
+const rating = data[tripId].rating;
+const comment = data[tripId].comment;
+const sightedSpecies = data[tripId].sightedSpecies;
+const route = data[tripId].route;
 
-
- const Home = ({navigation}) => {
-    //state = { columns: 2 }
-
-        //const { columns } = this.state
-        return (
-            <View style={styles.container}>
-             <Image blurRadius = {50} source={Images.trip0} resizeMode="cover" style={styles.imageBackground}> 
-
-            </Image>
-            </View >
-        );
+//we will loop through object properties and if an object has at least one property, then it will enter the loop and return false. If the object doesn’t have any properties then it will return true.
+function isEmpty(data) {
+    for (var prop in data) {
+        if (data.hasOwnProperty(prop))
+            return false;
     }
-  
+
+    return true;
+}
+
+const Home = ({ route, navigation }) => {
+
+    return (
+        <View style={styles.container}>
+            <ImageBackground blurRadius={50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}>
+                <ScrollView> 
+                    {isEmpty ? <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
+                        <View style={styles.item}>
+                            <Image style={styles.image} source={Images.trip0} />
+                            <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
+                            <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text>
+                        </View>
+                    </TouchableOpacity> : null}
+                </ScrollView>
+            </ImageBackground>
+        </View >
+    );
+}
+
 export default Home
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection: 'column',
-        backgroundColor: '#8fcbbc'
+        //alignItems: 'center',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
     },
-    submitText: {
-        color: '#FFF',
-        fontSize: 18
+    item: {
+        marginTop: 15,
+        padding: 5,
+        flex: 1,
+        fontSize: 20,
+
     },
-    screen:{
-        flex:1,
-        display:'flex',
-        justifyContent:'center',
-        alignItems:'center',
-        backgroundColor:'#00000025',
+    textSubTitle: {
+        position: 'absolute',
+        color: 'white',
+        fontSize: 20,
+        marginHorizontal: 10,
+        marginVertical: 25,
+        marginLeft: 30,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8,
+        paddingTop: 180,
+        fontWeight: 'bold',
+        fontSize: 30
+
     },
-    text:{
-        color:'#000',
-        fontWeight:'700',
-        fontSize:30
+    text: {
+        position: 'absolute',
+        color: 'white',
+        fontSize: 20,
+        marginHorizontal: 10,
+        marginVertical: 25,
+        marginLeft: 30,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8,
+        paddingTop: 200,
+        fontSize: 14
+
+
     },
-    button:{
-        backgroundColor:'#0275d8',
-        paddingVertical: 5,
-        paddingHorizontal: 10
-        
+    image: {
+        marginTop: 15,
+        marginLeft: 15,
+        flex: 1,
+        width: ITEM_WIDTH - 35,
+        height: ITEM_WIDTH / 1.5,
+        borderRadius: 15,
+
+
     },
-    buttonText:{
-        color:'#fff',
-        fontSize:25
-    }
+    imageBackground: {
+        flex: 1,
+
+    },
+    shadowProp: {
+        shadowColor: '#171717',
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
+    },
 })
