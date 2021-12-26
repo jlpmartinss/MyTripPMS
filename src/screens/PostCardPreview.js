@@ -146,7 +146,7 @@ function PostCardPreview(props) {
                             <View style={{ width: width - 40, height: 200, marginTop: 20 }}>
                                 <Image
                                     style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 5, borderWidth: 1, borderColor: '#dddddd' }}
-                                    source={require('../../assets/Trips/sunset.jpg')}
+                                    source={require('../../assets/Trips/imsunset.jpg')}
                                 />
 
                             </View>
@@ -155,7 +155,7 @@ function PostCardPreview(props) {
                 </ScrollView>
                 <ScrollView>
                     <View>
-                        <Text style={styles.text} /*Comentaário da viagem */ >
+                        <Text style={styles.text} /*Comentário da viagem */ >
                             {comment}
                         </Text>
                     </View>
