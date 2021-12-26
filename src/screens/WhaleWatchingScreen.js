@@ -1,0 +1,146 @@
+import React from "react";
+import { View, Text, StyleSheet, Dimensions, Image, Button, TouchableOpacity } from 'react-native';
+import { color } from "react-native-elements/dist/helpers";
+import { ScrollView } from "react-native-gesture-handler";
+import ImageBackground from "react-native/Libraries/Image/ImageBackground";
+import Images from "../Images";
+
+const ITEM_WIDTH = Dimensions.get('window').width
+
+export default function WhaleWatchingScreen({ route, navigation}) {
+
+    
+    console.log("I'm in WhaleWatching Screen " );
+
+    return (
+        <View style={styles.container}>
+            <ImageBackground blurRadius={50} source={require("../../assets/Trips/imcetaceos.jpg")} resizeMode="cover" style={styles.imageBackground}>
+                <ScrollView>                    
+                    <Image style={styles.image} source={require("../../assets/Trips/imcetaceos.jpg")} />
+                    <Text style={styles.textTitle}>Description:</Text>
+                    <Text style={styles.textNormal}>We churn up the ocean in our search for the right coordinates and there they are! Dolphins! Playful, communicative, energetic! Although it seems they are posing for photos, they are actually living in their own enchanted world. Whales who may or may not give off embarrassing odours, decide if they will honour us with a visit. Adding to this 3 hour memorable taste of wild life, we sometimes have the opportunity of spotting turtles and sea birds.{"\n"}{"\n"}
+                    When the climate is inviting, we stop for a swim in the ocean below Cabo Girão, and when there are favourable winds, we turn off the engines and hoist the sails, which means less pollution and more relaxation. A 3 hour trip that is worth doing at least once in a lifetime by both locals and visitors. Reserve your place and bring your loved ones along!</Text>
+
+                    <Text style={styles.textTitle}>Route:</Text>
+                        <Image style={styles.image} source={require("../../assets/Trips/mapasVMT_cetaceos.png")} />
+                    <Text style={styles.textTitle}>Tripulation:</Text>                
+
+                    <View style ={styles.containerHorizontal}>                        
+                        <View width = {ITEM_WIDTH/2 - 15}>
+                            <Text style = {styles.textSubTitle}>Luana Mendonça:</Text> 
+                            <Text style = {styles.textNormal}>Luana is an experienced skipper with more than 5000 sailing hours. {"\n"} Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla. </Text>
+                        </View>
+                        <Image style = {styles.imageFace} source={require("../../assets/Crew/Luana.jpg") }/>
+                    </View>
+
+                    <View style ={styles.containerHorizontal}>                        
+                        <View width = {ITEM_WIDTH/2 - 15}>
+                            <Text style = {styles.textSubTitle}>João Martins:</Text> 
+                            <Text style = {styles.textNormal}>João is a biologist that knows all the the waters of Madeira Island like the palm of his hand. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.  </Text>
+                        </View>
+                        <Image style = {styles.imageFace} source={require("../../assets/Crew/Joao.jpg") }/>
+                    </View>
+
+                    <View style ={styles.containerHorizontal}>                        
+                        <View width = {ITEM_WIDTH/2 - 15}>
+                            <Text style = {styles.textSubTitle}>Francisco Vasconcelos</Text> 
+                            <Text style = {styles.textNormal}>Francisco is your tour guide. He knows everything about the Madeira. He will guide you throug this amazing trip and identify all the landmarks. Bla bla bla bla bla bla bla bla bla.</Text>
+                        </View>
+                        <Image style = {styles.imageFace} source={require("../../assets/Crew/Francisco.jpg") }/>
+                    </View>
+
+                    <View style ={styles.containerHorizontal}>                        
+                        <View width = {ITEM_WIDTH/2 - 15}>
+                            <Text style = {styles.textSubTitle}>Marcos Silva:</Text> 
+                            <Text style = {styles.textNormal}>This is thdsdsdsdsdsdsdssssssssssssssssssssssssssssssssssssssssedsdsdsdsdssdsdsdsdsds</Text>
+                        </View>
+                        <Image style = {styles.imageFace} source={require("../../assets/Crew/Marcos.jpg") }/>
+                    </View>
+
+                    
+
+                </ScrollView>
+            </ImageBackground>
+        </View >
+       
+    );
+}
+
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        flexDirection: 'column',
+        backgroundColor: 'grey',
+    },
+    containerHorizontal: {
+        padding: 20,
+        flex: 1,
+        //alignItems: 'center',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+      
+    },
+    item: {
+        padding:5,
+        flex:1,
+        fontSize: 20,
+        
+    },
+    image: {
+        marginTop: 15,
+        margin: 15,
+        flex: 1,
+        width: ITEM_WIDTH - 30,
+        height: ITEM_WIDTH / 1.5,
+        borderRadius: 15,
+    },
+
+    imageFace: {
+        flex: 1,
+        width: ITEM_WIDTH/2.15,
+        height: ITEM_WIDTH/2.15,
+        backgroundColor: 'white',
+        borderRadius: 15
+    },
+    imageBackground: {
+        flex: 1
+    },
+    textTitle: {
+        color: 'white',
+        fontSize: 32,
+        marginHorizontal: 10,
+        marginTop: 10,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8
+    },
+    textSubTitle: {
+        color: 'white',
+        fontSize: 20,
+        marginHorizontal: 10,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8
+    },
+    textNormal: {
+        marginLeft: 20,
+        marginHorizontal: 10,
+        color: 'white',
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8,
+        marginBottom: 20,
+        marginRight: 20,
+        textAlign: 'justify',
+        fontSize: 15,
+    },
+    textCientific: {
+        marginLeft: 20,
+        marginHorizontal: 10,
+        color: 'white',
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8,
+        textAlign: 'justify',
+        fontSize: 15,
+    },
+
+
+})

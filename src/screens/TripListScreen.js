@@ -2,21 +2,43 @@ import React from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableOpacity, Dimensions, ImageBackground} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import Images from "../Images";
 
 let ITEM_WIDTH = Dimensions.get('window').width;
 
 export default function TripListScreen({ navigation }){
-    console.log("I'm in SpeciesScreen");
+    console.log("I'm in TripList Screen");
     
     return(
         <View style ={styles.container}>
             <ImageBackground blurRadius = {50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}> 
                 <ScrollView> 
-                    <TouchableOpacity onPress={() => navigation.navigate("Whales")}>       
+
+                    <TouchableOpacity onPress={() => navigation.navigate("Cetaceans")}>       
                         <View style ={styles.item}>                    
-                            <Image style = {styles.image} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
-                                <Text style = {styles.textSubTitle}>Whales</Text>
+                            <Image style = {styles.image} source={require("../../assets/Trips/imcetaceos.jpg") }/>
+                                <Text style = {styles.textSubTitle}>Cetaceans</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => navigation.navigate("Cetaceans")}>       
+                        <View style ={styles.item}>                    
+                            <Image style = {styles.image} source={require("../../assets/Trips/imdesertas.jpg") }/>
+                                <Text style = {styles.textSubTitle}>Desertas Island</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => navigation.navigate("Cetaceans")}>       
+                        <View style ={styles.item}>                    
+                            <Image style = {styles.image} source={require("../../assets/Trips/imfaja.jpg") }/>
+                                <Text style = {styles.textSubTitle}>Fajãs</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => navigation.navigate("Cetaceans")}>       
+                        <View style ={styles.item}>                    
+                            <Image style = {styles.image} source={require("../../assets/Trips/imsunset.jpg") }/>
+                                <Text style = {styles.textSubTitle}>Sunset</Text>
                         </View>
                     </TouchableOpacity>
 

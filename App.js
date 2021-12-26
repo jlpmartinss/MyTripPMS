@@ -14,8 +14,12 @@ import SeabirdsScreen from './src/screens/SeabirdsScreen';
 import OthersScreen from './src/screens/OthersScreen';
 import SelectPictureScreen from './src/screens/SelectPictureScreen';
 import Whale1 from './src/screens/Whale1';
-import { AddTripScreenNavigator, HomeScreenNavigator, SpeciesScreenNavigator, PostCardNavigator } from './src/screens/CustomNavigation';
 import TripListScreen from './src/screens/TripListScreen';
+import WhaleWhatchingScreen from './src/screens/WhaleWatchingScreen';
+import DesertasScreen from './src/screens/DesertasScreen';
+import FajasScreen from './src/screens/FajasScreen';
+import SunsetScreen from './src/screens/SunsetScreen';
+import { AddTripScreenNavigator, HomeScreenNavigator, SpeciesScreenNavigator, PostCardNavigator } from './src/screens/CustomNavigation';
 import { StatusBar } from 'expo-status-bar';
 
 
@@ -96,7 +100,13 @@ export default () => (
         <Tab.Screen name="Home" component={HomeScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
         <Tab.Screen name="Species" component={SpeciesScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Feather name="search" size={size} color={color} /> )}}/>
         <Tab.Screen name="Add Trip" component={AddTripScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Ionicons name="add-circle" size={size} color={color} /> )}}/>
-        <Tab.Screen name="TripListScreen" component={TripListScreen} options={{tabBarIcon: ({size,color}) => (<Ionicons name="add-circle" size={size} color={color} /> )}}/>
+
+        <Tab.Screen name="TripListScreen" component={TripListScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
+        <Tab.Screen name="WhaleWhatchingScreen" component={WhaleWhatchingScreen} options={{tabBarIcon: ({size,color}) => (<Ionicons name="add-circle" size={size} color={color} /> )}}/>
+        <Tab.Screen name="DesertasScreen" component={DesertasScreen} options={{tabBarIcon: ({size,color}) => (<Ionicons name="add-circle" size={size} color={color} /> )}}/>
+        <Tab.Screen name="FajasScreen" component={FajasScreen} options={{tabBarIcon: ({size,color}) => (<Ionicons name="add-circle" size={size} color={color} /> )}}/>
+        <Tab.Screen name="SunsetScreen" component={SunsetScreen} options={{tabBarIcon: ({size,color}) => (<Ionicons name="add-circle" size={size} color={color} /> )}}/>
+
       </Tab.Navigator>
     </NavigationContainer>
 

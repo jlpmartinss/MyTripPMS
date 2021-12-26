@@ -1,8 +1,6 @@
 //Screens
 import HomeScreen from './HomeScreen';
 
-
-
 import SpeciesScreen from './SpeciesScreen';
 import AddTripScreen from './AddTripScreen';
 import WhalesScreen from './WhalesScreen';
@@ -13,6 +11,11 @@ import SelectPictureScreen from './SelectPictureScreen';
 import Whale1 from './Whale1';
 import Dolphin1 from './Dolphin1';
 import PostCardPreview from './PostCardPreview';
+import TripListScreen from './TripListScreen';
+import WhaleWatchingScreen from './WhaleWatchingScreen';
+import DesertasScreen from './DesertasScreen';
+import FajasScreen from './FajasScreen';
+import SunsetScreen from './SunsetScreen';
 
 const { createStackNavigator } = require("@react-navigation/stack");
 
@@ -134,5 +137,31 @@ const PostCardNavigator = () => {
     );
 }
 export { PostCardNavigator }
+
+
+const TripListScreenNavigator = () => {
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen
+                name="WhaleWatching"
+                component={WhaleWatchingScreen}
+            />
+            <Stack.Screen
+                name="Desertas"
+                component={DesertasScreen}
+            />
+             <Stack.Screen
+                name="Faja"
+                component={FajasScreen}
+            />
+            <Stack.Screen
+                name="Sunset"
+                component={SunsetScreen}
+            />
+            
+        </Stack.Navigator>
+    );
+}
+export { TripListScreenNavigator }
 
 
