@@ -18,46 +18,29 @@ const comment = data[tripId].comment;
 const sightedSpecies = data[tripId].sightedSpecies;
 const route = data[tripId].route;
 
-const Home = ({ navigation }) => {
-    //state = { columns: 2 }
+//we will loop through object properties and if an object has at least one property, then it will enter the loop and return false. If the object doesn’t have any properties then it will return true.
+function isEmpty(data) {
+    for (var prop in data) {
+        if (data.hasOwnProperty(prop))
+            return false;
+    }
 
-    //const { columns } = this.state
+    return true;
+}
+
+const Home = ({ route, navigation }) => {
+
     return (
         <View style={styles.container}>
             <ImageBackground blurRadius={50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}>
-                <ScrollView>
-                    <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
+                <ScrollView> 
+                    {isEmpty ? <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
                         <View style={styles.item}>
                             <Image style={styles.image} source={Images.trip0} />
                             <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
                             <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text>
-
                         </View>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-                        <View style={styles.item}>
-                            <Image style={styles.image} source={Images.trip1} />
-                            <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
-                            <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text>
-                        </View>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-                        <View style={styles.item}>
-                            <Image style={styles.image} source={Images.trip2} />
-                            <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
-                            <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text>
-                        </View>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-                        <View style={styles.item}>
-                            <Image style={styles.image} source={Images.trip3} />
-                            <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
-                            <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text>
-                        </View>
-                    </TouchableOpacity>
+                    </TouchableOpacity> : null}
                 </ScrollView>
             </ImageBackground>
         </View >
@@ -90,9 +73,9 @@ const styles = StyleSheet.create({
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 8,
         paddingTop: 180,
-        fontWeight:'bold',
-        fontSize:30
-        
+        fontWeight: 'bold',
+        fontSize: 30
+
     },
     text: {
         position: 'absolute',
@@ -104,9 +87,9 @@ const styles = StyleSheet.create({
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 8,
         paddingTop: 200,
-        fontSize:14
+        fontSize: 14
 
-        
+
     },
     image: {
         marginTop: 15,
@@ -115,16 +98,16 @@ const styles = StyleSheet.create({
         width: ITEM_WIDTH - 35,
         height: ITEM_WIDTH / 1.5,
         borderRadius: 15,
-   
+
 
     },
     imageBackground: {
         flex: 1,
-        
+
     },
     shadowProp: {
         shadowColor: '#171717',
         shadowOpacity: 0.2,
         shadowRadius: 3,
-      },
+    },
 })
