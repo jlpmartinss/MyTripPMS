@@ -12,8 +12,7 @@ import OthersScreen from './OthersScreen';
 import SelectPictureScreen from './SelectPictureScreen';
 import Whale1 from './Whale1';
 import Dolphin1 from './Dolphin1';
-
-
+import PostCardPreview from './PostCardPreview';
 
 const { createStackNavigator } = require("@react-navigation/stack");
 
@@ -119,5 +118,16 @@ const DolphinsScreenNavigator = () => {
 }
 export { DolphinsScreenNavigator }
 
+const PostCardNavigator = () => {
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen
+                name="PostCardPreview"
+                component={PostCardPreview}
+            />
+        </Stack.Navigator>
+    );
+}
+export { PostCardNavigator }
 
 
