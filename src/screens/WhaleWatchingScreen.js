@@ -52,7 +52,7 @@ export default function WhaleWatchingScreen({ route, navigation}) {
                     <View style ={styles.containerHorizontal}>                        
                         <View width = {ITEM_WIDTH/2 - 15}>
                             <Text style = {styles.textSubTitle}>Marcos Silva:</Text> 
-                            <Text style = {styles.textNormal}>This is thdsdsdsdsdsdsdssssssssssssssssssssssssssssssssssssssssedsdsdsdsdssdsdsdsdsds</Text>
+                            <Text style = {styles.textNormal}>Marcos will be your barman. He knows everything about your drinks. You can be asured that you will serve you very well. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</Text>
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Marcos.jpg") }/>
                     </View>
