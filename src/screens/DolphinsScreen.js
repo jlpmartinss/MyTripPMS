@@ -2,6 +2,7 @@ import React from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableOpacity, ImageBackground, Dimensions} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
+import Data from "./../../jsons/DolphinsData.json"
 
 
 let ITEM_WIDTH = Dimensions.get('window').width;
@@ -14,49 +15,49 @@ export default function DolphinsScreen({ navigation }){
             <ImageBackground blurRadius = {50} source={require("../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg") } resizeMode="cover" style={styles.imageBackground}> 
             <View style ={styles.container}>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", { pressedId: 1})}/*Dolphin1*/>        
+                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[0])}/*Dolphin1*/>        
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg") }/>
                         <Text style = {styles.textSubTitle}>Atlantic Spotted Dolphin</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", { pressedId: 2})}/*Dolphin2*/>       
+                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[1])}/*Dolphin2*/>       
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Dolphins/2Bottlenose_dolphin.jpg") }/>
                         <Text style = {styles.textSubTitle}>Bottlenose Dolphin</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", { pressedId: 3})}/*Dolphin3*/>       
+                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[2])}/*Dolphin3*/>       
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Dolphins/3Common_dolphin.jpg") }/>
                         <Text style = {styles.textSubTitle}>Common Dolphin</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", { pressedId: 4})}/*Dolphin4*/>       
+                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[3])}/*Dolphin4*/>       
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Dolphins/4Frasers_dolphin.jpg") }/>
                         <Text style = {styles.textSubTitle}>Frasers Dolphin</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", { pressedId: 5})}/*Dolphin5*/>      
+                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[4])}/*Dolphin5*/>      
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Dolphins/5Rissos_Dolphin.jpg") }/>
                         <Text style = {styles.textSubTitle}>Risso's Dolphin</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", { pressedId: 6})}/*Dolphin6*/>       
+                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[5])}/*Dolphin6*/>       
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Dolphins/6Rough_toothed_dolphin.jpg") }/>
                         <Text style = {styles.textSubTitle}>Rough Toothed Dolphin</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", { pressedId: 7})}/*Dolphin7*/>       
+                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[6])}/*Dolphin7*/>       
                     <View style ={styles.item}>
                         <Image style = {styles.image} source={require("../../assets/Dolphins/7Stripped_dolphin.jpg") }/>
                         <Text style = {styles.textSubTitle}>Stripped Dolphin</Text>                            
