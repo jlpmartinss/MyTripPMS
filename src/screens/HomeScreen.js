@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text, Button, StyleSheet, FlatList, Dimensions } from 'react-native';
+import { View, Text, Button, StyleSheet, FlatList, Dimensions, Image } from 'react-native';
 import { TouchableOpacity } from "react-native-gesture-handler";
-
+import Images from "./Images"
 
 //const ITEM_WIDTH = Dimensions.get('window').width
 
@@ -12,13 +12,9 @@ import { TouchableOpacity } from "react-native-gesture-handler";
         //const { columns } = this.state
         return (
             <View style={styles.container}>
-                <Text style={styles.text}>I am screen1</Text>
-            <TouchableOpacity
-                onPress={() => navigation.navigate("Whale1", { msg: "From Screen Home" })}
-                style={styles.button}
-            >
-                <Text style={styles.buttonText}>Click Me!</Text>
-            </TouchableOpacity>
+             <Image blurRadius = {50} source={Images.trip0} resizeMode="cover" style={styles.imageBackground}> 
+
+            </Image>
             </View >
         );
     }

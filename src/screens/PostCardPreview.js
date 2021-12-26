@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableHighlight, TextInput, ImageBackground, Dimensions} from 'react-native';
-import {Rating, RatingProps} from 'react-native-elements';
+import React, { useState } from 'react';
+import { View, Text, Button, ScrollView, StyleSheet, Image, TouchableHighlight, TextInput, ImageBackground, Dimensions } from 'react-native';
+import { Rating, RatingProps } from 'react-native-elements';
 import { Entypo, Feather, Ionicons, Icon, AntDesign, FontAwesome } from '@expo/vector-icons'
 import { RectButton } from 'react-native-gesture-handler';
 
@@ -32,109 +32,109 @@ function PostCardPreview(props) {
     return (
         <View>
             <ScrollView scrollEventThrottle={16}/*Scrollview da página toda */>
-            <ScrollView /*Scroll view Horizontal */
-                        scrollEventThrottle={16}
-                    >
-                        <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
-                            <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20 }}>
-                                {location}
-                            </Text>
+                <ScrollView /*Scroll view Horizontal */
+                    scrollEventThrottle={16}
+                >
+                    <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
+                        <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20 }}>
+                            {location}
+                        </Text>
 
-                            <View style={{ height: 130, marginTop: 20 }}>
-                                <ScrollView
-                                    horizontal={true}
-                                    showsHorizontalScrollIndicator={false}
-                                >
-                                    <Category imageUri={require('../../assets/home.png')}
-                                        name="Home"
-                                    />
-                                    <Category imageUri={require('../../assets/whale.jpg')}
-                                        name="Experiences"
-                                    />
-                                    <Category imageUri={require('../../assets/586396-dophin-animals.jpg')}
-                                        name="Resturant"
-                                    />
-                                </ScrollView>
-                            </View>
-                            <View style={{ marginTop: 40, paddingHorizontal: 20 }}>
-                                <Text style={{ fontSize: 24, fontWeight: '700' }}>
-                                {name}  
-                                </Text>
-                                <Text style={{ fontWeight: '100', marginTop: 10 }}>
+                        <View style={{ height: 130, marginTop: 20 }}>
+                            <ScrollView
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+                            >
+                                <Category imageUri={require('../../assets/home.png')}
+                                    name="Home"
+                                />
+                                <Category imageUri={require('../../assets/whale.jpg')}
+                                    name="Experiences"
+                                />
+                                <Category imageUri={require('../../assets/586396-dophin-animals.jpg')}
+                                    name="Resturant"
+                                />
+                            </ScrollView>
+                        </View>
+                        <View style={{ marginTop: 40, paddingHorizontal: 20 }}>
+                            <Text style={{ fontSize: 24, fontWeight: '700' }}>
+                                {name}
+                            </Text>
+                            <Text style={{ fontWeight: '100', marginTop: 10 }}>
                                 {hours}
-                                    
-                                </Text>
-                                <Rating
+
+                            </Text>
+                            <Rating
                                 onClose={() => setOpenRating(false)} /* não está a fazer nada */
                                 visible={isOpenRating}
                                 readonly
                                 showRating
-                                type= "star"
-                                fractions ={1}
+                                type="star"
+                                fractions={1}
                                 startingValue={5}
                                 imageSize={40}
                                 ratingConfirm={selectedRating => {
-                                console.log('Selected rating', selectedRating);
+                                    console.log('Selected rating', selectedRating);
                                 }}
-                                 ></Rating>
-                                 <Text>
-                    Share on social
-                    <AntDesign name="facebook-square" size={32} color="#4267B2" />
-                    <AntDesign name="instagram" size={32} color="black" />
-                    </Text>
-                                <View style={{ width: width - 40, height: 200, marginTop: 20 }}>
-                                    <Image
-                                        style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 5, borderWidth: 1, borderColor: '#dddddd' }}
-                                        source={require('../../assets/home.png')}
-                                    />
+                            ></Rating>
+                            <Text>
+                                Share on social
+                                <AntDesign name="facebook-square" size={32} color="#4267B2" />
+                                <AntDesign name="instagram" size={32} color="black" />
+                            </Text>
+                            <View style={{ width: width - 40, height: 200, marginTop: 20 }}>
+                                <Image
+                                    style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 5, borderWidth: 1, borderColor: '#dddddd' }}
+                                    source={require('../../assets/home.png')}
+                                />
 
-                                </View>
                             </View>
                         </View>
-                    </ScrollView>
+                    </View>
+                </ScrollView>
                 <ScrollView>
                     <View>
-                <Text /*Comentaário da viagem */ >
-                {comment}
-                </Text>
-                </View>
+                        <Text /*Comentaário da viagem */ >
+                            {comment}
+                        </Text>
+                    </View>
                 </ScrollView>
-             
-                
-            <Text>Edit PostCard
-                <FontAwesome name="edit" size={32} color="blue" onPress={() => navigation.navigate("EditPostCard", { msg: "testing" })}  /* onpress por implementar*/ />
+
+
+                <Text>Edit PostCard
+                    <FontAwesome name="edit" size={32} color="blue" onPress={() => navigation.navigate("EditPostCard", { msg: "testing" })}  /* onpress por implementar*/ />
                 </Text>
 
 
-                
+
                 <Text style={styles.textTitles}>
                     Sighted Species
-                    </Text>
-                    <Text>
-                        (Specie Name) {sightedSpecies}
-                    </Text>
+                </Text>
+                <Text>
+                    (Specie Name) {sightedSpecies}
+                </Text>
 
-                    <Image  /*Insert specie image*//>
-                    <Text>
+                <Image  /*Insert specie image*/ />
+                <Text>
                     Sighted at: (eg. 10:23 AM)
-                    
-                    </Text>
-                    <Text style={styles.textTitles}>
-                    Description 
-                    </Text>
-                    
-           
+
+                </Text>
+                <Text style={styles.textTitles}>
+                    Description
+                </Text>
+
+
                 <Text style={styles.textTitles}>
                     Route : {route}
                 </Text>
-                <Image  /*Insert route image*//>
+                <Image  /*Insert route image*/ />
 
-                </ScrollView>
+            </ScrollView>
         </View>
 
-        
-            
-        
+
+
+
     );
 }
 
@@ -146,10 +146,10 @@ const styles = StyleSheet.create({
         fontSize: 32,
         marginHorizontal: 10,
         marginTop: 10,
-    },image: {
+    }, image: {
         flex: 1,
-        width: ITEM_WIDTH/20,
-        height: ITEM_WIDTH/20,
+        width: ITEM_WIDTH / 20,
+        height: ITEM_WIDTH / 20,
         backgroundColor: 'white',
         borderRadius: 2
     },
