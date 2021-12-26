@@ -13,14 +13,55 @@
 		"route" : "./"
 	},
 	{
-		"id"          : "1",
-		"name"        : "whale2",
-		"cName"       : "whale2",
-		"imgPath"     : "whale2",
-		"length"      : "whale2",
-		"weight"      : "whale2",
-		"color"       : "whale2",
-		"description" : "whale2",
-		"curiostity"  : "whale2"
+		"Date": "Thu Dec 23",
+		"Time": "11:00:00 2021",
+		"Latitude": "32.371666",
+		"Longitude": "-16.274998",
+		"Animals": [{
+			"SpeciesName": "Atlantic_spotted",
+			"NumberIndividuals": "2",
+			"NumberOffspring": "2",
+			"Behaviours": ["jump","whistle"],
+			"ReactionsToBoat": ["touch"]
+		}],
+		"SeaState": 2,
+		"ConfidenceLevel": "nao sei",
+		"BoatName": "Dory Boat",
+		"Comments": "surprising!!!",
+		"ReporterName": "John"	
+	},
+	{
+		"id": "2",
+		"ongoing": "false",
+		"location" : "Madeira, Câmara de lobos",
+		"name": "Catamaran Trip",
+		"imagecollection" : "/trip1collection",
+		"date": "Sunday Dec 26 2021",
+		"time": "11:00:00",
+		"lat": "32.371666",
+		"long": "-16.274998",
+
+		"animals": [{
+			"SpeciesName": "Atlantic Spotted dolphin",
+			"NumberIndividuals": "2",
+			"NumberOffspring": "2",
+			"Behaviours": ["jump","whistle"],
+			"ReactionsToBoat": ["touch"]
+		}, 
+		{"SpeciesName": "Bottlenose Dolphin",
+		"NumberIndividuals": "3",
+		"NumberOffspring": "1",
+		"Behaviours": ["jump"],
+		"ReactionsToBoat": ["touch"]}
+		],
+
+		"imgPath": "../../assets/whale.jpg",
+		"seaState": 2,
+		"confidenceLevel": "nao sei",
+		"rating": "5.0",
+		"boatName": "Dory Boat",
+		"comments": "This trip was surprising. We saw whales, and right after were greeted with an amazingn sunset. These creatures are amazing!!",
+		"reporterName": "John",
+		"route" : "./"
 	}
 ]
