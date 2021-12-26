@@ -38,7 +38,7 @@ export default Images = {
     whale19: require("../assets/Whales/19Sperm_Whale.jpg"),
     whale20: require("../assets/Whales/20Trues_beaked_whale.jpg"),
 
-    whalewatching: require("../assets/Trips/mapasVMT_cetaceos"),
+    whalewatching: require("../assets/Trips/mapasVMT_cetaceos.png"),
     desertas: require("../assets/Trips/mapasVMT_desertas-1.png"),
     sunset: require("../assets/Trips/mapa_por-do-sol.png"),
     faja: require("../assets/Trips/mapa_fajas.png"),
