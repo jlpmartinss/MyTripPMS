@@ -107,13 +107,13 @@ function PostCardPreview(props) {
                                 showsHorizontalScrollIndicator={true}
                             >
                                 <Category imageUri={require('../../assets/home.png')}
-                                    name ="Home"
+                                    name ="" /*se quisermos adicionar titulo às imagens */
                                 />
                                 <Category imageUri={require('../../assets/whale.jpg')}
-                                    name="Experiences"
+                                    name=""
                                 />
                                 <Category imageUri={require('../../assets/586396-dophin-animals.jpg')}
-                                    name="Resturant"
+                                    name=""
                                 />
                             </ScrollView>
                         </View>
@@ -129,7 +129,7 @@ function PostCardPreview(props) {
                                 onClose={() => setOpenRating(false)} /* não está a fazer nada */
                                 visible={isOpenRating}
                                 readonly
-                                showRating
+                                showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
                                 type="star"
                                 fractions={1}
                                 startingValue={5}

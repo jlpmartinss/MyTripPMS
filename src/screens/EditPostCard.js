@@ -16,7 +16,7 @@ export default function EditPostCard() {
       iconHeight={24}
       onRate={setRating}
       />
-      <Text>{rating}</Text>
+      <Text /* passar este valor para o json da viagem (para depois aparecer no postcard preview) */ >{rating}</Text>
       </View>
   );
   
