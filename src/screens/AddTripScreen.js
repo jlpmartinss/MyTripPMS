@@ -99,10 +99,7 @@ const styles = StyleSheet.create({
     imageBackground: {
         flex: 1
     },
-    button: {
-        color: 'red'
 
-    }
 })
 
 export default AddTripScreen
