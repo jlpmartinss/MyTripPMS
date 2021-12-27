@@ -19,7 +19,7 @@ export default function WhaleWatchingScreen({ navigation}) {
 
                     <Image style={styles.image} source={require("../../assets/Trips/imcetaceos.jpg")} />
                     <View style={styles.textBox}>
-                        <Text style={styles.textTitle}>Description:</Text>
+                        <Text style={styles.textTitle}>Description</Text>
                         <Text style={styles.textNormal}>We churn up the ocean in our search for the right coordinates and there they are! Dolphins! Playful, communicative, energetic! Although it seems they are posing for photos, they are actually living in their own enchanted world. Whales who may or may not give off embarrassing odours, decide if they will honour us with a visit. Adding to this 3 hour memorable taste of wild life, we sometimes have the opportunity of spotting turtles and sea birds.{"\n"}{"\n"}
                     When the climate is inviting, we stop for a swim in the ocean below Cabo Girão, and when there are favourable winds, we turn off the engines and hoist the sails, which means less pollution and more relaxation. A 3 hour trip that is worth doing at least once in a lifetime by both locals and visitors. Reserve your place and bring your loved ones along!</Text>
                     </View>
@@ -35,7 +35,7 @@ export default function WhaleWatchingScreen({ navigation}) {
                     
                     <View style ={styles.containerHorizontal}>                        
                         <View width = {ITEM_WIDTH/2 - 15} >
-                            <Text style = {styles.textSubTitle}>Luana Mendonça:</Text> 
+                            <Text style = {styles.textSubTitle}>Luana Mendonça</Text> 
                             <Text style = {styles.textNormal}>Luana is an experienced skipper with more than 5000 sailing hours. {"\n"} Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla. </Text>
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Luana.jpg") }/>
@@ -45,7 +45,7 @@ export default function WhaleWatchingScreen({ navigation}) {
 
                     <View style ={styles.containerHorizontal}>                        
                         <View width = {ITEM_WIDTH/2 - 15}>
-                            <Text style = {styles.textSubTitle}>João Martins:</Text> 
+                            <Text style = {styles.textSubTitle}>João Martins</Text> 
                             <Text style = {styles.textNormal}>João is a biologist that knows all the the waters of Madeira Island like the palm of his hand. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.  </Text>
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Joao.jpg") }/>
@@ -61,7 +61,7 @@ export default function WhaleWatchingScreen({ navigation}) {
 
                     <View style ={styles.containerHorizontal}>                        
                         <View width = {ITEM_WIDTH/2 - 15}>
-                            <Text style = {styles.textSubTitle}>Marcos Silva:</Text> 
+                            <Text style = {styles.textSubTitle}>Marcos Silva</Text> 
                             <Text style = {styles.textNormal}>Marcos will be your barman. He knows everything about your drinks. You can be asured that you will serve you very well. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</Text>
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Marcos.jpg") }/>

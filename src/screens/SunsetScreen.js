@@ -19,7 +19,7 @@ export default function SunsetScreen({ route, navigation}) {
 
                     <Image style={styles.image} source={require("../../assets/Trips/imsunset.jpg")} />
                     <View style={styles.textBox}>
-                        <Text style={styles.textTitle}>Description:</Text>
+                        <Text style={styles.textTitle}>Description</Text>
                         <Text style={styles.textNormal}>We are in Funchal and we look towards the twilight. Do you know what we see? Absolutely nothing! No buildings, towers or bridges. Only nature, an endless ocean, a constant line that balances days and nights and with the 3 Desert Islands there in the background, a little to the left.{"\n"}{"\n"}
                         Board with us on a dream journey, a romantic wave, where besides sighting dolphins and/or whales, it is possible to swim in the warm waters accompanied by the sunset. We sail out for 3 hours so that you can partake in this unique spectacle of colour that changes every day and reflects in the passive ocean of our coast.</Text>
                     </View>
@@ -33,7 +33,7 @@ export default function SunsetScreen({ route, navigation}) {
                     <Text style={styles.textTitle}>Tripulation:</Text>
                     <View style ={styles.containerHorizontal}>                        
                         <View width = {ITEM_WIDTH/2 - 15}>
-                            <Text style = {styles.textSubTitle}>Luana Mendonça:</Text> 
+                            <Text style = {styles.textSubTitle}>Luana Mendonça</Text> 
                             <Text style = {styles.textNormal}>Luana is an experienced skipper with more than 5000 sailing hours. {"\n"} Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla. </Text>
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Luana.jpg") }/>
@@ -41,7 +41,7 @@ export default function SunsetScreen({ route, navigation}) {
 
                     <View style ={styles.containerHorizontal}>                        
                         <View width = {ITEM_WIDTH/2 - 15}>
-                            <Text style = {styles.textSubTitle}>João Martins:</Text> 
+                            <Text style = {styles.textSubTitle}>João Martins</Text> 
                             <Text style = {styles.textNormal}>João is a biologist that knows all the the waters of Madeira Island like the palm of his hand. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.  </Text>
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Joao.jpg") }/>
@@ -57,7 +57,7 @@ export default function SunsetScreen({ route, navigation}) {
 
                     <View style ={styles.containerHorizontal}>                        
                         <View width = {ITEM_WIDTH/2 - 15}>
-                            <Text style = {styles.textSubTitle}>Marcos Silva:</Text> 
+                            <Text style = {styles.textSubTitle}>Marcos Silva</Text> 
                             <Text style = {styles.textNormal}>Marcos will be your barman. He knows everything about your drinks. You can be asured that you will serve you very well. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</Text>
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Marcos.jpg") }/>

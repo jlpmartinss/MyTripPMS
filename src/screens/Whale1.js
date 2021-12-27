@@ -100,17 +100,17 @@ export default function Whale1({ route, navigation}) {
                     <Image style={styles.image} source={imgPath} />
                                
                     <View style={styles.textBox}>
-                        {summary != "" ? <Text style={styles.textSubTitle}>Summary:</Text> : null}
+                        {summary != "" ? <Text style={styles.textSubTitle}>Summary</Text> : null}
                         {summary != "" ? <Text style={styles.textNormal}>{summary}</Text> : null}
                     </View >
 
                     <View style={styles.textBox}>
-                        {identify != "" ? <Text style={styles.textSubTitle}>How to identify:</Text> : null}
+                        {identify != "" ? <Text style={styles.textSubTitle}>How to identify</Text> : null}
                         {identify != "" ? <Text style={styles.textNormal}>{identify}</Text> : null}
                     </View >
 
                     <View style={styles.textBox}>
-                        {curiostity != "" ? <Text style={styles.textSubTitle}>Curiosities:</Text> : null}
+                        {curiostity != "" ? <Text style={styles.textSubTitle}>Curiosities</Text> : null}
                         {curiostity != "" ? <Text style={styles.textNormal}>{curiostity}</Text> : null}
                     </View >
 

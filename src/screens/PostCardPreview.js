@@ -125,74 +125,21 @@ function PostCardPreview(props) {
                                 horizontal={true}
                                 showsHorizontalScrollIndicator={false}>
                                     
-                        <View>
-                            <Text style={styles.sightedSpecies}>
-                                {sightedSpecies[0].SpeciesName}
-                            </Text>
-
-                            <Image  /*Insert specie image*/ />
-
-                            <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
-                                First seen at: {sightedSpecies[0].Sighted}
-                            </Text>
-                            <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
-                                Behaviours: {sightedSpecies[0].Behaviours[0]}, {sightedSpecies[0].Behaviours[1]}
-                            </Text>
-                            <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
-                                Reactions to boat: {sightedSpecies[0].ReactionsToBoat[0]}
-                            </Text>
-                        </View>
-                        <View>
-                            <Text style={styles.sightedSpecies}>
-                                {sightedSpecies[1].SpeciesName}
-                            </Text>
-
-                            <Image  /*Insert specie image*/ />
-
-                            <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
-                                First seen at: {sightedSpecies[1].Sighted}
-                            </Text>
-                            <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
-                                Behaviours: {sightedSpecies[1].Behaviours[0]}
-                            </Text>
-                            <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
-                                Reactions to boat: {sightedSpecies[1].ReactionsToBoat[0]}
-                            </Text>
-                        </View>
-                        <View>
-                            <Text style={styles.sightedSpecies}>
-                                {sightedSpecies[2].SpeciesName}
-                            </Text>
-
-                            <Image  /*Insert specie image*/ />
-
-                            <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
-                                First seen at: {sightedSpecies[2].Sighted}
-                            </Text>
-                            <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
-                                Behaviours: {sightedSpecies[2].Behaviours[0]}, {sightedSpecies[2].Behaviours[1]}
-                            </Text>
-                            <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
-                                Reactions to boat: {sightedSpecies[2].ReactionsToBoat[0]}
-                            </Text>
-                        </View>
-                        <View>
-                            <Text style={styles.sightedSpecies}>
-                                {sightedSpecies[3].SpeciesName}
-                            </Text>
-
-                            <Image  /*Insert specie image*/ />
-
-                            <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
-                                First seen at: {sightedSpecies[3].Sighted}
-                            </Text>
-                            <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
-                                Behaviours: {sightedSpecies[3].Behaviours[0]}, {sightedSpecies[3].Behaviours[1]}
-                            </Text>
-                            <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
-                                Reactions to boat: {sightedSpecies[3].ReactionsToBoat[0]}
-                            </Text>
-                        </View>
+                                    <View>
+                            
+                            { sightedSpecies.map((specie, key) => {
+                                 return <Text style={styles.text} key = {key}>{specie.SpeciesName};
+                                  <Text style={styles.text}> {"\n"} First Seen at: {specie.Sighted}</Text> 
+                                     <Text style={styles.text}> {"\n"} Behaviours:</Text> 
+                                        { specie.Behaviours.map((behaviour, key1) => {
+                                             <Text style={styles.text} key={key1}>{behaviour}</Text>
+                                        })}
+                                      <Text style={styles.text}> {"\n"} Reactions to boat: </Text>
+                                        { specie.Behaviours.map((reaction, key2) => {
+                                              <Text style={styles.text} style={styles.text} key={key2}>{reaction}</Text>
+                                        })}</Text>
+                            })}
+                            </View>
                     </ScrollView>
                 </View>
                 
