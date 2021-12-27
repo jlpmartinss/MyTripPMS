@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "MyTripPMS",
-    "slug": "MyTripPMS",
+    "name": "MyTrip",
+    "slug": "MyTrip",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/586396-dophin-animals.jpg",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "image": "./assets/586396-dophin-animals.jpg",
+      "resizeMode": "adaptiveIcon",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -21,12 +21,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/586396-dophin-animals.jpg",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/586396-dophin-animals.jpg"
     }
   }
 }
