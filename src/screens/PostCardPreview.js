@@ -38,11 +38,7 @@ const behaviour = sightedSpecies.Behaviours;
 let ITEM_WIDTH = Dimensions.get('window').width;
 
 
-const PostCardPreview = ({navigation, params}) => {
-
-    let data = route.params; //não consegui passar o valor
-    const rating = data;
-    console.log(rating);
+const PostCardPreview = ({navigation}) => {
     const [isOpenRating, setOpenRating] = useState(true);
     const [text, setText] = useState('');
     const onShare = async () => {
@@ -71,16 +67,20 @@ const PostCardPreview = ({navigation, params}) => {
                             {location}
                         </Text>
                         <Text style={{ fontSize: 15, fontWeight: '500', marginTop: 10, paddingHorizontal: 20 }}>
-                            {latitude} , {longitude}
+                            Coordinates: {latitude} , {longitude}
                         </Text>
                         <Text style={{ fontSize: 15, fontWeight: '500', marginTop: 10, paddingHorizontal: 20 }}>
                             Sea State: {seaState}m
                         </Text>
-
-                        <View style={{ height: 130, marginTop: 20 }}>
+                        <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 20, paddingHorizontal: 20 }}>
+                                Your Gallery:
+                        </Text>
+                        <View style={{ height: 130, marginTop: 8 }}>
+                        
                             <ScrollView
                                 horizontal={true}
                                 showsHorizontalScrollIndicator={false}
+
                             >
                                 <Category imageUri={require('../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg')}
                                     name="" /*se quisermos adicionar titulo às imagens */
@@ -101,24 +101,37 @@ const PostCardPreview = ({navigation, params}) => {
                                 {date} at {time}
 
                             </Text>
-                            { rating != "undefined" ?
-                             <Rating style={{ marginTop: 10 } }
+                            <Rating style={{ marginTop: 10 }}
+                                onClose={() => setOpenRating(false)} /* não está a fazer nada */
+                                visible={isOpenRating}
                                 readonly
                                 showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
                                 type="star"
-                                startingValue={rating}
-                                imageSize={26}
-                            ></Rating> : null} 
-                            <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 30 }}>
-                                Share on social:
-                                <TouchableOpacity onPress={() => onShare()}>
-                                    <AntDesign name="facebook-square" size={30} color="#4267B2" />
-                                    <AntDesign name="instagram" size={30} color="black" />
-                                </TouchableOpacity>
+                                fractions={1}
+                                startingValue={5}
+                                imageSize={22}
+                                ratingConfirm={selectedRating => {
+                                    console.log('Selected rating', selectedRating);
+                                }}
+                            ></Rating>
+                            <View  style={styles.textBoxSocial}>
+                                <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 25 }}>
+                                    Share on social:
+                                    <TouchableOpacity onPress={() => onShare()}>
+                                        <AntDesign name="facebook-square" size={30} color="#4267B2" />
+                                    </TouchableOpacity>
+                                    <TouchableOpacity onPress={() => onShare()}>
+                                        <AntDesign name="instagram" size={30} color="black" />
+                                    </TouchableOpacity>
 
-                            </Text>
+                                </Text>
+                            </View>
                             <View style={{ width: width - 40, height: 200, marginTop: 20 }}>
+                            <Text style={{ fontSize: 18, fontWeight: '700', marginBottom: 5}}>
+                                Your Featured Photo:
+                            </Text>
                                 <Image
+                                    
                                     style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 5, borderWidth: 1, borderColor: '#dddddd' }}
                                     source={require('../../assets/Trips/imsunset.jpg')}
                                 />
@@ -134,11 +147,13 @@ const PostCardPreview = ({navigation, params}) => {
                         </Text>
                     </View>
                 </ScrollView>
-                <Text style={styles.text}>Edit PostCard
-                    <TouchableOpacity onPress={() => navigation.navigate("EditPostCard")}>
-                        <FontAwesome name="edit" size={30} color="blue"/>
-                    </TouchableOpacity>
-                </Text>
+                <View style = {styles.textBoxPostCard} >
+                    <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 15}}>Edit PostCard
+                        <TouchableOpacity onPress={() => navigation.navigate("EditPostCard")}>
+                            <FontAwesome name="edit" size={30} color="blue"/>
+                        </TouchableOpacity>
+                    </Text>
+                </View>
 
                 <View>
 
@@ -218,6 +233,26 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: '700',
         marginTop: 10,
-        color: 'blue'
+        color: 'rgba(23,108,255,1)'
+    },
+    textBoxSocial: {
+        flex: 1,
+        backgroundColor: 'rgba(23,108,255, 0.11)',
+        margin: 20,
+        borderRadius: 15,
+        paddingHorizontal: 50,
+        width: 290,
+        height: 90,
+        alignSelf: 'center'    
+    },
+    textBoxPostCard: {
+        flex: 1,
+        backgroundColor: 'rgba(23,108,255, 0.11)',
+        margin: 20,
+        borderRadius: 15,
+        paddingHorizontal: 60,
+        width: 265,
+        height: 70,
+        alignSelf: 'center'    
     }
 })
