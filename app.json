@@ -7,7 +7,7 @@
     "icon": "./assets/586396-dophin-animals.jpg",
     "splash": {
       "image": "./assets/586396-dophin-animals.jpg",
-      "resizeMode": "contain",
+      "resizeMode": "adaptiveIcon",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -26,7 +26,7 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/586396-dophin-animals.jpg"
     }
   }
 }
