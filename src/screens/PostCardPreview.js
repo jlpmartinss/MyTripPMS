@@ -126,7 +126,7 @@ const PostCardPreview = ({navigation}) => {
 
                                 </Text>
                             </View>
-                            <View style={{ width: width - 40, height: 200, marginTop: 20 }}>
+                            <View style={{ width: width - 40, height: 300, marginTop: 20, backgroundColor: 'white'}}>
                             <Text style={{ fontSize: 18, fontWeight: '700', marginBottom: 5}}>
                                 Your Featured Photo:
                             </Text>
@@ -135,17 +135,14 @@ const PostCardPreview = ({navigation}) => {
                                     style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 5, borderWidth: 1, borderColor: '#dddddd' }}
                                     source={require('../../assets/Trips/imsunset.jpg')}
                                 />
-
+                                <Text style={styles.textComment} /*Comentário da viagem */ >
+                                     {comment}
+                                </Text>
                             </View>
                         </View>
                     </View>
                 </ScrollView>
                 <ScrollView backgroundColor = "white">
-                    <View>
-                        <Text style={styles.text} /*Comentário da viagem */ >
-                            {comment}
-                        </Text>
-                    </View>
                     <View style = {styles.textBoxPostCard} >
                         <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 8}}>Edit PostCard
                             <TouchableOpacity onPress={() => navigation.navigate("EditPostCard")}>
@@ -219,6 +216,14 @@ const styles = StyleSheet.create({
         marginTop: 10,
         color: 'black'
     },
+    textComment: {
+        paddingHorizontal: 0,
+        fontSize: 15,
+        fontWeight: '500',
+        marginTop: 10,
+        color: 'black'
+    },
+
     sightedSpecies: {
         paddingHorizontal: 25,
         marginLeft: 10,
@@ -243,6 +248,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'rgba(23,108,255, 0.08)',
         margin: 20,
+        marginTop: 10,
         borderRadius: 15,
         paddingHorizontal: 80,
         width: ITEM_WIDTH-ITEM_WIDTH/8,
