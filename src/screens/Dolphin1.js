@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     },
     textTitle: {
         color: 'white',
-        fontSize: 32,
+        fontSize: 24,
         marginHorizontal: 10,
         marginTop: 10,
         textShadowColor: 'rgba(0, 0, 0, 1)',
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     },
     textSubTitle: {
         color: 'white',
-        fontSize: 24,
+        fontSize: 18,
         marginHorizontal: 10,
         marginVertical: 1,
         textShadowColor: 'rgba(0, 0, 0, 1)',

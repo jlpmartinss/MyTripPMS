@@ -12,17 +12,13 @@ const { height, width } = Dimensions.get('window')
 
 var tripId = 0;
 
-/* pomos isto?
-const seaState = data[tripId].seaState;
-const confidenceLevel = data[tripId].confidenceLevel;
-const reporterName = data[tripId].reporterName;*/
-
 
 const id = data[tripId].id;
 const ongoing = data[tripId].ongoing;
 const location = data[tripId].location;
 const latitude = data[tripId].lat;
 const longitude = data[tripId].long;
+const seaState = data[tripId].seaState;
 const name = data[tripId].name;
 const imagecollection = data[tripId].imagecollection;
 const date = data[tripId].date;
@@ -33,6 +29,7 @@ const rating = data[tripId].rating;
 const comment = data[tripId].comments;
 const sightedSpecies = data[tripId].animals;
 const route = data[tripId].route;
+const boatName = data[tripId].boatName;
 
 let ITEM_WIDTH = Dimensions.get('window').width;
 
@@ -49,14 +46,17 @@ function PostCardPreview(props) {
                         <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20, textShadowColor: 'rgba(0, 0, 0, 1)'}}>
                             {location}
                         </Text>
-                        <Text style={{ fontSize: 18, fontWeight: '500' , marginTop: 10, paddingHorizontal: 20}}>
+                        <Text style={{ fontSize: 15, fontWeight: '500' , marginTop: 10, paddingHorizontal: 20}}>
                             {latitude} , {longitude}
+                        </Text>
+                        <Text style={{ fontSize: 15, fontWeight: '500' , marginTop: 10, paddingHorizontal: 20}}>
+                            Sea State: {seaState}m
                         </Text>
 
                         <View style={{ height: 130, marginTop: 20 }}>
                             <ScrollView
                                 horizontal={true}
-                                showsHorizontalScrollIndicator={true}
+                                showsHorizontalScrollIndicator={false}
                             >
                                 <Category imageUri={require('../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg')}
                                     name ="" /*se quisermos adicionar titulo às imagens */
@@ -71,9 +71,9 @@ function PostCardPreview(props) {
                         </View>
                         <View style={{ marginTop: 20, paddingHorizontal: 20 }}>
                             <Text style={{ fontSize: 24, fontWeight: '700', textShadowColor: 'rgba(0, 0, 0, 1)'}}>
-                                {name} 
+                                {name} | {boatName}
                             </Text>
-                            <Text style={{ fontSize: 18, fontWeight: '500' , marginTop: 10}}>
+                            <Text style={{ fontSize: 15, fontWeight: '500' , marginTop: 10}}>
                                 {date} at {time}
 
                             </Text>
@@ -117,13 +117,14 @@ function PostCardPreview(props) {
                 </Text>
 
                 <View>
-                    <ScrollView
-                                horizontal={false}
-                                showsHorizontalScrollIndicator={true}>
-                                    
-                            <Text style={styles.textTitles}>
+                    
+                    <Text style={styles.textTitles}>
                                 Sighted Species
-                            </Text>
+                    </Text>
+                    <ScrollView
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}>
+                                    
                         <View>
                             <Text style={styles.sightedSpecies}>
                                 {sightedSpecies[0].SpeciesName}
@@ -132,10 +133,13 @@ function PostCardPreview(props) {
                             <Image  /*Insert specie image*/ />
 
                             <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
-                                Sighted at: (eg. 10:23 AM)
+                                First seen at: {sightedSpecies[0].Sighted}
                             </Text>
                             <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
                                 Behaviours: {sightedSpecies[0].Behaviours[0]}, {sightedSpecies[0].Behaviours[1]}
+                            </Text>
+                            <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
+                                Reactions to boat: {sightedSpecies[0].ReactionsToBoat[0]}
                             </Text>
                         </View>
                         <View>
@@ -146,11 +150,13 @@ function PostCardPreview(props) {
                             <Image  /*Insert specie image*/ />
 
                             <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
-                                Sighted at: (eg. 10:23 AM)
+                                First seen at: {sightedSpecies[1].Sighted}
                             </Text>
                             <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
                                 Behaviours: {sightedSpecies[1].Behaviours[0]}
-
+                            </Text>
+                            <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
+                                Reactions to boat: {sightedSpecies[1].ReactionsToBoat[0]}
                             </Text>
                         </View>
                         <View>
@@ -161,10 +167,13 @@ function PostCardPreview(props) {
                             <Image  /*Insert specie image*/ />
 
                             <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
-                                Sighted at: (eg. 10:23 AM)
+                                First seen at: {sightedSpecies[2].Sighted}
                             </Text>
                             <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
                                 Behaviours: {sightedSpecies[2].Behaviours[0]}, {sightedSpecies[2].Behaviours[1]}
+                            </Text>
+                            <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
+                                Reactions to boat: {sightedSpecies[2].ReactionsToBoat[0]}
                             </Text>
                         </View>
                         <View>
@@ -175,11 +184,13 @@ function PostCardPreview(props) {
                             <Image  /*Insert specie image*/ />
 
                             <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
-                                Sighted at: (eg. 10:23 AM)
+                                First seen at: {sightedSpecies[3].Sighted}
                             </Text>
                             <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
                                 Behaviours: {sightedSpecies[3].Behaviours[0]}, {sightedSpecies[3].Behaviours[1]}
-
+                            </Text>
+                            <Text style={{paddingHorizontal: 20, fontSize: 15, fontWeight: '500', marginTop: 10, marginLeft: 10}}>
+                                Reactions to boat: {sightedSpecies[3].ReactionsToBoat[0]}
                             </Text>
                         </View>
                     </ScrollView>
