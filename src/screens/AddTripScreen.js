@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Image } from "react-native";
+import { Image, TouchableOpacity } from "react-native";
 import { View, Text, Button, StyleSheet, TextInput, Alert, ImageBackground, Dimensions } from 'react-native';
 import { TouchableHighlight } from "react-native-gesture-handler";
 import Data from "./../../jsons/Trips.json"
@@ -54,10 +54,10 @@ const AddTripScreen = ({ navigation }) => {
                     onChangeText={text => setText(text)}
                     defaultValue={text}
                 />
-                <Button style = {{borderRadius: 20, overflow: 'hidden'}}
-                    title="Add Trip"
-                    onPress={() => { checkTripTime() }}
-                />
+
+                <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime() }}>
+                <Text style={styles.textButton}>Add Trip</Text>
+                </TouchableOpacity>
             </View>
         </ImageBackground>
     );
@@ -75,16 +75,30 @@ const styles = StyleSheet.create({
     textSubTitle: {
 
         color: 'white',
-        fontSize: 20,
         fontWeight: 'bold',
         fontSize: 24,
-        marginTop: 50, textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8
+        marginTop: 50, 
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 5
 
     },
+    textButton: {
+        color: 'white',
+        fontSize: 18,
+    },
+
     imageBackground: {
         flex: 1
-    }
+    },
+    roundButton1: {
+        width: 150,
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+        backgroundColor: '#176cff',
+        //overflow = 'hidden'
+      },
 })
 
 export default AddTripScreen

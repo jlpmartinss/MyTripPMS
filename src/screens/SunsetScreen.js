@@ -24,7 +24,7 @@ export default function SunsetScreen({ route, navigation}) {
                         Board with us on a dream journey, a romantic wave, where besides sighting dolphins and/or whales, it is possible to swim in the warm waters accompanied by the sunset. We sail out for 3 hours so that you can partake in this unique spectacle of colour that changes every day and reflects in the passive ocean of our coast.</Text>
                     </View>
 
-                    <View style={styles.textBox}>
+                    <View style={styles.textBoxMap}>
                     <Text style={styles.textTitle}>Route:</Text>
                         <Image style={styles.image} source={require("../../assets/Trips/mapa_por-do-sol.png")} />
                     </View>
@@ -153,6 +153,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0, 0, 0, 0.33)',
         margin: 15,
         borderRadius: 15,
+    },
+    textBoxMap: {
+        flex: 1,
+        margin: 15,
+        borderRadius: 15,
+        backgroundColor: 'rgba(0, 200, 255, 0.33)'
     },
 
 

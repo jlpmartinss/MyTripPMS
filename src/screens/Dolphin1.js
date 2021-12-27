@@ -54,7 +54,7 @@ export default function Dolphin1({ route, navigation}) {
         <View style={styles.container}>
                 <ImageBackground blurRadius = {50} source={imgPath} resizeMode="cover" style={styles.imageBackground}>            
                 <ScrollView>
-                    
+
                     <Text style={styles.textTitle}>{name}</Text>
                     <Text style={styles.textNormal, styles.textCientific}>Cientific name: {cientificName}</Text>  
                     <Image style={styles.image} source={imgPath}/>
@@ -120,9 +120,10 @@ const styles = StyleSheet.create({
         fontSize: 24,
         marginHorizontal: 10,
         marginTop: 10,
+        marginLeft: 20,
         textShadowColor: 'rgba(0, 0, 0, 1)',
         fontWeight: '700',
-        //textShadowRadius: 8
+        textShadowRadius: 5
     },
     textSubTitle: {
         color: 'white',
@@ -148,8 +149,8 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginHorizontal: 10,
         color: 'white',
-        //textShadowColor: 'rgba(0, 0, 0, 1)',
-        //textShadowRadius: 8,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 5,
         textAlign: 'justify',
         fontSize: 15,
     },

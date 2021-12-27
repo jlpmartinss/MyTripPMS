@@ -23,7 +23,7 @@ export default function DesertasScreen({ route, navigation}) {
                     Come and see this natural paradise for yourself and participate in activities such as standup paddle and snorkelling. All this as part of a memorable 9 hour excursion, with plenty of swimming and a delicious Madeiran buffet lunch on board. Reserve now!</Text>
                     </View>
 
-                    <View style={styles.textBox}>
+                    <View style={styles.textBoxMap}>
                         <Text style={styles.textTitle}>Route:</Text>
                         <Image style={styles.image} source={require("../../assets/Trips/mapasVMT_desertas-1.png")} />
                     </View>
@@ -152,6 +152,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0, 0, 0, 0.33)',
         margin: 15,
         borderRadius: 15,
+    },
+    textBoxMap: {
+        flex: 1,
+        margin: 15,
+        borderRadius: 15,
+        backgroundColor: 'rgba(0, 200, 255, 0.33)'
     },
 
 

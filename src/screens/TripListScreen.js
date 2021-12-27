@@ -11,13 +11,13 @@ export default function TripListScreen({ navigation }){
     
     return(
         <View style ={styles.container}>
-            <ImageBackground blurRadius = {50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}> 
+            <ImageBackground blurRadius = {50} source={require("../../assets/Trips/imdesertas.jpg")} resizeMode="cover" style={styles.imageBackground}> 
                 <ScrollView> 
 
                     <TouchableOpacity onPress={() => navigation.navigate("Cetaceans")}>       
                         <View style ={styles.item}>                    
                             <Image style = {styles.image} source={require("../../assets/Trips/imcetaceos.jpg") }/>
-                                <Text style = {styles.textSubTitle}>Cetaceans</Text>
+                                <Text style = {styles.textSubTitle}>Whale Watching</Text>
                         </View>
                     </TouchableOpacity>
 

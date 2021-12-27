@@ -25,7 +25,7 @@ export default function FajasScreen({ route, navigation}) {
                         An itinerary by sea where it is possible to see much of the natural beauty and life that our Island has to show.</Text>
                     </View>
                     
-                    <View style={styles.textBox}>
+                    <View style={styles.textBoxMap}>
                         <Text style={styles.textTitle}>Route:</Text>
                         <Image style={styles.image} source={require("../../assets/Trips/mapa_fajas.png")} />
                     </View>
@@ -154,6 +154,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0, 0, 0, 0.33)',
         margin: 15,
         borderRadius: 15,
+    },
+    textBoxMap: {
+        flex: 1,
+        margin: 15,
+        borderRadius: 15,
+        backgroundColor: 'rgba(0, 200, 255, 0.33)'
     },
 
 

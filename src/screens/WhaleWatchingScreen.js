@@ -24,7 +24,7 @@ export default function WhaleWatchingScreen({ route, navigation}) {
                     When the climate is inviting, we stop for a swim in the ocean below Cabo Girão, and when there are favourable winds, we turn off the engines and hoist the sails, which means less pollution and more relaxation. A 3 hour trip that is worth doing at least once in a lifetime by both locals and visitors. Reserve your place and bring your loved ones along!</Text>
                     </View>
 
-                    <View style={styles.textBox}>
+                    <View style={styles.textBoxMap} >
                     <Text style={styles.textTitle}>Route:</Text>
                         <Image style={styles.image} source={require("../../assets/Trips/mapasVMT_cetaceos.png")} />
                     </View>   
@@ -157,6 +157,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0, 0, 0, 0.33)',
         margin: 15,
         borderRadius: 15,
+    },
+    textBoxMap: {
+        flex: 1,
+        margin: 15,
+        borderRadius: 15,
+        backgroundColor: 'rgba(0, 200, 255, 0.33)'
     },
 
 
