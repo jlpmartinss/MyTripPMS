@@ -17,6 +17,35 @@ export default function DesertasScreen({ route, navigation}) {
                 <ScrollView> 
                     
                     <Image style={styles.image} source={require("../../assets/Trips/imdesertas.jpg")} />
+
+                    <View style={styles.textBox}>
+
+                        <Text style={styles.textTitle}>Summary:</Text>
+
+                        <Text style={styles.textNormal}>Duration:{"\n"}
+                        - 9H
+                        </Text>
+
+                        <Text style={styles.textNormal}>Interest points:{"\n"}
+                        - Deserta Grande Island{"\n"}
+                        - Bugio Island{"\n"}
+                        - Chão Islander
+                        </Text>
+
+                        <Text style={styles.textNormal}>Stopping points:{"\n"}
+                        - Deserta Grande Island
+                        </Text>
+
+                        <Text style={styles.textNormal}>Available activities:{"\n"}
+                        - Standup paddle{"\n"}
+                        - Snorkeling{"\n"}
+                        - Swimming{"\n"}
+                        - Snacks + bar{"\n"}
+                        - Buffet + 1 drink
+                        </Text>
+
+                    </View>  
+
                     <View style={styles.textBox}>
                         <Text style={styles.textTitle}>Description</Text>
                         <Text style={styles.textNormal}>Leaving from the Funchal Marina and heading out to sea towards the horizon, we reach a group of 3 islands, that although they are called Desert islands, are inhabited by numerous wildlife species both marine and land animals. This is only one reason that makes it worth the effort to disembark from the catamaran onto the virgin beach.{"\n"}{"\n"}

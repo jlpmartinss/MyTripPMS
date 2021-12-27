@@ -18,6 +18,31 @@ export default function SunsetScreen({ route, navigation}) {
                 <ScrollView>  
 
                     <Image style={styles.image} source={require("../../assets/Trips/imsunset.jpg")} />
+
+                    <View style={styles.textBox}>
+
+                        <Text style={styles.textTitle}>Summary:</Text>
+
+                        <Text style={styles.textNormal}>Duration:{"\n"}
+                        - 3H
+                        </Text>
+
+                        <Text style={styles.textNormal}>Interest points:{"\n"}
+                        - Largo do Cabo Girão
+                        </Text>
+
+                        <Text style={styles.textNormal}>Stopping points:{"\n"}
+                        - Largo do Cabo Girão (if weather conditions are favourable)
+                        </Text>
+
+                        <Text style={styles.textNormal}>Available activities:{"\n"}
+                        - Snorkeling{"\n"}
+                        - Swimming{"\n"}
+                        - Snacks + bar
+                        </Text>
+
+                    </View>   
+
                     <View style={styles.textBox}>
                         <Text style={styles.textTitle}>Description</Text>
                         <Text style={styles.textNormal}>We are in Funchal and we look towards the twilight. Do you know what we see? Absolutely nothing! No buildings, towers or bridges. Only nature, an endless ocean, a constant line that balances days and nights and with the 3 Desert Islands there in the background, a little to the left.{"\n"}{"\n"}

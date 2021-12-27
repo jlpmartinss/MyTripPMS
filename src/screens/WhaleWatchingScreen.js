@@ -15,11 +15,36 @@ export default function WhaleWatchingScreen({ navigation}) {
     return (
         <View style={styles.container}>
             <ImageBackground blurRadius={50} source={require("../../assets/Trips/imcetaceos.jpg")} resizeMode="cover" style={styles.imageBackground}>
-                <ScrollView>    
-
+                <ScrollView>                 
+                        
                     <Image style={styles.image} source={require("../../assets/Trips/imcetaceos.jpg")} />
+
                     <View style={styles.textBox}>
-                        <Text style={styles.textTitle}>Description</Text>
+
+                        <Text style={styles.textTitle}>Summary:</Text>
+
+                        <Text style={styles.textNormal}>Duration:{"\n"}
+                        - 3H
+                        </Text>
+
+                        <Text style={styles.textNormal}>Interest points:{"\n"}
+                        - Largo do Cabo Girão
+                        </Text>
+
+                        <Text style={styles.textNormal}>Stopping points:{"\n"}
+                        - Largo do Cabo Girão (if weather conditions are favourable)
+                        </Text>
+
+                        <Text style={styles.textNormal}>Available activities:{"\n"}
+                        - Snorkeling{"\n"}
+                        - Swimming{"\n"}
+                        - Snacks + bar
+                        </Text>
+
+                    </View>   
+
+                    <View style={styles.textBox}>
+                        <Text style={styles.textTitle}>Description:</Text>
                         <Text style={styles.textNormal}>We churn up the ocean in our search for the right coordinates and there they are! Dolphins! Playful, communicative, energetic! Although it seems they are posing for photos, they are actually living in their own enchanted world. Whales who may or may not give off embarrassing odours, decide if they will honour us with a visit. Adding to this 3 hour memorable taste of wild life, we sometimes have the opportunity of spotting turtles and sea birds.{"\n"}{"\n"}
                     When the climate is inviting, we stop for a swim in the ocean below Cabo Girão, and when there are favourable winds, we turn off the engines and hoist the sails, which means less pollution and more relaxation. A 3 hour trip that is worth doing at least once in a lifetime by both locals and visitors. Reserve your place and bring your loved ones along!</Text>
                     </View>

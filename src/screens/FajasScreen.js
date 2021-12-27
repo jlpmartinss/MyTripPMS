@@ -17,6 +17,40 @@ export default function FajasScreen({ route, navigation}) {
             <ImageBackground blurRadius={50} source={require("../../assets/Trips/imfaja.jpg")} resizeMode="cover" style={styles.imageBackground}>
                 <ScrollView>                    
                     <Image style={styles.image} source={require("../../assets/Trips/imfaja.jpg")} />
+
+                    <View style={styles.textBox}>
+
+                        <Text style={styles.textTitle}>Summary:</Text>
+
+                        <Text style={styles.textNormal}>Duration:{"\n"}
+                        - 9H
+                        </Text>
+
+                        <Text style={styles.textNormal}>Interest points:{"\n"}
+                        - Câmara de lobos{"\n"}
+                        - Largo do Cabo Girão{"\n"}
+                        - Ribeira Brava{"\n"}
+                        - Madalena do Mar{"\n"}
+                        - Calheta{"\n"}
+                        - Jardim do Mar{"\n"}
+                        - Paúl do Mar
+                        </Text>
+
+                        <Text style={styles.textNormal}>Stopping points:{"\n"}
+                        - Paúl do Mar Village
+                        </Text>
+
+                        <Text style={styles.textNormal}>Available activities:{"\n"}
+                        - Standup paddle{"\n"}
+                        - Snorkeling{"\n"}
+                        - Swimming{"\n"}
+                        - Desembarque na vila do Paúl do Mar{"\n"}
+                        - Snacks + bar{"\n"}
+                        - Buffet + 1 drink
+                        </Text>
+
+                    </View>  
+
                     <View style={styles.textBox}>
                         <Text style={styles.textTitle}>Description</Text>
                         <Text style={styles.textNormal}>And what if the scenery to the West of Madeira is even more incredible?{"\n"}{"\n"}
