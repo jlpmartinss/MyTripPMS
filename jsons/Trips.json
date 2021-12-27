@@ -15,7 +15,7 @@
 			"SpeciesName": "Atlantic Spotted dolphin",
 			"NumberIndividuals": "3",
 			"NumberOffspring": "1",
-			"Behaviours": ["jump","whistle"],
+			"Behaviours": ["jump"," whistle"],
 			"ReactionsToBoat": ["touch"],
 			"Sighted": "14:13 PM"}, 
 		{

@@ -30,6 +30,7 @@ const comment = data[tripId].comments;
 const sightedSpecies = data[tripId].animals;
 const route = data[tripId].route;
 const boatName = data[tripId].boatName;
+const behaviour = sightedSpecies.Behaviours;
 
 let ITEM_WIDTH = Dimensions.get('window').width;
 
@@ -43,13 +44,13 @@ function PostCardPreview(props) {
                     scrollEventThrottle={16}
                 >
                     <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
-                        <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20, textShadowColor: 'rgba(0, 0, 0, 1)'}}>
+                        <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20, textShadowColor: 'rgba(0, 0, 0, 1)' }}>
                             {location}
                         </Text>
-                        <Text style={{ fontSize: 15, fontWeight: '500' , marginTop: 10, paddingHorizontal: 20}}>
+                        <Text style={{ fontSize: 15, fontWeight: '500', marginTop: 10, paddingHorizontal: 20 }}>
                             {latitude} , {longitude}
                         </Text>
-                        <Text style={{ fontSize: 15, fontWeight: '500' , marginTop: 10, paddingHorizontal: 20}}>
+                        <Text style={{ fontSize: 15, fontWeight: '500', marginTop: 10, paddingHorizontal: 20 }}>
                             Sea State: {seaState}m
                         </Text>
 
@@ -59,7 +60,7 @@ function PostCardPreview(props) {
                                 showsHorizontalScrollIndicator={false}
                             >
                                 <Category imageUri={require('../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg')}
-                                    name ="" /*se quisermos adicionar titulo às imagens */
+                                    name="" /*se quisermos adicionar titulo às imagens */
                                 />
                                 <Category imageUri={require('../../assets/whale.jpg')}
                                     name=""
@@ -70,14 +71,14 @@ function PostCardPreview(props) {
                             </ScrollView>
                         </View>
                         <View style={{ marginTop: 20, paddingHorizontal: 20 }}>
-                            <Text style={{ fontSize: 24, fontWeight: '700', textShadowColor: 'rgba(0, 0, 0, 1)'}}>
+                            <Text style={{ fontSize: 24, fontWeight: '700', textShadowColor: 'rgba(0, 0, 0, 1)' }}>
                                 {name} | {boatName}
                             </Text>
-                            <Text style={{ fontSize: 15, fontWeight: '500' , marginTop: 10}}>
+                            <Text style={{ fontSize: 15, fontWeight: '500', marginTop: 10 }}>
                                 {date} at {time}
 
                             </Text>
-                            <Rating style= {{marginTop: 10}}
+                            <Rating style={{ marginTop: 10 }}
                                 onClose={() => setOpenRating(false)} /* não está a fazer nada */
                                 visible={isOpenRating}
                                 readonly
@@ -90,8 +91,8 @@ function PostCardPreview(props) {
                                     console.log('Selected rating', selectedRating);
                                 }}
                             ></Rating>
-                            <Text style={{ fontSize: 18, fontWeight: '700' , marginTop: 30}}>
-                                Share on social: 
+                            <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 30 }}>
+                                Share on social:
                                 <AntDesign name="facebook-square" size={30} color="#4267B2" />
                                 <AntDesign name="instagram" size={30} color="black" />
                             </Text>
@@ -112,37 +113,35 @@ function PostCardPreview(props) {
                         </Text>
                     </View>
                 </ScrollView>
-                <Text style={styles.text}>Edit PostCard 
+                <Text style={styles.text}>Edit PostCard
                     <FontAwesome name="edit" size={30} color="blue" onPress={() => navigation.navigate("EditPostCard", { msg: "testing" })}  /* onpress por implementar*/ />
                 </Text>
 
                 <View>
-                    
+
                     <Text style={styles.textTitles}>
-                                Sighted Species
+                        Sighted Species
                     </Text>
                     <ScrollView
-                                horizontal={true}
-                                showsHorizontalScrollIndicator={false}>
-                                    
-                                    <View>
-                            
-                            { sightedSpecies.map((specie, key) => {
-                                 return <Text style={styles.text} key = {key}>{specie.SpeciesName};
-                                  <Text style={styles.text}> {"\n"} First Seen at: {specie.Sighted}</Text> 
-                                     <Text style={styles.text}> {"\n"} Behaviours:</Text> 
-                                        { specie.Behaviours.map((behaviour, key1) => {
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}>
+
+                        <View>
+
+                            {sightedSpecies.map((specie, key) => {
+                                return <Text style={styles.text} key={key}>{specie.SpeciesName};
+                                    <Text style={styles.text}> {"\n"} First Seen at: {specie.Sighted}</Text>
+                                    <Text style={styles.text}> {"\n"} Behaviours: {specie.Behaviours}</Text>
+                                    {/* { specie.Behaviours.map((behaviour, key1) => {
                                              <Text style={styles.text} key={key1}>{behaviour}</Text>
-                                        })}
-                                      <Text style={styles.text}> {"\n"} Reactions to boat: </Text>
-                                        { specie.Behaviours.map((reaction, key2) => {
-                                              <Text style={styles.text} style={styles.text} key={key2}>{reaction}</Text>
-                                        })}</Text>
+                                        })} */}
+                                    <Text style={styles.text}> {"\n"} Reactions to boat: {specie.ReactionsToBoat}</Text>
+                                    </Text>
                             })}
-                            </View>
+                        </View>
                     </ScrollView>
                 </View>
-                
+
                 <Text style={styles.textTitles}>
                     Description
                 </Text>
@@ -185,15 +184,16 @@ const styles = StyleSheet.create({
     },
     text: {
         paddingHorizontal: 20,
-        fontSize: 15, 
+        fontSize: 15,
         fontWeight: '500',
         marginTop: 10,
     },
-    sightedSpecies:{
-        paddingHorizontal: 20, 
+    sightedSpecies: {
+        paddingHorizontal: 20,
         marginLeft: 10,
-        fontSize: 15, 
-        fontWeight: '700', 
+        fontSize: 15,
+        fontWeight: '700',
         marginTop: 10,
         color: 'blue'
-    }})
+    }
+})
