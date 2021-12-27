@@ -17,6 +17,35 @@ export default function DesertasScreen({ route, navigation}) {
                 <ScrollView> 
                     
                     <Image style={styles.image} source={require("../../assets/Trips/imdesertas.jpg")} />
+
+                    <View style={styles.textBox}>
+
+                        <Text style={styles.textTitle}>Summary:</Text>
+
+                        <Text style={styles.textNormal}>Duration:{"\n"}
+                        - 9H
+                        </Text>
+
+                        <Text style={styles.textNormal}>Interest points:{"\n"}
+                        - Deserta Grande Island{"\n"}
+                        - Bugio Island{"\n"}
+                        - Chão Islander
+                        </Text>
+
+                        <Text style={styles.textNormal}>Stopping points:{"\n"}
+                        - Deserta Grande Island
+                        </Text>
+
+                        <Text style={styles.textNormal}>Available activities:{"\n"}
+                        - Standup paddle{"\n"}
+                        - Snorkeling{"\n"}
+                        - Swimming{"\n"}
+                        - Snacks + bar{"\n"}
+                        - Buffet + 1 drink
+                        </Text>
+
+                    </View>  
+
                     <View style={styles.textBox}>
                         <Text style={styles.textTitle}>Description</Text>
                         <Text style={styles.textNormal}>Leaving from the Funchal Marina and heading out to sea towards the horizon, we reach a group of 3 islands, that although they are called Desert islands, are inhabited by numerous wildlife species both marine and land animals. This is only one reason that makes it worth the effort to disembark from the catamaran onto the virgin beach.{"\n"}{"\n"}
@@ -27,48 +56,47 @@ export default function DesertasScreen({ route, navigation}) {
                         <Text style={styles.textTitle}>Route</Text>
                         <Image style={styles.image} source={require("../../assets/Trips/mapasVMT_desertas-1.png")} />
                     </View>
-                    <View style={styles.textBox}>
-                    <Text style={styles.textTitle}>Tripulation</Text>                
 
+               <View style={styles.textBox}>
+                    <Text style={styles.textTitle}>Tripulation:</Text>  
+                               
+                    
                     <View style ={styles.containerHorizontal}>                        
-                        <View width = {ITEM_WIDTH/2 - 15}>
-                            <Text style = {styles.textSubTitle}>Luana Mendonça</Text> 
-                            <Text style = {styles.textNormal}>Luana is an experienced skipper with more than 5000 sailing hours. {"\n"} Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla. </Text>
+                        <View width = {ITEM_WIDTH/2 - 30} >
+                            <Text style = {styles.textSubTitle}>Luana Mendonça:</Text> 
+                            <Text style = {styles.textCrew}>Luana is an experienced skipper with more than 5000 sailing hours. {"\n"} Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla. </Text>
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Luana.jpg") }/>
-                    </View>
+                    </View> 
 
                     <View style ={styles.containerHorizontal}>                        
-                        <View width = {ITEM_WIDTH/2 - 15}>
-                            <Text style = {styles.textSubTitle}>João Martins</Text> 
-                            <Text style = {styles.textNormal}>João is a biologist that knows all the the waters of Madeira Island like the palm of his hand. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.  </Text>
+                        <View width = {ITEM_WIDTH/2 - 30}>
+                            <Text style = {styles.textSubTitle}>João Martins:</Text> 
+                            <Text style = {styles.textCrew}>João is a biologist that knows all the the waters of Madeira Island like the palm of his hand. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.  </Text>
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Joao.jpg") }/>
                     </View>
 
                     <View style ={styles.containerHorizontal}>                        
-                        <View width = {ITEM_WIDTH/2 - 15}>
-                            <Text style = {styles.textSubTitle}>Francisco Vasconcelos</Text> 
-                            <Text style = {styles.textNormal}>Francisco is your tour guide. He knows everything about the Madeira. He will guide you throug this amazing trip and identify all the landmarks. Bla bla bla bla bla bla bla bla bla.</Text>
+                        <View width = {ITEM_WIDTH/2 - 30}>
+                            <Text style = {styles.textSubTitle}>Francisco Vasconcelos:</Text> 
+                            <Text style = {styles.textCrew}>Francisco is your tour guide. He will guide you throug your trip and identify all the important landmarks.</Text>
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Francisco.jpg") }/>
                     </View>
 
                     <View style ={styles.containerHorizontal}>                        
-                        <View width = {ITEM_WIDTH/2 - 15}>
-                            <Text style = {styles.textSubTitle}>Marcos Silva</Text> 
-                            <Text style = {styles.textNormal}>Marcos will be your barman. He knows everything about your drinks. You can be asured that you will serve you very well. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</Text>
+                        <View width = {ITEM_WIDTH/2 - 30}>
+                            <Text style = {styles.textSubTitle}>Marcos Silva:</Text> 
+                            <Text style = {styles.textCrew}>Marcos will be your barman. He knows everything about your drinks. You can be asured that you will serve you very well. Bla bla bla bla.</Text>
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Marcos.jpg") }/>
                     </View>
-                    </View>
-
-                    
+                    </View>                    
 
                 </ScrollView>
             </ImageBackground>
-        </View >
-       
+        </View >       
     );
 }
 
@@ -80,17 +108,18 @@ const styles = StyleSheet.create({
         backgroundColor: 'grey',
     },
     containerHorizontal: {
-        padding: 20,
+        paddingHorizontal: 20,
+        paddingVertical: 5,
         flex: 1,
-        //alignItems: 'center',
+        alignItems: 'center',
         flexDirection: 'row',
-        flexWrap: 'wrap',      
+        flexWrap: 'wrap',
+        color: 'red'    
     },
     item: {
         padding:5,
         flex:1,
-        fontSize: 20,
-        
+        fontSize: 20        
     },
     image: {
         alignSelf:'center',
@@ -100,11 +129,9 @@ const styles = StyleSheet.create({
         height: ITEM_WIDTH / 1.5,
         borderRadius: 15,
     },
-
     imageFace: {
         flex: 1,
-        width: ITEM_WIDTH/2.15,
-        height: ITEM_WIDTH/2.15,
+        height: ITEM_WIDTH/2.5,
         backgroundColor: 'white',
         borderRadius: 15
     },
@@ -115,26 +142,20 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 24,
         marginHorizontal: 10,
-        marginTop: 10,
-        //textShadowColor: 'rgba(0, 0, 0, 1)',
-        //textShadowRadius: 8
+        marginVertical: 10,
     },
     textSubTitle: {
         color: 'white',
         fontSize: 18,
-        marginHorizontal: 10,
-        //textShadowColor: 'rgba(0, 0, 0, 1)',
-        //textShadowRadius: 8
+        marginVertical: 10,
+        marginRight:10,
     },
-    textNormal: {
-        marginLeft: 20,
-        marginHorizontal: 10,
+    textNormal: {           
+        alignSelf:'auto',  
+        marginHorizontal: 15,
         color: 'white',
-        //textShadowColor: 'rgba(0, 0, 0, 1)',
-        //textShadowRadius: 8,
-        marginBottom: 20,
+        marginBottom: 10,
         marginTop: 10,
-        marginRight: 20,
         textAlign: 'justify',
         fontSize: 15,
     },
@@ -142,15 +163,21 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginHorizontal: 10,
         color: 'white',
-        //textShadowColor: 'rgba(0, 0, 0, 1)',
-        //textShadowRadius: 8,
         textAlign: 'justify',
         fontSize: 15,
+    },
+    textCrew: {    
+        flex: 1,    
+        color: 'white',
+        textAlign: 'justify',
+        fontSize: 14,
+        marginRight:10,
     },
     textBox: {
         flex: 1,
         backgroundColor: 'rgba(0, 0, 0, 0.33)',
         margin: 15,
+        paddingBottom:10,
         borderRadius: 15,
     },
     textBoxMap: {
@@ -158,8 +185,5 @@ const styles = StyleSheet.create({
         margin: 15,
         borderRadius: 15,
         backgroundColor: 'rgba(0, 200, 255, 0.33)'
-    },
-
-
-
+    }
 })

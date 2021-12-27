@@ -18,6 +18,31 @@ export default function SunsetScreen({ route, navigation}) {
                 <ScrollView>  
 
                     <Image style={styles.image} source={require("../../assets/Trips/imsunset.jpg")} />
+
+                    <View style={styles.textBox}>
+
+                        <Text style={styles.textTitle}>Summary:</Text>
+
+                        <Text style={styles.textNormal}>Duration:{"\n"}
+                        - 3H
+                        </Text>
+
+                        <Text style={styles.textNormal}>Interest points:{"\n"}
+                        - Largo do Cabo Girão
+                        </Text>
+
+                        <Text style={styles.textNormal}>Stopping points:{"\n"}
+                        - Largo do Cabo Girão (if weather conditions are favourable)
+                        </Text>
+
+                        <Text style={styles.textNormal}>Available activities:{"\n"}
+                        - Snorkeling{"\n"}
+                        - Swimming{"\n"}
+                        - Snacks + bar
+                        </Text>
+
+                    </View>   
+
                     <View style={styles.textBox}>
                         <Text style={styles.textTitle}>Description</Text>
                         <Text style={styles.textNormal}>We are in Funchal and we look towards the twilight. Do you know what we see? Absolutely nothing! No buildings, towers or bridges. Only nature, an endless ocean, a constant line that balances days and nights and with the 3 Desert Islands there in the background, a little to the left.{"\n"}{"\n"}
@@ -30,46 +55,45 @@ export default function SunsetScreen({ route, navigation}) {
                     </View>
 
                     <View style={styles.textBox}>
-                    <Text style={styles.textTitle}>Tripulation:</Text>
+                    <Text style={styles.textTitle}>Tripulation:</Text>  
+                               
+                    
                     <View style ={styles.containerHorizontal}>                        
-                        <View width = {ITEM_WIDTH/2 - 15}>
-                            <Text style = {styles.textSubTitle}>Luana Mendonça</Text> 
-                            <Text style = {styles.textNormal}>Luana is an experienced skipper with more than 5000 sailing hours. {"\n"} Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla. </Text>
+                        <View width = {ITEM_WIDTH/2 - 30} >
+                            <Text style = {styles.textSubTitle}>Luana Mendonça:</Text> 
+                            <Text style = {styles.textCrew}>Luana is an experienced skipper with more than 5000 sailing hours. {"\n"} Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla. </Text>
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Luana.jpg") }/>
-                    </View>
+                    </View> 
 
                     <View style ={styles.containerHorizontal}>                        
-                        <View width = {ITEM_WIDTH/2 - 15}>
-                            <Text style = {styles.textSubTitle}>João Martins</Text> 
-                            <Text style = {styles.textNormal}>João is a biologist that knows all the the waters of Madeira Island like the palm of his hand. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.  </Text>
+                        <View width = {ITEM_WIDTH/2 - 30}>
+                            <Text style = {styles.textSubTitle}>João Martins:</Text> 
+                            <Text style = {styles.textCrew}>João is a biologist that knows all the the waters of Madeira Island like the palm of his hand. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.  </Text>
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Joao.jpg") }/>
                     </View>
 
                     <View style ={styles.containerHorizontal}>                        
-                        <View width = {ITEM_WIDTH/2 - 15}>
-                            <Text style = {styles.textSubTitle}>Francisco Vasconcelos</Text> 
-                            <Text style = {styles.textNormal}>Francisco is your tour guide. He knows everything about the Madeira. He will guide you throug this amazing trip and identify all the landmarks. Bla bla bla bla bla bla bla bla bla.</Text>
+                        <View width = {ITEM_WIDTH/2 - 30}>
+                            <Text style = {styles.textSubTitle}>Francisco Vasconcelos:</Text> 
+                            <Text style = {styles.textCrew}>Francisco is your tour guide. He will guide you throug your trip and identify all the important landmarks.</Text>
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Francisco.jpg") }/>
                     </View>
 
                     <View style ={styles.containerHorizontal}>                        
-                        <View width = {ITEM_WIDTH/2 - 15}>
-                            <Text style = {styles.textSubTitle}>Marcos Silva</Text> 
-                            <Text style = {styles.textNormal}>Marcos will be your barman. He knows everything about your drinks. You can be asured that you will serve you very well. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</Text>
+                        <View width = {ITEM_WIDTH/2 - 30}>
+                            <Text style = {styles.textSubTitle}>Marcos Silva:</Text> 
+                            <Text style = {styles.textCrew}>Marcos will be your barman. He knows everything about your drinks. You can be asured that you will serve you very well. Bla bla bla bla.</Text>
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Marcos.jpg") }/>
                     </View>
-                    </View>
-
-                    
+                    </View>                    
 
                 </ScrollView>
             </ImageBackground>
-        </View >
-       
+        </View >       
     );
 }
 
@@ -81,17 +105,18 @@ const styles = StyleSheet.create({
         backgroundColor: 'grey',
     },
     containerHorizontal: {
-        padding: 20,
+        paddingHorizontal: 20,
+        paddingVertical: 5,
         flex: 1,
-        //alignItems: 'center',
+        alignItems: 'center',
         flexDirection: 'row',
-        flexWrap: 'wrap',      
+        flexWrap: 'wrap',
+        color: 'red'    
     },
     item: {
         padding:5,
         flex:1,
-        fontSize: 20,
-        
+        fontSize: 20        
     },
     image: {
         alignSelf:'center',
@@ -101,11 +126,9 @@ const styles = StyleSheet.create({
         height: ITEM_WIDTH / 1.5,
         borderRadius: 15,
     },
-
     imageFace: {
         flex: 1,
-        width: ITEM_WIDTH/2.15,
-        height: ITEM_WIDTH/2.15,
+        height: ITEM_WIDTH/2.5,
         backgroundColor: 'white',
         borderRadius: 15
     },
@@ -116,26 +139,20 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 24,
         marginHorizontal: 10,
-        marginTop: 10,
-        //textShadowColor: 'rgba(0, 0, 0, 1)',
-        //textShadowRadius: 8
+        marginVertical: 10,
     },
     textSubTitle: {
         color: 'white',
-        fontSize: 18,
-        marginHorizontal: 10,
-        //textShadowColor: 'rgba(0, 0, 0, 1)',
-        //textShadowRadius: 8
+        fontSize: 16,
+        marginVertical: 10,
+        marginRight:10,
     },
-    textNormal: {
-        marginLeft: 20,
-        marginHorizontal: 10,
+    textNormal: {           
+        alignSelf:'auto',  
+        marginHorizontal: 15,
         color: 'white',
-        //textShadowColor: 'rgba(0, 0, 0, 1)',
-        //textShadowRadius: 8,
-        marginBottom: 20,
+        marginBottom: 10,
         marginTop: 10,
-        marginRight: 20,
         textAlign: 'justify',
         fontSize: 15,
     },
@@ -143,15 +160,21 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginHorizontal: 10,
         color: 'white',
-        //textShadowColor: 'rgba(0, 0, 0, 1)',
-        //textShadowRadius: 8,
         textAlign: 'justify',
         fontSize: 15,
+    },
+    textCrew: {    
+        flex: 1,    
+        color: 'white',
+        textAlign: 'justify',
+        fontSize: 14,
+        marginRight:10,
     },
     textBox: {
         flex: 1,
         backgroundColor: 'rgba(0, 0, 0, 0.33)',
         margin: 15,
+        paddingBottom:10,
         borderRadius: 15,
     },
     textBoxMap: {
@@ -159,8 +182,5 @@ const styles = StyleSheet.create({
         margin: 15,
         borderRadius: 15,
         backgroundColor: 'rgba(0, 200, 255, 0.33)'
-    },
-
-
-
+    }
 })
