@@ -4,9 +4,9 @@
     "slug": "MyTrip",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/586396-dophin-animals.jpg",
+    "icon": "./assets/Icons/golfinho_icon.png",
     "splash": {
-      "image": "./assets/586396-dophin-animals.jpg",
+      "image": "./assets/Icons/golfinho_icon.png",
       "resizeMode": "adaptiveIcon",
       "backgroundColor": "#ffffff"
     },
@@ -21,12 +21,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/586396-dophin-animals.jpg",
+        "foregroundImage": "./assets/Icons/golfinho_icon.png",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./assets/586396-dophin-animals.jpg"
+      "favicon": "./assets/Icons/golfinho_icon.png"
     }
   }
 }
