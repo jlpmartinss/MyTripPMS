@@ -129,8 +129,8 @@ function PostCardPreview(props) {
                         <View>
 
                             {sightedSpecies.map((specie, key) => {
-                                return <Text style={styles.text} key={key}>{specie.SpeciesName};
-                                    <Text style={styles.text}> {"\n"} First Seen at: {specie.Sighted}</Text>
+                                return <Text style={styles.sightedSpecies} key={key}>{specie.SpeciesName}
+                                    <Text style={styles.text}> {"\n\n"} First Seen at: {specie.Sighted}</Text>
                                     <Text style={styles.text}> {"\n"} Behaviours: {specie.Behaviours}</Text>
                                     {/* { specie.Behaviours.map((behaviour, key1) => {
                                              <Text style={styles.text} key={key1}>{behaviour}</Text>
@@ -187,6 +187,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: '500',
         marginTop: 10,
+        color: 'black'
     },
     sightedSpecies: {
         paddingHorizontal: 20,
