@@ -4,7 +4,7 @@ import * as FileSystem from 'expo-file-system';
 
 import  Rating from 'react-native-easy-rating';
 
-//const text = await FileSystem.readFile(Dirs.CacheDir + 'test.txt');
+//const text = await FileSystem.getInfoAsync("../../jsons/Trips.json");
 
 export default function EditPostCard({ route, navigation}) {
   const [rating,setRating] = useState();
@@ -23,7 +23,13 @@ export default function EditPostCard({ route, navigation}) {
 
       <Button
         title="Confirm"
-        onPress={ () => {FileSystem.writeAsStringAsync("../../jsons/Trips.json",{rating: rating})} } 
+        onPress={ () => {
+          if(FileSystem.getInfoAsync("./../../jsons/Trips.json")){
+            FileSystem.writeAsStringAsync("./../../jsons/Trips.json",{rating: rating});
+            console.log("entrei")
+          }
+          
+        } } 
       />
       
       </View>
