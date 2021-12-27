@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Image } from "react-native";
 import { View, Text, Button, StyleSheet, TextInput, Alert, ImageBackground, Dimensions } from 'react-native';
+import { TouchableHighlight } from "react-native-gesture-handler";
 import Data from "./../../jsons/Trips.json"
 
 let ITEM_WIDTH = Dimensions.get('window').width;
@@ -45,7 +46,7 @@ const AddTripScreen = ({ navigation }) => {
                 <Text style={styles.textSubTitle}>Type the code of your trip</Text>
 
                 <TextInput
-                    style={{ padding: 10, height: 40, width: 150, margin: 15 }}
+                    style={{ padding: 10, height: 40, width: 150, margin: 15, borderRadius: 8}}
                     backgroundColor='#FFFFFF'
                     //se o input for números onChangeText = {onChangeNumber} + value = {number} + keyboardType="numeric" 
                     placeholder="Type Trip Code Here"
@@ -53,14 +54,12 @@ const AddTripScreen = ({ navigation }) => {
                     onChangeText={text => setText(text)}
                     defaultValue={text}
                 />
-
-                <Button
+                <Button style = {{borderRadius: 20, overflow: 'hidden'}}
                     title="Add Trip"
                     onPress={() => { checkTripTime() }}
                 />
             </View>
         </ImageBackground>
-
     );
 }
 
@@ -68,8 +67,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-
-
 
     },
     textInput: {
@@ -80,15 +77,14 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 20,
         fontWeight: 'bold',
-        fontSize: 30,
+        fontSize: 24,
         marginTop: 50, textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 8
 
     },
     imageBackground: {
         flex: 1
-    },
-
+    }
 })
 
 export default AddTripScreen

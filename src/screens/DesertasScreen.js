@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     },
     textTitle: {
         color: 'white',
-        fontSize: 32,
+        fontSize: 24,
         marginHorizontal: 10,
         marginTop: 10,
         textShadowColor: 'rgba(0, 0, 0, 1)',
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     },
     textSubTitle: {
         color: 'white',
-        fontSize: 20,
+        fontSize: 18,
         marginHorizontal: 10,
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 8
@@ -124,9 +124,10 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginHorizontal: 10,
         color: 'white',
-        textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8,
+        //textShadowColor: 'rgba(0, 0, 0, 1)',
+        //textShadowRadius: 8,
         marginBottom: 20,
+        marginTop: 10,
         marginRight: 20,
         textAlign: 'justify',
         fontSize: 15,

@@ -147,6 +147,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         marginTop: 10,
         textShadowColor: 'rgba(0, 0, 0, 1)',
+        fontWeight: '700',
         textShadowRadius: 8
     },
     textSubTitle: {
@@ -155,18 +156,19 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         marginVertical: 1,
         textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8
+        textShadowRadius: 8,
     },
     textNormal: {
         marginLeft: 20,
         marginHorizontal: 10,
         color: 'white',
-        textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8,
+        //textShadowColor: 'rgba(0, 0, 0, 1)',
+        //textShadowRadius: 8,
         marginBottom: 20,
+        marginTop: 10,
         marginRight: 20,
         textAlign: 'justify',
-        fontSize: 15,
+        fontSize: 15
     },
     textCientific: {
         marginLeft: 20,
