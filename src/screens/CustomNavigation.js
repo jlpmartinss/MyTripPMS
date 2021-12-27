@@ -16,6 +16,7 @@ import WhaleWatchingScreen from './WhaleWatchingScreen';
 import DesertasScreen from './DesertasScreen';
 import FajasScreen from './FajasScreen';
 import SunsetScreen from './SunsetScreen';
+import EditPostCardScreen from './EditPostCard';
 
 const { createStackNavigator } = require("@react-navigation/stack");
 
@@ -49,7 +50,10 @@ const HomeScreenNavigator = () => {
                 name="TripList"
                 component={TripListScreen}
             />
-        
+             <Stack.Screen
+                name="EditCard"
+                component={EditPostCardScreen}
+            />
 
         </Stack.Navigator>
     );
@@ -136,7 +140,11 @@ const PostCardNavigator = () => {
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen
                 name="PostCardPreview"
-                component={PostCardPreview}
+                component={EditPostCardScreen}
+            />
+            <Stack.Screen
+                name="EditCard"
+                component={EditPostCardScreen}
             />
         </Stack.Navigator>
     );

@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, Button} from 'react-native';
-import * as RNFS from 'react-native-fs';
+import { Dirs, FileSystem} from 'react-native-file-access';
 
 import  Rating from 'react-native-easy-rating';
-import { Button } from 'react-native-elements/dist/buttons/Button';
 
+//const text = await FileSystem.readFile(Dirs.CacheDir + 'test.txt');
 
-
-export default function EditPostCard() {
+export default function EditPostCard({ route, navigation}) {
   const [rating,setRating] = useState();
 
   return (
@@ -22,7 +21,11 @@ export default function EditPostCard() {
       
       <Text /* passar este valor para o json da viagem (para depois aparecer no postcard preview) */  >{rating}</Text>
 
-      <Button text="Confirm "/* onPress={ () => {RNFS.writeFile("../../jsons/Trips.json","rating":{rating})}} *//>
+      <Button
+        title="Confirm"
+        onPress={ () => {FileSystem.writeFile("../../jsons/Trips.json",{rating: rating})} } 
+      />
+      
       </View>
   );
   
