@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 import { View, Text, Button} from 'react-native';
 import * as FileSystem from 'expo-file-system';
-
+import data from "./../../jsons/Trips.json";
 import  Rating from 'react-native-easy-rating';
 
 //const text = await FileSystem.getInfoAsync("../../jsons/Trips.json");
+
+var tripId = 0;
+
+function writeToJson(data) {
+  const ficheiro = FileSystem.readAsStringAsync("file://./../../jsons/Trips.json");
+  console.log(ficheiro);
+  return data;
+  //if()
+}
 
 export default function EditPostCard({ route, navigation}) {
   const [rating,setRating] = useState();
@@ -24,11 +33,20 @@ export default function EditPostCard({ route, navigation}) {
       <Button
         title="Confirm"
         onPress={ () => {
-          if(FileSystem.getInfoAsync("./../../jsons/Trips.json")){
+          data[tripId].rating.replace(rating);
+          
+          const testing = data[tripId].rating;
+          const value = testing.valueOf();
+          
+          testing.replace(value,rating);
+          console.log("Valor do Json " + data[tripId].rating.toString() +" \nvalor para inserir:" + rating);
+          console.log("Valor lido: " + testing);
+          /*if(FileSystem.getInfoAsync("./../../jsons/Trips.json")){
             FileSystem.writeAsStringAsync("./../../jsons/Trips.json",{rating: rating});
             console.log("entrei")
           }
-          
+          */
+         //writeToJson(rating);
         } } 
       />
       
