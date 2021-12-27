@@ -18,7 +18,7 @@ export default function FajasScreen({ route, navigation}) {
                 <ScrollView>                    
                     <Image style={styles.image} source={require("../../assets/Trips/imfaja.jpg")} />
                     <View style={styles.textBox}>
-                        <Text style={styles.textTitle}>Description:</Text>
+                        <Text style={styles.textTitle}>Description</Text>
                         <Text style={styles.textNormal}>And what if the scenery to the West of Madeira is even more incredible?{"\n"}{"\n"}
                         Reserve your excursion with friends and family on a 9 hour journey that you will not forget in a hurry! Passing by Fajã dos Padres, we head off on a full day of cliffs and fun. Disembark in Paúl do Mar for a quick visit, swimming, standup paddle and snorkeling are, of course, on the ‘menu’. And speaking of menu, a full delicious Madeiran buffet lunch is served on board after a disembark of one hour in Paúl do Mar village.{"\n"}{"\n"}
                         Amongst the memorable 'Fajãs' are “Fajã do Mar”, “Jardim do Mar”, “Paúl do Mar” and “Fajã da Ovelha”.{"\n"}{"\n"}
@@ -26,16 +26,16 @@ export default function FajasScreen({ route, navigation}) {
                     </View>
                     
                     <View style={styles.textBoxMap}>
-                        <Text style={styles.textTitle}>Route:</Text>
+                        <Text style={styles.textTitle}>Route</Text>
                         <Image style={styles.image} source={require("../../assets/Trips/mapa_fajas.png")} />
                     </View>
 
                     <View style={styles.textBox}>
-                        <Text style={styles.textTitle}>Tripulation:</Text>                
+                        <Text style={styles.textTitle}>Tripulation</Text>                
 
                         <View style ={styles.containerHorizontal}>                        
                             <View width = {ITEM_WIDTH/2 - 15}>
-                                <Text style = {styles.textSubTitle}>Luana Mendonça:</Text> 
+                                <Text style = {styles.textSubTitle}>Luana Mendonça</Text> 
                                 <Text style = {styles.textNormal}>Luana is an experienced skipper with more than 5000 sailing hours. {"\n"} Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla. </Text>
                             </View>
                             <Image style = {styles.imageFace} source={require("../../assets/Crew/Luana.jpg") }/>
@@ -43,7 +43,7 @@ export default function FajasScreen({ route, navigation}) {
 
                         <View style ={styles.containerHorizontal}>                        
                             <View width = {ITEM_WIDTH/2 - 15}>
-                                <Text style = {styles.textSubTitle}>João Martins:</Text> 
+                                <Text style = {styles.textSubTitle}>João Martins</Text> 
                                 <Text style = {styles.textNormal}>João is a biologist that knows all the the waters of Madeira Island like the palm of his hand. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.  </Text>
                             </View>
                             <Image style = {styles.imageFace} source={require("../../assets/Crew/Joao.jpg") }/>
@@ -59,7 +59,7 @@ export default function FajasScreen({ route, navigation}) {
 
                         <View style ={styles.containerHorizontal}>                        
                             <View width = {ITEM_WIDTH/2 - 15}>
-                                <Text style = {styles.textSubTitle}>Marcos Silva:</Text> 
+                                <Text style = {styles.textSubTitle}>Marcos Silva</Text> 
                                 <Text style = {styles.textNormal}>Marcos will be your barman. He knows everything about your drinks. You can be asured that you will serve you very well. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</Text>
                             </View>
                             <Image style = {styles.imageFace} source={require("../../assets/Crew/Marcos.jpg") }/>
