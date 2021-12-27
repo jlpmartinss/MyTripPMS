@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Button} from 'react-native';
-import { Dirs, FileSystem} from 'react-native-file-access';
+import * as FileSystem from 'expo-file-system';
 
 import  Rating from 'react-native-easy-rating';
 
@@ -23,7 +23,7 @@ export default function EditPostCard({ route, navigation}) {
 
       <Button
         title="Confirm"
-        onPress={ () => {FileSystem.writeFile("../../jsons/Trips.json",{rating: rating})} } 
+        onPress={ () => {FileSystem.writeAsStringAsync("../../jsons/Trips.json",{rating: rating})} } 
       />
       
       </View>
