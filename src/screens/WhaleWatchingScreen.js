@@ -7,7 +7,7 @@ import Images from "../Images";
 
 const ITEM_WIDTH = Dimensions.get('window').width
 
-export default function WhaleWatchingScreen({ route, navigation}) {
+export default function WhaleWatchingScreen({ navigation}) {
 
     
     console.log("I'm in WhaleWatching Screen " );

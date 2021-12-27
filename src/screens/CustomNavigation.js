@@ -45,6 +45,11 @@ const HomeScreenNavigator = () => {
                 name="PostCard"
                 component={PostCardPreview}
             />
+            <Stack.Screen
+                name="TripList"
+                component={TripListScreen}
+            />
+        
 
         </Stack.Navigator>
     );
@@ -143,7 +148,11 @@ const TripListScreenNavigator = () => {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen
-                name="WhaleWatching"
+                name="TripList"
+                component={TripListScreen}
+            />
+            <Stack.Screen
+                name="WhalesWatching"
                 component={WhaleWatchingScreen}
             />
             <Stack.Screen
@@ -159,9 +168,23 @@ const TripListScreenNavigator = () => {
                 component={SunsetScreen}
             />
             
+            
         </Stack.Navigator>
     );
 }
 export { TripListScreenNavigator }
+
+const WhalesWatchingScreenNavigator = () => {
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen
+                name="WhalesWatching"
+                component={WhaleWatchingScreen}
+            />
+           
+        </Stack.Navigator>
+    );
+}
+export { WhalesWatchingScreenNavigator }
 
 

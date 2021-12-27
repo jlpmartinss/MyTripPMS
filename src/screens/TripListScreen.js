@@ -14,37 +14,33 @@ export default function TripListScreen({ navigation }){
             <ImageBackground blurRadius = {50} source={require("../../assets/Trips/imdesertas.jpg")} resizeMode="cover" style={styles.imageBackground}> 
                 <ScrollView> 
 
-                    <TouchableOpacity onPress={() => navigation.navigate("Cetaceans")}>       
+                    <TouchableOpacity onPress={() => navigation.navigate("WhalesWatching")}>       
                         <View style ={styles.item}>                    
                             <Image style = {styles.image} source={require("../../assets/Trips/imcetaceos.jpg") }/>
                                 <Text style = {styles.textSubTitle}>Whale Watching</Text>
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => navigation.navigate("Cetaceans")}>       
+                    <TouchableOpacity onPress={() => navigation.navigate("Desertas")}>       
                         <View style ={styles.item}>                    
                             <Image style = {styles.image} source={require("../../assets/Trips/imdesertas.jpg") }/>
                                 <Text style = {styles.textSubTitle}>Desertas Island</Text>
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => navigation.navigate("Cetaceans")}>       
+                    <TouchableOpacity onPress={() => navigation.navigate("Faja")}>       
                         <View style ={styles.item}>                    
                             <Image style = {styles.image} source={require("../../assets/Trips/imfaja.jpg") }/>
                                 <Text style = {styles.textSubTitle}>Fajãs</Text>
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => navigation.navigate("Cetaceans")}>       
+                    <TouchableOpacity onPress={() => navigation.navigate("Sunset")}>       
                         <View style ={styles.item}>                    
                             <Image style = {styles.image} source={require("../../assets/Trips/imsunset.jpg") }/>
                                 <Text style = {styles.textSubTitle}>Sunset</Text>
                         </View>
-                    </TouchableOpacity>
-
-
-                    
-                                            
+                    </TouchableOpacity>                      
                 </ScrollView>
             </ImageBackground>
         </View>
