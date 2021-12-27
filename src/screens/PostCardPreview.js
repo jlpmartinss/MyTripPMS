@@ -38,7 +38,11 @@ const behaviour = sightedSpecies.Behaviours;
 let ITEM_WIDTH = Dimensions.get('window').width;
 
 
-const PostCardPreview = ({navigation}) => {
+const PostCardPreview = ({navigation, params}) => {
+
+    let data = route.params; //não consegui passar o valor
+    const rating = data;
+    console.log(rating);
     const [isOpenRating, setOpenRating] = useState(true);
     const [text, setText] = useState('');
     const onShare = async () => {
@@ -97,19 +101,14 @@ const PostCardPreview = ({navigation}) => {
                                 {date} at {time}
 
                             </Text>
-                            <Rating style={{ marginTop: 10 }}
-                                onClose={() => setOpenRating(false)} /* não está a fazer nada */
-                                visible={isOpenRating}
+                            { rating != "undefined" ?
+                             <Rating style={{ marginTop: 10 } }
                                 readonly
                                 showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
                                 type="star"
-                                fractions={1}
-                                startingValue={5}
+                                startingValue={rating}
                                 imageSize={26}
-                                ratingConfirm={selectedRating => {
-                                    console.log('Selected rating', selectedRating);
-                                }}
-                            ></Rating>
+                            ></Rating> : null} 
                             <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 30 }}>
                                 Share on social:
                                 <TouchableOpacity onPress={() => onShare()}>

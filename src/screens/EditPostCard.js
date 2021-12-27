@@ -32,21 +32,16 @@ export default function EditPostCard({ route, navigation}) {
 
       <Button
         title="Confirm"
-        onPress={ () => {
-          data[tripId].rating.replace(rating);
+        onPress={ () => { navigation.navigate("PostCard", {rating:rating})
+          /*data[tripId].rating.replace(rating);
           
           const testing = data[tripId].rating;
           const value = testing.valueOf();
-          
           testing.replace(value,rating);
           console.log("Valor do Json " + data[tripId].rating.toString() +" \nvalor para inserir:" + rating);
-          console.log("Valor lido: " + testing);
-          /*if(FileSystem.getInfoAsync("./../../jsons/Trips.json")){
-            FileSystem.writeAsStringAsync("./../../jsons/Trips.json",{rating: rating});
-            console.log("entrei")
-          }
-          */
-         //writeToJson(rating);
+          console.log("Valor lido: " + testing);*/
+          
+          
         } } 
       />
       
