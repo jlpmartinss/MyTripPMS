@@ -94,27 +94,40 @@ export default function Whale1({ route, navigation}) {
         <View style={styles.container}>
             <ImageBackground blurRadius={50} source={imgPath} resizeMode="cover" style={styles.imageBackground}>
                 <ScrollView>
+
                     <Text style={styles.textTitle}>{name}</Text>
                     <Text style={styles.textNormal, styles.textCientific}>Cientific name: {cientificName}</Text>
                     <Image style={styles.image} source={imgPath} />
-
-                    {summary != "" ? <Text style={styles.textSubTitle}>Summary:</Text> : null}
+                               
+                    <View style={styles.textBox}>
+                        {summary != "" ? <Text style={styles.textSubTitle}>Summary:</Text> : null}
                         {summary != "" ? <Text style={styles.textNormal}>{summary}</Text> : null}
+                    </View >
 
-                    {identify != "" ? <Text style={styles.textSubTitle}>How to identify:</Text> : null}
+                    <View style={styles.textBox}>
+                        {identify != "" ? <Text style={styles.textSubTitle}>How to identify:</Text> : null}
                         {identify != "" ? <Text style={styles.textNormal}>{identify}</Text> : null}
+                    </View >
 
-                    {curiostity != "" ? <Text style={styles.textSubTitle}>Curiosities:</Text> : null}
+                    <View style={styles.textBox}>
+                        {curiostity != "" ? <Text style={styles.textSubTitle}>Curiosities:</Text> : null}
                         {curiostity != "" ? <Text style={styles.textNormal}>{curiostity}</Text> : null}
+                    </View >
 
-                    {length != "" ? <Text style={styles.textSubTitle}>Average Length:</Text> : null}
+                    <View style={styles.textBox}>
+                        {length != "" ? <Text style={styles.textSubTitle}>Average Length:</Text> : null}
                         {length != "" ? <Text style={styles.textNormal}>{length}</Text> : null}
+                    </View >
 
-                    {weight != "" ? <Text style={styles.textSubTitle}>Average Weight:</Text> : null}
+                    <View style={styles.textBox}>
+                        {weight != "" ? <Text style={styles.textSubTitle}>Average Weight:</Text> : null}
                         {weight != "" ? <Text style={styles.textNormal}>{weight}</Text> : null}
+                    </View >
 
-                    {color != "" ? <Text style={styles.textSubTitle}>Color:</Text> : null}
+                    <View style={styles.textBox}>
+                        {color != "" ? <Text style={styles.textSubTitle}>Color:</Text> : null}
                         {color != "" ? <Text style={styles.textNormal}>{color}</Text> : null}
+                    </View>
 
                 </ScrollView>
             </ImageBackground>
@@ -148,15 +161,15 @@ const styles = StyleSheet.create({
         marginTop: 10,
         textShadowColor: 'rgba(0, 0, 0, 1)',
         fontWeight: '700',
-        textShadowRadius: 8
+        //textShadowRadius: 8
     },
     textSubTitle: {
         color: 'white',
         fontSize: 18,
         marginHorizontal: 10,
         marginVertical: 1,
-        textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8,
+        //textShadowColor: 'rgba(0, 0, 0, 1)',
+        //textShadowRadius: 8,
     },
     textNormal: {
         marginLeft: 20,
@@ -174,10 +187,16 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginHorizontal: 10,
         color: 'white',
-        textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8,
+        //textShadowColor: 'rgba(0, 0, 0, 1)',
+        //textShadowRadius: 8,
         textAlign: 'justify',
         fontSize: 15,
+    },
+    textBox: {
+        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        margin: 15,
+        borderRadius: 15,
     },
 
 

@@ -15,16 +15,22 @@ export default function SunsetScreen({ route, navigation}) {
     return (
         <View style={styles.container}>
             <ImageBackground blurRadius={50} source={require("../../assets/Trips/imsunset.jpg")} resizeMode="cover" style={styles.imageBackground}>
-                <ScrollView>                    
-                    <Image style={styles.image} source={require("../../assets/Trips/imsunset.jpg")} />
-                    <Text style={styles.textTitle}>Description:</Text>
-                    <Text style={styles.textNormal}>We are in Funchal and we look towards the twilight. Do you know what we see? Absolutely nothing! No buildings, towers or bridges. Only nature, an endless ocean, a constant line that balances days and nights and with the 3 Desert Islands there in the background, a little to the left.{"\n"}{"\n"}
-                    Board with us on a dream journey, a romantic wave, where besides sighting dolphins and/or whales, it is possible to swim in the warm waters accompanied by the sunset. We sail out for 3 hours so that you can partake in this unique spectacle of colour that changes every day and reflects in the passive ocean of our coast.</Text>
+                <ScrollView>  
 
+                    <Image style={styles.image} source={require("../../assets/Trips/imsunset.jpg")} />
+                    <View style={styles.textBox}>
+                        <Text style={styles.textTitle}>Description:</Text>
+                        <Text style={styles.textNormal}>We are in Funchal and we look towards the twilight. Do you know what we see? Absolutely nothing! No buildings, towers or bridges. Only nature, an endless ocean, a constant line that balances days and nights and with the 3 Desert Islands there in the background, a little to the left.{"\n"}{"\n"}
+                        Board with us on a dream journey, a romantic wave, where besides sighting dolphins and/or whales, it is possible to swim in the warm waters accompanied by the sunset. We sail out for 3 hours so that you can partake in this unique spectacle of colour that changes every day and reflects in the passive ocean of our coast.</Text>
+                    </View>
+
+                    <View style={styles.textBox}>
                     <Text style={styles.textTitle}>Route:</Text>
                         <Image style={styles.image} source={require("../../assets/Trips/mapa_por-do-sol.png")} />
-                    <Text style={styles.textTitle}>Tripulation:</Text>                
+                    </View>
 
+                    <View style={styles.textBox}>
+                    <Text style={styles.textTitle}>Tripulation:</Text>
                     <View style ={styles.containerHorizontal}>                        
                         <View width = {ITEM_WIDTH/2 - 15}>
                             <Text style = {styles.textSubTitle}>Luana Mendonça:</Text> 
@@ -56,6 +62,7 @@ export default function SunsetScreen({ route, navigation}) {
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Marcos.jpg") }/>
                     </View>
+                    </View>
 
                     
 
@@ -78,8 +85,7 @@ const styles = StyleSheet.create({
         flex: 1,
         //alignItems: 'center',
         flexDirection: 'row',
-        flexWrap: 'wrap',
-      
+        flexWrap: 'wrap',      
     },
     item: {
         padding:5,
@@ -88,8 +94,8 @@ const styles = StyleSheet.create({
         
     },
     image: {
+        alignSelf:'center',
         marginTop: 15,
-        margin: 15,
         flex: 1,
         width: ITEM_WIDTH - 30,
         height: ITEM_WIDTH / 1.5,
@@ -111,15 +117,15 @@ const styles = StyleSheet.create({
         fontSize: 24,
         marginHorizontal: 10,
         marginTop: 10,
-        textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8
+        //textShadowColor: 'rgba(0, 0, 0, 1)',
+        //textShadowRadius: 8
     },
     textSubTitle: {
         color: 'white',
         fontSize: 18,
         marginHorizontal: 10,
-        textShadowColor: 'blue',
-        textShadowRadius: 8
+        //textShadowColor: 'rgba(0, 0, 0, 1)',
+        //textShadowRadius: 8
     },
     textNormal: {
         marginLeft: 20,
@@ -137,11 +143,18 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginHorizontal: 10,
         color: 'white',
-        textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8,
+        //textShadowColor: 'rgba(0, 0, 0, 1)',
+        //textShadowRadius: 8,
         textAlign: 'justify',
         fontSize: 15,
     },
+    textBox: {
+        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        margin: 15,
+        borderRadius: 15,
+    },
+
 
 
 })

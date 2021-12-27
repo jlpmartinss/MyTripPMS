@@ -14,14 +14,20 @@ export default function DesertasScreen({ route, navigation}) {
     return (
         <View style={styles.container}>
             <ImageBackground blurRadius={50} source={require("../../assets/Trips/imdesertas.jpg")} resizeMode="cover" style={styles.imageBackground}>
-                <ScrollView>                    
+                <ScrollView> 
+                    
                     <Image style={styles.image} source={require("../../assets/Trips/imdesertas.jpg")} />
-                    <Text style={styles.textTitle}>Description:</Text>
-                    <Text style={styles.textNormal}>Leaving from the Funchal Marina and heading out to sea towards the horizon, we reach a group of 3 islands, that although they are called Desert islands, are inhabited by numerous wildlife species both marine and land animals. This is only one reason that makes it worth the effort to disembark from the catamaran onto the virgin beach.{"\n"}{"\n"}
+                    <View style={styles.textBox}>
+                        <Text style={styles.textTitle}>Description:</Text>
+                        <Text style={styles.textNormal}>Leaving from the Funchal Marina and heading out to sea towards the horizon, we reach a group of 3 islands, that although they are called Desert islands, are inhabited by numerous wildlife species both marine and land animals. This is only one reason that makes it worth the effort to disembark from the catamaran onto the virgin beach.{"\n"}{"\n"}
                     Come and see this natural paradise for yourself and participate in activities such as standup paddle and snorkelling. All this as part of a memorable 9 hour excursion, with plenty of swimming and a delicious Madeiran buffet lunch on board. Reserve now!</Text>
+                    </View>
 
-                    <Text style={styles.textTitle}>Route:</Text>
+                    <View style={styles.textBox}>
+                        <Text style={styles.textTitle}>Route:</Text>
                         <Image style={styles.image} source={require("../../assets/Trips/mapasVMT_desertas-1.png")} />
+                    </View>
+                    <View style={styles.textBox}>
                     <Text style={styles.textTitle}>Tripulation:</Text>                
 
                     <View style ={styles.containerHorizontal}>                        
@@ -55,6 +61,7 @@ export default function DesertasScreen({ route, navigation}) {
                         </View>
                         <Image style = {styles.imageFace} source={require("../../assets/Crew/Marcos.jpg") }/>
                     </View>
+                    </View>
 
                     
 
@@ -77,8 +84,7 @@ const styles = StyleSheet.create({
         flex: 1,
         //alignItems: 'center',
         flexDirection: 'row',
-        flexWrap: 'wrap',
-      
+        flexWrap: 'wrap',      
     },
     item: {
         padding:5,
@@ -87,8 +93,8 @@ const styles = StyleSheet.create({
         
     },
     image: {
+        alignSelf:'center',
         marginTop: 15,
-        margin: 15,
         flex: 1,
         width: ITEM_WIDTH - 30,
         height: ITEM_WIDTH / 1.5,
@@ -110,15 +116,15 @@ const styles = StyleSheet.create({
         fontSize: 24,
         marginHorizontal: 10,
         marginTop: 10,
-        textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8
+        //textShadowColor: 'rgba(0, 0, 0, 1)',
+        //textShadowRadius: 8
     },
     textSubTitle: {
         color: 'white',
         fontSize: 18,
         marginHorizontal: 10,
-        textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8
+        //textShadowColor: 'rgba(0, 0, 0, 1)',
+        //textShadowRadius: 8
     },
     textNormal: {
         marginLeft: 20,
@@ -136,11 +142,18 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginHorizontal: 10,
         color: 'white',
-        textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8,
+        //textShadowColor: 'rgba(0, 0, 0, 1)',
+        //textShadowRadius: 8,
         textAlign: 'justify',
         fontSize: 15,
     },
+    textBox: {
+        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        margin: 15,
+        borderRadius: 15,
+    },
+
 
 
 })
