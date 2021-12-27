@@ -38,7 +38,7 @@ const behaviour = sightedSpecies.Behaviours;
 let ITEM_WIDTH = Dimensions.get('window').width;
 
 
-const PostCardPreview = (props) => {
+const PostCardPreview = ({navigation}) => {
     const [isOpenRating, setOpenRating] = useState(true);
     const [text, setText] = useState('');
     const onShare = async () => {
@@ -136,7 +136,9 @@ const PostCardPreview = (props) => {
                     </View>
                 </ScrollView>
                 <Text style={styles.text}>Edit PostCard
-                    <FontAwesome name="edit" size={30} color="blue" onPress={() => navigation.navigate("EditPostCard", { msg: "testing" })}  /* onpress por implementar*/ />
+                    <TouchableOpacity onPress={() => navigation.navigate("EditPostCard")}>
+                        <FontAwesome name="edit" size={30} color="blue"/>
+                    </TouchableOpacity>
                 </Text>
 
                 <View>
