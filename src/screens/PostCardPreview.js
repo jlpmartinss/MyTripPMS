@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, Button, ScrollView, StyleSheet, Image, TouchableHighlight, TextInput, ImageBackground, Dimensions } from 'react-native';
+import { View, Text, Button, ScrollView, StyleSheet, Image, TouchableHighlight, TextInput, ImageBackground, Dimensions, Touchable,  } from 'react-native';
 import { Rating, RatingProps } from 'react-native-elements';
 import { Entypo, Feather, Ionicons, Icon, AntDesign, FontAwesome } from '@expo/vector-icons'
-import { RectButton } from 'react-native-gesture-handler';
-
-
+import { RectButton, TouchableOpacity } from 'react-native-gesture-handler';
+import { Share } from 'react-native';
 import data from "./../../jsons/Trips.json";
 import Category from '../../Category';
+import files from './fileBase64';
+import * as Sharing from 'expo-sharing'
 
 const { height, width } = Dimensions.get('window')
 
@@ -32,13 +33,31 @@ const route = data[tripId].route;
 const boatName = data[tripId].boatName;
 const behaviour = sightedSpecies.Behaviours;
 
+
+
 let ITEM_WIDTH = Dimensions.get('window').width;
 
-function PostCardPreview(props) {
+
+const PostCardPreview = (props) => {
     const [isOpenRating, setOpenRating] = useState(true);
     const [text, setText] = useState('');
+    const onShare = async () => {
+        const shareOptions = {
+            message:
+            'React Native | A framework for building native apps using React',
+            url: files.image1
+
+        }
+        try {
+            const result = await Share.open(shareOptions);
+        
+        } catch (error) {
+            alert(error.message);
+        }
+    };
     return (
         <View>
+
             <ScrollView scrollEventThrottle={16}/*Scrollview da página toda */>
                 <ScrollView /*Scroll view Horizontal */
                     scrollEventThrottle={16}
@@ -93,8 +112,11 @@ function PostCardPreview(props) {
                             ></Rating>
                             <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 30 }}>
                                 Share on social:
-                                <AntDesign name="facebook-square" size={30} color="#4267B2" />
-                                <AntDesign name="instagram" size={30} color="black" />
+                                <TouchableOpacity onPress={() => onShare()}>
+                                    <AntDesign name="facebook-square" size={30} color="#4267B2" />
+                                    <AntDesign name="instagram" size={30} color="black" />
+                                </TouchableOpacity>
+
                             </Text>
                             <View style={{ width: width - 40, height: 200, marginTop: 20 }}>
                                 <Image
@@ -136,7 +158,7 @@ function PostCardPreview(props) {
                                              <Text style={styles.text} key={key1}>{behaviour}</Text>
                                         })} */}
                                     <Text style={styles.text}> {"\n"} Reactions to boat: {specie.ReactionsToBoat}</Text>
-                                    </Text>
+                                </Text>
                             })}
                         </View>
                     </ScrollView>
