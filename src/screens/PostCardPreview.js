@@ -115,7 +115,7 @@ const PostCardPreview = ({navigation}) => {
                                 }}
                             ></Rating>
                             <View  style={styles.textBoxSocial}>
-                                <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 25 }}>
+                                <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 10 }}>
                                     Share on social:
                                     <TouchableOpacity onPress={() => onShare()}>
                                         <AntDesign name="facebook-square" size={30} color="#4267B2" />
@@ -140,32 +140,30 @@ const PostCardPreview = ({navigation}) => {
                         </View>
                     </View>
                 </ScrollView>
-                <ScrollView>
+                <ScrollView backgroundColor = "white">
                     <View>
                         <Text style={styles.text} /*Comentário da viagem */ >
                             {comment}
                         </Text>
                     </View>
+                    <View style = {styles.textBoxPostCard} >
+                        <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 8}}>Edit PostCard
+                            <TouchableOpacity onPress={() => navigation.navigate("EditPostCard")}>
+                                <FontAwesome name="edit" size={30} color="blue"/>
+                            </TouchableOpacity>
+                        </Text>
+                    </View>
                 </ScrollView>
-                <View style = {styles.textBoxPostCard} >
-                    <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 15}}>Edit PostCard
-                        <TouchableOpacity onPress={() => navigation.navigate("EditPostCard")}>
-                            <FontAwesome name="edit" size={30} color="blue"/>
-                        </TouchableOpacity>
-                    </Text>
-                </View>
-
-                <View>
-
+                
+                <View backgroundColor = "white">
                     <Text style={styles.textTitles}>
                         Sighted Species
                     </Text>
-                    <ScrollView
+
+                    <ScrollView style = {styles.textBoxSpecies}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}>
-
                         <View>
-
                             {sightedSpecies.map((specie, key) => {
                                 return <Text style={styles.sightedSpecies} key={key}>{specie.SpeciesName}
                                     <Text style={styles.text}> {"\n\n"} First Seen at: {specie.Sighted}</Text>
@@ -178,24 +176,18 @@ const PostCardPreview = ({navigation}) => {
                             })}
                         </View>
                     </ScrollView>
-                </View>
 
-                <Text style={styles.textTitles}>
+                    <Text style={styles.textTitles}>
                     Description
-                </Text>
+                    </Text>
 
-
-                <Text style={styles.textTitles}>
-                    Route : {route}
-                </Text>
-                <Image  /*Insert route image*/ />
-
+                    <Text style={styles.textTitles}>
+                        Route : {route}
+                    </Text>
+                    <Image  /*Insert route image*/ />
+                </View>
             </ScrollView>
         </View>
-
-
-
-
     );
 }
 
@@ -228,7 +220,7 @@ const styles = StyleSheet.create({
         color: 'black'
     },
     sightedSpecies: {
-        paddingHorizontal: 20,
+        paddingHorizontal: 25,
         marginLeft: 10,
         fontSize: 15,
         fontWeight: '700',
@@ -237,22 +229,36 @@ const styles = StyleSheet.create({
     },
     textBoxSocial: {
         flex: 1,
-        backgroundColor: 'rgba(23,108,255, 0.11)',
-        margin: 20,
-        borderRadius: 15,
-        paddingHorizontal: 50,
-        width: 290,
-        height: 90,
-        alignSelf: 'center'    
-    },
-    textBoxPostCard: {
-        flex: 1,
-        backgroundColor: 'rgba(23,108,255, 0.11)',
+        backgroundColor: 'rgba(23,108,255, 0.08)',
         margin: 20,
         borderRadius: 15,
         paddingHorizontal: 60,
-        width: 265,
-        height: 70,
-        alignSelf: 'center'    
+        width: ITEM_WIDTH-ITEM_WIDTH/8,
+        height: 90,
+        maxHeight: 55,
+        alignSelf: 'flex-start',
+        marginHorizontal: 0
+    },
+    textBoxPostCard: {
+        flex: 1,
+        backgroundColor: 'rgba(23,108,255, 0.08)',
+        margin: 20,
+        borderRadius: 15,
+        paddingHorizontal: 80,
+        width: ITEM_WIDTH-ITEM_WIDTH/8,
+        height: 55,
+        alignSelf: 'flex-start'   
+    },
+    textBoxSpecies: {
+        flex: 1,
+        backgroundColor: 'rgba(23,108,255, 0.08)',
+        margin: 20,
+        borderRadius: 15,
+        paddingHorizontal: 0,
+        paddingVertical: 5,
+        width: ITEM_WIDTH-ITEM_WIDTH/8,
+        height: 530,
+        alignSelf: 'flex-start'
+
     }
 })

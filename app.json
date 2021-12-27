@@ -23,8 +23,7 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/Icons/golfinho_icon.png",
         "backgroundColor": "#FFFFFF"
-      },
-      "package": "com.luamendonca21.MyTrip"
+      }
     },
     "web": {
       "favicon": "./assets/Icons/golfinho_icon.png"
