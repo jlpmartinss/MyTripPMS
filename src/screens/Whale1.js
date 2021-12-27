@@ -100,17 +100,17 @@ export default function Whale1({ route, navigation}) {
                     <Image style={styles.image} source={imgPath} />
                                
                     <View style={styles.textBox}>
-                        {summary != "" ? <Text style={styles.textSubTitle}>Summary</Text> : null}
+                        {summary != "" ? <Text style={styles.textSubTitle}>Summary:</Text> : null}
                         {summary != "" ? <Text style={styles.textNormal}>{summary}</Text> : null}
                     </View >
 
                     <View style={styles.textBox}>
-                        {identify != "" ? <Text style={styles.textSubTitle}>How to identify</Text> : null}
+                        {identify != "" ? <Text style={styles.textSubTitle}>How to identify:</Text> : null}
                         {identify != "" ? <Text style={styles.textNormal}>{identify}</Text> : null}
                     </View >
 
                     <View style={styles.textBox}>
-                        {curiostity != "" ? <Text style={styles.textSubTitle}>Curiosities</Text> : null}
+                        {curiostity != "" ? <Text style={styles.textSubTitle}>Curiosities:</Text> : null}
                         {curiostity != "" ? <Text style={styles.textNormal}>{curiostity}</Text> : null}
                     </View >
 
@@ -166,21 +166,15 @@ const styles = StyleSheet.create({
     },
     textSubTitle: {
         color: 'white',
-        fontSize: 18,
-        marginHorizontal: 10,
-        marginVertical: 1,
-        //textShadowColor: 'rgba(0, 0, 0, 1)',
-        //textShadowRadius: 8,
+        fontSize: 20,
+        marginVertical: 10,
+        marginHorizontal:10,
     },
     textNormal: {
-        marginLeft: 20,
         marginHorizontal: 10,
         color: 'white',
-        //textShadowColor: 'rgba(0, 0, 0, 1)',
-        //textShadowRadius: 8,
         marginBottom: 20,
         marginTop: 10,
-        marginRight: 20,
         textAlign: 'justify',
         fontSize: 15
     },
@@ -198,7 +192,5 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0, 0, 0, 0.33)',
         margin: 15,
         borderRadius: 15,
-    },
-
-
+    }
 })
