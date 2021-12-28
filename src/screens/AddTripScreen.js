@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useEffect, useState } from "react";
 import { Image, TouchableOpacity } from "react-native";
 import { View, Text, Button, StyleSheet, TextInput, Alert, ImageBackground, Dimensions } from 'react-native';
@@ -7,7 +8,8 @@ import Data from "./../../jsons/Trips.json"
 let ITEM_WIDTH = Dimensions.get('window').width;
 
 const AddTripScreen = ({ navigation }) => {
-    const [text, setText] = useState('');
+    //const [teste,setTeste] = useState('');
+    const [name, setName] = useState('');
     const id = '0';
     const [currentDate, setCurrentDate] = useState('');
     var isClicked = false;
@@ -30,17 +32,30 @@ const AddTripScreen = ({ navigation }) => {
         console.log({ dataAtual });
         console.log({ tripTime });
         if (dataAtual > tripTime) {
-            Alert.alert("Go to Home and see your Trip");
+            Alert.alert(name);
+            setData();
+            //Alert.alert("Go to Home and see your Trip");
             //navigation.navigate('HomeScreen', {screen:"HomeScreen"});
         }
         else (
             console.log("Your trip is not over yet!")
         )
     }
+    const setData = async() => {
+        if(name.length==0) {
+            Alert.alert('Warning!', 'Please write your data')
+        }
+        try{
+            await AsyncStorage.setItem('Username', name);
+            navigation.navigate('Home');
+        } catch (error){
+            console.log(console.error);
+
+        }
+    }
 
 
     return (
-
         <ImageBackground blurRadius={3} source={require("../../assets/trip.jpg")} resizeMode="cover" style={styles.imageBackground}>
             <View style={styles.container}>
                 <Text style={styles.textSubTitle}>Type the code of your trip</Text>
@@ -51,8 +66,8 @@ const AddTripScreen = ({ navigation }) => {
                     //se o input for números onChangeText = {onChangeNumber} + value = {number} + keyboardType="numeric" 
                     placeholder="Type Trip Code Here"
                     //onSubmitEditing={text => setText(text)}
-                    onChangeText={text => setText(text)}
-                    defaultValue={text}
+                    onChangeText={name => setName(name)}
+                    //defaultValue={text}
                 />
 
                 <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime() }}>

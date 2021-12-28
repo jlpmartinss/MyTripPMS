@@ -1,4 +1,5 @@
-import React from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import React, { useEffect, useState } from "react";
 import { View, Text, Button, StyleSheet, FlatList, Dimensions, Image, ScrollView, ImageBackground } from 'react-native';
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Images from "../Images"
@@ -28,11 +29,30 @@ function isEmpty(data) {
     return true;
 }
 
+
 const Home = ({ route, navigation }) => {
+    const [name,setName]= useState('');
+    const getData = () => {
+        try {
+            AsyncStorage.getItem('Username')
+                .then(value=> {
+                    if (value != null) {
+                        setName(value);
+                    }
+                })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect (() => {
+        getData();
+    }, []);
 
     return (
         <View style={styles.container}>
             <ImageBackground blurRadius={50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}>
+                <Text> Welcome {name}</Text>
                 <ScrollView> 
                     {isEmpty ? <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
                         <View style={styles.item}>

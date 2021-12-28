@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button, ScrollView, StyleSheet, Image, TouchableHighlight, TextInput, ImageBackground, Dimensions, Touchable,  } from 'react-native';
+import { View, Text, Button, ScrollView, StyleSheet, Image, TouchableHighlight, TextInput, ImageBackground, Dimensions, Touchable} from 'react-native';
 import { Rating, RatingProps } from 'react-native-elements';
 import { Entypo, Feather, Ionicons, Icon, AntDesign, FontAwesome } from '@expo/vector-icons'
 import { RectButton, TouchableOpacity } from 'react-native-gesture-handler';
@@ -7,7 +7,8 @@ import { Share } from 'react-native';
 import data from "./../../jsons/Trips.json";
 import Category from '../../Category';
 import files from './fileBase64';
-import * as Sharing from 'expo-sharing'
+import * as Sharing from 'expo-sharing';
+
 
 const { height, width } = Dimensions.get('window')
 
