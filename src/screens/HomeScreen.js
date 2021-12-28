@@ -49,6 +49,21 @@ const Home = ({ route, navigation }) => {
         getData();
     }, []);
 
+
+    let tripData = route.params;
+
+    const id = tripData.id;
+    const ongoing = tripData.ongoing;
+    const location = tripData.location;
+    const name = tripData.name;
+    const imagecollection = tripData.imagecollection;
+    const date = tripData.date;
+    const imgPath = tripData.imgPath;
+    const rating = tripData.rating;
+    const comment = tripData.comment;
+    const sightedSpecies = tripData.sightedSpecies;
+    const routeTrip = tripData.route;
+
     return (
         <View style={styles.container}>
             <ImageBackground blurRadius={50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}>
