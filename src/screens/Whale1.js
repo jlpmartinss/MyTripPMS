@@ -9,6 +9,7 @@ const ITEM_WIDTH = Dimensions.get('window').width
 export default function Whale1({ route, navigation}) {
 
     let data = route.params;
+    
 
     const id            = data.id; 
     const name          = data.name; 

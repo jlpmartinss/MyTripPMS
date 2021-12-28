@@ -3,18 +3,19 @@ import React, { useEffect, useState } from "react";
 import { Image, TouchableOpacity } from "react-native";
 import { View, Text, Button, StyleSheet, TextInput, Alert, ImageBackground, Dimensions } from 'react-native';
 import { TouchableHighlight } from "react-native-gesture-handler";
-import Data from "./../../jsons/Trips.json"
+import Data from "./../../jsons/Trips.json";
 
 let ITEM_WIDTH = Dimensions.get('window').width;
 
 const AddTripScreen = ({ route, navigation }) => {
     //const [teste,setTeste] = useState('');
-    const [name, setName] = useState('');
+    const [idTrip, setIdTrip] = useState('');
     const id = '0';
     const [currentDate, setCurrentDate] = useState('');
     var isClicked = false;
     var tripTime = Data[id].fullDate;
     var dataAtual = new Date().toLocaleString();
+    //console.log(Data);
 
 
     useEffect(() => {
@@ -32,7 +33,7 @@ const AddTripScreen = ({ route, navigation }) => {
         console.log({ dataAtual });
         console.log({ tripTime });
         if (dataAtual > tripTime) {
-            Alert.alert(name);
+            Alert.alert(idTrip);
             setData();
             //Alert.alert("Go to Home and see your Trip");
             //navigation.navigate('HomeScreen', {screen:"HomeScreen"});
@@ -41,17 +42,20 @@ const AddTripScreen = ({ route, navigation }) => {
             console.log("Your trip is not over yet!")
         )
     }
-    const setData = async() => {
-        if(name.length==0) {
+    const setData = async () => {
+        if (idTrip.length == 0 || typeof(idTrip) != 'number') {
             Alert.alert('Warning!', 'Please write your data')
         }
-        try{
-            await AsyncStorage.setItem('Username', name);
-            navigation.navigate('Home');
-        } catch (error){
-            console.log(console.error);
-
+        else {
+            try {
+                await AsyncStorage.setItem('IdNewTrip', idTrip);
+                navigation.navigate('Home');
+            } catch (error) {
+                console.log(console.error);
+    
+            }
         }
+        
     }
 
 
@@ -61,17 +65,17 @@ const AddTripScreen = ({ route, navigation }) => {
                 <Text style={styles.textSubTitle}>Type the code of your trip</Text>
 
                 <TextInput
-                    style={{ padding: 10, height: 40, width: 150, margin: 15, borderRadius: 8}}
+                    style={{ padding: 10, height: 40, width: 150, margin: 15, borderRadius: 8 }}
                     backgroundColor='#FFFFFF'
                     //se o input for números onChangeText = {onChangeNumber} + value = {number} + keyboardType="numeric" 
                     placeholder="Type Trip Code Here"
                     //onSubmitEditing={text => setText(text)}
-                    onChangeText={name => setName(name)}
-                    //defaultValue={text}
+                    onChangeText={idTrip => setIdTrip(idTrip)}
+                //defaultValue={text}
                 />
 
-                <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime(); navigation.navigate("Home", Data[id]); }}>
-                <Text style={styles.textButton}>Add Trip</Text>
+                <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime(); navigation.navigate("Home", Data[id]) }}>
+                    <Text style={styles.textButton}>Add Trip</Text>
                 </TouchableOpacity>
             </View>
         </ImageBackground>
@@ -92,7 +96,7 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         fontSize: 24,
-        marginTop: 50, 
+        marginTop: 50,
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 5
 
@@ -113,7 +117,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         backgroundColor: '#176cff',
         //overflow = 'hidden'
-      },
+    },
 })
 
 export default AddTripScreen
