@@ -3,7 +3,7 @@ import { View, Text, Button} from 'react-native';
 import * as FileSystem from 'expo-file-system';
 import data from "./../../jsons/Trips.json";
 import  Rating from 'react-native-easy-rating';
-import {writeJsonFile} from 'write-json-file';
+//import {writeJsonFile} from 'write-json-file';
 
 
 
