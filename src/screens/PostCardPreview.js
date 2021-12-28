@@ -29,7 +29,7 @@ const imgPath = data[tripId].imgPath;
 const rating = data[tripId].rating;
 const comment = data[tripId].comments;
 const sightedSpecies = data[tripId].animals;
-const route = data[tripId].route;
+const routetrip = data[tripId].route;
 const boatName = data[tripId].boatName;
 const behaviour = sightedSpecies.Behaviours;
 
@@ -38,7 +38,9 @@ const behaviour = sightedSpecies.Behaviours;
 let ITEM_WIDTH = Dimensions.get('window').width;
 
 
-const PostCardPreview = ({navigation}) => {
+const PostCardPreview = ({navigation , route }) => {
+    let data = route.params; 
+    const rating = data;
     const [isOpenRating, setOpenRating] = useState(true);
     const [text, setText] = useState('');
     const onShare = async () => {
@@ -101,13 +103,20 @@ const PostCardPreview = ({navigation}) => {
                                 {date} at {time}
 
                             </Text>
-                            <Rating style={{ marginTop: 10 }}
+                            { rating != undefined ? <Rating style={{ marginTop: 10 }}
                                 readonly
                                 showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
                                 type="star"
-                                startingValue={5}
+                                startingValue={rating}
                                 imageSize={22}
-                            ></Rating>
+                            ></Rating> : <Rating style={{ marginTop: 10 }}
+                            readonly
+                            showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
+                            type="star"
+                            startingValue={3}
+                            imageSize={22}
+                        ></Rating> }
+                            
                             <View  style={styles.textBoxSocial}>
                                 <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 10 }}>
                                     Share on social:
@@ -173,7 +182,7 @@ const PostCardPreview = ({navigation}) => {
                     </Text>
 
                     <Text style={styles.textTitles}>
-                        Route : {route}
+                        Route : {routetrip}
                     </Text>
                     <Image  /*Insert route image*/ />
                 </View>
