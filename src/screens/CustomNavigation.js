@@ -75,6 +75,15 @@ const SpeciesScreenNavigator = () => {
                 name="Dolphins"
                 component={DolphinsScreen}
             />
+            
+            <Stack.Screen
+                name="Seabirds"
+                component={SeabirdsScreen}
+            />
+            <Stack.Screen
+                name="Others"
+                component={OthersScreen}
+            />
             <Stack.Screen
                 name="Whale1"
                 component={Whale1}
