@@ -44,9 +44,7 @@ export default () => (
         <Tab.Screen name="Home" component={HomeScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
         <Tab.Screen name="Species" component={SpeciesScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Feather name="search" size={size} color={color} /> )}}/>
         <Tab.Screen name="Add Trip" component={AddTripScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Ionicons name="add-circle" size={size} color={color} /> )}}/>
-
         <Tab.Screen name="TripList" component={TripListScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
-        <Tab.Screen name="EditPostCard" component={PostCardNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
 
       </Tab.Navigator>
     </NavigationContainer>

@@ -10,7 +10,7 @@ import OthersScreen from './OthersScreen';
 import SelectPictureScreen from './SelectPictureScreen';
 import Whale1 from './Whale1';
 import Dolphin1 from './Dolphin1';
-import PostCardPreview from './PostCardPreview';
+import PostCardPreviewScreen from './PostCardPreview';
 import TripListScreen from './TripListScreen';
 import WhaleWatchingScreen from './WhaleWatchingScreen';
 import DesertasScreen from './DesertasScreen';
@@ -44,7 +44,7 @@ const HomeScreenNavigator = () => {
             />
             <Stack.Screen
                 name="PostCard"
-                component={PostCardPreview}
+                component={PostCardPreviewScreen}
             />
             <Stack.Screen
                 name="TripList"
@@ -140,7 +140,7 @@ const PostCardNavigator = () => {
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen
                 name="PostCardPreview"
-                component={EditPostCardScreen}
+                component={PostCardPreviewScreen}
             />
             <Stack.Screen
                 name="EditCard"

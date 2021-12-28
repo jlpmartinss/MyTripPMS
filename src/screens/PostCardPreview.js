@@ -102,17 +102,11 @@ const PostCardPreview = ({navigation}) => {
 
                             </Text>
                             <Rating style={{ marginTop: 10 }}
-                                onClose={() => setOpenRating(false)} /* não está a fazer nada */
-                                visible={isOpenRating}
                                 readonly
                                 showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
                                 type="star"
-                                fractions={1}
                                 startingValue={5}
                                 imageSize={22}
-                                ratingConfirm={selectedRating => {
-                                    console.log('Selected rating', selectedRating);
-                                }}
                             ></Rating>
                             <View  style={styles.textBoxSocial}>
                                 <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 10 }}>
@@ -145,7 +139,7 @@ const PostCardPreview = ({navigation}) => {
                 <ScrollView backgroundColor = "white">
                     <View style = {styles.textBoxPostCard} >
                         <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 8}}>Edit PostCard
-                            <TouchableOpacity onPress={() => navigation.navigate("EditPostCard")}>
+                            <TouchableOpacity onPress={() => navigation.navigate("EditCard")}>
                                 <FontAwesome name="edit" size={30} color="blue"/>
                             </TouchableOpacity>
                         </Text>
