@@ -12,7 +12,7 @@ import {writeJsonFile} from 'write-json-file';
 var tripId = 0;
 
 function writeToJson(data) {
-  await writeJsonFile('./../../jsons/Trips.json', {rating: data}, replacer);
+  //await writeJsonFile('./../../jsons/Trips.json', {rating: data}, replacer);
   /*var ficheiro = FileSystem.readAsStringAsync("file://./../../jsons/Trips.json");
   console.log(ficheiro);
   return data;*/
