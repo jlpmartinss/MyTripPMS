@@ -11,69 +11,69 @@ export default function SeabirdsScreen({ navigation }){
     
     return(
         <ScrollView>
-            <ImageBackground blurRadius = {50} source={require("./../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg") } resizeMode="cover" style={styles.imageBackground}> 
+            <ImageBackground blurRadius = {50} source={require("../../assets/Seabirds/worldseabirdday.jpg") } resizeMode="cover" style={styles.imageBackground}> 
             <View style ={styles.container}>      
 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
+                        <Image style = {styles.image} source={require("../../assets/Seabirds/worldseabirdday.jpg") }/>
                         <Text style = {styles.textSubTitle}>Seabird 1</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Seabird 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Seabirds/worldseabirdday.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Seabird 2</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Seabird 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Seabirds/worldseabirdday.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Seabird 3</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Seabird 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Seabirds/worldseabirdday.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Seabird 4</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Seabird 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Seabirds/worldseabirdday.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Seabird 5</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Seabird 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Seabirds/worldseabirdday.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Seabird 6</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Seabird 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Seabirds/worldseabirdday.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Seabird 7</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Seabird 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Seabirds/worldseabirdday.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Seabird 8</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Seabird 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Seabirds/worldseabirdday.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Seabird 9</Text>                            
                     </View>
                 </TouchableOpacity>
 

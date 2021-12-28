@@ -57,42 +57,82 @@ export default function DesertasScreen({ route, navigation}) {
                         <Image style={styles.image} source={require("../../assets/Trips/mapasVMT_desertas-1.png")} />
                     </View>
 
-               <View style={styles.textBox}>
-                    <Text style={styles.textTitle}>Tripulation:</Text>  
-                               
+                    <View style={styles.textBox}>
+                        <Text style={styles.textTitle}>Crew:</Text> 
+                                
+                            <Text style={styles.textTitle}>Skippers:</Text>
+                                <View style ={styles.containerHorizontal}>                        
+                                    <View width = {ITEM_WIDTH/2 - 30} >
+                                        <Text style = {styles.textSubTitle}>Luana Mendonça:</Text> 
+                                        <Text style = {styles.textCrew}>Luana is an experienced skipper with more than 5000 sailing hours. {"\n"} Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla. </Text>
+                                    </View>
+                                    <Image style = {styles.imageFace} source={require("../../assets/Crew/Luana.jpg") }/>
+                                </View>
+
+                                <View style ={styles.containerHorizontal}>                        
+                                    <View width = {ITEM_WIDTH/2 - 30} >
+                                        <Text style = {styles.textSubTitle}>Marcelo Sousa:</Text> 
+                                        <Text style = {styles.textCrew}>Luana is an experienced skipper with more than 5000 sailing hours. {"\n"} Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla. </Text>
+                                    </View>
+                                    <Image style = {styles.imageFace} source={require("../../assets/Crew/marcelo-rebelo-de-sousa-foto-rodrigo-antunes-lusa1315263edefaultlarge_1024.jpg") }/>
+                                </View>
+
                     
-                    <View style ={styles.containerHorizontal}>                        
-                        <View width = {ITEM_WIDTH/2 - 30} >
-                            <Text style = {styles.textSubTitle}>Luana Mendonça:</Text> 
-                            <Text style = {styles.textCrew}>Luana is an experienced skipper with more than 5000 sailing hours. {"\n"} Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla. </Text>
-                        </View>
-                        <Image style = {styles.imageFace} source={require("../../assets/Crew/Luana.jpg") }/>
-                    </View> 
+                            <Text style={styles.textTitle}>Biologists:</Text> 
+                            
+                                <View style ={styles.containerHorizontal}>                        
+                                    <View width = {ITEM_WIDTH/2 - 30}>
+                                        <Text style = {styles.textSubTitle}>João Martins:</Text> 
+                                        <Text style = {styles.textCrew}>João is a biologist that knows all the the waters of Madeira Island like the palm of his hand. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.  </Text>
+                                    </View>
+                                    <Image style = {styles.imageFace} source={require("../../assets/Crew/Joao.jpg") }/>
+                                </View>
 
-                    <View style ={styles.containerHorizontal}>                        
-                        <View width = {ITEM_WIDTH/2 - 30}>
-                            <Text style = {styles.textSubTitle}>João Martins:</Text> 
-                            <Text style = {styles.textCrew}>João is a biologist that knows all the the waters of Madeira Island like the palm of his hand. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.  </Text>
-                        </View>
-                        <Image style = {styles.imageFace} source={require("../../assets/Crew/Joao.jpg") }/>
-                    </View>
+                                <View style ={styles.containerHorizontal}>                        
+                                    <View width = {ITEM_WIDTH/2 - 30}>
+                                        <Text style = {styles.textSubTitle}>Antonio Costa:</Text> 
+                                        <Text style = {styles.textCrew}>João is a biologist that knows all the the waters of Madeira Island like the palm of his hand. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.  </Text>
+                                    </View>
+                                    <Image style = {styles.imageFace} source={require("../../assets/Crew/QvhnkTYJ_400x400.png") }/>
+                                </View>
 
-                    <View style ={styles.containerHorizontal}>                        
-                        <View width = {ITEM_WIDTH/2 - 30}>
-                            <Text style = {styles.textSubTitle}>Francisco Vasconcelos:</Text> 
-                            <Text style = {styles.textCrew}>Francisco is your tour guide. He will guide you throug your trip and identify all the important landmarks.</Text>
-                        </View>
-                        <Image style = {styles.imageFace} source={require("../../assets/Crew/Francisco.jpg") }/>
-                    </View>
+                            <Text style={styles.textTitle}>Tourist Guides:</Text> 
 
-                    <View style ={styles.containerHorizontal}>                        
-                        <View width = {ITEM_WIDTH/2 - 30}>
-                            <Text style = {styles.textSubTitle}>Marcos Silva:</Text> 
-                            <Text style = {styles.textCrew}>Marcos will be your barman. He knows everything about your drinks. You can be asured that you will serve you very well. Bla bla bla bla.</Text>
-                        </View>
-                        <Image style = {styles.imageFace} source={require("../../assets/Crew/Marcos.jpg") }/>
-                    </View>
-                    </View>                    
+                                <View style ={styles.containerHorizontal}>                        
+                                    <View width = {ITEM_WIDTH/2 - 30}>
+                                        <Text style = {styles.textSubTitle}>Francisco Vasconcelos:</Text> 
+                                        <Text style = {styles.textCrew}>Francisco is your tour guide. He will guide you throug your trip and identify all the important landmarks.</Text>
+                                    </View>
+                                    <Image style = {styles.imageFace} source={require("../../assets/Crew/Francisco.jpg") }/>
+                                </View>
+
+                                <View style ={styles.containerHorizontal}>                        
+                                    <View width = {ITEM_WIDTH/2 - 30}>
+                                        <Text style = {styles.textSubTitle}>Angelina Jolie:</Text> 
+                                        <Text style = {styles.textCrew}>Francisco is your tour guide. He will guide you throug your trip and identify all the important landmarks.</Text>
+                                    </View>
+                                    <Image style = {styles.imageFace} source={require("../../assets/Crew/angelina-jolie.jpg") }/>
+                                </View>
+
+                            <Text style={styles.textTitle}>Barmans:</Text> 
+
+                                <View style ={styles.containerHorizontal}>                        
+                                    <View width = {ITEM_WIDTH/2 - 30}>
+                                        <Text style = {styles.textSubTitle}>Marcos Silva:</Text> 
+                                        <Text style = {styles.textCrew}>Marcos will be your barman. He knows everything about your drinks. You can be asured that you will serve you very well. Bla bla bla bla.</Text>
+                                    </View>
+                                    <Image style = {styles.imageFace} source={require("../../assets/Crew/Marcos.jpg") }/>
+                                </View>
+
+                                <View style ={styles.containerHorizontal}>                        
+                                    <View width = {ITEM_WIDTH/2 - 30}>
+                                        <Text style = {styles.textSubTitle}>Brad Pitt:</Text> 
+                                        <Text style = {styles.textCrew}>Marcos will be your barman. He knows everything about your drinks. You can be asured that you will serve you very well. Bla bla bla bla.</Text>
+                                    </View>
+                                    <Image style = {styles.imageFace} source={require("../../assets/Crew/Brad-Pitt-2.jpg") }/>
+                                </View>
+
+                        </View>                    
 
                 </ScrollView>
             </ImageBackground>
@@ -146,7 +186,7 @@ const styles = StyleSheet.create({
     },
     textSubTitle: {
         color: 'white',
-        fontSize: 18,
+        fontSize: 16,
         marginVertical: 10,
         marginRight:10,
     },

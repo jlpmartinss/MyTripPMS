@@ -11,69 +11,69 @@ export default function OthersScreen({ navigation }){
     
     return(
         <ScrollView>
-            <ImageBackground blurRadius = {50} source={require("../../assets/586396-dophin-animals.jpg") } resizeMode="cover" style={styles.imageBackground}> 
+            <ImageBackground blurRadius = {50} source={require("../../assets/Others/1Others.jpg") } resizeMode="cover" style={styles.imageBackground}> 
             <View style ={styles.container}>      
 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+            <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Others 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Others/1Others.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Other 1</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Others 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Others/1Others.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Other 2</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Others 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Others/1Others.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Other 3</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Others 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Others/1Others.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Other 4</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Others 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Others/1Others.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Other 5</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Others 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Others/1Others.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Other 6</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Others 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Others/1Others.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Other 7</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Others 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Others/1Others.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Other 8</Text>                            
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigation.push("Whales")}>       
+                <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
                     <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Others 1</Text>                            
+                        <Image style = {styles.image} source={require("../../assets/Others/1Others.jpg") }/>
+                        <Text style = {styles.textSubTitle}>Other 9</Text>                            
                     </View>
                 </TouchableOpacity>
 
