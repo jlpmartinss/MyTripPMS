@@ -4,40 +4,53 @@ import { View, Text, Button, StyleSheet, FlatList, Dimensions, Image, ScrollView
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Images from "../Images"
 
+
+
 const ITEM_WIDTH = Dimensions.get('window').width
-import data from "./../../jsons/Trips.json";
-var tripId = 0;
-const id = data[tripId].id;
-const ongoing = data[tripId].ongoing;
-const location = data[tripId].location;
-const name = data[tripId].name;
-const imagecollection = data[tripId].imagecollection;
-const date = data[tripId].date;
-const imgPath = data[tripId].imgPath;
-const rating = data[tripId].rating;
-const comment = data[tripId].comment;
-const sightedSpecies = data[tripId].sightedSpecies;
-const route = data[tripId].route;
+
+
 
 //we will loop through object properties and if an object has at least one property, then it will enter the loop and return false. If the object doesn’t have any properties then it will return true.
-function isEmpty(data) {
-    for (var prop in data) {
-        if (data.hasOwnProperty(prop))
+function isEmpty(obj) {
+    for (var prop in obj) {
+        if (obj.hasOwnProperty(prop))
             return false;
     }
-
     return true;
 }
 
 
 const Home = ({ route, navigation }) => {
-    const [name,setName]= useState('');
+
+    // let data = route.params;
+
+    // if(data == undefined){
+    //     console.log("nada");
+    // }else {
+    //     console.log(data.id);
+    // }
+
+    // var tripId = 0;
+    //const id = data.id;
+    // const ongoing = data.ongoing;
+    // const location = data.location;
+    // const name = data.name;
+    // const imagecollection = data.imagecollection;
+    // const date = data.date;
+    // const imgPath = data.imgPath;
+    // const rating = data.rating;
+    // const comment = data.comment;
+    // const sightedSpecies = data.sightedSpecies;
+    // //const route = data.route;
+
+
+    const [idTrip, setIdTrip] = useState('');
     const getData = () => {
         try {
-            AsyncStorage.getItem('Username')
-                .then(value=> {
+            AsyncStorage.getItem('IdNewTrip')
+                .then(value => {
                     if (value != null) {
-                        setName(value);
+                        setIdTrip(value);
                     }
                 })
         } catch (error) {
@@ -45,35 +58,36 @@ const Home = ({ route, navigation }) => {
         }
     }
 
-    useEffect (() => {
+    useEffect(() => {
         getData();
     }, []);
 
 
-    let tripData = route.params;
 
-    const id = tripData.id;
-    const ongoing = tripData.ongoing;
-    const location = tripData.location;
-    const name = tripData.name;
-    const imagecollection = tripData.imagecollection;
-    const date = tripData.date;
-    const imgPath = tripData.imgPath;
-    const rating = tripData.rating;
-    const comment = tripData.comment;
-    const sightedSpecies = tripData.sightedSpecies;
-    const routeTrip = tripData.route;
+
+    // const id = tripData.id;
+    // const ongoing = tripData.ongoing;
+    // const location = tripData.location;
+    // const name = tripData.name;
+    // const imagecollection = tripData.imagecollection;
+    // const date = tripData.date;
+    // const imgPath = tripData.imgPath;
+    // const rating = tripData.rating;
+    // const comment = tripData.comment;
+    // const sightedSpecies = tripData.sightedSpecies;
+    // const routeTrip = tripData.route;
 
     return (
         <View style={styles.container}>
             <ImageBackground blurRadius={50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}>
-                <Text> Welcome {name}</Text>
-                <ScrollView> 
+                <Text> Welcome {idTrip}</Text>
+            
+                <ScrollView>
                     {isEmpty ? <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
                         <View style={styles.item}>
                             <Image style={styles.image} source={Images.trip0} />
-                            <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
-                            <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text>
+                            {/* <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
+                            <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text> */}
                         </View>
                     </TouchableOpacity> : null}
                 </ScrollView>
