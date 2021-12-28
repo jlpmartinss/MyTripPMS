@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import React, { useState, useEffect } from 'react';
 import { View, Text, Button, ScrollView, StyleSheet, Image, TouchableHighlight, TextInput, ImageBackground, Dimensions, Touchable} from 'react-native';
 import { Rating, RatingProps } from 'react-native-elements';
 import { Entypo, Feather, Ionicons, Icon, AntDesign, FontAwesome } from '@expo/vector-icons'
@@ -40,9 +41,30 @@ let ITEM_WIDTH = Dimensions.get('window').width;
 
 
 const PostCardPreview = ({navigation , route }) => {
-    let data = route.params; 
+    let data = route.params; 7
+    
     const rating = data;
-    const [isOpenRating, setOpenRating] = useState(true);
+    
+
+    const [editedrating, setRating] = useState('');
+    const getData = () => {
+        try {
+            AsyncStorage.getItem('newRating')
+                .then(value => {
+                    if (value != null) {
+                        setRating(value);
+                    }
+                })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        getData();
+    }, []);
+    const test = getData();
+    console.log("Hello?"+test);
     const [text, setText] = useState('');
     const onShare = async () => {
         const shareOptions = {
@@ -104,11 +126,11 @@ const PostCardPreview = ({navigation , route }) => {
                                 {date} at {time}
 
                             </Text>
-                            { rating != undefined ? <Rating style={{ marginTop: 10 }}
+                            { editedrating != undefined ? <Rating style={{ marginTop: 10 }}
                                 readonly
                                 showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
                                 type="star"
-                                startingValue={rating}
+                                startingValue={editedrating}
                                 imageSize={22}
                             ></Rating> : <Rating style={{ marginTop: 10 }}
                             readonly

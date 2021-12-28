@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState } from 'react';
 import { View, Text, Button } from 'react-native';
 import * as FileSystem from 'expo-file-system';
@@ -20,24 +21,42 @@ function writeToJson(data) {
 }
 
 export default function EditPostCard({ route, navigation }) {
-  const [rating, setRating] = useState();
+  const [editedrating, setRating] = useState();
+  //console.log(editedrating);
+
+  const setData = async () => {
+    if (editedrating == undefined) {
+      //console.log(editedrating);
+      Alert.alert('Warning!', 'Please select a rating')
+    }
+    else {
+        try {
+            await AsyncStorage.setItem('newRating', editedrating);
+            navigation.navigate('PostCard');
+        } catch (error) {
+            console.log(console.error);
+
+        }
+    }
+    
+}
 
   return (
     <View>
       <Rating
-        rating={rating}
+        rating={editedrating}
         max={5}
         iconWidth={24}
         iconHeight={24}
         onRate={setRating}
       />
 
-      <Text /* passar este valor para o json da viagem (para depois aparecer no postcard preview) */  >{rating}</Text>
+      <Text /* passar este valor para o json da viagem (para depois aparecer no postcard preview) */  >{editedrating}</Text>
 
       <Button
         title="Confirm"
-        onPress={() => {
-          navigation.navigate("PostCard", rating)
+        onPress={() => {setData ;
+          navigation.navigate("PostCard", editedrating)
 
           //writeToJson(rating);
           /* data[tripId].rating.replace(rating);
