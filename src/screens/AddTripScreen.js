@@ -6,7 +6,7 @@ import Data from "./../../jsons/Trips.json"
 
 let ITEM_WIDTH = Dimensions.get('window').width;
 
-const AddTripScreen = ({ navigation }) => {
+const AddTripScreen = ({ route, navigation }) => {
     const [text, setText] = useState('');
     const id = '0';
     const [currentDate, setCurrentDate] = useState('');
@@ -55,7 +55,7 @@ const AddTripScreen = ({ navigation }) => {
                     defaultValue={text}
                 />
 
-                <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime() }}>
+                <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime(); navigation.navigate("Home", Data[id]); }}>
                 <Text style={styles.textButton}>Add Trip</Text>
                 </TouchableOpacity>
             </View>
