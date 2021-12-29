@@ -1,13 +1,13 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, {useState} from 'react';
-import { StyleSheet, View, Button, ImageBackground, TextInput,Dimensions, Text } from 'react-native';
+import { Alert, StyleSheet, View, Button, ImageBackground, TextInput,Dimensions, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons';
 
 let ITEM_WIDTH = Dimensions.get('window').width;
 
 const LoginScreen = ({ route, navigation }) => { 
-    const [username, setUsername] = useState(null)
+    const [username, setUsername] = useState('')
     //const[password, setPassword] = useState(null)
 
     const entrar = () => {
@@ -19,12 +19,10 @@ const LoginScreen = ({ route, navigation }) => {
         if (username.length == 0){
             Alert.alert('WARNING: Please write something!');
         }
-        else if(isNaN(username)){
-            Alert.alert('WARNING: Please don\'\t write a digit!');
-        }
         else {
             try {
                 await AsyncStorage.setItem('NewUser', username);
+                //navigation.navigate("Welcome")
             } catch (error) {
                 console.log(console.error);
             }
@@ -41,7 +39,8 @@ const LoginScreen = ({ route, navigation }) => {
                 <TextInput style = {styles.textInput}
                     placeholder = "Username"
                     //eftIcon ={{type: 'font-awesome', name: 'envelope'}}
-                    onChangeText = {username =>setUsername(username)}/>
+                    onChangeText = {username => setUsername(username)}/>
+                    {entrar()}
                     
                     {/*
                 <TextInput style = {styles.textInput}
@@ -50,7 +49,7 @@ const LoginScreen = ({ route, navigation }) => {
                     onChangeText = {value => setPassword(value)}
                     secureTextEntry = {true}/>*/}
 
-                <TouchableOpacity style={styles.buttom} onPress={() => {setData(), navigation.navigate("Welcome")}}>
+                <TouchableOpacity style={styles.buttom} onPress={() => {username.length != 0 ? setData() && navigation.navigate("Welcome"):Alert.alert('WARNING: Please write something!');}}>
                     <Text style={styles.textButton}>Confirm</Text>
                 </TouchableOpacity>
         

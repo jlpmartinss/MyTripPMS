@@ -54,6 +54,8 @@ const AddTripScreen = ({ route, navigation }) => {
             try {
                 await AsyncStorage.setItem('IdNewTrip', idTrip);
                 array.push(idTrip);
+                navigation.navigate("Home")
+
             } catch (error) {
                 console.log(console.error);
             }

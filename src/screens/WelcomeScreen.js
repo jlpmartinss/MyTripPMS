@@ -26,7 +26,11 @@ export default function SunsetScreen({ route, navigation}) {
         getData();
     }, []);
 
-
+    const entrar = () => {
+        console.log("entrou")
+        console.log(username)
+        //console.log(password)
+    }
 
 
     return (
@@ -35,6 +39,7 @@ export default function SunsetScreen({ route, navigation}) {
                 <Text style={styles.textSubTitle}>My Trip</Text>
 
                 <Text style = {styles.welcomeText}>
+                    {entrar()}
                     Welcome {username}
                 </Text>
                 
