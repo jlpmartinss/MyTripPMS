@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, Dimensions, Image, Button, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Image, Button, TouchableOpacity, Alert } from 'react-native';
 import { color } from "react-native-elements/dist/helpers";
 import { ScrollView } from "react-native-gesture-handler";
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
@@ -9,18 +9,25 @@ import Images from "../Images";
 export default function SunsetScreen({ route, navigation}) {
 
     const [username, setUsername] = useState('');
+    const[password, setPassword] = useState('');
+
     const getData = () => {
         try {
-            AsyncStorage.getItem('NewUser')
+            AsyncStorage.getItem('UserData')
                 .then(value => {
                     if (value != null) {
-                        setUsername(value);
+                        //volta a converter num objeto
+                        let user = JSON.parse(value);
+                        setUsername(user.Name);
+                        setPassword(user.Password);
                     }
                 })
         } catch (error) {
             console.log(error);
         }
     }
+
+
 
     useEffect(() => {
         getData();

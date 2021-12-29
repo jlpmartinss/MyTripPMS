@@ -1,1 +1,0 @@
-expo-image-picker-multiple

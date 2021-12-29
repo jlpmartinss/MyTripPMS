@@ -6,7 +6,7 @@ import * as Sharing from 'expo-sharing';
 //Documentation https://docs.expo.dev/versions/latest/sdk/imagepicker/#permissions
 
 export default function SelectPictureScreen() {
-  const [image, setImage] = useState(null);
+  //const [image, setImage] = useState(null);
 
   // const pickImage = async () => {
   //   // No permissions request is necessary for launching the image library

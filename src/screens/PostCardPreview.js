@@ -7,7 +7,7 @@ import { RectButton, TouchableOpacity } from 'react-native-gesture-handler';
 
 import data from "./../../jsons/Trips.json";
 import Category from '../../Category';
-import files from './fileBase64';
+
 //import * as Sharing from 'expo-sharing';
 import Images from '../Images';
 import SelectPicture from './SelectPictureScreen'

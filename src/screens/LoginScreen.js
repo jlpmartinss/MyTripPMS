@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Alert, StyleSheet, View, Button, ImageBackground, TextInput,Dimensions, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons';
@@ -8,20 +8,25 @@ let ITEM_WIDTH = Dimensions.get('window').width;
 
 const LoginScreen = ({ route, navigation }) => { 
     const [username, setUsername] = useState('')
-    //const[password, setPassword] = useState(null)
+    const [password, setPassword] = useState('')
 
     const entrar = () => {
         console.log("entrou")
         console.log(username)
     }
     const setData = async () => {
-        if (username.length == 0){
-            Alert.alert('WARNING: Please write something!');
+        if (username.length == 0 && password.length == 0){
+            Alert.alert('WARNING: Please write your username!');
         }
         else {
             try {
-                await AsyncStorage.setItem('NewUser', username);
-                //navigation.navigate("Welcome")
+                var user={
+                    Name: username,
+                    Password: password
+                }
+                //converte em string para poder passar
+                await AsyncStorage.setItem('UserData', JSON.stringify(user));
+                navigation.navigate("Welcome")
             } catch (error) {
                 console.log(console.error);
             }
@@ -29,33 +34,40 @@ const LoginScreen = ({ route, navigation }) => {
         
     }
 
+    //caso já tenha feito login
+    const getData = () => {
+        try {
+            AsyncStorage.getItem('UserData')
+                .then(value => {
+                    if (value != null) {
+                        navigation.navigate("Welcome")
+                    }
+                })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        getData();
+    }, []);
+
+
+
+
     return (
         <ImageBackground blurRadius={5} source={require("../../assets/welcomeimage/welcome.jpg")} resizeMode="cover" style={styles.imageBackground}>
             <View style = {styles.container}>
                 <Text style = {styles.textSubTitle}> Sign In </Text>
-                <Text style = {styles.text}> Enter Your Name. </Text>
-
-                <TextInput style = {styles.textInput}
-                    placeholder = "Username"
-                    //eftIcon ={{type: 'font-awesome', name: 'envelope'}}
-                    onChangeText = {username => setUsername(username)}/>
-                    {entrar()}
-                    
-                    {/*
-                <TextInput style = {styles.textInput}
-                    placeholder ='Password'
-                    leftIcon = {{type: 'font-awesome', name: 'lock'}}
-                    onChangeText = {value => setPassword(value)}
-                    secureTextEntry = {true}/>*/}
-
-                <TouchableOpacity style={styles.buttom} onPress={() => {username.length != 0 ? setData() && navigation.navigate("Welcome"):Alert.alert('WARNING: Please write something!');}}>
+                <TextInput style = {styles.textInput} placeholder = "Enter Your Name" onChangeText = {(value) => setUsername(value)}/>
+                <TextInput style = {styles.textInput} placeholder = "Enter Your Password" onChangeText = {(value) => setPassword(value)}/>
+                <TouchableOpacity style={styles.buttom} onPress={() => {setData(); entrar();}}>
                     <Text style={styles.textButton}>Confirm</Text>
                 </TouchableOpacity>
         
             </View>
         </ImageBackground>
     );
-
 }
 
     const styles = StyleSheet.create({

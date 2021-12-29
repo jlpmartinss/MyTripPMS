@@ -1,6 +1,6 @@
 //Screens
 import HomeScreen from './HomeScreen';
-
+import { Entypo, Feather, Ionicons } from '@expo/vector-icons'
 import SpeciesScreen from './SpeciesScreen';
 import AddTripScreen from './AddTripScreen';
 import WhalesScreen from './WhalesScreen';
@@ -19,7 +19,10 @@ import SunsetScreen from './SunsetScreen';
 import EditPostCardScreen from './EditPostCard';
 import LoginScreen from './LoginScreen';
 import WelcomeScreen from './WelcomeScreen';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+
+const Tab = createBottomTabNavigator();
 const { createStackNavigator } = require("@react-navigation/stack");
 
 const Stack = createStackNavigator();
@@ -32,7 +35,12 @@ const LoginScreenNavigator = () => {
                 name="LoginScreen"
                 component={LoginScreen}
             />
+             <Stack.Screen
+                name="Welcome"
+                component={WelcomeScreen}
+            />
         </Stack.Navigator>
+        
     );
 }
 
@@ -50,42 +58,49 @@ const WelcomeScreenNavigator = () => {
 }
 export { WelcomeScreenNavigator }
 
-const HomeScreenNavigator = () => {
+const HomeTabs = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen
+        <Tab.Navigator screenOptions={{ headerShown: false }}>
+            <Tab.Screen
                 name="Home"
                 component={HomeScreen}
+                options={{ tabBarIcon: ({ size, color }) => (<Entypo name="home" size={size} color={color} />) }}
             />
-            <Stack.Screen
+            <Tab.Screen
                 name="Species"
                 component={SpeciesScreen}
+                options={{ tabBarIcon: ({ size, color }) => (<Feather name="search" size={size} color={color} />) }}
             />
-            <Stack.Screen
+            <Tab.Screen
                 name="AddTrip"
                 component={AddTripScreen}
+                component={AddTripScreenNavigator} options={{ tabBarIcon: ({ size, color }) => (<Ionicons name="add-circle" size={size} color={color} />) }}
             />
-            <Stack.Screen
-                name="Whale1"
-                component={Whale1}
-            />
-            <Stack.Screen
+            <Tab.Screen
                 name="PostCard"
                 component={PostCardPreviewScreen}
+                options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color}/>)}} 
+
             />
-            <Stack.Screen
+            <Tab.Screen
                 name="TripList"
                 component={TripListScreen}
+                component={TripListScreenNavigator} options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color} />) }}
             />
-             <Stack.Screen
+            <Tab.Screen
                 name="EditCard"
                 component={EditPostCardScreen}
-            />
+                options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color}/>)}} 
 
-        </Stack.Navigator>
+            />
+            <Tab.Screen name="SelectedPictureScreen"
+                component={SelectedPictureScreenNavigator}
+                options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color}/>)}} 
+            />
+        </Tab.Navigator>
     );
 }
-export { HomeScreenNavigator }
+export { HomeTabs }
 
 const SpeciesScreenNavigator = () => {
     return (
@@ -98,11 +113,11 @@ const SpeciesScreenNavigator = () => {
                 name="Whales"
                 component={WhalesScreen}
             />
-             <Stack.Screen
+            <Stack.Screen
                 name="Dolphins"
                 component={DolphinsScreen}
             />
-            
+
             <Stack.Screen
                 name="Seabirds"
                 component={SeabirdsScreen}
@@ -164,7 +179,7 @@ const DolphinsScreenNavigator = () => {
             />
             <Stack.Screen
                 name="Dolphin1"
-                component={Whale1}
+                component={Dolphin1}
             />
         </Stack.Navigator>
     );
@@ -203,7 +218,7 @@ const TripListScreenNavigator = () => {
                 name="Desertas"
                 component={DesertasScreen}
             />
-             <Stack.Screen
+            <Stack.Screen
                 name="Faja"
                 component={FajasScreen}
             />
@@ -211,8 +226,8 @@ const TripListScreenNavigator = () => {
                 name="Sunset"
                 component={SunsetScreen}
             />
-            
-            
+
+
         </Stack.Navigator>
     );
 }
@@ -225,7 +240,7 @@ const WhalesWatchingScreenNavigator = () => {
                 name="WhalesWatching"
                 component={WhaleWatchingScreen}
             />
-           
+
         </Stack.Navigator>
     );
 }
@@ -238,7 +253,7 @@ const SelectedPictureScreenNavigator = () => {
                 name="SelectedPictureScreen"
                 component={SelectPictureScreen}
             />
-           
+
         </Stack.Navigator>
     );
 }
