@@ -4,6 +4,7 @@ import { Image, TouchableOpacity } from "react-native";
 import { View, Text, Button, StyleSheet, TextInput, Alert, ImageBackground, Dimensions } from 'react-native';
 import { TouchableHighlight } from "react-native-gesture-handler";
 import Data from "./../../jsons/Trips.json";
+const array = [];
 
 let ITEM_WIDTH = Dimensions.get('window').width;
 
@@ -33,7 +34,7 @@ const AddTripScreen = ({ route, navigation }) => {
         console.log({ dataAtual });
         console.log({ tripTime });
         if (dataAtual > tripTime) {
-            Alert.alert(idTrip);
+            Alert.alert(idTrip)
             setData();
             //Alert.alert("Go to Home and see your Trip");
             //navigation.navigate('HomeScreen', {screen:"HomeScreen"});
@@ -43,13 +44,18 @@ const AddTripScreen = ({ route, navigation }) => {
         )
     }
     const setData = async () => {
-        if (idTrip.length == 0 || typeof(idTrip) != 'number') {
-            Alert.alert('Warning!', 'Please write your data')
+        if (idTrip.length == 0){
+            Alert.alert('WARNING: Please write something!');
+        }
+        else if(isNaN(idTrip)){
+            Alert.alert('WARNING: Please write a number!');
         }
         else {
             try {
                 await AsyncStorage.setItem('IdNewTrip', idTrip);
+                array.push(idTrip);
                 navigation.navigate('Home');
+                console.log(array);
             } catch (error) {
                 console.log(console.error);
     
@@ -74,7 +80,7 @@ const AddTripScreen = ({ route, navigation }) => {
                 //defaultValue={text}
                 />
 
-                <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime(); navigation.navigate("Home", Data[id]) }}>
+                <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime(),navigation.navigate("Home", array)}}>
                     <Text style={styles.textButton}>Add Trip</Text>
                 </TouchableOpacity>
             </View>
