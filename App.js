@@ -49,7 +49,7 @@ export default () => (
       <SafeAreaView>
         <StatusBar style='light' translucent= {false} animated={true}/>
       </SafeAreaView>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={LoginScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
         <Stack.Screen name="Welcome" component={WelcomeScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
         <Stack.Screen name="Home" component={HomeTabs} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
