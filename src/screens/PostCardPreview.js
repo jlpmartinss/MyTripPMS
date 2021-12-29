@@ -47,6 +47,7 @@ const PostCardPreview = ({navigation , route }) => {
     
 
     const [editedrating, setRating] = useState('');
+    const [editComment, setComment] = useState('');
     const getData = () => {
         try {
             AsyncStorage.getItem('newRating')
@@ -65,6 +66,8 @@ const PostCardPreview = ({navigation , route }) => {
     }, []);
     const test = getData();
     console.log("Hello?"+test);
+
+
     const [text, setText] = useState('');
     const onShare = async () => {
         const shareOptions = {
