@@ -17,11 +17,23 @@ import DesertasScreen from './DesertasScreen';
 import FajasScreen from './FajasScreen';
 import SunsetScreen from './SunsetScreen';
 import EditPostCardScreen from './EditPostCard';
+import WelcomeScreen from './WelcomeScreen';
 
 const { createStackNavigator } = require("@react-navigation/stack");
 
 const Stack = createStackNavigator();
 
+const WelcomeScreenNavigator = () => {
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen
+                name="Welcome"
+                component={WelcomeScreen}
+            />
+        </Stack.Navigator>
+    );
+}
+export { WelcomeScreenNavigator }
 
 const HomeScreenNavigator = () => {
     return (
