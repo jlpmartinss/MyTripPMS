@@ -13,7 +13,6 @@ const LoginScreen = ({ route, navigation }) => {
     const entrar = () => {
         console.log("entrou")
         console.log(username)
-        //console.log(password)
     }
     const setData = async () => {
         if (username.length == 0){
