@@ -31,7 +31,6 @@ const LoginScreen = ({ route, navigation }) => {
                 console.log(console.error);
             }
         }
-        
     }
 
     //caso já tenha feito login
@@ -51,8 +50,6 @@ const LoginScreen = ({ route, navigation }) => {
     useEffect(() => {
         getData();
     }, []);
-
-
 
 
     return (

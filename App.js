@@ -22,6 +22,8 @@ import FajasScreen from './src/screens/FajasScreen';
 import SunsetScreen from './src/screens/SunsetScreen';
 import { AddTripScreenNavigator, HomeScreenNavigator, SpeciesScreenNavigator, PostCardNavigator, TripListScreenNavigator, LoginScreenNavigator, EditPostCardNavigator, SelectedPictureScreenNavigator, WelcomeScreenNavigator, HomeTabs, WhalesScreenNavigator, DolphinsScreenNavigator } from './src/screens/CustomNavigation';
 import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 const Tab = createBottomTabNavigator();
@@ -40,8 +42,13 @@ Test = createStackNavigator();
 
 //Navegação default em todas as páginas (bottoms tabs)
 export default () => (
-    <NavigationContainer >
-      <Stack.Navigator>
+  
+  
+    <NavigationContainer>
+      <SafeAreaView>
+        <StatusBar style='light' translucent= {false} animated={true}/>
+      </SafeAreaView>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={LoginScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
         <Stack.Screen name="Welcome" component={WelcomeScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
         <Stack.Screen name="Home" component={HomeTabs} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
