@@ -9,18 +9,14 @@ let ITEM_WIDTH = Dimensions.get('window').width;
 const LoginScreen = ({ route, navigation }) => { 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-
-    const entrar = () => {
-        console.log("entrou")
-        console.log(username)
-    }
+    
     const setData = async () => {
         if (username.length == 0 && password.length == 0){
             Alert.alert('WARNING: Please write your username!');
         }
         else {
             try {
-                var user={
+                var user = {
                     Name: username,
                     Password: password
                 }
@@ -42,6 +38,7 @@ const LoginScreen = ({ route, navigation }) => {
                     if (value != null) {
                         navigation.navigate("Welcome")
                     }
+                    console.log(value)
                 })
         } catch (error) {
             console.log(error);
@@ -60,8 +57,8 @@ const LoginScreen = ({ route, navigation }) => {
             <View style = {styles.container}>
                 <Text style = {styles.textSubTitle}> Sign In </Text>
                 <TextInput style = {styles.textInput} placeholder = "Enter Your Name" onChangeText = {(value) => setUsername(value)}/>
-                <TextInput style = {styles.textInput} placeholder = "Enter Your Password" onChangeText = {(value) => setPassword(value)}/>
-                <TouchableOpacity style={styles.buttom} onPress={() => {setData(); entrar();}}>
+                <TextInput style = {styles.textInput} placeholder = "Enter Your Password" onChangeText = {(value) => setPassword(value)} secureTextEntry = {true}/>
+                <TouchableOpacity style={styles.buttom} onPress={() => {setData()}}>
                     <Text style={styles.textButton}>Confirm</Text>
                 </TouchableOpacity>
         
