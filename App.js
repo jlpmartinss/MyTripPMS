@@ -24,6 +24,9 @@ import { AddTripScreenNavigator, HomeScreenNavigator, SpeciesScreenNavigator, Po
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import LoginScreen from './src/screens/LoginScreen';
+import PostCardPreview from './src/screens/PostCardPreview';
+import Dolphin1 from './src/screens/Dolphin1';
 
 
 const Tab = createBottomTabNavigator();
@@ -42,23 +45,23 @@ Test = createStackNavigator();
 
 //Navegação default em todas as páginas (bottoms tabs)
 export default () => (
-  
-  
     <NavigationContainer>
       <SafeAreaView>
         <StatusBar style='light' translucent= {false} animated={true}/>
       </SafeAreaView>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Login" component={LoginScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
-        <Stack.Screen name="Welcome" component={WelcomeScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
+        <Stack.Screen name="Welcome" component={WelcomeScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
         <Stack.Screen name="Home" component={HomeTabs} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
-        <Stack.Screen name="Species" component={SpeciesScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Feather name="search" size={size} color={color} /> )}}/>
-        <Stack.Screen name="Add Trip" component={AddTripScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Ionicons name="add-circle" size={size} color={color} /> )}}/>
-        <Stack.Screen name="TripList" component={TripListScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
-        <Stack.Screen name="SelectedPictureScreen" component={SelectedPictureScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
-        <Stack.Screen name="PostCard" component={PostCardNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
-        <Stack.Screen name="Whales" component={WhalesScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
-        <Stack.Screen name="Dolphins" component={DolphinsScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
+        <Stack.Screen name="Species" component={SpeciesScreen} options={{tabBarIcon: ({size,color}) => (<Feather name="search" size={size} color={color} /> )}}/>
+        <Stack.Screen name="Add Trip" component={AddTripScreen} options={{tabBarIcon: ({size,color}) => (<Ionicons name="add-circle" size={size} color={color} /> )}}/>
+        <Stack.Screen name="TripList" component={TripListScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
+        <Stack.Screen name="SelectedPictureScreen" component={SelectPictureScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
+        <Stack.Screen name="PostCard" component={PostCardPreview} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
+        <Stack.Screen name="Whales" component={WhalesScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
+        <Stack.Screen name="Dolphins" component={DolphinsScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
+        <Stack.Screen name="Whale1" component={Whale1} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
+        <Stack.Screen name="Dolphin1" component={Dolphin1} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
       </Stack.Navigator>
     </NavigationContainer>
 

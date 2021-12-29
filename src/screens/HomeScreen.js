@@ -73,12 +73,11 @@ const Home = ({ route, navigation }) => {
     return (
         <View style={styles.container}>
             <ImageBackground blurRadius={50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}>
-                <Text> Welcome {idTrip}</Text>
-            
+                <Text style= {styles.textSubTitle}> My Trips </Text>
                 <ScrollView>
                     {isEmpty ? <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
                         <View style={styles.item}>
-                            <Image style={styles.image} source={Images.trip0} />
+                            <Image style={styles.image} source={Images.imsunset} />
                             {/* <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
                             <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text> */}
                         </View>
@@ -103,7 +102,8 @@ const styles = StyleSheet.create({
         padding: 5,
         flex: 1,
         fontSize: 20,
-
+  
+        
     },
     textSubTitle: {
         position: 'absolute',
@@ -111,10 +111,9 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginHorizontal: 10,
         marginVertical: 25,
-        marginLeft: 30,
+        marginLeft: 15,
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 8,
-        paddingTop: 180,
         fontWeight: 'bold',
         fontSize: 30
 
@@ -134,14 +133,12 @@ const styles = StyleSheet.create({
 
     },
     image: {
-        marginTop: 15,
+        marginTop: 85,
         marginLeft: 15,
         flex: 1,
         width: ITEM_WIDTH - 35,
         height: ITEM_WIDTH / 1.5,
         borderRadius: 15,
-
-
     },
     imageBackground: {
         flex: 1,

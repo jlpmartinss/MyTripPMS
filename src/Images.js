@@ -43,7 +43,8 @@ export default Images = {
     desertas: require("../assets/Trips/mapasVMT_desertas-1.png"),
     sunset: require("../assets/Trips/mapa_por-do-sol.png"),
     faja: require("../assets/Trips/mapa_fajas.png"),
-    fireworks: require("../assets/Trips/F.Atlantico-Polonia-75-1220x817-1220x817.jpg")
+    fireworks: require("../assets/Trips/F.Atlantico-Polonia-75-1220x817-1220x817.jpg"),
+    imsunset: require("../assets/Trips/imsunset.jpg")
     
 
 }

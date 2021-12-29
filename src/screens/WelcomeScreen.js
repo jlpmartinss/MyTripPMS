@@ -28,7 +28,6 @@ export default function SunsetScreen({ route, navigation}) {
     }
 
 
-
     useEffect(() => {
         getData();
     }, []);
