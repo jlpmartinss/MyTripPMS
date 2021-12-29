@@ -16,7 +16,6 @@ const AddTripScreen = ({ route, navigation }) => {
     var isClicked = false;
     var tripTime = Data[id].fullDate;
     var dataAtual = new Date().toLocaleString();
-    //console.log(Data);
 
 
     useEffect(() => {
@@ -36,24 +35,18 @@ const AddTripScreen = ({ route, navigation }) => {
         if (dataAtual > tripTime) {
             Alert.alert(idTrip)
             setData();
-            //Alert.alert("Go to Home and see your Trip");
-            //navigation.navigate('HomeScreen', {screen:"HomeScreen"});
         }
         else (
             console.log("Your trip is not over yet!")
         )
     }
     const setData = async () => {
-        if (idTrip.length == 0){
-            Alert.alert('WARNING: Please write something!');
-        }
-        else if(isNaN(idTrip)){
+        if (idTrip.length == 0 || isNaN(parseInt(idTrip))) {
             Alert.alert('WARNING: Please write a number!');
         }
         else {
             try {
-                await AsyncStorage.setItem('IdNewTrip', idTrip);
-                array.push(idTrip);
+                await AsyncStorage.setItem('IdNewTrip', JSON.stringify(idTrip));
                 navigation.navigate("Home")
 
             } catch (error) {
@@ -63,6 +56,11 @@ const AddTripScreen = ({ route, navigation }) => {
         
     }
 
+
+    //teste
+    const entrar = () =>{
+        console.log(idTrip)
+    }
 
     return (
         <ImageBackground blurRadius={3} source={require("../../assets/trip.jpg")} resizeMode="cover" style={styles.imageBackground}>
@@ -79,7 +77,7 @@ const AddTripScreen = ({ route, navigation }) => {
                 //defaultValue={text}
                 />
 
-                <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime(),navigation.navigate("Home", idTrip)}}>
+                <TouchableOpacity style={styles.roundButton1} onPress={() => {setData()}}>
                     <Text style={styles.textButton}>Add Trip</Text>
                 </TouchableOpacity>
             </View>

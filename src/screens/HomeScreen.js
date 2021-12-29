@@ -41,12 +41,14 @@ const Home = ({ route, navigation }) => {
 
 
     const [idTrip, setIdTrip] = useState('');
+
     const getData = () => {
         try {
             AsyncStorage.getItem('IdNewTrip')
                 .then(value => {
                     if (value != null) {
-                        setIdTrip(value);
+                        setIdTrip(idTrip);
+                        console.log(idTrip);
                     }
                 })
         } catch (error) {
@@ -69,6 +71,11 @@ const Home = ({ route, navigation }) => {
     // const comment = tripData.comment;
     // const sightedSpecies = tripData.sightedSpecies;
     // const routeTrip = tripData.route;
+
+    //teste
+    const entrar = () =>{
+        console.log(idTrip)
+    }
 
     return (
         <View style={styles.container}>
