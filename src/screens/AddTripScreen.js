@@ -52,7 +52,6 @@ const AddTripScreen = ({ route, navigation }) => {
                 navigation.navigate('Home');
             } catch (error) {
                 console.log(console.error);
-    
             }
         }
         

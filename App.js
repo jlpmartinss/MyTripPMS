@@ -19,7 +19,7 @@ import WhaleWhatchingScreen from './src/screens/WhaleWatchingScreen';
 import DesertasScreen from './src/screens/DesertasScreen';
 import FajasScreen from './src/screens/FajasScreen';
 import SunsetScreen from './src/screens/SunsetScreen';
-import { AddTripScreenNavigator, HomeScreenNavigator, SpeciesScreenNavigator, PostCardNavigator, TripListScreenNavigator, EditPostCardNavigator } from './src/screens/CustomNavigation';
+import { AddTripScreenNavigator, HomeScreenNavigator, SpeciesScreenNavigator, PostCardNavigator, TripListScreenNavigator, EditPostCardNavigator, SelectedPictureScreenNavigator } from './src/screens/CustomNavigation';
 import { StatusBar } from 'expo-status-bar';
 
 
@@ -45,6 +45,8 @@ export default () => (
         <Tab.Screen name="Species" component={SpeciesScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Feather name="search" size={size} color={color} /> )}}/>
         <Tab.Screen name="Add Trip" component={AddTripScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Ionicons name="add-circle" size={size} color={color} /> )}}/>
         <Tab.Screen name="TripList" component={TripListScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
+        <Tab.Screen name="SelectedPictureScreen" component={SelectedPictureScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
+        <Tab.Screen name="PostCard" component={PostCardNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
 
       </Tab.Navigator>
     </NavigationContainer>

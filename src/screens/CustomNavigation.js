@@ -204,4 +204,18 @@ const WhalesWatchingScreenNavigator = () => {
 }
 export { WhalesWatchingScreenNavigator }
 
+const SelectedPictureScreenNavigator = () => {
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen
+                name="SelectedPictureScreen"
+                component={SelectPictureScreen}
+            />
+           
+        </Stack.Navigator>
+    );
+}
+export { SelectedPictureScreenNavigator }
+
+
 

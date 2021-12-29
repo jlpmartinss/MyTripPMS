@@ -4,11 +4,7 @@ import { View, Text, Button, StyleSheet, FlatList, Dimensions, Image, ScrollView
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Images from "../Images"
 
-
-
 const ITEM_WIDTH = Dimensions.get('window').width
-
-
 
 //we will loop through object properties and if an object has at least one property, then it will enter the loop and return false. If the object doesn’t have any properties then it will return true.
 function isEmpty(obj) {
@@ -22,7 +18,7 @@ function isEmpty(obj) {
 
 const Home = ({ route, navigation }) => {
 
-    // let data = route.params;
+    //let data = route.params;
 
     // if(data == undefined){
     //     console.log("nada");
@@ -41,7 +37,7 @@ const Home = ({ route, navigation }) => {
     // const rating = data.rating;
     // const comment = data.comment;
     // const sightedSpecies = data.sightedSpecies;
-    // //const route = data.route;
+    //const route = data.route;
 
 
     const [idTrip, setIdTrip] = useState('');
@@ -61,9 +57,6 @@ const Home = ({ route, navigation }) => {
     useEffect(() => {
         getData();
     }, []);
-
-
-
 
     // const id = tripData.id;
     // const ongoing = tripData.ongoing;
