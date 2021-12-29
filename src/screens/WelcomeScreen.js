@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 8,
         backgroundColor: '#fff',
-        marginTop: 350
+        marginTop: 300
     },
     imageBackground: {
         flex: 1
@@ -58,6 +58,9 @@ const styles = StyleSheet.create({
         alignSelf: "flex-start",
         marginTop: 10,
         color: 'white',
-        fontSize: 15
+        fontSize: 15,
+        paddingVertical: 20,
+        lineHeight: 20
+
     }
 })

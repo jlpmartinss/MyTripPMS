@@ -198,6 +198,8 @@ const styles = StyleSheet.create({
         marginTop: 10,
         textAlign: 'justify',
         fontSize: 15,
+        lineHeight: 20
+
     },
     textCientific: {
         marginLeft: 20,
@@ -211,7 +213,8 @@ const styles = StyleSheet.create({
         color: 'white',
         textAlign: 'justify',
         fontSize: 14,
-        marginRight:10,
+        marginRight: 10,
+        lineHeight: 20
     },
     textBox: {
         flex: 1,

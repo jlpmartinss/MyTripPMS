@@ -6,6 +6,7 @@ import React from 'react';
 
 //Screens
 import HomeScreen from './src/screens/HomeScreen';
+import WelcomeScreen from './src/screens/WelcomeScreen.js';
 import SpeciesScreen from './src/screens/SpeciesScreen';
 import AddTripScreen from './src/screens/AddTripScreen';
 import WhalesScreen from './src/screens/WhalesScreen';

@@ -80,7 +80,7 @@ const AddTripScreen = ({ route, navigation }) => {
                 //defaultValue={text}
                 />
 
-                <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime(),navigation.navigate("Home", array)}}>
+                <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime(),navigation.navigate("Home", idTrip)}}>
                     <Text style={styles.textButton}>Add Trip</Text>
                 </TouchableOpacity>
             </View>

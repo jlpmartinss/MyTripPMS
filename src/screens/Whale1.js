@@ -177,7 +177,9 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         marginTop: 10,
         textAlign: 'justify',
-        fontSize: 15
+        fontSize: 15,
+        lineHeight: 20
+
     },
     textCientific: {
         marginLeft: 20,
