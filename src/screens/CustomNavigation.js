@@ -17,11 +17,26 @@ import DesertasScreen from './DesertasScreen';
 import FajasScreen from './FajasScreen';
 import SunsetScreen from './SunsetScreen';
 import EditPostCardScreen from './EditPostCard';
+import LoginScreen from './LoginScreen';
 import WelcomeScreen from './WelcomeScreen';
 
 const { createStackNavigator } = require("@react-navigation/stack");
 
 const Stack = createStackNavigator();
+
+
+const LoginScreenNavigator = () => {
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen
+                name="LoginScreen"
+                component={LoginScreen}
+            />
+        </Stack.Navigator>
+    );
+}
+
+export { LoginScreenNavigator }
 
 const WelcomeScreenNavigator = () => {
     return (

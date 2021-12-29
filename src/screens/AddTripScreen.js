@@ -54,8 +54,6 @@ const AddTripScreen = ({ route, navigation }) => {
             try {
                 await AsyncStorage.setItem('IdNewTrip', idTrip);
                 array.push(idTrip);
-                navigation.navigate('Home');
-                console.log(array);
             } catch (error) {
                 console.log(console.error);
             }
@@ -92,9 +90,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
 
-    },
-    textInput: {
-        padding: 10, height: 40, width: 150, alignSelf: 'center'
     },
     textSubTitle: {
 

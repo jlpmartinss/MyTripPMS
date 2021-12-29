@@ -20,7 +20,7 @@ import WhaleWhatchingScreen from './src/screens/WhaleWatchingScreen';
 import DesertasScreen from './src/screens/DesertasScreen';
 import FajasScreen from './src/screens/FajasScreen';
 import SunsetScreen from './src/screens/SunsetScreen';
-import { AddTripScreenNavigator, HomeScreenNavigator, SpeciesScreenNavigator, PostCardNavigator, TripListScreenNavigator, EditPostCardNavigator, SelectedPictureScreenNavigator, WelcomeScreenNavigator } from './src/screens/CustomNavigation';
+import { AddTripScreenNavigator, HomeScreenNavigator, SpeciesScreenNavigator, PostCardNavigator, TripListScreenNavigator, LoginScreenNavigator, EditPostCardNavigator, SelectedPictureScreenNavigator, WelcomeScreenNavigator } from './src/screens/CustomNavigation';
 import { StatusBar } from 'expo-status-bar';
 
 
@@ -42,6 +42,7 @@ Test = createStackNavigator();
 export default () => (
     <NavigationContainer >
       <Tab.Navigator>
+        <Tab.Screen name="Login" component={LoginScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
         <Tab.Screen name="Welcome" component={WelcomeScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
         <Tab.Screen name="Home" component={HomeScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
         <Tab.Screen name="Species" component={SpeciesScreenNavigator} options={{tabBarIcon: ({size,color}) => (<Feather name="search" size={size} color={color} /> )}}/>
