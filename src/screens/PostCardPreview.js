@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState , useEffect} from 'react';
 import { View, Text, Button, ScrollView, StyleSheet, Image, TouchableHighlight, TextInput, Share, ImageBackground, Dimensions, Touchable } from 'react-native';
 import { Rating, RatingProps } from 'react-native-elements';
@@ -255,6 +256,11 @@ const PostCardPreview = ({ navigation, route }) => {
 export default PostCardPreview;
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+
+    },
     textTitles: {
         color: 'black',
         fontSize: 18,
