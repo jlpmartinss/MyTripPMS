@@ -33,9 +33,8 @@ export default function SunsetScreen({ route, navigation}) {
     }, []);
 
     const entrar = () => {
-        console.log("entrou")
         console.log(username)
-        //console.log(password)
+        console.log(password)
     }
 
 
@@ -92,16 +91,14 @@ const styles = StyleSheet.create({
     text: {
         marginHorizontal: 20,
         alignSelf: "flex-start",
-        marginTop: 10,
         color: 'white',
         fontSize: 15,
-        paddingVertical: 20,
         lineHeight: 20
     },
     welcomeText: {
         marginHorizontal: 20,
         alignSelf: "flex-start",
-        marginTop: 20,
+        marginTop: 30,
         color: 'white',
         fontSize: 18,
         fontWeight: 'bold',
