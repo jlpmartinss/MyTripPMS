@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import React, { useState, useEffect } from 'react';
 import { View, Text, Button, ScrollView, StyleSheet, Image, TouchableHighlight, TextInput, ImageBackground, Dimensions, Touchable} from 'react-native';
 import { Rating, RatingProps } from 'react-native-elements';
 import { Entypo, Feather, Ionicons, Icon, AntDesign, FontAwesome } from '@expo/vector-icons'
@@ -40,8 +41,31 @@ let ITEM_WIDTH = Dimensions.get('window').width;
 const PostCardPreview = ({navigation , route }) => {
     let data = route.params; 
     const rating = data;
-    const [isOpenRating, setOpenRating] = useState(true);
+
+    //const [editedrating, setRating] = useState('');
+    const [editComment, setComment] = useState('');
+    const getData = () => {
+        try {
+            AsyncStorage.getItem('newComment')
+                .then(value => {
+                    if (value != null) {
+                        setComment(value);
+                    }
+                })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        getData();
+    }, []);
+
+    console.log('comment:' +editComment);
+
     const [text, setText] = useState('');
+
+
     const onShare = async () => {
         const shareOptions = {
             message:
@@ -117,7 +141,11 @@ const PostCardPreview = ({navigation , route }) => {
                                     Your Featured Photo: </Text>
                                     <Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 5, borderWidth: 1, borderColor: '#dddddd' }} source={require('../../assets/Trips/imsunset.jpg')} />
 
-                                <Text style={styles.textComment} /*Comentário da viagem */ >  </Text>
+                                    { editComment == '' ? <Text style={styles.textComment} /*Comentário da viagem */ > {comment} 
+                                    </Text> : <Text style={styles.textComment}> {editComment}
+
+                                    </Text>
+                                    }
                             </View>
 
                         </View>
