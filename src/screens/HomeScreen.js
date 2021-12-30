@@ -83,25 +83,31 @@ const Home = ({ route, navigation }) => {
 
     return (
         <View style={styles.container}>
-            <ImageBackground blurRadius={50} source={img} resizeMode="cover" style={styles.imageBackground}>
-                <View style= {styles.headerbox}>
-                    <Text style= {styles.textHeader}>My trips </Text>
-                   
-                </View> 
-                
-                <TouchableOpacity style={styles.buttom} onPress={() => {navigation.navigate("AddTrip"); }}>
-                    <Text style={styles.textButton}>Confirm {idTrip} {entrar()}</Text>
-                </TouchableOpacity>
-                
+            <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
+                <ScrollView style={styles.darkerimage}>
 
-                <ScrollView>
-                    {isEmpty ? <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
+                    <View style= {styles.headerbox}>
+                        <Text style= {styles.textHeader}>My trips </Text>                   
+                    </View> 
+
+                    <TouchableOpacity style={styles.buttom} onPress={() => {navigation.navigate("AddTrip"); }}>
+                        <Text style={styles.buttonText}>Add a new trip</Text>
+                    </TouchableOpacity>
+
+
+                    {isEmpty ? 
+                    <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
                         <View style={styles.item}>
                             <Image style={styles.image} source={img} />
                             {/* <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
                             <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text> */}
                         </View>
                     </TouchableOpacity> : null}
+
+                    <TouchableOpacity style={styles.buttom} onPress={() => {navigation.navigate("SelectedPictureScreen"); }}>
+                        <Text style={styles.buttonText}>Select Pic TEST! </Text>
+                    </TouchableOpacity>            
+
                 </ScrollView>
             </ImageBackground>
         </View >
@@ -170,11 +176,9 @@ const styles = StyleSheet.create({
         textShadowRadius: 8,
         paddingTop: 200,
         fontSize: 14
-
-
     },
     image: {
-        marginTop: 85,
+        marginTop: 0,
         marginLeft: 15,
         flex: 1,
         width: ITEM_WIDTH - 35,
@@ -182,12 +186,30 @@ const styles = StyleSheet.create({
         borderRadius: 15,
     },
     imageBackground: {
-        flex: 1,
-
+        flex: 1,        
+    },
+    darkerimage: {
+        backgroundColor: 'rgba(0, 0, 0, 0.3)'
     },
     shadowProp: {
         shadowColor: '#171717',
         shadowOpacity: 0.2,
         shadowRadius: 3,
     },
+    buttom: {
+        width: ITEM_WIDTH/2,
+        height: 40,
+        marginTop: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf:'center',
+        borderRadius: 8,
+        backgroundColor: '#11BDBB',
+    },
+      buttonText: {
+        fontSize: 20,
+        color: 'black',
+      },
+
+
 })

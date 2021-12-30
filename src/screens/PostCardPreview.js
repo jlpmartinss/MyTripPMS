@@ -78,112 +78,114 @@ const PostCardPreview = ({navigation , route }) => {
     }
 
     return (
-        <View>
+        <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
+            <View style={styles.darkerimage}>
 
-            <View style= {styles.headerbox}>
-                <Text style= {styles.textHeader}>PostCard</Text>
-            </View>  
+                <View style= {styles.headerbox}>
+                    <Text style= {styles.textHeader}>PostCard</Text>
+                </View>  
 
-            <ScrollView scrollEventThrottle = {16}/*Scrollview da página toda */>
-                    <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
+                <ScrollView scrollEventThrottle = {16}/*Scrollview da página toda */>
+                        <View style={{ flex: 1,paddingTop: 20 }}>
 
-                        <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20, textShadowColor: 'rgba(0, 0, 0, 1)' }}> {location} </Text>
-                        <Text style={{ fontSize: 15, fontWeight: '500', marginTop: 10, paddingHorizontal: 20 }}>Coordinates: {latitude} , {longitude} </Text>
-                        <Text style={{ fontSize: 15, fontWeight: '500', marginTop: 10, paddingHorizontal: 20 }}>Sea State: {seaState}m </Text>
-                        <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 20, paddingHorizontal: 20 }}>Your Gallery: </Text>
+                            <Text style={styles.textTitles}>{location} </Text>
+                            <Text style={styles.text}>Coordinates: {latitude} , {longitude} É para incluir??!?! </Text>
+                            <Text style={styles.text}>Sea State: {seaState}m </Text>
+                            <Text style={styles.text}>Your Gallery: </Text>
 
-                        <View style={{ height: 130, marginTop: 8 }}>
+                            <View style={{ height: 130, marginTop: 8 }}>
+                            
+                                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                                    <Category imageUri={require('../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg')}  name="" /*se quisermos adicionar titulo às imagens *//>
+                                    <Category imageUri={require('../../assets/whale.jpg')}  name=""/>
+                                    <Category imageUri={require('../../assets/586396-dophin-animals.jpg')} name=""/>
+                                </ScrollView>
+
+                            </View>
+
+                            <View style={{ flex: 1, paddingTop: 20 }}>
+
+                                <Text style={styles.textTitles}>{name} | {boatName}</Text>
+                                <Text style={styles.text}>{date} at {time}</Text>
+                                
+                                { rating != undefined ? <Rating style = {{ marginTop: 10 }}
+                                    readonly
+                                    showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
+                                    type="star"
+                                    startingValue={rating}
+                                    imageSize={22}
+                                ></Rating> :
+                                <Rating style = {{ marginTop: 10 }}
+                                    readonly
+                                    showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
+                                    type="star"
+                                    startingValue={3}
+                                    imageSize={22}
+                                ></Rating> }
+                                
+                                <Text style={styles.textSocial}>Share on social:
+
+                                <View style = {{flexDirection: 'row', margin: 100}}>
+                                    <TouchableOpacity style={styles.icon} onPress={() => onShare()}>
+                                        <AntDesign name="facebook-square" size={50} color="#4267B2" />
+                                    </TouchableOpacity>
+
+                                    <TouchableOpacity style={styles.icon} onPress={() => onShare()}>
+                                        <AntDesign name="instagram" size={50} color="black" />
+                                    </TouchableOpacity>
+                                </View>
+
+                                </Text>  
+
+                                <View style={{ width: width - 40, height: 300, marginTop: 20,}}>
+                                    <Text style={{ fontSize: 18, fontWeight: '700', marginBottom: 5}}>
+                                        Your Featured Photo: </Text>
+                                        <Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 5, borderWidth: 1, borderColor: '#dddddd' }} source={require('../../assets/Trips/imsunset.jpg')} />
+
+                                        { editComment == '' ? <Text style={styles.textComment} /*Comentário da viagem */ > {comment} 
+                                        </Text> : <Text style={styles.textComment}> {editComment}
+
+                                        </Text>
+                                        }
+                                </View>
+
+                            </View>
+                        </View>
                         
-                            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                                <Category imageUri={require('../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg')}  name="" /*se quisermos adicionar titulo às imagens *//>
-                                <Category imageUri={require('../../assets/whale.jpg')}  name=""/>
-                                <Category imageUri={require('../../assets/586396-dophin-animals.jpg')} name=""/>
-                            </ScrollView>
-
+                        <View style = {styles.textBoxPostCard} >
+                            <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 8}}>Edit PostCard
+                                <TouchableOpacity onPress={() => navigation.navigate("EditCard")}>
+                                    <FontAwesome name="edit" size={30} color="blue"/>
+                                </TouchableOpacity>
+                            </Text>
                         </View>
-
-                        <View style={{ marginTop: 20, paddingHorizontal: 20 }}>
-
-                            <Text style={{ fontSize: 24, fontWeight: '700', textShadowColor: 'rgba(0, 0, 0, 1)' }}>{name} | {boatName}</Text>
-                            <Text style={{ fontSize: 15, fontWeight: '500', marginTop: 10 }}>{date} at {time}</Text>
-                            
-                            { rating != undefined ? <Rating style = {{ marginTop: 10 }}
-                                readonly
-                                showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
-                                type="star"
-                                startingValue={rating}
-                                imageSize={22}
-                            ></Rating> :
-                            <Rating style = {{ marginTop: 10 }}
-                                readonly
-                                showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
-                                type="star"
-                                startingValue={3}
-                                imageSize={22}
-                             ></Rating> }
-                            
-                            <View style={styles.textBoxSocial}>
-                                <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 10 }}>Share on social:
-
-                                    <TouchableOpacity onPress={() => onShare()}>
-                                        <AntDesign name="facebook-square" size={30} color="#4267B2" />
-                                    </TouchableOpacity>
-
-                                    <TouchableOpacity onPress={() => onShare()}>
-                                        <AntDesign name="instagram" size={30} color="black" />
-                                    </TouchableOpacity>
-
-                                </Text>                                
-                            </View>
-
-                            <View style={{ width: width - 40, height: 300, marginTop: 20, backgroundColor: 'white'}}>
-                                <Text style={{ fontSize: 18, fontWeight: '700', marginBottom: 5}}>
-                                    Your Featured Photo: </Text>
-                                    <Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 5, borderWidth: 1, borderColor: '#dddddd' }} source={require('../../assets/Trips/imsunset.jpg')} />
-
-                                    { editComment == '' ? <Text style={styles.textComment} /*Comentário da viagem */ > {comment} 
-                                    </Text> : <Text style={styles.textComment}> {editComment}
-
-                                    </Text>
-                                    }
-                            </View>
-
-                        </View>
-                    </View>
                     
-                    <View style = {styles.textBoxPostCard} >
-                        <Text style={{ fontSize: 18, fontWeight: '700', marginTop: 8}}>Edit PostCard
-                            <TouchableOpacity onPress={() => navigation.navigate("EditCard")}>
-                                <FontAwesome name="edit" size={30} color="blue"/>
-                            </TouchableOpacity>
-                        </Text>
+                    <View>
+                        <Text style={styles.textTitles}> Sighted Species: </Text>
+
+                            <View /* Adicionar textbox*/ >
+                                {sightedSpecies.map((specie, key) => {
+                                    return (
+                                        <Text style={styles.sightedSpecies} key={key}>{specie.SpeciesName}
+                                            <Text style={styles.text}> {"\n\n"} First Seen at: {specie.Sighted}</Text>
+                                            <Text style={styles.text}> {"\n"} Behaviours: {specie.Behaviours}</Text>
+                                            {/* { specie.Behaviours.map((behaviour, key1) => {
+                                                    <Text style={styles.text} key={key1}>{behaviour}</Text>
+                                                })} */}
+                                            <Text style={styles.text}> {"\n"} Reactions to boat: {specie.ReactionsToBoat}</Text>
+                                        </Text>
+                                )})}
+                            </View>
+
+                        <Text style={styles.textTitles}>Description: </Text>
+                            {/*Adicionar descrição*/}
+                        <Text style={styles.textTitles}>Route : {routetrip} </Text>
+                            <Image  /*Insert route image*/ />
                     </View>
-                
-                <View backgroundColor = "white">
-                    <Text style={styles.textTitles}> Sighted Species: </Text>
 
-                        <View /* Adicionar textbox*/ >
-                            {sightedSpecies.map((specie, key) => {
-                                return (
-                                    <Text style={styles.sightedSpecies} key={key}>{specie.SpeciesName}
-                                        <Text style={styles.text}> {"\n\n"} First Seen at: {specie.Sighted}</Text>
-                                        <Text style={styles.text}> {"\n"} Behaviours: {specie.Behaviours}</Text>
-                                        {/* { specie.Behaviours.map((behaviour, key1) => {
-                                                <Text style={styles.text} key={key1}>{behaviour}</Text>
-                                            })} */}
-                                        <Text style={styles.text}> {"\n"} Reactions to boat: {specie.ReactionsToBoat}</Text>
-                                    </Text>
-                            )})}
-                        </View>
-
-                    <Text style={styles.textTitles}>Description: </Text>
-                        {/*Adicionar descrição*/}
-                    <Text style={styles.textTitles}>Route : {routetrip} </Text>
-                        <Image  /*Insert route image*/ />
-                </View>
-
-            </ScrollView>
-        </View>
+                </ScrollView>
+            </View>
+        </ImageBackground>
     );
 }
 
@@ -191,13 +193,13 @@ export default PostCardPreview;
 
 const styles = StyleSheet.create({
     textTitles: {
-        color: 'black',
+        color: 'white',
         fontSize: 18,
         fontWeight: '700',
         paddingHorizontal: 20,
-        marginTop: 10,
+        margin: 10,
+        marginLeft: 0,
         textShadowColor: 'rgba(0, 0, 0, 1)',
-        marginTop: 20
     },
     image: {
         flex: 1,
@@ -236,14 +238,14 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: '500',
         marginTop: 10,
-        color: 'black'
+        color: 'white'
     },
     textComment: {
         paddingHorizontal: 0,
         fontSize: 15,
         fontWeight: '500',
         marginTop: 10,
-        color: 'black'
+        color: 'white'
     },
 
     sightedSpecies: {
@@ -255,16 +257,12 @@ const styles = StyleSheet.create({
         color: 'rgba(23,108,255,1)'
     },
     textBoxSocial: {
-        flex: 1,
-        backgroundColor: 'rgba(23,108,255, 0.08)',
+        backgroundColor: 'rgba(23,108,255, 0.50)',
         margin: 20,
         borderRadius: 15,
-        paddingHorizontal: 60,
-        width: ITEM_WIDTH-ITEM_WIDTH/8,
-        height: 90,
-        maxHeight: 55,
-        alignSelf: 'flex-start',
-        marginHorizontal: 0
+        width: ITEM_WIDTH/1.2,
+        height: 55,
+        alignSelf: 'center',
     },
     textBoxPostCard: {
         flex: 1,
@@ -288,5 +286,28 @@ const styles = StyleSheet.create({
         height: 530,
         alignSelf: 'flex-start'
 
+    },
+    textSocial: {
+        color: 'white',
+        fontSize: 18,
+        fontWeight: '700',
+        padding: 10,
+        alignItems: 'center',
+        alignSelf:'center',
+        margin: 10,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        width: ITEM_WIDTH,
+    },
+    imageBackground: {
+        flex: 1,        
+    },
+    darkerimage: {
+        backgroundColor: 'rgba(0, 0, 0, 0.3)'
+    },
+    icon: {      
+        flex:1,  
+        alignSelf: 'flex-start',
+        alignContent: "center",
+        alignItems: 'center',
     }
 })

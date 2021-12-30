@@ -59,39 +59,36 @@ const AddTripScreen = ({ route, navigation }) => {
             }
         }
     }
-  
-
 
     return (
-        <View style={styles.container}>
-            <ImageBackground blurRadius={3} source={require("../../assets/trip.jpg")} resizeMode="cover" style={styles.imageBackground}>
+        <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
+            <ScrollView style={styles.darkerimage}>
 
-                 <View style= {styles.headerbox}>
-                    <Text style= {styles.textHeader}>Add Trip</Text>
-                </View> 
-                <ScrollView> 
-                    <Text style={styles.textSubTitle}>Type the code of your trip</Text>
+            <View style= {styles.headerbox}>
+                <Text style= {styles.textHeader}>Add Trip</Text>
+            </View> 
+                <Text style={styles.textSubTitle}>Type the code of your trip</Text>
 
-                    <TextInput
-                        style= {styles.textInput}
-                        backgroundColor='#FFFFFF'
-                        //se o input for números onChangeText = {onChangeNumber} + value = {number} + keyboardType="numeric" 
-                        placeholder="Type Trip Code Here"
-                        //onSubmitEditing={text => setText(text)}
-                        onChangeText={idTrip => setIdTrip(idTrip)}
+                <TextInput
+                    style= {styles.textInput}
+                    backgroundColor='#FFFFFF'
+                    //se o input for números onChangeText = {onChangeNumber} + value = {number} + keyboardType="numeric" 
+                    placeholder="Type Trip Code Here"
+                    //onSubmitEditing={text => setText(text)}
+                    onChangeText={idTrip => setIdTrip(idTrip)}
                     //defaultValue={text}
-                    />
+                />
 
-                    <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime(); navigation.navigate("Home") }}>
-                        <Text style={styles.textButton}>Add Trip</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.roundButton1} onPress={() => {  navigation.navigate("Home") }}>
-                        <Text style={styles.textButton}>See my Trips</Text>
-                    </TouchableOpacity>
-                 
-                </ScrollView>
-            </ImageBackground>
-        </View>
+                <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime(); navigation.navigate("Home") }}>
+                    <Text style={styles.textButton}>Add Trip</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.roundButton1} onPress={() => { navigation.navigate("Home") }}>
+                    <Text style={styles.textButton}>See my Trips</Text>
+                </TouchableOpacity>
+                
+            </ScrollView>
+        </ImageBackground>
+    
     );
 }
 
@@ -119,7 +116,7 @@ const styles = StyleSheet.create({
 
     },
     textButton: {
-        color: 'white',
+        color: 'black',
         fontSize: 18,
     },
     headerbox: {
@@ -145,29 +142,32 @@ const styles = StyleSheet.create({
         zIndex: 10
     },
     imageBackground: {
-        flex: 1,        
-        minHeight: ITEM_HEIGHT,
+        flex: 1, 
+        minHeight: ITEM_HEIGHT,       
+    },
+    darkerimage: {
+        backgroundColor: 'rgba(0, 0, 0, 0.3)'
     },
     roundButton1: {
-        width: 150,
+        width: ITEM_WIDTH/2,
         height: 40,
+        marginTop: 20,
         justifyContent: 'center',
         alignItems: 'center',
         alignSelf: 'center',
         borderRadius: 8,
-        backgroundColor: '#176cff',
-        //overflow = 'hidden'
+        backgroundColor: '#11BDBB',
+        //overflow = 'hidden',
     },
     textInput: {
-        padding: 10,
-        height: 40,
-        width: 150,
-        margin: 15,
+        backgroundColor: 'white',
         borderRadius: 8,
-        
-        justifyContent: 'center',
-        alignItems: 'center',
+        padding: 10, 
+        height: 40, 
+        width: '50%', 
         alignSelf: 'center',
+        marginTop: 20,
+        textAlign: 'center'
     },
 })
 

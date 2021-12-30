@@ -105,6 +105,7 @@ export default function SelectPictureScreen() {
   }
 
   return (
+    
     <View style={styles.container}>
       <ImageBackground blurRadius = {50} source={require("../../assets/Trips/imdesertas.jpg")} resizeMode="cover" style={styles.imageBackground}> 
       <View style= {styles.headerbox}>

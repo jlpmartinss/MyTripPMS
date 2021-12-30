@@ -39,8 +39,8 @@ export default function SunsetScreen({ route, navigation}) {
 
 
     return (
-        <ImageBackground blurRadius={5} source={require("../../assets/welcomeimage/welcome.jpg")} resizeMode="cover" style={styles.imageBackground}>
-            <ScrollView>
+        <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
+            <ScrollView style={styles.darkerimage}>
                 <View style={styles.container}>
                     <Text style={styles.textSubTitle}>My Trip</Text>
 
@@ -88,7 +88,10 @@ const styles = StyleSheet.create({
         marginTop: 200
     },
     imageBackground: {
-        flex: 1
+        flex: 1,        
+    },
+    darkerimage: {
+        backgroundColor: 'rgba(0, 0, 0, 0.3)'
     },
     text: {
         marginHorizontal: 20,

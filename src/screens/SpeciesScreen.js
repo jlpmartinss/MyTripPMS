@@ -13,15 +13,16 @@ export default function SpeciesScreen({ navigation }){
     
     return(
         
-        <View style ={styles.container}>
-            <ImageBackground blurRadius = {50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}>
-            
+        <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
+            <View style={styles.darkerimage}>
+
+                
                 <View style= {styles.headerbox}>
                     <Text style= {styles.textHeader}>Species</Text>
                 </View>                
-                
-                <ScrollView> 
-                
+                    
+                <ScrollView>
+                    
                     <TouchableOpacity onPress={() => navigation.navigate("Whales")}>       
                         <View style ={styles.item}>                    
                             <Image style = {styles.image} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
@@ -50,8 +51,8 @@ export default function SpeciesScreen({ navigation }){
                         </View>  
                     </TouchableOpacity>                              
                 </ScrollView>
-            </ImageBackground>
-        </View>
+            </View>
+        </ImageBackground>
     );
 }
 
@@ -110,6 +111,9 @@ const styles = StyleSheet.create({
         borderRadius: 15,
     },
     imageBackground: {
-        flex: 1
+        flex: 1,        
+    },
+    darkerimage: {
+        backgroundColor: 'rgba(0, 0, 0, 0.3)'
     },
 })

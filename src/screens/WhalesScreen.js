@@ -223,7 +223,10 @@ const styles = StyleSheet.create({
         borderRadius: 15
     },
     imageBackground: {
-        flex: 1
+        flex: 1,        
+    },
+    darkerimage: {
+        backgroundColor: 'rgba(0, 0, 0, 0.3)'
     },
 })
 

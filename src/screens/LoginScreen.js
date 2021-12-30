@@ -50,13 +50,17 @@ const LoginScreen = ({ route, navigation }) => {
 
 
     return (
-        <ImageBackground blurRadius={5} source={require("../../assets/welcomeimage/welcome.jpg")} resizeMode="cover" style={styles.imageBackground}>
-            <View style = {styles.container}>
+        <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
+            <View style={styles.darkerimage}>
+
                 <Text style = {styles.textSubTitle}> Sign In </Text>
-                <TextInput style = {styles.textInput} placeholder = "Enter Your Name" onChangeText = {(value) => setUsername(value)}/>
+                    <TextInput style = {styles.textInput} placeholder = "Enter Your Name" onChangeText = {(value) => setUsername(value)}/>
+
                 <TextInput style = {styles.textInput} placeholder = "Enter Your Password" onChangeText = {(value) => setPassword(value)} secureTextEntry = {true}/>
-                <TouchableOpacity style={styles.buttom} onPress={() => {setData()}}>
-                    <Text style={styles.textButton}>Confirm</Text>
+                    <TouchableOpacity style={styles.buttom} onPress={() => {setData()}}>
+                        
+                <Text style={styles.textButton}>Confirm</Text>
+
                 </TouchableOpacity>
         
             </View>
@@ -71,7 +75,12 @@ const LoginScreen = ({ route, navigation }) => {
     
         },
         imageBackground: {
-            flex: 1
+            flex: 1,        
+        },
+        darkerimage: {
+            flex: 1,
+            backgroundColor: 'rgba(0, 0, 0, 0.3)',            
+            alignItems: 'center',
         },
         textSubTitle: {
             color: 'white',
@@ -102,7 +111,7 @@ const LoginScreen = ({ route, navigation }) => {
 
         },
         textButton: {
-            color: 'white',
+            color: 'black',
             fontSize: 18,
         },
         buttom: {
@@ -112,7 +121,7 @@ const LoginScreen = ({ route, navigation }) => {
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 8,
-            backgroundColor: '#176cff',
+            backgroundColor: '#11BDBB',
         }
 
     })
