@@ -50,6 +50,8 @@ export default function SelectPictureScreen() {
   var count = 0;
   let ImageList = [];
 
+  
+
   let openImagePickerAsync = async () => {
     let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
     
@@ -112,7 +114,6 @@ export default function SelectPictureScreen() {
         <Text style= {styles.textHeader}>Select photo</Text>
       </View>
         <ScrollView>
-
         <View style={styles.textBox}>
           <Text style={styles.instructions}>To share a photo from your phone with a friend, just press the button below!</Text>
         </View>        
