@@ -21,18 +21,18 @@ function writeToJson(data) {
 }
 
 export default function EditPostCard({ route, navigation }) {
-  const [editedrating, setRating] = useState('');
+  const [rating, setRating] = useState();
   const [editComment, setComment] = useState('');
   //console.log(editedrating);
 
   const setData = async () => {
-    if (editedrating == undefined && editComment == undefined) {
+    if (rating == undefined && editComment == undefined) {
       //console.log(editedrating);
       Alert.alert('Warning!', 'Please select a rating')
     }
     else {
         try {
-            await AsyncStorage.setItem('newRating', editedrating);
+            await AsyncStorage.setItem('newRating', rating);
             await AsyncStorage.setItem('newComment', editComment);
             navigation.navigate('PostCard');
         } catch (error) {
@@ -96,15 +96,15 @@ export default function EditPostCard({ route, navigation }) {
 <Text style={styles.textSubTitle}>Rate your Trip</Text>
 <Rating
         style ={{paddingHorizontal: 130 }}
-        rating={editedrating}
+        rating={rating}
         max={5}
         iconWidth={24}
         iconHeight={24}
         onRate={setRating}
       />
-<Text style ={{textAlign: 'center'}}  /* passar este valor para o json da viagem (para depois aparecer no postcard preview) */  >Selected Rating: {editedrating} stars</Text>
+<Text style ={{textAlign: 'center'}}  /* passar este valor para o json da viagem (para depois aparecer no postcard preview) */  >Selected Rating: {rating} stars</Text>
 
-<TouchableOpacity style={styles.roundButton1}  onPress={() => {navigation.navigate("PostCard", editedrating)}}>
+<TouchableOpacity style={styles.roundButton1}  onPress={() => {navigation.navigate("PostCard", rating)}}>
     
     <Text style={styles.textButton}>Finish Editing</Text>
 </TouchableOpacity>
