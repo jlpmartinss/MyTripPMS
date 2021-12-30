@@ -11,7 +11,7 @@ const LoginScreen = ({ route, navigation }) => {
     const [password, setPassword] = useState('')
     
     const setData = async () => {
-        if (username.length == 0 && password.length == 0){
+        if (username.length == 0 || password.length == 0){
             Alert.alert('WARNING: Please write your username!');
         }
         else {

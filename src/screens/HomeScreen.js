@@ -73,18 +73,21 @@ const Home = ({ route, navigation }) => {
     // const routeTrip = tripData.route;
 
     //teste
+
+    const img = Images.imsunset;
+    
     const entrar = () =>{
         console.log(idTrip)
     }
 
     return (
         <View style={styles.container}>
-            <ImageBackground blurRadius={50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg")} resizeMode="cover" style={styles.imageBackground}>
+            <ImageBackground blurRadius={50} source={img} resizeMode="cover" style={styles.imageBackground}>
                 <Text style= {styles.textSubTitle}> My Trips </Text>
                 <ScrollView>
                     {isEmpty ? <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
                         <View style={styles.item}>
-                            <Image style={styles.image} source={Images.imsunset} />
+                            <Image style={styles.image} source={img} />
                             {/* <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
                             <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text> */}
                         </View>

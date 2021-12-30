@@ -5,6 +5,7 @@ import ImageBackground from "react-native/Libraries/Image/ImageBackground";
 import Images from "../Images";
 
 const ITEM_WIDTH = Dimensions.get('window').width
+const ITEM_HEIGHT = Dimensions.get('window').height
 
 export default function Dolphin1({ route, navigation}) {
 
@@ -113,7 +114,8 @@ const styles = StyleSheet.create({
 
     },
     imageBackground: {
-        flex: 1
+        flex: 1,        
+        minHeight: ITEM_HEIGHT,
     },
     textTitle: {
         color: 'white',

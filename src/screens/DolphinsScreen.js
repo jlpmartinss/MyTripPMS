@@ -6,6 +6,7 @@ import Data from "./../../jsons/DolphinsData.json"
 
 
 let ITEM_WIDTH = Dimensions.get('window').width;
+let ITEM_HEIGHT = Dimensions.get('window').height;
 
 export default function DolphinsScreen({ navigation }){
     console.log("I'm in DolphinsScreen");
@@ -101,7 +102,8 @@ const styles = StyleSheet.create({
         borderRadius: 15
     },
     imageBackground: {
-        flex: 1
+        flex: 1,        
+        minHeight: ITEM_HEIGHT,
     },
 })
 

@@ -4,9 +4,9 @@ import { Image, TouchableOpacity } from "react-native";
 import { View, Text, Button, StyleSheet, TextInput, Alert, ImageBackground, Dimensions } from 'react-native';
 import { TouchableHighlight } from "react-native-gesture-handler";
 import Data from "./../../jsons/Trips.json";
-const array = [];
 
 let ITEM_WIDTH = Dimensions.get('window').width;
+const ITEM_HEIGHT = Dimensions.get('window').height
 
 const AddTripScreen = ({ route, navigation }) => {
     //const [teste,setTeste] = useState('');
@@ -16,6 +16,7 @@ const AddTripScreen = ({ route, navigation }) => {
     var isClicked = false;
     var tripTime = Data[id].fullDate;
     var dataAtual = new Date().toLocaleString();
+    //console.log(Data);
 
 
     useEffect(() => {
@@ -33,34 +34,31 @@ const AddTripScreen = ({ route, navigation }) => {
         console.log({ dataAtual });
         console.log({ tripTime });
         if (dataAtual > tripTime) {
-            Alert.alert(idTrip)
+            Alert.alert(idTrip);
             setData();
+            //Alert.alert("Go to Home and see your Trip");
+            //navigation.navigate('HomeScreen', {screen:"HomeScreen"});
         }
         else (
             console.log("Your trip is not over yet!")
         )
     }
     const setData = async () => {
-        if (idTrip.length == 0 || isNaN(parseInt(idTrip))) {
-            Alert.alert('WARNING: Please write a number!');
+        if (idTrip.length == 0 || typeof(idTrip) != 'number') {
+            Alert.alert('Warning!', 'Please write your data')
         }
         else {
             try {
-                await AsyncStorage.setItem('IdNewTrip', JSON.stringify(idTrip));
-                navigation.navigate("Home")
-
+                await AsyncStorage.setItem('IdNewTrip', idTrip);
+                navigation.navigate('Home');
             } catch (error) {
                 console.log(console.error);
+    
             }
         }
         
     }
 
-
-    //teste
-    const entrar = () =>{
-        console.log(idTrip)
-    }
 
     return (
         <ImageBackground blurRadius={3} source={require("../../assets/trip.jpg")} resizeMode="cover" style={styles.imageBackground}>
@@ -77,7 +75,7 @@ const AddTripScreen = ({ route, navigation }) => {
                 //defaultValue={text}
                 />
 
-                <TouchableOpacity style={styles.roundButton1} onPress={() => {setData()}}>
+                <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime(); navigation.navigate("Home", Data[id]) }}>
                     <Text style={styles.textButton}>Add Trip</Text>
                 </TouchableOpacity>
             </View>
@@ -90,6 +88,9 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
 
+    },
+    textInput: {
+        padding: 10, height: 40, width: 150, alignSelf: 'center'
     },
     textSubTitle: {
 
@@ -107,7 +108,8 @@ const styles = StyleSheet.create({
     },
 
     imageBackground: {
-        flex: 1
+        flex: 1,        
+        minHeight: ITEM_HEIGHT,
     },
     roundButton1: {
         width: 150,
