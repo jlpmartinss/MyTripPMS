@@ -33,7 +33,7 @@ export default function EditPostCard({ route, navigation }) {
     else {
         try {
             await AsyncStorage.setItem('newComment', editComment);
-            navigation.navigate('PostCard', rating);
+            navigation.navigate('PostCardEdited', rating);
         } catch (error) {
             console.log(console.error);
 

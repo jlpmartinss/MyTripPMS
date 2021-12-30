@@ -27,6 +27,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import LoginScreen from './src/screens/LoginScreen';
 import PostCardPreview from './src/screens/PostCardPreview';
 import Dolphin1 from './src/screens/Dolphin1';
+import PostCardEdited from './src/screens/PostCardEdited'
 import { HomeTabs } from './src/screens/CustomNavigation';
 
 
@@ -67,6 +68,8 @@ export default () => (
         <Stack.Screen name="Desertas" component={DesertasScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
         <Stack.Screen name="Fajas" component={FajasScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
         <Stack.Screen name="Sunset" component={SunsetScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
+        <Stack.Screen name="PostCardEdited" component={PostCardEdited} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
+
       </Stack.Navigator>
     </NavigationContainer>
 
