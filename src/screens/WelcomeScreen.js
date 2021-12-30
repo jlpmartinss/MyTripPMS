@@ -40,22 +40,24 @@ export default function SunsetScreen({ route, navigation}) {
 
     return (
         <ImageBackground blurRadius={5} source={require("../../assets/welcomeimage/welcome.jpg")} resizeMode="cover" style={styles.imageBackground}>
-            <View style={styles.container}>
-                <Text style={styles.textSubTitle}>My Trip</Text>
+            <ScrollView>
+                <View style={styles.container}>
+                    <Text style={styles.textSubTitle}>My Trip</Text>
 
-                <Text style = {styles.welcomeText}>
-                    {entrar()}
-                    Welcome {username}
-                </Text>
-                
-                <Text style = {styles.text}>
-                    Explore the Marine Life to learn fun facts and more about your favorite marine animals. Create your post card of yout trip and share it with friends.
-                </Text>
+                    <Text style = {styles.welcomeText}>
+                        {entrar()}
+                        Welcome {username}
+                    </Text>
+                    
+                    <Text style = {styles.text}>
+                        Explore the Marine Life to learn fun facts and more about your favorite marine animals. Create your post card of yout trip and share it with friends.
+                    </Text>
 
-                <TouchableOpacity style={styles.roundButton1} onPress={() => {navigation.navigate("Home")}}>
-                    <Text style={styles.textButton}>Get Started</Text>
-                </TouchableOpacity>
-            </View>
+                    <TouchableOpacity style={styles.roundButton1} onPress={() => {navigation.navigate("Home")}}>
+                        <Text style={styles.textButton}>Get Started</Text>
+                    </TouchableOpacity>
+                </View>
+            </ScrollView>
         </ImageBackground>
     );
 }
