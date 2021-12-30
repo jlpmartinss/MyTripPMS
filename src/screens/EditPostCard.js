@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState } from 'react';
-import { View, Text, Button, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, Button, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import * as FileSystem from 'expo-file-system';
 import data from "./../../jsons/Trips.json";
 import Rating from 'react-native-easy-rating';
@@ -26,15 +26,14 @@ export default function EditPostCard({ route, navigation }) {
   //console.log(editedrating);
 
   const setData = async () => {
-    if (rating == undefined && editComment == undefined) {
+    if (editComment == '') {
       //console.log(editedrating);
-      Alert.alert('Warning!', 'Please select a rating')
+      Alert.alert('Warning!', 'Please write a comment')
     }
     else {
         try {
-            await AsyncStorage.setItem('newRating', rating);
             await AsyncStorage.setItem('newComment', editComment);
-            navigation.navigate('PostCard');
+            navigation.navigate('PostCard', rating);
         } catch (error) {
             console.log(console.error);
 
@@ -44,44 +43,6 @@ export default function EditPostCard({ route, navigation }) {
 }
 
   return (
-    /*<View >
-      <View style={styles.container}>
-      <Text  >Leave a comment of your Trip</Text>
-            <TextInput
-                    
-                    backgroundColor='#FFFFFF'
-                    placeholder="Type your new comment here"
-
-                    onChangeText={editComment => setComment(editComment)}
-                />
-                </View>
-                <View style={styles.container}>
-      <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 120, textShadowColor: 'rgba(0, 0, 0, 1)', textAlign: 'center' }} >Rate your Trip</Text>
-      <Rating
-        style ={{paddingHorizontal: 130 }}
-        rating={editedrating}
-        max={5}
-        iconWidth={24}
-        iconHeight={24}
-        onRate={setRating}
-      />
-
-      <Text style ={{textAlign: 'center'}}  /* passar este valor para o json da viagem (para depois aparecer no postcard preview) */  /*>{editedrating}</Text>*/
-
-    /*         
-      <TouchableOpacity style={styles.roundButton1} onPress={() => {navigation.navigate("PostCard", editedrating)}}
-    
-      >
-                   <Text style={styles.textButton}> Finish Editing</Text> 
-                </TouchableOpacity >
-                
-                </View>
-
-          
-
-
-    </View> */
-
 <View style={styles.container}>
 <Text style={styles.textSubTitle}>Leave a comment of your Trip</Text>
 
@@ -104,7 +65,7 @@ export default function EditPostCard({ route, navigation }) {
       />
 <Text style ={{textAlign: 'center'}}  /* passar este valor para o json da viagem (para depois aparecer no postcard preview) */  >Selected Rating: {rating} stars</Text>
 
-<TouchableOpacity style={styles.roundButton1}  onPress={() => {navigation.navigate("PostCard", rating)}}>
+<TouchableOpacity style={styles.roundButton1}  onPress={() => {setData()}}>
     
     <Text style={styles.textButton}>Finish Editing</Text>
 </TouchableOpacity>

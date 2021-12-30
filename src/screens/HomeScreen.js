@@ -75,7 +75,7 @@ const Home = ({ route, navigation }) => {
 
     //teste
 
-    const img = Images.imsunset;
+    const img = Images.dolphin1;
     
     const entrar = () =>{
         console.log(idTrip)

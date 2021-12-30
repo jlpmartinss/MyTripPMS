@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Image, View, Platform, TouchableOpacity, Text, StyleSheet, ImageBackground, Dimensions } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as Sharing from 'expo-sharing';
+import { ScrollView } from 'react-native-gesture-handler';
 
 let ITEM_WIDTH = Dimensions.get('window').width;
 //Documentation https://docs.expo.dev/versions/latest/sdk/imagepicker/#permissions
@@ -84,10 +85,21 @@ export default function SelectPictureScreen() {
   if (selectedImage !== null) {
     return (
       <View style={styles.container}>
-        <Image source={{ uri: selectedImage.localUri }} style={styles.thumbnail} />
-        <TouchableOpacity onPress={openShareDialogAsync} style={styles.button}>
-          <Text style={styles.buttonText}>Share this photo</Text>
-        </TouchableOpacity>
+        
+        <ImageBackground blurRadius = {50} source={{ uri: selectedImage.localUri }} 
+        resizeMode="cover" style={styles.imageBackground}> 
+
+        <View style= {styles.headerbox}>
+          <Text style= {styles.textHeader}>Select photo</Text>
+        </View>
+        
+          <ScrollView>
+            <Image source={{ uri: selectedImage.localUri }} style={styles.thumbnail} />
+            <TouchableOpacity onPress={openShareDialogAsync} style={styles.roundButton1}  >
+            <Text style={styles.buttonText}>Share this photo</Text>
+            </TouchableOpacity>
+          </ScrollView>
+        </ImageBackground> 
       </View>
     );
   }
@@ -95,18 +107,19 @@ export default function SelectPictureScreen() {
   return (
     <View style={styles.container}>
       <ImageBackground blurRadius = {50} source={require("../../assets/Trips/imdesertas.jpg")} resizeMode="cover" style={styles.imageBackground}> 
+      <View style= {styles.headerbox}>
+        <Text style= {styles.textHeader}>Select photo</Text>
+      </View>
+        <ScrollView>
 
-        <View style= {styles.headerbox}>
-          <Text style= {styles.textHeader}>Whale Watching</Text>
-        </View>  
+        <View style={styles.textBox}>
+          <Text style={styles.instructions}>To share a photo from your phone with a friend, just press the button below!</Text>
+        </View>        
 
-        <Image source={{ uri: 'https://i.imgur.com/TkIrScD.png' }} style={styles.logo} />
-
-        <Text style={styles.instructions}>To share a photo from your phone with a friend, just press the button below!</Text>
-
-        <TouchableOpacity onPress={openImagePickerAsync} style={styles.button}>
+        <TouchableOpacity onPress={openImagePickerAsync} style={styles.roundButton1}>
           <Text style={styles.buttonText}>Pick a photo</Text>
         </TouchableOpacity>
+        </ScrollView>
       </ImageBackground>
     </View>
   );
@@ -127,24 +140,33 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 18,
     marginHorizontal: 15,
-    marginBottom: 10,
+    margin: 10,
   },
-  button: {
-    backgroundColor: 'blue',
-    padding: 20,
-    borderRadius: 5,
+  roundButton1: {
+    width: 200,
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    borderRadius: 8,
+    backgroundColor: '#176cff',
+    //overflow = 'hidden'
   },
   buttonText: {
     fontSize: 20,
-    color: '#fff',
+    color: 'white',
   },
   thumbnail: {
-    width: 300,
-    height: 300,
+    width: ITEM_WIDTH/1.1,
+    height: ITEM_WIDTH,
     resizeMode: 'contain',
+    alignSelf: 'center',
+    margin: 30,    
+    borderRadius: 15,
   },
   imageBackground: {
     flex: 1,
+    width: ITEM_WIDTH
   },
   headerbox: {
     width: ITEM_WIDTH,
@@ -152,8 +174,8 @@ const styles = StyleSheet.create({
     padding:8,
     flex:1,
     fontSize: 20,        
-},
-textHeader: {
+  },
+  textHeader: {
     flex:1,
     width: ITEM_WIDTH,
     position: 'absolute',
@@ -167,5 +189,11 @@ textHeader: {
     fontSize: 30,       
     backgroundColor: 'rgba(0, 0, 0, 0.33)',
     zIndex: 10
-},
+  },
+  textBox: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.33)',
+    margin: 15,
+    borderRadius: 15,
+  }
 });
