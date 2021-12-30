@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableOpacity, Dimensions, ImageBackground} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaView } from "react-native-safe-area-context";
-import { BlurView } from 'expo-blur';
+
 
 
 let ITEM_WIDTH = Dimensions.get('window').width;
