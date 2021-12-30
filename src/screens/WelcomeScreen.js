@@ -53,7 +53,7 @@ export default function SunsetScreen({ route, navigation}) {
                         Explore the Marine Life to learn fun facts and more about your favorite marine animals. Create your post card of yout trip and share it with friends.
                     </Text>
 
-                    <TouchableOpacity style={styles.roundButton1} onPress={() => {navigation.navigate("Home")}}>
+                    <TouchableOpacity style={styles.roundButton1} onPress={() => {navigation.navigate("AddTrip")}}>
                         <Text style={styles.textButton}>Get Started</Text>
                     </TouchableOpacity>
                 </View>

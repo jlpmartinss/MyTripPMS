@@ -44,20 +44,22 @@ const AddTripScreen = ({ route, navigation }) => {
         )
     }
     const setData = async () => {
-        if (idTrip.length == 0 || typeof(idTrip) != 'number') {
+        if (idTrip.length == 0 ) {
             Alert.alert('Warning!', 'Please write your data')
         }
         else {
             try {
-                await AsyncStorage.setItem('IdNewTrip', idTrip);
-                navigation.navigate('Home');
+                var trip = {
+                    Id: idTrip
+                }
+                await AsyncStorage.setItem('IdNewTrip',  JSON.stringify(trip));
+                //navigation.navigate('Home');
             } catch (error) {
                 console.log(console.error);
-    
             }
         }
-        
     }
+  
 
 
     return (
@@ -80,9 +82,13 @@ const AddTripScreen = ({ route, navigation }) => {
                     //defaultValue={text}
                     />
 
-                    <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime(); navigation.navigate("Home", Data[id]) }}>
+                    <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime(); navigation.navigate("Home") }}>
                         <Text style={styles.textButton}>Add Trip</Text>
                     </TouchableOpacity>
+                    <TouchableOpacity style={styles.roundButton1} onPress={() => {  navigation.navigate("Home") }}>
+                        <Text style={styles.textButton}>See my Trips</Text>
+                    </TouchableOpacity>
+                 
                 </ScrollView>
             </ImageBackground>
         </View>

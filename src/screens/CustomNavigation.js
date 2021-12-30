@@ -40,10 +40,7 @@ const HomeTabs = () => {
                 component={SpeciesScreen}
                 options={{ tabBarIcon: ({ size, color }) => (<Feather name="search" size={size} color={color} />) }}
             />
-            <Tab.Screen
-                name="AddTrip"
-                component={AddTripScreen} options={{ tabBarIcon: ({ size, color }) => (<Ionicons name="add-circle" size={size} color={color} />) }}
-            />
+
             <Tab.Screen
                 name="PostCard"
                 component={PostCardPreviewScreen}

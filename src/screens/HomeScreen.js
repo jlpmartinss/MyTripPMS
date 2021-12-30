@@ -47,8 +47,9 @@ const Home = ({ route, navigation }) => {
             AsyncStorage.getItem('IdNewTrip')
                 .then(value => {
                     if (value != null) {
-                        setIdTrip(idTrip);
-                        console.log(idTrip);
+                        //volta a converter num objeto
+                        let trip = JSON.parse(value);
+                        setIdTrip(trip.Id);
                     }
                 })
         } catch (error) {
@@ -83,10 +84,15 @@ const Home = ({ route, navigation }) => {
     return (
         <View style={styles.container}>
             <ImageBackground blurRadius={50} source={img} resizeMode="cover" style={styles.imageBackground}>
-
                 <View style= {styles.headerbox}>
-                    <Text style= {styles.textHeader}>My trips</Text>
+                    <Text style= {styles.textHeader}>My trips </Text>
+                   
                 </View> 
+                
+                <TouchableOpacity style={styles.buttom} onPress={() => {navigation.navigate("AddTrip"); }}>
+                    <Text style={styles.textButton}>Confirm {idTrip} {entrar()}</Text>
+                </TouchableOpacity>
+                
 
                 <ScrollView>
                     {isEmpty ? <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>

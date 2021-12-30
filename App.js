@@ -55,7 +55,7 @@ export default () => (
         <Stack.Screen name="Welcome" component={WelcomeScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
         <Stack.Screen name="Home" component={HomeTabs} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
         <Stack.Screen name="Species" component={SpeciesScreen} options={{tabBarIcon: ({size,color}) => (<Feather name="search" size={size} color={color} /> )}}/>
-        <Stack.Screen name="Add Trip" component={AddTripScreen} options={{tabBarIcon: ({size,color}) => (<Ionicons name="add-circle" size={size} color={color} /> )}}/>
+        <Stack.Screen name="AddTrip" component={AddTripScreen} options={{tabBarIcon: ({size,color}) => (<Ionicons name="add-circle" size={size} color={color} /> )}}/>
         <Stack.Screen name="TripList" component={TripListScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
         <Stack.Screen name="SelectedPictureScreen" component={SelectPictureScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
         <Stack.Screen name="PostCard" component={PostCardPreview} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
