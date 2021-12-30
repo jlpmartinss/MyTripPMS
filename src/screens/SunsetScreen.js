@@ -15,6 +15,11 @@ export default function SunsetScreen({ route, navigation}) {
     return (
         <View style={styles.container}>
             <ImageBackground blurRadius={50} source={require("../../assets/Trips/imsunset.jpg")} resizeMode="cover" style={styles.imageBackground}>
+                
+                <View style= {styles.headerbox}>
+                    <Text style= {styles.textHeader}>Sunset</Text>
+                </View>  
+               
                 <ScrollView>  
 
                     <Image style={styles.image} source={require("../../assets/Trips/imsunset.jpg")} />
@@ -157,6 +162,28 @@ const styles = StyleSheet.create({
         padding:5,
         flex:1,
         fontSize: 20        
+    },
+    headerbox: {
+        width: ITEM_WIDTH,
+        paddingTop: 35,
+        padding:8,
+        flex:1,
+        fontSize: 20,        
+    },
+    textHeader: {
+        flex:1,
+        width: ITEM_WIDTH,
+        position: 'absolute',
+        color: 'white',
+        fontSize: 20,
+        paddingLeft:10,
+        paddingBottom: 2,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8,
+        fontWeight: 'bold',
+        fontSize: 30,       
+        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        zIndex: 10
     },
     image: {
         alignSelf:'center',

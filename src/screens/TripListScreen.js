@@ -12,9 +12,14 @@ export default function TripListScreen({ navigation }){
     return(
         <View style ={styles.container}>
             <ImageBackground blurRadius = {50} source={require("../../assets/Trips/imdesertas.jpg")} resizeMode="cover" style={styles.imageBackground}> 
+                
+                <View style= {styles.headerbox}>
+                    <Text style= {styles.textHeader}>Routes</Text>
+                </View>   
+                
                 <ScrollView> 
 
-                    <TouchableOpacity onPress={() => navigation.navigate("WhalesWatching")}>       
+                    <TouchableOpacity onPress={() => navigation.navigate("WhaleWatching")}>       
                         <View style ={styles.item}>                    
                             <Image style = {styles.image} source={require("../../assets/Trips/imcetaceos.jpg") }/>
                                 <Text style = {styles.textSubTitle}>Whale Watching</Text>
@@ -28,7 +33,7 @@ export default function TripListScreen({ navigation }){
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => navigation.navigate("Faja")}>       
+                    <TouchableOpacity onPress={() => navigation.navigate("Fajas")}>       
                         <View style ={styles.item}>                    
                             <Image style = {styles.image} source={require("../../assets/Trips/imfaja.jpg") }/>
                                 <Text style = {styles.textSubTitle}>Fajãs</Text>
@@ -70,6 +75,28 @@ const styles = StyleSheet.create({
         marginLeft: 30,
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 8
+    },
+    headerbox: {
+        width: ITEM_WIDTH,
+        paddingTop: 35,
+        padding:8,
+        flex:1,
+        fontSize: 20,        
+    },
+    textHeader: {
+        flex:1,
+        width: ITEM_WIDTH,
+        position: 'absolute',
+        color: 'white',
+        fontSize: 20,
+        paddingLeft:10,
+        paddingBottom: 2,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8,
+        fontWeight: 'bold',
+        fontSize: 30,       
+        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        zIndex: 10
     },
     image: {
         marginTop: 15,

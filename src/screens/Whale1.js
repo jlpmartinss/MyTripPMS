@@ -94,12 +94,17 @@ export default function Whale1({ route, navigation}) {
 
         <View style={styles.container}>
             <ImageBackground blurRadius={50} source={imgPath} resizeMode="cover" style={styles.imageBackground}>
-                <ScrollView>
+            <View style= {styles.headerbox}>
+                <Text style= {styles.textHeader}>{name}</Text>
+            </View> 
 
-                    <Text style={styles.textTitle}>{name}</Text>
-                    <Text style={styles.textNormal, styles.textCientific}>Cientific name: {cientificName}</Text>
+                <ScrollView>
                     <Image style={styles.image} source={imgPath} />
-                               
+
+                    <View style={styles.textBox}>
+                        {cientificName != "" ? <Text style={styles.textSubTitle}>Cientific name: {cientificName}</Text> : null}
+                    </View >  
+
                     <View style={styles.textBox}>
                         {summary != "" ? <Text style={styles.textSubTitle}>Summary:</Text> : null}
                         {summary != "" ? <Text style={styles.textNormal}>{summary}</Text> : null}
@@ -151,6 +156,28 @@ const styles = StyleSheet.create({
         height: ITEM_WIDTH / 1.5,
         borderRadius: 15,
 
+    },
+    headerbox: {
+        width: ITEM_WIDTH,
+        paddingTop: 35,
+        padding:8,
+        flex:1,
+        fontSize: 20,        
+    },
+    textHeader: {
+        flex:1,
+        width: ITEM_WIDTH,
+        position: 'absolute',
+        color: 'white',
+        fontSize: 20,
+        paddingLeft:10,
+        paddingBottom: 2,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8,
+        fontWeight: 'bold',
+        fontSize: 30,       
+        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        zIndex: 10
     },
     imageBackground: {
         flex: 1

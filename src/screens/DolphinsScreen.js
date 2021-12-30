@@ -12,62 +12,66 @@ export default function DolphinsScreen({ navigation }){
     console.log("I'm in DolphinsScreen");
 
     return(
-        <ScrollView>
-            <ImageBackground blurRadius = {50} source={require("../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg") } resizeMode="cover" style={styles.imageBackground}> 
-            <View style ={styles.container}>
-                
-                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[0])}/*Dolphin1*/>        
-                    <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Atlantic Spotted Dolphin</Text>                            
-                    </View>
-                </TouchableOpacity>
-                
-                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[1])}/*Dolphin2*/>       
-                    <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/Dolphins/2Bottlenose_dolphin.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Bottlenose Dolphin</Text>                            
-                    </View>
-                </TouchableOpacity>
-                
-                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[2])}/*Dolphin3*/>       
-                    <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/Dolphins/3Common_dolphin.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Common Dolphin</Text>                            
-                    </View>
-                </TouchableOpacity>
-                
-                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[3])}/*Dolphin4*/>       
-                    <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/Dolphins/4Frasers_dolphin.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Frasers Dolphin</Text>                            
-                    </View>
-                </TouchableOpacity>
-                
-                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[4])}/*Dolphin5*/>      
-                    <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/Dolphins/5Rissos_Dolphin.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Risso's Dolphin</Text>                            
-                    </View>
-                </TouchableOpacity>
-                
-                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[5])}/*Dolphin6*/>       
-                    <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/Dolphins/6Rough_toothed_dolphin.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Rough Toothed Dolphin</Text>                            
-                    </View>
-                </TouchableOpacity>
-                
-                <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[6])}/*Dolphin7*/>       
-                    <View style ={styles.item}>
-                        <Image style = {styles.image} source={require("../../assets/Dolphins/7Stripped_dolphin.jpg") }/>
-                        <Text style = {styles.textSubTitle}>Stripped Dolphin</Text>                            
-                    </View>
-                </TouchableOpacity>
-                
-            </View>    
-            </ImageBackground>
-        </ScrollView>
+        <ImageBackground blurRadius = {50} source={require("../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg") } resizeMode="cover" style={styles.imageBackground}> 
+            <View style= {styles.headerbox}>
+                <Text style= {styles.textHeader}>Dolphins</Text>
+            </View> 
+
+            <ScrollView>
+                <View style ={styles.container}>
+                    
+                    <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[0])}/*Dolphin1*/>        
+                        <View style ={styles.item}>
+                            <Image style = {styles.image} source={require("../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg") }/>
+                            <Text style = {styles.textSubTitle}>Atlantic Spotted Dolphin</Text>                            
+                        </View>
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[1])}/*Dolphin2*/>       
+                        <View style ={styles.item}>
+                            <Image style = {styles.image} source={require("../../assets/Dolphins/2Bottlenose_dolphin.jpg") }/>
+                            <Text style = {styles.textSubTitle}>Bottlenose Dolphin</Text>                            
+                        </View>
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[2])}/*Dolphin3*/>       
+                        <View style ={styles.item}>
+                            <Image style = {styles.image} source={require("../../assets/Dolphins/3Common_dolphin.jpg") }/>
+                            <Text style = {styles.textSubTitle}>Common Dolphin</Text>                            
+                        </View>
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[3])}/*Dolphin4*/>       
+                        <View style ={styles.item}>
+                            <Image style = {styles.image} source={require("../../assets/Dolphins/4Frasers_dolphin.jpg") }/>
+                            <Text style = {styles.textSubTitle}>Frasers Dolphin</Text>                            
+                        </View>
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[4])}/*Dolphin5*/>      
+                        <View style ={styles.item}>
+                            <Image style = {styles.image} source={require("../../assets/Dolphins/5Rissos_Dolphin.jpg") }/>
+                            <Text style = {styles.textSubTitle}>Risso's Dolphin</Text>                            
+                        </View>
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[5])}/*Dolphin6*/>       
+                        <View style ={styles.item}>
+                            <Image style = {styles.image} source={require("../../assets/Dolphins/6Rough_toothed_dolphin.jpg") }/>
+                            <Text style = {styles.textSubTitle}>Rough Toothed Dolphin</Text>                            
+                        </View>
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity onPress={() => navigation.navigate("Dolphin1", Data[6])}/*Dolphin7*/>       
+                        <View style ={styles.item}>
+                            <Image style = {styles.image} source={require("../../assets/Dolphins/7Stripped_dolphin.jpg") }/>
+                            <Text style = {styles.textSubTitle}>Stripped Dolphin</Text>                            
+                        </View>
+                    </TouchableOpacity>
+                    
+                </View>    
+            </ScrollView>  
+        </ImageBackground>
     );
 }
 
@@ -79,6 +83,28 @@ const styles = StyleSheet.create({
         //alignItems: 'center',
         flexDirection: 'row',
         flexWrap: 'wrap'      
+    },
+        headerbox: {
+        width: ITEM_WIDTH,
+        paddingTop: 35,
+        padding:8,
+        flex:1,
+        fontSize: 20,        
+    },
+    textHeader: {
+        flex:1,
+        width: ITEM_WIDTH,
+        position: 'absolute',
+        color: 'white',
+        fontSize: 20,
+        paddingLeft:10,
+        paddingBottom: 2,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8,
+        fontWeight: 'bold',
+        fontSize: 30,       
+        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        zIndex: 10
     },
     item: {
         padding:5,

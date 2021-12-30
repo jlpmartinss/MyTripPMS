@@ -55,6 +55,11 @@ const PostCardPreview = ({navigation , route }) => {
 
     return (
         <View>
+
+            <View style= {styles.headerbox}>
+                <Text style= {styles.textHeader}>PostCard</Text>
+            </View>  
+
             <ScrollView scrollEventThrottle = {16}/*Scrollview da página toda */>
                     <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
 
@@ -165,12 +170,35 @@ const styles = StyleSheet.create({
         marginTop: 10,
         textShadowColor: 'rgba(0, 0, 0, 1)',
         marginTop: 20
-    }, image: {
+    },
+    image: {
         flex: 1,
         width: ITEM_WIDTH / 20,
         height: ITEM_WIDTH / 20,
         backgroundColor: 'white',
         borderRadius: 2
+    },
+    headerbox: {
+        width: ITEM_WIDTH,
+        paddingTop: 35,
+        padding:8,
+        flex:1,
+        fontSize: 20,        
+    },
+    textHeader: {
+        flex:1,
+        width: ITEM_WIDTH,
+        position: 'absolute',
+        color: 'white',
+        fontSize: 20,
+        paddingLeft:10,
+        paddingBottom: 2,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8,
+        fontWeight: 'bold',
+        fontSize: 30,       
+        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        zIndex: 10
     },
     imageBackground: {
         flex: 1

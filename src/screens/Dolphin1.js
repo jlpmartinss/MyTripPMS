@@ -53,12 +53,17 @@ export default function Dolphin1({ route, navigation}) {
     return (
         
         <View style={styles.container}>
-                <ImageBackground blurRadius = {50} source={imgPath} resizeMode="cover" style={styles.imageBackground}>            
-                <ScrollView>
+            <ImageBackground blurRadius={50} source={imgPath} resizeMode="cover" style={styles.imageBackground}>
+            <View style= {styles.headerbox}>
+                <Text style= {styles.textHeader}>{name}</Text>
+            </View> 
 
-                    <Text style={styles.textTitle}>{name}</Text>
-                    <Text style={styles.textNormal, styles.textCientific}>Cientific name: {cientificName}</Text>  
-                    <Image style={styles.image} source={imgPath}/>
+                <ScrollView>
+                    <Image style={styles.image} source={imgPath} />
+
+                    <View style={styles.textBox}>
+                        {cientificName != "" ? <Text style={styles.textSubTitle}>Cientific name: {cientificName}</Text> : null}
+                    </View > 
                         
                     <View style={styles.textBox}>
                         {summary != ""? <Text style={styles.textSubTitle}>Summary</Text>:null}
@@ -126,6 +131,29 @@ const styles = StyleSheet.create({
         textShadowColor: 'rgba(0, 0, 0, 1)',
         fontWeight: '700',
         textShadowRadius: 5
+    },
+    
+    headerbox: {
+        width: ITEM_WIDTH,
+        paddingTop: 35,
+        padding:8,
+        flex:1,
+        fontSize: 20,        
+    },
+    textHeader: {
+        flex:1,
+        width: ITEM_WIDTH,
+        position: 'absolute',
+        color: 'white',
+        fontSize: 20,
+        paddingLeft:10,
+        paddingBottom: 2,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8,
+        fontWeight: 'bold',
+        fontSize: 30,       
+        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        zIndex: 10
     },
     textSubTitle: {
         color: 'white',

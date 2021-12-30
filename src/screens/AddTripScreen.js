@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useEffect, useState } from "react";
-import { Image, TouchableOpacity } from "react-native";
+import { Image, ScrollView, TouchableOpacity } from "react-native";
 import { View, Text, Button, StyleSheet, TextInput, Alert, ImageBackground, Dimensions } from 'react-native';
 import { TouchableHighlight } from "react-native-gesture-handler";
 import Data from "./../../jsons/Trips.json";
@@ -61,25 +61,31 @@ const AddTripScreen = ({ route, navigation }) => {
 
 
     return (
-        <ImageBackground blurRadius={3} source={require("../../assets/trip.jpg")} resizeMode="cover" style={styles.imageBackground}>
-            <View style={styles.container}>
-                <Text style={styles.textSubTitle}>Type the code of your trip</Text>
+        <View style={styles.container}>
+            <ImageBackground blurRadius={3} source={require("../../assets/trip.jpg")} resizeMode="cover" style={styles.imageBackground}>
 
-                <TextInput
-                    style={{ padding: 10, height: 40, width: 150, margin: 15, borderRadius: 8 }}
-                    backgroundColor='#FFFFFF'
-                    //se o input for números onChangeText = {onChangeNumber} + value = {number} + keyboardType="numeric" 
-                    placeholder="Type Trip Code Here"
-                    //onSubmitEditing={text => setText(text)}
-                    onChangeText={idTrip => setIdTrip(idTrip)}
-                //defaultValue={text}
-                />
+                 <View style= {styles.headerbox}>
+                    <Text style= {styles.textHeader}>Add Trip</Text>
+                </View> 
+                <ScrollView> 
+                    <Text style={styles.textSubTitle}>Type the code of your trip</Text>
 
-                <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime(); navigation.navigate("Home", Data[id]) }}>
-                    <Text style={styles.textButton}>Add Trip</Text>
-                </TouchableOpacity>
-            </View>
-        </ImageBackground>
+                    <TextInput
+                        style= {styles.textInput}
+                        backgroundColor='#FFFFFF'
+                        //se o input for números onChangeText = {onChangeNumber} + value = {number} + keyboardType="numeric" 
+                        placeholder="Type Trip Code Here"
+                        //onSubmitEditing={text => setText(text)}
+                        onChangeText={idTrip => setIdTrip(idTrip)}
+                    //defaultValue={text}
+                    />
+
+                    <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime(); navigation.navigate("Home", Data[id]) }}>
+                        <Text style={styles.textButton}>Add Trip</Text>
+                    </TouchableOpacity>
+                </ScrollView>
+            </ImageBackground>
+        </View>
     );
 }
 
@@ -99,14 +105,39 @@ const styles = StyleSheet.create({
         fontSize: 24,
         marginTop: 50,
         textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 5
+        textShadowRadius: 5,
+        
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
 
     },
     textButton: {
         color: 'white',
         fontSize: 18,
     },
-
+    headerbox: {
+        width: ITEM_WIDTH,
+        paddingTop: 35,
+        padding:8,
+        flex:1,
+        fontSize: 20,        
+    },
+    textHeader: {
+        flex:1,
+        width: ITEM_WIDTH,
+        position: 'absolute',
+        color: 'white',
+        fontSize: 20,
+        paddingLeft:10,
+        paddingBottom: 2,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8,
+        fontWeight: 'bold',
+        fontSize: 30,       
+        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        zIndex: 10
+    },
     imageBackground: {
         flex: 1,        
         minHeight: ITEM_HEIGHT,
@@ -116,9 +147,21 @@ const styles = StyleSheet.create({
         height: 40,
         justifyContent: 'center',
         alignItems: 'center',
+        alignSelf: 'center',
         borderRadius: 8,
         backgroundColor: '#176cff',
         //overflow = 'hidden'
+    },
+    textInput: {
+        padding: 10,
+        height: 40,
+        width: 150,
+        margin: 15,
+        borderRadius: 8,
+        
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
     },
 })
 

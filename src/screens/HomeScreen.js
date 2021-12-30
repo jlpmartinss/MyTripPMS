@@ -83,7 +83,11 @@ const Home = ({ route, navigation }) => {
     return (
         <View style={styles.container}>
             <ImageBackground blurRadius={50} source={img} resizeMode="cover" style={styles.imageBackground}>
-                <Text style= {styles.textSubTitle}> My Trips </Text>
+
+                <View style= {styles.headerbox}>
+                    <Text style= {styles.textHeader}>My trips</Text>
+                </View> 
+
                 <ScrollView>
                     {isEmpty ? <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
                         <View style={styles.item}>
@@ -112,7 +116,6 @@ const styles = StyleSheet.create({
         padding: 5,
         flex: 1,
         fontSize: 20,
-  
         
     },
     textSubTitle: {
@@ -127,6 +130,28 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 30
 
+    },
+    headerbox: {
+        width: ITEM_WIDTH,
+        paddingTop: 35,
+        padding:8,
+        flex:1,
+        fontSize: 20,        
+    },
+    textHeader: {
+        flex:1,
+        width: ITEM_WIDTH,
+        position: 'absolute',
+        color: 'white',
+        fontSize: 20,
+        paddingLeft:10,
+        paddingBottom: 2,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8,
+        fontWeight: 'bold',
+        fontSize: 30,       
+        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        zIndex: 10
     },
     text: {
         position: 'absolute',

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Image, View, Platform, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { Button, Image, View, Platform, TouchableOpacity, Text, StyleSheet, ImageBackground, Dimensions } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as Sharing from 'expo-sharing';
 
+let ITEM_WIDTH = Dimensions.get('window').width;
 //Documentation https://docs.expo.dev/versions/latest/sdk/imagepicker/#permissions
 
 export default function SelectPictureScreen() {
@@ -93,14 +94,20 @@ export default function SelectPictureScreen() {
 
   return (
     <View style={styles.container}>
-      <Image source={{ uri: 'https://i.imgur.com/TkIrScD.png' }} style={styles.logo} />
-      <Text style={styles.instructions}>
-        To share a photo from your phone with a friend, just press the button below!
-      </Text>
+      <ImageBackground blurRadius = {50} source={require("../../assets/Trips/imdesertas.jpg")} resizeMode="cover" style={styles.imageBackground}> 
 
-      <TouchableOpacity onPress={openImagePickerAsync} style={styles.button}>
-        <Text style={styles.buttonText}>Pick a photo</Text>
-      </TouchableOpacity>
+        <View style= {styles.headerbox}>
+          <Text style= {styles.textHeader}>Whale Watching</Text>
+        </View>  
+
+        <Image source={{ uri: 'https://i.imgur.com/TkIrScD.png' }} style={styles.logo} />
+
+        <Text style={styles.instructions}>To share a photo from your phone with a friend, just press the button below!</Text>
+
+        <TouchableOpacity onPress={openImagePickerAsync} style={styles.button}>
+          <Text style={styles.buttonText}>Pick a photo</Text>
+        </TouchableOpacity>
+      </ImageBackground>
     </View>
   );
 }
@@ -117,7 +124,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   instructions: {
-    color: '#888',
+    color: 'white',
     fontSize: 18,
     marginHorizontal: 15,
     marginBottom: 10,
@@ -135,5 +142,30 @@ const styles = StyleSheet.create({
     width: 300,
     height: 300,
     resizeMode: 'contain',
-  }
+  },
+  imageBackground: {
+    flex: 1,
+  },
+  headerbox: {
+    width: ITEM_WIDTH,
+    paddingTop: 35,
+    padding:8,
+    flex:1,
+    fontSize: 20,        
+},
+textHeader: {
+    flex:1,
+    width: ITEM_WIDTH,
+    position: 'absolute',
+    color: 'white',
+    fontSize: 20,
+    paddingLeft:10,
+    paddingBottom: 2,
+    textShadowColor: 'rgba(0, 0, 0, 1)',
+    textShadowRadius: 8,
+    fontWeight: 'bold',
+    fontSize: 30,       
+    backgroundColor: 'rgba(0, 0, 0, 0.33)',
+    zIndex: 10
+},
 });
