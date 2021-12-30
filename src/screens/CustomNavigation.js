@@ -27,37 +27,6 @@ const { createStackNavigator } = require("@react-navigation/stack");
 
 const Stack = createStackNavigator();
 
-
-const LoginScreenNavigator = () => {
-    return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen
-                name="LoginScreen"
-                component={LoginScreen}
-            />
-             <Stack.Screen
-                name="Welcome"
-                component={WelcomeScreen}
-            />
-        </Stack.Navigator>
-        
-    );
-}
-
-export { LoginScreenNavigator }
-
-const WelcomeScreenNavigator = () => {
-    return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen
-                name="Welcome"
-                component={WelcomeScreen}
-            />
-        </Stack.Navigator>
-    );
-}
-export { WelcomeScreenNavigator }
-
 const HomeTabs = () => {
     return (
         <Tab.Navigator screenOptions={{ headerShown: false }}>
@@ -73,28 +42,24 @@ const HomeTabs = () => {
             />
             <Tab.Screen
                 name="AddTrip"
-                component={AddTripScreen}
-                component={AddTripScreenNavigator} options={{ tabBarIcon: ({ size, color }) => (<Ionicons name="add-circle" size={size} color={color} />) }}
+                component={AddTripScreen} options={{ tabBarIcon: ({ size, color }) => (<Ionicons name="add-circle" size={size} color={color} />) }}
             />
             <Tab.Screen
                 name="PostCard"
                 component={PostCardPreviewScreen}
                 options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color}/>)}} 
-
             />
             <Tab.Screen
                 name="TripList"
-                component={TripListScreen}
-                component={TripListScreenNavigator} options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color} />) }}
+                component={TripListScreen} options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color} />) }}
             />
             <Tab.Screen
                 name="EditCard"
                 component={EditPostCardScreen}
                 options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color}/>)}} 
-
             />
             <Tab.Screen name="SelectedPictureScreen"
-                component={SelectedPictureScreenNavigator}
+                component={SelectPictureScreen}
                 options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color}/>)}} 
             />
         </Tab.Navigator>
@@ -102,162 +67,200 @@ const HomeTabs = () => {
 }
 export { HomeTabs }
 
-const SpeciesScreenNavigator = () => {
-    return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen
-                name="Species"
-                component={SpeciesScreen}
-            />
-            <Stack.Screen
-                name="Whales"
-                component={WhalesScreen}
-            />
-            <Stack.Screen
-                name="Dolphins"
-                component={DolphinsScreen}
-            />
-
-            <Stack.Screen
-                name="Seabirds"
-                component={SeabirdsScreen}
-            />
-            <Stack.Screen
-                name="Others"
-                component={OthersScreen}
-            />
-            <Stack.Screen
-                name="Whale1"
-                component={Whale1}
-            />
-            <Stack.Screen
-                name="Dolphin1"
-                component={Dolphin1}
-            />
-
-        </Stack.Navigator>
-    );
-}
-export { SpeciesScreenNavigator }
-
-const AddTripScreenNavigator = () => {
-    return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen
-                name="AddTrip"
-                component={AddTripScreen}
-            />
-        </Stack.Navigator>
-    );
-}
-export { AddTripScreenNavigator }
-
-const WhalesScreenNavigator = () => {
-    return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-
-            <Stack.Screen
-                name="Whales"
-                component={WhalesScreen}
-            />
-            <Stack.Screen
-                name="Whale1"
-                component={Whale1}
-            />
-
-        </Stack.Navigator>
-    );
-}
-export { WhalesScreenNavigator }
-
-const DolphinsScreenNavigator = () => {
-    return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen
-                name="Dolphins"
-                component={DolphinsScreen}
-            />
-            <Stack.Screen
-                name="Dolphin1"
-                component={Dolphin1}
-            />
-        </Stack.Navigator>
-    );
-}
-export { DolphinsScreenNavigator }
-
-const PostCardNavigator = () => {
-    return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen
-                name="PostCardPreview"
-                component={PostCardPreviewScreen}
-            />
-            <Stack.Screen
-                name="EditCard"
-                component={EditPostCardScreen}
-            />
-        </Stack.Navigator>
-    );
-}
-export { PostCardNavigator }
 
 
-const TripListScreenNavigator = () => {
-    return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen
-                name="TripList"
-                component={TripListScreen}
-            />
-            <Stack.Screen
-                name="WhalesWatching"
-                component={WhaleWatchingScreen}
-            />
-            <Stack.Screen
-                name="Desertas"
-                component={DesertasScreen}
-            />
-            <Stack.Screen
-                name="Faja"
-                component={FajasScreen}
-            />
-            <Stack.Screen
-                name="Sunset"
-                component={SunsetScreen}
-            />
 
 
-        </Stack.Navigator>
-    );
-}
-export { TripListScreenNavigator }
 
-const WhalesWatchingScreenNavigator = () => {
-    return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen
-                name="WhalesWatching"
-                component={WhaleWatchingScreen}
-            />
 
-        </Stack.Navigator>
-    );
-}
-export { WhalesWatchingScreenNavigator }
 
-const SelectedPictureScreenNavigator = () => {
-    return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen
-                name="SelectedPictureScreen"
-                component={SelectPictureScreen}
-            />
 
-        </Stack.Navigator>
-    );
-}
-export { SelectedPictureScreenNavigator }
+
+// const SpeciesScreenNavigator = () => {
+//     return (
+//         <Stack.Navigator screenOptions={{ headerShown: false }}>
+//             <Stack.Screen
+//                 name="Species"
+//                 component={SpeciesScreen}
+//             />
+//             <Stack.Screen
+//                 name="Whales"
+//                 component={WhalesScreen}
+//             />
+//             <Stack.Screen
+//                 name="Dolphins"
+//                 component={DolphinsScreen}
+//             />
+
+//             <Stack.Screen
+//                 name="Seabirds"
+//                 component={SeabirdsScreen}
+//             />
+//             <Stack.Screen
+//                 name="Others"
+//                 component={OthersScreen}
+//             />
+//             <Stack.Screen
+//                 name="Whale1"
+//                 component={Whale1}
+//             />
+//             <Stack.Screen
+//                 name="Dolphin1"
+//                 component={Dolphin1}
+//             />
+
+//         </Stack.Navigator>
+//     );
+// }
+// export { SpeciesScreenNavigator }
+
+// const AddTripScreenNavigator = () => {
+//     return (
+//         <Stack.Navigator screenOptions={{ headerShown: false }}>
+//             <Stack.Screen
+//                 name="AddTrip"
+//                 component={AddTripScreen}
+//             />
+//         </Stack.Navigator>
+//     );
+// }
+// export { AddTripScreenNavigator }
+
+// const WhalesScreenNavigator = () => {
+//     return (
+//         <Stack.Navigator screenOptions={{ headerShown: false }}>
+
+//             <Stack.Screen
+//                 name="Whales"
+//                 component={WhalesScreen}
+//             />
+//             <Stack.Screen
+//                 name="Whale1"
+//                 component={Whale1}
+//             />
+
+//         </Stack.Navigator>
+//     );
+// }
+// export { WhalesScreenNavigator }
+
+// const DolphinsScreenNavigator = () => {
+//     return (
+//         <Stack.Navigator screenOptions={{ headerShown: false }}>
+//             <Stack.Screen
+//                 name="Dolphins"
+//                 component={DolphinsScreen}
+//             />
+//             <Stack.Screen
+//                 name="Dolphin1"
+//                 component={Dolphin1}
+//             />
+//         </Stack.Navigator>
+//     );
+// }
+// export { DolphinsScreenNavigator }
+
+// const PostCardNavigator = () => {
+//     return (
+//         <Stack.Navigator screenOptions={{ headerShown: false }}>
+//             <Stack.Screen
+//                 name="PostCardPreview"
+//                 component={PostCardPreviewScreen}
+//             />
+//             <Stack.Screen
+//                 name="EditCard"
+//                 component={EditPostCardScreen}
+//             />
+//         </Stack.Navigator>
+//     );
+// }
+// export { PostCardNavigator }
+
+
+// const TripListScreenNavigator = () => {
+//     return (
+//         <Stack.Navigator screenOptions={{ headerShown: false }}>
+//             <Stack.Screen
+//                 name="TripList"
+//                 component={TripListScreen}
+//             />
+//             <Stack.Screen
+//                 name="WhalesWatching"
+//                 component={WhaleWatchingScreen}
+//             />
+//             <Stack.Screen
+//                 name="Desertas"
+//                 component={DesertasScreen}
+//             />
+//             <Stack.Screen
+//                 name="Faja"
+//                 component={FajasScreen}
+//             />
+//             <Stack.Screen
+//                 name="Sunset"
+//                 component={SunsetScreen}
+//             />
+
+//         </Stack.Navigator>
+//     );
+// }
+// export { TripListScreenNavigator }
+
+// const WhalesWatchingScreenNavigator = () => {
+//     return (
+//         <Stack.Navigator screenOptions={{ headerShown: false }}>
+//             <Stack.Screen
+//                 name="WhalesWatching"
+//                 component={WhaleWatchingScreen}
+//             />
+
+//         </Stack.Navigator>
+//     );
+// }
+// export { WhalesWatchingScreenNavigator }
+
+// const SelectedPictureScreenNavigator = () => {
+//     return (
+//         <Stack.Navigator screenOptions={{ headerShown: false }}>
+//             <Stack.Screen
+//                 name="SelectedPictureScreen"
+//                 component={SelectPictureScreen}
+//             />
+
+//         </Stack.Navigator>
+//     );
+// }
+// export { SelectedPictureScreenNavigator }
+
+// const LoginScreenNavigator = () => {
+//     return (
+//         <Stack.Navigator screenOptions={{ headerShown: false }}>
+//             <Stack.Screen
+//                 name="LoginScreen"
+//                 component={LoginScreen}
+//             />
+//              <Stack.Screen
+//                 name="Welcome"
+//                 component={WelcomeScreen}
+//             />
+//         </Stack.Navigator>
+        
+//     );
+// }
+
+// export { LoginScreenNavigator }
+
+// const WelcomeScreenNavigator = () => {
+//     return (
+//         <Stack.Navigator screenOptions={{ headerShown: false }}>
+//             <Stack.Screen
+//                 name="Welcome"
+//                 component={WelcomeScreen}
+//             />
+//         </Stack.Navigator>
+//     );
+// }
+// export { WelcomeScreenNavigator }
 
 
 

@@ -5,6 +5,7 @@ import { Entypo, Feather, Ionicons } from '@expo/vector-icons'
 import React from 'react';
 
 //Screens
+//import { AddTripScreenNavigator, HomeScreenNavigator, SpeciesScreenNavigator, PostCardNavigator, TripListScreenNavigator, LoginScreenNavigator, EditPostCardNavigator, SelectedPictureScreenNavigator, WelcomeScreenNavigator, HomeTabs, WhalesScreenNavigator, DolphinsScreenNavigator } from './src/screens/CustomNavigation';
 import HomeScreen from './src/screens/HomeScreen';
 import WelcomeScreen from './src/screens/WelcomeScreen.js';
 import SpeciesScreen from './src/screens/SpeciesScreen';
@@ -20,13 +21,13 @@ import WhaleWhatchingScreen from './src/screens/WhaleWatchingScreen';
 import DesertasScreen from './src/screens/DesertasScreen';
 import FajasScreen from './src/screens/FajasScreen';
 import SunsetScreen from './src/screens/SunsetScreen';
-import { AddTripScreenNavigator, HomeScreenNavigator, SpeciesScreenNavigator, PostCardNavigator, TripListScreenNavigator, LoginScreenNavigator, EditPostCardNavigator, SelectedPictureScreenNavigator, WelcomeScreenNavigator, HomeTabs, WhalesScreenNavigator, DolphinsScreenNavigator } from './src/screens/CustomNavigation';
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import LoginScreen from './src/screens/LoginScreen';
 import PostCardPreview from './src/screens/PostCardPreview';
 import Dolphin1 from './src/screens/Dolphin1';
+import { HomeTabs } from './src/screens/CustomNavigation';
 
 
 const Tab = createBottomTabNavigator();
