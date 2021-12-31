@@ -47,9 +47,9 @@ export default function EditPostCard({ route, navigation }) {
 <Text style={styles.textSubTitle}>Leave a comment of your Trip</Text>
 
 <TextInput
-    style={{ padding: 10, height: 150, width: 210, margin: 15, borderRadius: 8 }}
+    style={styles.texInput}
     backgroundColor='#FFFFFF'
-                    placeholder="Type your new comment here"
+                    placeholder="Enter Your Comment"
 
                     onChangeText={editComment => setComment(editComment)}
 />
@@ -80,17 +80,26 @@ const styles = StyleSheet.create({
       alignItems: 'center',
 
   },
-  textInput: {
-      padding: 10, height: 40, width: 150, alignSelf: 'center'
+  texInput: {
+    backgroundColor: 'white',
+    padding: 10, 
+    height: 100, 
+    width: '50%', 
+    margin: 15, 
+    borderRadius: 8,
+    textAlign: 'center',
+    marginTop: 30
   },
   textSubTitle: {
-
       color: 'black',
       fontWeight: 'bold',
-      fontSize: 24,
-      marginTop: 50,
+      fontSize: 22,
+      marginTop: 60,
       textShadowColor: 'rgba(0, 0, 0, 1)',
-      //textShadowRadius: 5
+      textAlign: 'center',
+      justifyContent: 'center'
+  },
+  inputCommment: {
 
   },
   imageBackground: {
