@@ -43,13 +43,14 @@ const Home = ({ route, navigation }) => {
 
 
     const [idTrip, setIdTrip] = useState('');
-  
+
 
     const getData = () => {
         try {
             AsyncStorage.getItem('IdNewTrip')
                 .then(value => {
                     if (value != null) {
+                        console.log(idTrip);
                         //volta a converter num objeto
                         let trip = JSON.parse(value);
                         setIdTrip(trip.Id);
@@ -65,57 +66,82 @@ const Home = ({ route, navigation }) => {
         array.push(idTrip);
     }, []);
 
-    //converter em int, era por isso que dava undefined
-    const id = Number(idTrip);
 
-    const ongoing = Data[id].ongoing;
-    var location = Data[id].location;
-    const name = Data[id].name;
-    const imagecollection = Data[id].imagecollection;
-    const date = Data[id].date;
-    const imgPath = Data[id].imgPath;
-    const rating = Data[id].rating;
-    const comment = Data[id].comment;
-    const sightedSpecies = Data[id].sightedSpecies;
-    const routeTrip = Data[id].route;
+    function checkIdTrip(idTrip) {
+        //console.log("id trip = ", idTrip);
+        if (idTrip !== '') {
+            //converter em int, era por isso que dava undefined
+            const id = Number(idTrip);
+            console.log("id trip do IF = ", idTrip)
+            var ongoing = Data[id].ongoing;
+            var location = Data[id].location;
+            var name = Data[id].name;
+            var imagecollection = Data[id].imagecollection;
+            var date = Data[id].date;
+            var imgPath = Data[id].imgPath;
+            var rating = Data[id].rating;
+            var comment = Data[id].comment;
+            var sightedSpecies = Data[id].sightedSpecies;
+            var routeTrip = Data[id].route;
+        } else {
+            console.log("Entrou no else")
+            var id = 1;
+            var ongoing = "";
+            var location = "";
+            var name = "";
+            var imagecollection = "";
+            var date = "";
+            var imgPath = "";
+            var rating = "";
+            var comment = "";
+            var sightedSpecies = "";
+            var routeTrip = "";
+        }
+
+    }
+
 
     //teste
-    const img = Images.trip0;
+    if(idTrip == 0) {
+        var img = Images.trip0;
 
-
-    
-    const entrar = () =>{
-        console.log(id)
     }
+    else if(idTrip==1) {
+        var img = Images.trip1;
+    }
+   
+
+
+
 
     return (
         <View style={styles.container}>
             <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
                 <ScrollView style={styles.darkerimage}>
 
-                    <View style= {styles.headerbox}>
-                        <Text style= {styles.textHeader}> My Trips {console.log(array, id)}</Text>                   
-                    </View> 
-                    <Text style = {styles.welcomeText}>
+                    <View style={styles.headerbox}>
+                        <Text style={styles.textHeader}> My Trips </Text>
+                    </View>
+                    <Text style={styles.welcomeText}>
                         Here you can see your trips. If you haven't done one yet, join!
                     </Text>
-                    <TouchableOpacity style={styles.buttom} onPress={() => {navigation.navigate("AddTrip"); }}>
+                    <TouchableOpacity style={styles.buttom} onPress={() => { navigation.navigate("AddTrip"); }}>
                         <Text style={styles.textButton}>Add a New Trip</Text>
                     </TouchableOpacity>
 
 
-                    {isEmpty ? 
-                    <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
-                        <View style={styles.item}>
-                            <Image style={styles.image} source={img}/>
-                           <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
-                            <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text>
-                        </View>
-                    </TouchableOpacity> : null}
+                    {!isEmpty(Data[idTrip]) ?
+                        <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
+                            <View style={styles.item}>
+                                <Image style={styles.image} source={img} />
+                                {/* <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
+                                <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text> */}
+                            </View>
+                        </TouchableOpacity> : null}
 
-                    <TouchableOpacity style={styles.buttom} onPress={() => {navigation.navigate("SelectedPictureScreen"); }}>
+                    <TouchableOpacity style={styles.buttom} onPress={() => { navigation.navigate("SelectedPictureScreen"); }}>
                         <Text style={styles.textButton}>Select Pic TEST! </Text>
-                    </TouchableOpacity>            
+                    </TouchableOpacity>
 
                 </ScrollView>
             </ImageBackground>
@@ -136,7 +162,7 @@ const styles = StyleSheet.create({
         marginTop: 15,
         padding: 5,
         flex: 1,
-        fontSize: 20,        
+        fontSize: 20,
     },
     text: {
         position: 'absolute',
@@ -150,7 +176,7 @@ const styles = StyleSheet.create({
         fontSize: 14
     },
     textSubTitle: {
-        position:'absolute',
+        position: 'absolute',
         color: 'white',
         fontSize: 20,
         marginHorizontal: 10,
@@ -170,20 +196,20 @@ const styles = StyleSheet.create({
     headerbox: {
         width: ITEM_WIDTH,
         paddingTop: 35,
-        padding:8,
-        flex:1      
+        padding: 8,
+        flex: 1
     },
     textHeader: {
-        flex:1,
+        flex: 1,
         width: ITEM_WIDTH,
         position: 'absolute',
         color: 'white',
-        paddingLeft:10,
+        paddingLeft: 10,
         paddingBottom: 2,
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 2,
         fontWeight: 'bold',
-        fontSize: 22,       
+        fontSize: 22,
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         zIndex: 10
     },
@@ -191,12 +217,12 @@ const styles = StyleSheet.create({
         marginTop: 0,
         marginLeft: 15,
         flex: 1,
-        width: ITEM_WIDTH/1.1,
-        height: ITEM_WIDTH/1.5,
+        width: ITEM_WIDTH / 1.1,
+        height: ITEM_WIDTH / 1.5,
         borderRadius: 15,
     },
     imageBackground: {
-        flex: 1,        
+        flex: 1,
     },
     darkerimage: {
         backgroundColor: 'rgba(0, 0, 0, 0.3)'
@@ -207,7 +233,7 @@ const styles = StyleSheet.create({
         shadowRadius: 3,
     },
     buttom: {
-        width: ITEM_WIDTH/2,
+        width: ITEM_WIDTH / 2,
         height: 40,
         marginTop: 30,
         justifyContent: 'center',

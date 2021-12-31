@@ -23,9 +23,6 @@ export default function SpeciesScreen({ navigation }){
                 </View>                
                     
                 <ScrollView>
-                    <Text style = {styles.textMarine}>
-                        Marine Life
-                    </Text>
                     <TouchableOpacity onPress={() => navigation.navigate("Whales")}>       
                         <View style ={styles.item}>                    
                             <Image style = {styles.image} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
@@ -75,9 +72,8 @@ const styles = StyleSheet.create({
     },
     headerbox: {
         width: ITEM_WIDTH,
-        paddingTop: 35,
-        padding:8,
-        flex:1,       
+        paddingTop: 32,
+        flex:1,    
     },
     textHeader: {
         flex:1,
@@ -97,9 +93,9 @@ const styles = StyleSheet.create({
         position:'absolute',
         color: 'white',
         fontSize: 20,
-        marginHorizontal: 10,
+        marginHorizontal: 20,
         marginVertical: 20,
-        marginLeft: 30,
+        marginLeft: ITEM_WIDTH / 12,
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 8
     },
@@ -113,11 +109,11 @@ const styles = StyleSheet.create({
     },
     image: {
         marginTop: 15,
-        marginLeft: 15,
         flex: 1,
-        width: ITEM_WIDTH/1.1,
-        height: ITEM_WIDTH/1.5,
+        width: ITEM_WIDTH / 1.1,
+        height: ITEM_WIDTH / 1.5,
         borderRadius: 15,
+        alignSelf: 'center'
     },
     imageBackground: {
         flex: 1,        

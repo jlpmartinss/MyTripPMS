@@ -78,15 +78,12 @@ const styles = StyleSheet.create({
     container: {
         paddingTop: 20,
         paddingBottom: 20,
-        flex: 1,
-        //alignItems: 'center',
         flexDirection: 'row',
         flexWrap: 'wrap'      
     },
     headerbox: {
         width: ITEM_WIDTH,
-        paddingTop: 35,
-        padding: 8,
+        paddingTop: 32,
         flex: 1        
     },
     textHeader: {
@@ -119,7 +116,7 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        width: ITEM_WIDTH/2.15,
+        width: ITEM_WIDTH/2.11,
         height: ITEM_WIDTH/3.15,
         backgroundColor: 'white',
         borderRadius: 15

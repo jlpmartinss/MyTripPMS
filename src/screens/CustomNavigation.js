@@ -49,11 +49,7 @@ const HomeTabs = () => {
                 name="TripList"
                 component={TripListScreen} options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color} />) }}
             />
-            <Tab.Screen
-                name="EditCard"
-                component={EditPostCardScreen}
-                options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color}/>)}} 
-            />
+           
             <Tab.Screen name="SelectedPictureScreen"
                 component={SelectPictureScreen}
                 options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color}/>)}} 
