@@ -11,6 +11,7 @@ const ITEM_HEIGHT = Dimensions.get('window').height
 const AddTripScreen = ({ route, navigation }) => {
     //const [teste,setTeste] = useState('');
     const [idTrip, setIdTrip] = useState('');
+    //const [array_, setArray] = useState([]);
     const id = '0';
     const [currentDate, setCurrentDate] = useState('');
     var isClicked = false;
@@ -73,12 +74,27 @@ const AddTripScreen = ({ route, navigation }) => {
                     Id: idTrip
                 }
                 await AsyncStorage.setItem('IdNewTrip',  JSON.stringify(trip));
+                /* array_.push(Number(idTrip));
+                setArray(array_);
+                setDataArray();*/
                 navigation.navigate('Home');
             } catch (error) {
                 console.log(console.error);
             }
         }
     }
+
+    /*
+    const setDataArray = async () => {
+        try {
+            var array = {
+                _idarray: array_
+            }
+            await AsyncStorage.setItem('NewArray',  JSON.stringify(array));
+        } catch (error) {
+            console.log(console.error);
+        }
+    }*/
 
     return (
         <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>

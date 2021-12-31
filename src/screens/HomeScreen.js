@@ -43,7 +43,7 @@ const Home = ({ route, navigation }) => {
 
 
     const [idTrip, setIdTrip] = useState('');
-
+    //const [array_, setArray] = useState([]);
 
     const getData = () => {
         try {
@@ -61,9 +61,25 @@ const Home = ({ route, navigation }) => {
         }
     }
 
+    /*
+    const getDataArray = () => {
+        try {
+            AsyncStorage.getItem('NewArray')
+                .then(value => {
+                    if (value != null) {
+                        //volta a converter num objeto
+                        let array = JSON.parse(value);
+                        setArray(array._idarray);
+                    }
+                })
+        } catch (error) {
+            console.log(error);
+        }
+    }*/
+
     useEffect(() => {
         getData();
-        array.push(idTrip);
+        //getDataArray();
     }, []);
 
 
@@ -109,10 +125,6 @@ const Home = ({ route, navigation }) => {
     else if(idTrip==1) {
         var img = Images.trip1;
     }
-   
-
-
-
 
     return (
         <View style={styles.container}>
