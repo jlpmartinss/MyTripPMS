@@ -40,7 +40,6 @@ const HomeTabs = () => {
                 component={SpeciesScreen}
                 options={{ tabBarIcon: ({ size, color }) => (<Feather name="search" size={size} color={color} />) }}
             />
-
             <Tab.Screen
                 name="PostCard"
                 component={PostCardPreviewScreen}

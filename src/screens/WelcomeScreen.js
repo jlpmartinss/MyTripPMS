@@ -6,6 +6,8 @@ import { ScrollView } from "react-native-gesture-handler";
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
 import Images from "../Images";
 
+let ITEM_WIDTH = Dimensions.get('window').width;
+
 export default function SunsetScreen({ route, navigation}) {
 
     const [username, setUsername] = useState('');
@@ -46,14 +48,14 @@ export default function SunsetScreen({ route, navigation}) {
 
                     <Text style = {styles.welcomeText}>
                         {entrar()}
-                        Welcome {username}
+                        Welcome, {username}!
                     </Text>
                     
                     <Text style = {styles.text}>
                         Explore the Marine Life to learn fun facts and more about your favorite marine animals. Create your post card of yout trip and share it with friends.
                     </Text>
 
-                    <TouchableOpacity style={styles.roundButton1} onPress={() => {navigation.navigate("AddTrip")}}>
+                    <TouchableOpacity style={styles.buttom} onPress={() => {navigation.navigate("AddTrip")}}>
                         <Text style={styles.textButton}>Get Started</Text>
                     </TouchableOpacity>
                 </View>
@@ -76,22 +78,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         marginTop: 100,
         textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 5
-    },
-    roundButton1: {
-        width: 250,
-        height: 40,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 8,
-        backgroundColor: '#fff',
-        marginTop: 200
-    },
-    imageBackground: {
-        flex: 1,        
-    },
-    darkerimage: {
-        backgroundColor: 'rgba(0, 0, 0, 0.3)'
+        textShadowRadius: 2
     },
     text: {
         marginHorizontal: 20,
@@ -108,5 +95,26 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         paddingVertical: 10,
+    },
+    buttom: {
+        width: ITEM_WIDTH/2,
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+        backgroundColor: '#12AEB7',
+        marginTop: 200,
+        alignSelf: 'center'
+    },
+    textButton: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 18
+    },
+    imageBackground: {
+        flex: 1,        
+    },
+    darkerimage: {
+        backgroundColor: 'rgba(0, 0, 0, 0.3)'
     }
 })

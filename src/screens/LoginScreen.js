@@ -74,14 +74,6 @@ const LoginScreen = ({ route, navigation }) => {
             alignItems: 'center',
     
         },
-        imageBackground: {
-            flex: 1,        
-        },
-        darkerimage: {
-            flex: 1,
-            backgroundColor: 'rgba(0, 0, 0, 0.3)',            
-            alignItems: 'center',
-        },
         textSubTitle: {
             color: 'white',
             fontWeight: 'bold',
@@ -90,13 +82,12 @@ const LoginScreen = ({ route, navigation }) => {
             marginHorizontal: 20,
             marginTop: 150,
             textShadowColor: 'rgba(0, 0, 0, 1)',
-            textShadowRadius: 5
+            textShadowRadius: 3
         },
         text: {
             fontSize: 15,
             color: 'white',
             marginTop: 10
-
 
         },
         textInput: {
@@ -108,11 +99,19 @@ const LoginScreen = ({ route, navigation }) => {
             alignSelf: 'center',
             marginTop: 20,
             textAlign: 'center'
-
+        },
+        imageBackground: {
+            flex: 1,        
+        },
+        darkerimage: {
+            flex: 1,
+            backgroundColor: 'rgba(0, 0, 0, 0.3)',            
+            alignItems: 'center',
         },
         textButton: {
-            color: 'black',
+            color: 'white',
             fontSize: 18,
+            fontWeight: 'bold'
         },
         buttom: {
             width: ITEM_WIDTH/2,
@@ -121,9 +120,9 @@ const LoginScreen = ({ route, navigation }) => {
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 8,
-            backgroundColor: '#11BDBB',
+            backgroundColor: '#12AEB7',
+            alignSelf: 'center'
         }
-
     })
 
 export default LoginScreen

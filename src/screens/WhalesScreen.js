@@ -6,9 +6,9 @@ import Data from "./../../jsons/WhalesData.json"
 
 
 let ITEM_WIDTH = Dimensions.get('window').width;
+let ITEM_HEIGHT = Dimensions.get('window').height;
 
 export default function WhalesScreen({ navigation }){
-    console.log("I'm in WhalesScreen");
     
     return(
         <ImageBackground blurRadius = {50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg") } resizeMode="cover" style={styles.imageBackground}> 
@@ -17,7 +17,6 @@ export default function WhalesScreen({ navigation }){
             </View>  
 
             <ScrollView>
-
                 <View style ={styles.container}>
                     
                     <TouchableOpacity onPress={() => navigation.navigate('Whale1', Data[0])}>       
@@ -161,9 +160,7 @@ export default function WhalesScreen({ navigation }){
                     </TouchableOpacity>
 
                 </View>
-
             </ScrollView>
-
         </ImageBackground>
     );
 }
@@ -181,27 +178,25 @@ const styles = StyleSheet.create({
     headerbox: {
         width: ITEM_WIDTH,
         paddingTop: 35,
-        padding:8,
-        flex:1,
-        fontSize: 20,        
+        padding: 8,
+        flex: 1        
     },
     textHeader: {
         flex:1,
         width: ITEM_WIDTH,
         position: 'absolute',
         color: 'white',
-        fontSize: 20,
         paddingLeft:10,
         paddingBottom: 2,
         textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8,
+        textShadowRadius: 2,
         fontWeight: 'bold',
-        fontSize: 30,       
-        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        fontSize: 22,       
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
         zIndex: 10
     },
     item: {
-        padding:5,
+        padding: 5,
         flex:1,
         fontSize: 20,
         
@@ -209,7 +204,7 @@ const styles = StyleSheet.create({
     textSubTitle: {
         position:'absolute',
         color: 'white',
-        fontSize: 20,
+        fontSize: 18,
         marginHorizontal: 10,
         marginVertical: 10,
         textShadowColor: 'rgba(0, 0, 0, 1)',
@@ -218,16 +213,15 @@ const styles = StyleSheet.create({
     image: {
         flex: 1,
         width: ITEM_WIDTH/2.15,
-        height: ITEM_WIDTH/2.15,
+        height: ITEM_WIDTH/3.15,
         backgroundColor: 'white',
         borderRadius: 15
     },
     imageBackground: {
-        flex: 1,        
-    },
-    darkerimage: {
-        backgroundColor: 'rgba(0, 0, 0, 0.3)'
-    },
+        flex: 1,
+        minHeight: ITEM_HEIGHT,
+
+    }
 })
 
 

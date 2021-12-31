@@ -9,7 +9,6 @@ let ITEM_WIDTH = Dimensions.get('window').width;
 let ITEM_HEIGHT = Dimensions.get('window').height;
 
 export default function DolphinsScreen({ navigation }){
-    console.log("I'm in DolphinsScreen");
 
     return(
         <ImageBackground blurRadius = {50} source={require("../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg") } resizeMode="cover" style={styles.imageBackground}> 
@@ -84,26 +83,24 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap'      
     },
-        headerbox: {
+    headerbox: {
         width: ITEM_WIDTH,
         paddingTop: 35,
-        padding:8,
-        flex:1,
-        fontSize: 20,        
+        padding: 8,
+        flex: 1        
     },
     textHeader: {
         flex:1,
         width: ITEM_WIDTH,
         position: 'absolute',
         color: 'white',
-        fontSize: 20,
         paddingLeft:10,
         paddingBottom: 2,
         textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8,
+        textShadowRadius: 2,
         fontWeight: 'bold',
-        fontSize: 30,       
-        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        fontSize: 22,       
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
         zIndex: 10
     },
     item: {
@@ -114,7 +111,7 @@ const styles = StyleSheet.create({
     textSubTitle: {
         position:'absolute',
         color: 'white',
-        fontSize: 20,
+        fontSize: 18,
         marginHorizontal: 10,
         marginVertical: 10,
         textShadowColor: 'rgba(0, 0, 0, 1)',
@@ -123,7 +120,7 @@ const styles = StyleSheet.create({
     image: {
         flex: 1,
         width: ITEM_WIDTH/2.15,
-        height: ITEM_WIDTH/2.15,
+        height: ITEM_WIDTH/3.15,
         backgroundColor: 'white',
         borderRadius: 15
     },
@@ -132,27 +129,6 @@ const styles = StyleSheet.create({
         minHeight: ITEM_HEIGHT,
     },
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // let ITEM_WIDTH = Dimensions.get('window').width;
 // let ITEM_HEIGHT = Dimensions.get('window').height;

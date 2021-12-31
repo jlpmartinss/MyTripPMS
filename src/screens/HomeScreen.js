@@ -87,11 +87,11 @@ const Home = ({ route, navigation }) => {
                 <ScrollView style={styles.darkerimage}>
 
                     <View style= {styles.headerbox}>
-                        <Text style= {styles.textHeader}>My trips </Text>                   
+                        <Text style= {styles.textHeader}>My Trips </Text>                   
                     </View> 
 
                     <TouchableOpacity style={styles.buttom} onPress={() => {navigation.navigate("AddTrip"); }}>
-                        <Text style={styles.buttonText}>Add a new trip</Text>
+                        <Text style={styles.textButton}>Add a New Trip</Text>
                     </TouchableOpacity>
 
 
@@ -105,7 +105,7 @@ const Home = ({ route, navigation }) => {
                     </TouchableOpacity> : null}
 
                     <TouchableOpacity style={styles.buttom} onPress={() => {navigation.navigate("SelectedPictureScreen"); }}>
-                        <Text style={styles.buttonText}>Select Pic TEST! </Text>
+                        <Text style={styles.textButton}>Select Pic TEST! </Text>
                     </TouchableOpacity>            
 
                 </ScrollView>
@@ -147,22 +147,20 @@ const styles = StyleSheet.create({
         width: ITEM_WIDTH,
         paddingTop: 35,
         padding:8,
-        flex:1,
-        fontSize: 20,        
+        flex:1      
     },
     textHeader: {
         flex:1,
         width: ITEM_WIDTH,
         position: 'absolute',
         color: 'white',
-        fontSize: 20,
         paddingLeft:10,
         paddingBottom: 2,
         textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8,
+        textShadowRadius: 2,
         fontWeight: 'bold',
-        fontSize: 30,       
-        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        fontSize: 22,       
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
         zIndex: 10
     },
     text: {
@@ -202,14 +200,13 @@ const styles = StyleSheet.create({
         marginTop: 20,
         justifyContent: 'center',
         alignItems: 'center',
-        alignSelf:'center',
         borderRadius: 8,
-        backgroundColor: '#11BDBB',
+        backgroundColor: '#12AEB7',
+        alignSelf: 'center'
     },
-      buttonText: {
-        fontSize: 20,
-        color: 'black',
-      },
-
-
+    textButton: {
+        color: 'white',
+        fontSize: 18,
+        fontWeight: 'bold'
+    }
 })

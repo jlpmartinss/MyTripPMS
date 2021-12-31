@@ -97,8 +97,8 @@ export default function SelectPictureScreen() {
         
           <ScrollView>
             <Image source={{ uri: selectedImage.localUri }} style={styles.thumbnail} />
-            <TouchableOpacity onPress={openShareDialogAsync} style={styles.roundButton1}  >
-            <Text style={styles.buttonText}>Share this photo</Text>
+            <TouchableOpacity onPress={openShareDialogAsync} style={styles.buttom}  >
+            <Text style={styles.textButton}>Share this photo</Text>
             </TouchableOpacity>
           </ScrollView>
         </ImageBackground> 
@@ -118,8 +118,8 @@ export default function SelectPictureScreen() {
           <Text style={styles.instructions}>To share a photo from your phone with a friend, just press the button below!</Text>
         </View>        
 
-        <TouchableOpacity onPress={openImagePickerAsync} style={styles.roundButton1}>
-          <Text style={styles.buttonText}>Pick a photo</Text>
+        <TouchableOpacity onPress={openImagePickerAsync} style={styles.buttom}>
+          <Text style={styles.textButton}>Pick a photo</Text>
         </TouchableOpacity>
         </ScrollView>
       </ImageBackground>
@@ -140,23 +140,25 @@ const styles = StyleSheet.create({
   },
   instructions: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 16,
     marginHorizontal: 15,
     margin: 10,
+    textAlign: 'center'
   },
-  roundButton1: {
-    width: 200,
+  buttom: {
+    width: ITEM_WIDTH/2,
     height: 40,
     justifyContent: 'center',
     alignItems: 'center',
-    alignSelf: 'center',
     borderRadius: 8,
-    backgroundColor: '#176cff',
-    //overflow = 'hidden'
+    backgroundColor: '#12AEB7',
+    marginTop: 0,
+    alignSelf: 'center'
   },
-  buttonText: {
-    fontSize: 20,
-    color: 'white',
+  textButton: {
+      color: 'white',
+      fontWeight: 'bold',
+      fontSize: 18
   },
   thumbnail: {
     width: ITEM_WIDTH/1.1,
@@ -174,22 +176,20 @@ const styles = StyleSheet.create({
     width: ITEM_WIDTH,
     paddingTop: 35,
     padding:8,
-    flex:1,
-    fontSize: 20,        
+    flex:1     
   },
   textHeader: {
     flex:1,
     width: ITEM_WIDTH,
     position: 'absolute',
     color: 'white',
-    fontSize: 20,
     paddingLeft:10,
     paddingBottom: 2,
     textShadowColor: 'rgba(0, 0, 0, 1)',
-    textShadowRadius: 8,
+    textShadowRadius: 2,
     fontWeight: 'bold',
-    fontSize: 30,       
-    backgroundColor: 'rgba(0, 0, 0, 0.33)',
+    fontSize: 22,       
+    backgroundColor: 'rgba(0, 0, 0, 0.2)',
     zIndex: 10
   },
   textBox: {

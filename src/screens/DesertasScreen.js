@@ -163,8 +163,7 @@ const styles = StyleSheet.create({
     },
     item: {
         padding:5,
-        flex:1,
-        fontSize: 20        
+        flex:1     
     },
     headerbox: {
         width: ITEM_WIDTH,
@@ -178,14 +177,13 @@ const styles = StyleSheet.create({
         width: ITEM_WIDTH,
         position: 'absolute',
         color: 'white',
-        fontSize: 20,
         paddingLeft:10,
         paddingBottom: 2,
         textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8,
+        textShadowRadius: 2,
         fontWeight: 'bold',
-        fontSize: 30,       
-        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        fontSize: 22,       
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
         zIndex: 10
     },
     image: {

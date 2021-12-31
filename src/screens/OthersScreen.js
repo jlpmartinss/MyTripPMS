@@ -79,9 +79,6 @@ export default function OthersScreen({ navigation }){
 
             </View>    
             </ImageBackground>
-                                 
-            
-             
         </ScrollView>
     );
 }

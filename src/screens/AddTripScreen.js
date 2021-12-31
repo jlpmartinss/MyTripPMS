@@ -67,23 +67,23 @@ const AddTripScreen = ({ route, navigation }) => {
             <View style= {styles.headerbox}>
                 <Text style= {styles.textHeader}>Add Trip</Text>
             </View> 
-                <Text style={styles.textSubTitle}>Type the code of your trip</Text>
+                <Text  style={styles.textSubTitle}> Start a Trip or {"\n"} See Your Trips </Text>
 
                 <TextInput
                     style= {styles.textInput}
                     backgroundColor='#FFFFFF'
                     //se o input for números onChangeText = {onChangeNumber} + value = {number} + keyboardType="numeric" 
-                    placeholder="Type Trip Code Here"
+                    placeholder="Enter Your Trip Code"
                     //onSubmitEditing={text => setText(text)}
                     onChangeText={idTrip => setIdTrip(idTrip)}
                     //defaultValue={text}
                 />
 
-                <TouchableOpacity style={styles.roundButton1} onPress={() => { checkTripTime(); navigation.navigate("Home") }}>
-                    <Text style={styles.textButton}>Add Trip</Text>
+                <TouchableOpacity style={styles.button} onPress={() => { checkTripTime(); navigation.navigate("Home") }}>
+                    <Text style={styles.textButton}>Join Trip</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.roundButton1} onPress={() => { navigation.navigate("Home") }}>
-                    <Text style={styles.textButton}>See my Trips</Text>
+                <TouchableOpacity style={styles.button} onPress={() => { navigation.navigate("Home") }}>
+                    <Text style={styles.textButton}>See My Trips</Text>
                 </TouchableOpacity>
                 
             </ScrollView>
@@ -102,43 +102,41 @@ const styles = StyleSheet.create({
         padding: 10, height: 40, width: 150, alignSelf: 'center'
     },
     textSubTitle: {
-
         color: 'white',
         fontWeight: 'bold',
         fontSize: 24,
-        marginTop: 50,
+        marginTop: 150,
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 5,
-        
+        textAlign: 'center',
         justifyContent: 'center',
         alignItems: 'center',
         alignSelf: 'center',
 
     },
     textButton: {
-        color: 'black',
+        color: 'white',
         fontSize: 18,
+        fontWeight: 'bold'
     },
     headerbox: {
         width: ITEM_WIDTH,
         paddingTop: 35,
         padding:8,
-        flex:1,
-        fontSize: 20,        
+        flex:1        
     },
     textHeader: {
         flex:1,
         width: ITEM_WIDTH,
         position: 'absolute',
         color: 'white',
-        fontSize: 20,
         paddingLeft:10,
         paddingBottom: 2,
         textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8,
+        textShadowRadius: 2,
         fontWeight: 'bold',
-        fontSize: 30,       
-        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        fontSize: 22,       
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
         zIndex: 10
     },
     imageBackground: {
@@ -148,7 +146,7 @@ const styles = StyleSheet.create({
     darkerimage: {
         backgroundColor: 'rgba(0, 0, 0, 0.3)'
     },
-    roundButton1: {
+    button: {
         width: ITEM_WIDTH/2,
         height: 40,
         marginTop: 20,
@@ -156,8 +154,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'center',
         borderRadius: 8,
-        backgroundColor: '#11BDBB',
-        //overflow = 'hidden',
+        backgroundColor: '#12AEB7',
     },
     textInput: {
         backgroundColor: 'white',

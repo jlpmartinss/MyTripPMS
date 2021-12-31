@@ -1,12 +1,12 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState } from 'react';
-import { View, Text, Button, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { View, Text, Button, TextInput, TouchableOpacity, StyleSheet, Alert, Dimensions } from 'react-native';
 import * as FileSystem from 'expo-file-system';
 import data from "./../../jsons/Trips.json";
 import Rating from 'react-native-easy-rating';
 //import {writeJsonFile} from 'write-json-file';
 
-
+let ITEM_WIDTH = Dimensions.get('window').width;
 
 //const text = await FileSystem.getInfoAsync("../../jsons/Trips.json");
 
@@ -65,7 +65,7 @@ export default function EditPostCard({ route, navigation }) {
       />
 <Text style ={{textAlign: 'center'}}  /* passar este valor para o json da viagem (para depois aparecer no postcard preview) */  >Selected Rating: {rating} stars</Text>
 
-<TouchableOpacity style={styles.roundButton1}  onPress={() => {setData()}}>
+<TouchableOpacity style={styles.buttom}  onPress={() => {setData()}}>
     
     <Text style={styles.textButton}>Finish Editing</Text>
 </TouchableOpacity>
@@ -94,21 +94,22 @@ const styles = StyleSheet.create({
       //textShadowRadius: 5
 
   },
-  textButton: {
-      color: 'white',
-      fontSize: 18,
-  },
-
   imageBackground: {
       flex: 1
   },
-  roundButton1: {
-      width: 150,
-      height: 40,
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: 8,
-      backgroundColor: '#176cff',
-      //overflow = 'hidden'
-  },
+  buttom: {
+    width: ITEM_WIDTH/2,
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 8,
+    backgroundColor: '#12AEB7',
+    marginTop: 20,
+    alignSelf: 'center'
+},
+textButton: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 18
+},
 })
