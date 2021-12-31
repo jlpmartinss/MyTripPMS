@@ -44,7 +44,7 @@ const AddTripScreen = ({ route, navigation }) => {
         )
     }
     const setData = async () => {
-        if (idTrip.length == 0 ) {
+        if (idTrip.length == 0 || isNaN(idTrip)){
             Alert.alert('Warning!', 'Please write your data')
         }
         else {
@@ -53,7 +53,7 @@ const AddTripScreen = ({ route, navigation }) => {
                     Id: idTrip
                 }
                 await AsyncStorage.setItem('IdNewTrip',  JSON.stringify(trip));
-                //navigation.navigate('Home');
+                navigation.navigate('Home');
             } catch (error) {
                 console.log(console.error);
             }
@@ -79,7 +79,7 @@ const AddTripScreen = ({ route, navigation }) => {
                     //defaultValue={text}
                 />
 
-                <TouchableOpacity style={styles.button} onPress={() => { checkTripTime(); navigation.navigate("Home") }}>
+                <TouchableOpacity style={styles.button} onPress={() => { checkTripTime();}}>
                     <Text style={styles.textButton}>Join Trip</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button} onPress={() => { navigation.navigate("Home") }}>

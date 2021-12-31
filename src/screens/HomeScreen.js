@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, Button, StyleSheet, FlatList, Dimensions, Image, ScrollView, ImageBackground } from 'react-native';
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Images from "../Images"
+import Data from "./../../jsons/Trips.json";
 
 const ITEM_WIDTH = Dimensions.get('window').width
 
@@ -15,6 +16,7 @@ function isEmpty(obj) {
     return true;
 }
 
+const array = [];
 
 const Home = ({ route, navigation }) => {
 
@@ -41,6 +43,7 @@ const Home = ({ route, navigation }) => {
 
 
     const [idTrip, setIdTrip] = useState('');
+  
 
     const getData = () => {
         try {
@@ -59,26 +62,30 @@ const Home = ({ route, navigation }) => {
 
     useEffect(() => {
         getData();
+        array.push(idTrip);
     }, []);
 
-    // const id = tripData.id;
-    // const ongoing = tripData.ongoing;
-    // const location = tripData.location;
-    // const name = tripData.name;
-    // const imagecollection = tripData.imagecollection;
-    // const date = tripData.date;
-    // const imgPath = tripData.imgPath;
-    // const rating = tripData.rating;
-    // const comment = tripData.comment;
-    // const sightedSpecies = tripData.sightedSpecies;
-    // const routeTrip = tripData.route;
+    //converter em int, era por isso que dava undefined
+    const id = Number(idTrip);
+
+    const ongoing = Data[id].ongoing;
+    var location = Data[id].location;
+    const name = Data[id].name;
+    const imagecollection = Data[id].imagecollection;
+    const date = Data[id].date;
+    const imgPath = Data[id].imgPath;
+    const rating = Data[id].rating;
+    const comment = Data[id].comment;
+    const sightedSpecies = Data[id].sightedSpecies;
+    const routeTrip = Data[id].route;
 
     //teste
+    const img = Images.trip0;
 
-    const img = Images.dolphin1;
+
     
     const entrar = () =>{
-        console.log(idTrip)
+        console.log(id)
     }
 
     return (
@@ -87,7 +94,7 @@ const Home = ({ route, navigation }) => {
                 <ScrollView style={styles.darkerimage}>
 
                     <View style= {styles.headerbox}>
-                        <Text style= {styles.textHeader}>My Trips </Text>                   
+                        <Text style= {styles.textHeader}> My Trips {console.log(array, id)}</Text>                   
                     </View> 
 
                     <TouchableOpacity style={styles.buttom} onPress={() => {navigation.navigate("AddTrip"); }}>
@@ -98,9 +105,9 @@ const Home = ({ route, navigation }) => {
                     {isEmpty ? 
                     <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
                         <View style={styles.item}>
-                            <Image style={styles.image} source={img} />
-                            {/* <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
-                            <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text> */}
+                            <Image style={styles.image} source={img}/>
+                           <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
+                            <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text>
                         </View>
                     </TouchableOpacity> : null}
 
@@ -127,21 +134,28 @@ const styles = StyleSheet.create({
         marginTop: 15,
         padding: 5,
         flex: 1,
-        fontSize: 20,
-        
+        fontSize: 20,        
     },
-    textSubTitle: {
+    text: {
         position: 'absolute',
         color: 'white',
         fontSize: 20,
         marginHorizontal: 10,
-        marginVertical: 25,
-        marginLeft: 15,
+        marginLeft: 30,
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 8,
-        fontWeight: 'bold',
-        fontSize: 30
-
+        paddingTop: 20,
+        fontSize: 14
+    },
+    textSubTitle: {
+        position:'absolute',
+        color: 'white',
+        fontSize: 20,
+        marginHorizontal: 10,
+        paddingTop: 10,
+        marginLeft: 30,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8
     },
     headerbox: {
         width: ITEM_WIDTH,
@@ -163,24 +177,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         zIndex: 10
     },
-    text: {
-        position: 'absolute',
-        color: 'white',
-        fontSize: 20,
-        marginHorizontal: 10,
-        marginVertical: 25,
-        marginLeft: 30,
-        textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8,
-        paddingTop: 200,
-        fontSize: 14
-    },
     image: {
         marginTop: 0,
         marginLeft: 15,
         flex: 1,
-        width: ITEM_WIDTH - 35,
-        height: ITEM_WIDTH / 1.5,
+        width: ITEM_WIDTH/1.1,
+        height: ITEM_WIDTH/1.5,
         borderRadius: 15,
     },
     imageBackground: {

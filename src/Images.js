@@ -1,11 +1,10 @@
 export default Images = {
 
     //Trips images
-    trip0: require("../assets/586396-dophin-animals.jpg"),
-    trip1: require("../assets/whale.jpg"),
-    trip2: require("../assets/whale.jpg"),
-    trip3: require("../assets/whale.jpg"),
-    trip4: require("../assets/whale.jpg"),
+    trip0: require("../assets/Trips/imcetaceos.jpg"),
+    trip1: require("../assets/Trips/imdesertas.jpg"),
+    trip2: require("../assets/Trips/imfaja.jpg"),
+    trip3: require("../assets/Trips/imsunset.jpg"),
 
     //Dolphins images
     dolphin1: require("../assets/Dolphins/1Atlantic_spotted_dolphin.jpg"),

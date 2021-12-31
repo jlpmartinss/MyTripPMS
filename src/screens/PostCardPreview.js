@@ -255,7 +255,7 @@ const styles = StyleSheet.create({
         height: null, 
         width: null, 
         resizeMode: 'cover', 
-        borderRadius: 5, 
+        borderRadius: 10, 
         borderWidth: 1, 
         borderColor: '#dddddd'
     },

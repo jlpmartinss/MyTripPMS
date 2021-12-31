@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
         marginTop: 15,
         marginLeft: 15,
         flex: 1,
-        width: ITEM_WIDTH - 35,
+        width: ITEM_WIDTH/1.1,
         height: ITEM_WIDTH/1.5,
         borderRadius: 15,
     },
