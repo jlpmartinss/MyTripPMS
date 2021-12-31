@@ -102,7 +102,7 @@ const AddTripScreen = ({ route, navigation }) => {
                 <TouchableOpacity style={styles.button} onPress={() => { checkTripTime();}}>
                     <Text style={styles.textButton}>Join Trip</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={() => { navigation.navigate("Home") }}>
+                <TouchableOpacity style={styles.button} onPress={() => { setIdTrip(''); navigation.navigate("Home")}}>
                     <Text style={styles.textButton}>See My Trips</Text>
                 </TouchableOpacity>
                 
