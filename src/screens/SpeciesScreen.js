@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableOpacity, Dimensions, ImageBackground} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaView } from "react-native-safe-area-context";
+import { styleProps } from "react-native-web/dist/cjs/modules/forwardedProps";
 
 
 
@@ -22,7 +23,9 @@ export default function SpeciesScreen({ navigation }){
                 </View>                
                     
                 <ScrollView>
-                    
+                    <Text style = {styles.textMarine}>
+                        Marine Life
+                    </Text>
                     <TouchableOpacity onPress={() => navigation.navigate("Whales")}>       
                         <View style ={styles.item}>                    
                             <Image style = {styles.image} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
@@ -99,6 +102,14 @@ const styles = StyleSheet.create({
         marginLeft: 30,
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 8
+    },
+    textMarine: {
+        marginHorizontal: 20,
+        alignSelf: "flex-start",
+        color: 'white',
+        fontSize: 18,
+        marginTop: 20,
+        lineHeight: 20
     },
     image: {
         marginTop: 15,

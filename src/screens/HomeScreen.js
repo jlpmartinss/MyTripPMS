@@ -96,7 +96,9 @@ const Home = ({ route, navigation }) => {
                     <View style= {styles.headerbox}>
                         <Text style= {styles.textHeader}> My Trips {console.log(array, id)}</Text>                   
                     </View> 
-
+                    <Text style = {styles.welcomeText}>
+                        Here you can see your trips. If you haven't done one yet, join!
+                    </Text>
                     <TouchableOpacity style={styles.buttom} onPress={() => {navigation.navigate("AddTrip"); }}>
                         <Text style={styles.textButton}>Add a New Trip</Text>
                     </TouchableOpacity>
@@ -157,6 +159,14 @@ const styles = StyleSheet.create({
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 8
     },
+    welcomeText: {
+        marginHorizontal: 20,
+        alignSelf: "flex-start",
+        color: 'white',
+        fontSize: 15,
+        marginTop: 40,
+        lineHeight: 20
+    },
     headerbox: {
         width: ITEM_WIDTH,
         paddingTop: 35,
@@ -199,7 +209,7 @@ const styles = StyleSheet.create({
     buttom: {
         width: ITEM_WIDTH/2,
         height: 40,
-        marginTop: 20,
+        marginTop: 30,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 8,

@@ -18,7 +18,6 @@ export default function WhalesScreen({ navigation }){
 
             <ScrollView>
                 <View style ={styles.container}>
-                    
                     <TouchableOpacity onPress={() => navigation.navigate('Whale1', Data[0])}>       
                         <View style ={styles.item}>
                             <Image style = {styles.image} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg") }/>
