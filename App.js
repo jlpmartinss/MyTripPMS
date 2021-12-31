@@ -26,6 +26,7 @@ import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import LoginScreen from './src/screens/LoginScreen';
 import PostCardPreview from './src/screens/PostCardPreview';
+import PostCardEdited from './src/screens/PostCardEdited';
 import Dolphin1 from './src/screens/Dolphin1';
 import { HomeTabs } from './src/screens/CustomNavigation';
 
@@ -59,6 +60,7 @@ export default () => (
         <Stack.Screen name="TripList" component={TripListScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
         <Stack.Screen name="SelectedPictureScreen" component={SelectPictureScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
         <Stack.Screen name="PostCard" component={PostCardPreview} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
+        <Stack.Screen name="PostCardEdited" component={PostCardEdited} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
         <Stack.Screen name="Whales" component={WhalesScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
         <Stack.Screen name="Dolphins" component={DolphinsScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
         <Stack.Screen name="Whale1" component={Whale1} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>

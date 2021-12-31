@@ -66,7 +66,6 @@ export default function EditPostCard({ route, navigation }) {
 <Text style ={{textAlign: 'center'}}  /* passar este valor para o json da viagem (para depois aparecer no postcard preview) */  >Selected Rating: {rating} stars</Text>
 
 <TouchableOpacity style={styles.buttom}  onPress={() => {setData()}}>
-    
     <Text style={styles.textButton}>Finish Editing</Text>
 </TouchableOpacity>
 </View>

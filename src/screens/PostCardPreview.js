@@ -61,7 +61,7 @@ const PostCardPreview = ({navigation , route }) => {
         getData();
     }, []);
 
-    console.log('comment:' +editComment);
+    console.log('comment:' + editComment);
 
     const [text, setText] = useState('');
 

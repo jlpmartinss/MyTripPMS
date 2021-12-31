@@ -38,7 +38,7 @@ const behaviour = sightedSpecies.Behaviours;
 let ITEM_WIDTH = Dimensions.get('window').width;
 
 
-const PostCardPreview = ({navigation , route }) => {
+const PostCardEdited = ({navigation , route }) => {
     let data = route.params; 
     const rating = data;
 
@@ -194,7 +194,7 @@ const PostCardPreview = ({navigation , route }) => {
     );
 }
 
-export default PostCardPreview;
+export default PostCardEdited;
 
 const styles = StyleSheet.create({
     text: {
