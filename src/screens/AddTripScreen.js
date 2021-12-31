@@ -14,8 +14,9 @@ const AddTripScreen = ({ route, navigation }) => {
     const id = '0';
     const [currentDate, setCurrentDate] = useState('');
     var isClicked = false;
-    var tripTime = Data[id].fullDate;
+    
     var dataAtual = new Date().toLocaleString();
+    
     //console.log(Data);
 
 
@@ -30,19 +31,38 @@ const AddTripScreen = ({ route, navigation }) => {
         )
     }, [])
 
-    const checkTripTime = () => {
-        console.log({ dataAtual });
-        console.log({ tripTime });
-        if (dataAtual > tripTime) {
-            Alert.alert(idTrip);
-            setData();
-            //Alert.alert("Go to Home and see your Trip");
-            //navigation.navigate('HomeScreen', {screen:"HomeScreen"});
+    function isEmpty(obj) {
+        for (var prop in obj) {
+            if (obj.hasOwnProperty(prop))
+                return false;
         }
-        else (
-            console.log("Your trip is not over yet!")
-        )
+        return true;
     }
+    
+    const checkTripTime = () => {
+
+        if(!isEmpty(Data[idTrip])) {
+            var tripTime = Data[idTrip].fullDate;
+            console.log("dataatual" + dataAtual);
+            console.log("tripTime:" + tripTime);
+            if (dataAtual > tripTime) {
+                Alert.alert(idTrip);
+                setData();
+                //Alert.alert("Go to Home and see your Trip");
+                //navigation.navigate('HomeScreen', {screen:"HomeScreen"});
+            }
+            else {
+                console.log("Your trip is not over yet!");
+                Alert.alert("Your trip is not over yet!");   
+            }
+            
+        }
+        else {
+            console.log("This trip id does not exist");
+            Alert.alert("This trip id does not exist");        
+        }
+    }
+
     const setData = async () => {
         if (idTrip.length == 0 || isNaN(idTrip)){
             Alert.alert('Warning!', 'Please write your data')

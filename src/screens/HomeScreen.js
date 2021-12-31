@@ -68,16 +68,30 @@ const Home = ({ route, navigation }) => {
     //converter em int, era por isso que dava undefined
     const id = Number(idTrip);
 
-    const ongoing = Data[id].ongoing;
-    var location = Data[id].location;
-    const name = Data[id].name;
-    const imagecollection = Data[id].imagecollection;
-    const date = Data[id].date;
-    const imgPath = Data[id].imgPath;
-    const rating = Data[id].rating;
-    const comment = Data[id].comment;
-    const sightedSpecies = Data[id].sightedSpecies;
-    const routeTrip = Data[id].route;
+    if(idTrip){
+        console.log("id trip = " , idTrip)
+        var ongoing = Data[id].ongoing;
+        var location = Data[id].location;
+        var name = Data[id].name;
+        var imagecollection = Data[id].imagecollection;
+        var date = Data[id].date;
+        var imgPath = Data[id].imgPath;
+        var rating = Data[id].rating;
+        var comment = Data[id].comment;
+        var sightedSpecies = Data[id].sightedSpecies;
+        var routeTrip = Data[id].route;
+    } else {
+        var ongoing = "";
+        var location = "";
+        var name = "";
+        var imagecollection = "";
+        var date = "";
+        var imgPath = "";
+        var rating = "";
+        var comment = "";
+        var sightedSpecies = "";
+        var routeTrip = "";
+    }
 
     //teste
     const img = Images.trip0;
