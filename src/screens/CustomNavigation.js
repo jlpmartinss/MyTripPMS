@@ -20,6 +20,7 @@ import EditPostCardScreen from './EditPostCard';
 import LoginScreen from './LoginScreen';
 import WelcomeScreen from './WelcomeScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import RouteScreen from './RouteScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -52,6 +53,10 @@ const HomeTabs = () => {
            
             <Tab.Screen name="SelectedPictureScreen"
                 component={SelectPictureScreen}
+                options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color}/>)}} 
+            />
+            <Tab.Screen name="Route"
+                component={RouteScreen}
                 options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color}/>)}} 
             />
         </Tab.Navigator>

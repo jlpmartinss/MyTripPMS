@@ -30,6 +30,7 @@ import PostCardEdited from './src/screens/PostCardEdited';
 import Dolphin1 from './src/screens/Dolphin1';
 import { HomeTabs } from './src/screens/CustomNavigation';
 import EditPostCard from './src/screens/EditPostCard';
+import RouteScreen from './src/screens/RouteScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -70,6 +71,8 @@ export default () => (
         <Stack.Screen name="Desertas" component={DesertasScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
         <Stack.Screen name="Fajas" component={FajasScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
         <Stack.Screen name="Sunset" component={SunsetScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
+        <Stack.Screen name="RouteScreen" component={RouteScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
+
       </Stack.Navigator>
     </NavigationContainer>
 
