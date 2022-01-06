@@ -7,7 +7,6 @@ import Data from "./../../jsons/Trips.json";
 
 const ITEM_WIDTH = Dimensions.get('window').width
 
-var arrayViagens = [] 
 
 //we will loop through object properties and if an object has at least one property, then it will enter the loop and return false. If the object doesn’t have any properties then it will return true.
 function isEmpty(obj) {
@@ -17,8 +16,6 @@ function isEmpty(obj) {
     }
     return true;
 }
-
-const array = [];
 
 const Home = ({ route, navigation }) => {
 
@@ -45,7 +42,7 @@ const Home = ({ route, navigation }) => {
 
 
     const [idTrip, setIdTrip] = useState('');
-    const [arrayViagens, setArray] = useState([]);
+    const [array_, setArray] = useState([]);
 
     const getData = () => {
         try {
@@ -64,25 +61,25 @@ const Home = ({ route, navigation }) => {
     }
 
     
-    /*
+    
     const getDataArray = () => {
         try {
             AsyncStorage.getItem('NewArray')
                 .then(value => {
                     if (value != null) {
-                        volta a converter num objeto
-                        let array = JSON.parse(value);
-                        setArray(array._idarray);
+                        //volta a converter num objeto
+                        let array_ = JSON.parse(value);
+                        setArray(array_);
                     }
                 })
         } catch (error) {
             console.log(error);
         }
-    }*/
+    }
 
     useEffect(() => {
         getData();
-        //getDataArray();
+        getDataArray();
     }, []);
 
 
@@ -128,19 +125,24 @@ const Home = ({ route, navigation }) => {
     else if(idTrip == 1) {
         var img = Images.trip1;
     }
+    else if(idTrip == 2) {
+        var img = Images.trip2;
+    }
 
     console.log("id trip = " + Number(idTrip));
 
+    console.log("home" + array_);
+    /*
     if(Number(idTrip)){
         try {
-            arrayViagens.push(idTrip);
-            console.log("arrayViagens= " + arrayViagens)
+            array_.push(idTrip);
+            console.log("arrayViagens= " + array_)
             //setArray(arrayViagens); // Aqui rebenta!!
             
         } catch (error) {
             console.log(console.error())
         }
-    } 
+    } */
 
     return (
         <View style={styles.container}>

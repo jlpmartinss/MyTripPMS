@@ -11,7 +11,7 @@ const ITEM_HEIGHT = Dimensions.get('window').height
 const AddTripScreen = ({ route, navigation }) => {
     //const [teste,setTeste] = useState('');
     const [idTrip, setIdTrip] = useState('');
-    //const [array_, setArray] = useState([]);
+    const [array_, setArray] = useState([]);
     const id = '0';
     const [currentDate, setCurrentDate] = useState('');
     var isClicked = false;
@@ -30,6 +30,7 @@ const AddTripScreen = ({ route, navigation }) => {
         setCurrentDate(
             date + '/' + month + '/' + year + ' ' + hours + ':' + minutes
         )
+        //getDataArray();
     }, [])
 
     function isEmpty(obj) {
@@ -74,9 +75,10 @@ const AddTripScreen = ({ route, navigation }) => {
                     Id: idTrip
                 }
                 await AsyncStorage.setItem('IdNewTrip',  JSON.stringify(trip));
-                /* array_.push(Number(idTrip));
+                array_.push(Number(idTrip));
                 setArray(array_);
-                setDataArray();*/
+                console.log("Add trip", array_);
+                setDataArray();
                 navigation.navigate('Home');
             } catch (error) {
                 console.log(console.error);
@@ -84,17 +86,30 @@ const AddTripScreen = ({ route, navigation }) => {
         }
     }
 
-    /*
+    
     const setDataArray = async () => {
         try {
-            var array = {
-                _idarray: array_
-            }
-            await AsyncStorage.setItem('NewArray',  JSON.stringify(array));
+            await AsyncStorage.setItem('NewArray', JSON.stringify(array_));
         } catch (error) {
             console.log(console.error);
         }
-    }*/
+    }
+
+    const getDataArray = () => {
+        try {
+            AsyncStorage.getItem('NewArray')
+                .then(value => {
+                    if (value != null) {
+                        //volta a converter num objeto
+                        let array_ = JSON.parse(value);
+                        console.log("array do home" + array_);
+                        setArray(array_);
+                    }
+                })
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
