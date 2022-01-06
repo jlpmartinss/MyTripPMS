@@ -75,7 +75,9 @@ const AddTripScreen = ({ route, navigation }) => {
                     Id: idTrip
                 }
                 await AsyncStorage.setItem('IdNewTrip',  JSON.stringify(trip));
-                array_.push(Number(idTrip));
+                if(!array_.includes(Number(idTrip))){
+                    array_.push(Number(idTrip));
+                }
                 setArray(array_);
                 console.log("Add trip", array_);
                 setDataArray();

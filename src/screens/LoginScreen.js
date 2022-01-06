@@ -16,13 +16,36 @@ const LoginScreen = ({ route, navigation }) => {
         }
         else {
             try {
-                var user = {
-                    Name: username,
-                    Password: password
+                let value = await AsyncStorage.getItem('UserData');
+                if (value != null) {
+                    let userPre = JSON.parse(value);
+                    console.log("aqui: ", userPre.Name);
+                    console.log("aqui: ", userPre.Password);
+                    console.log("aqui: ", username);
+                    console.log("aqui: ", password);
+                    if (userPre.Name == username){
+                        if (userPre.Password != password){
+                            Alert.alert('WARNING: This is not your password! Please try again!');
+                        }
+                        else{
+                            var user = {
+                                Name: username,
+                                Password: password
+                            }
+                            //converte em string para poder passar
+                            await AsyncStorage.setItem('UserData', JSON.stringify(user));
+                            navigation.navigate("Welcome")
+                        }
+                    }
+                    else{
+                        var user = {
+                            Name: username,
+                            Password: password
+                        }
+                        await AsyncStorage.setItem('UserData', JSON.stringify(user));
+                        navigation.navigate("Welcome")
+                    }
                 }
-                //converte em string para poder passar
-                await AsyncStorage.setItem('UserData', JSON.stringify(user));
-                navigation.navigate("Welcome")
             } catch (error) {
                 console.log(console.error);
             }
@@ -37,7 +60,6 @@ const LoginScreen = ({ route, navigation }) => {
                     if (value != null) {
                         navigation.navigate("Welcome")
                     }
-                    console.log(value)
                 })
         } catch (error) {
             console.log(error);
