@@ -70,11 +70,12 @@ export default function EditPostCard({ route, navigation }) {
     if (editComment == '') {
       //console.log(editedrating);
       Alert.alert('Warning!', 'Please write a comment')
+      
     }
     else {
         try {
             await AsyncStorage.setItem('newComment', editComment);
-            navigation.navigate('PostCardEdited', rating);
+            navigation.navigate('PostCardEdited', rating, selectedImage.localUri);
         } catch (error) {
             console.log(console.error);
 
@@ -94,6 +95,7 @@ export default function EditPostCard({ route, navigation }) {
           
 
         <TouchableOpacity onPress={openImagePickerAsync} style={styles.buttom}>
+        
           <Text style={styles.textButton}>Pick a photo</Text>
         </TouchableOpacity>
 
@@ -127,13 +129,6 @@ export default function EditPostCard({ route, navigation }) {
     <Text style={styles.textButton}>Finish Editing</Text>
 </TouchableOpacity>
 
-
-
-
-
-      
-
-  
       </View>
 
   );
