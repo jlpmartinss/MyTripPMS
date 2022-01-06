@@ -39,9 +39,10 @@ let ITEM_WIDTH = Dimensions.get('window').width;
 
 
 const PostCardEdited = ({navigation , route }) => {
-    let data = route.params; 
-    const rating = data;
-
+    //let data = route.params; 
+    //const rating = data;
+    const { rating, imageSelected } = route.params;
+    console.log(imageSelected);
     //const [editedrating, setRating] = useState('');
     const [editComment, setComment] = useState('');
     const getData = () => {
@@ -141,7 +142,7 @@ const PostCardEdited = ({navigation , route }) => {
                                 
                                 <View style={{ width: ITEM_WIDTH/1.1, height: 300, marginTop: 0, alignSelf: 'center'}}>
                                     
-                                        <Image style={styles.image} source={require('../../assets/Trips/imsunset.jpg')} />
+                                        { imageSelected == '' ? <Image style={styles.image} source={require('../../assets/Trips/imsunset.jpg')}  /> : <Image style={styles.image} source={{ uri: imageSelected }} />   }
 
                                         { editComment == '' ? <Text style={styles.textComment} /*Comentário da viagem */ > {comment} 
                                         </Text> : <Text style={styles.textComment}> {editComment}

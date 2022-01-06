@@ -1,10 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState } from 'react';
 import { View, Text, Button, TextInput, TouchableOpacity, StyleSheet, Alert, Dimensions, ImageBackground } from 'react-native';
-import * as FileSystem from 'expo-file-system';
-import data from "./../../jsons/Trips.json";
+
 import Rating from 'react-native-easy-rating';
-//import {writeJsonFile} from 'write-json-file';
 
 import * as ImagePicker from 'expo-image-picker';
 import * as Sharing from 'expo-sharing';
@@ -13,17 +11,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 let ITEM_WIDTH = Dimensions.get('window').width;
 
-//const text = await FileSystem.getInfoAsync("../../jsons/Trips.json");
-
 var tripId = 0;
-
-function writeToJson(data) {
-  //await writeJsonFile('./../../jsons/Trips.json', {rating: data}, replacer);
-  /*var ficheiro = FileSystem.readAsStringAsync("file://./../../jsons/Trips.json");
-  console.log(ficheiro);
-  return data;*/
-  //if()
-}
 
 export default function EditPostCard({ route, navigation }) {
   const [rating, setRating] = useState();
@@ -74,8 +62,9 @@ export default function EditPostCard({ route, navigation }) {
     }
     else {
         try {
+            const imageSelected = selectedImage.localUri;
             await AsyncStorage.setItem('newComment', editComment);
-            navigation.navigate('PostCardEdited', rating, selectedImage.localUri);
+            navigation.navigate('PostCardEdited', {rating:rating, imageSelected:imageSelected});
         } catch (error) {
             console.log(console.error);
 
