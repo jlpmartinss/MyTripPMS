@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, Dimensions} from 'react-native'
-import { Permissions } from 'expo'
+import { StyleSheet, Text, View, Dimensions } from 'react-native'
+//import { Permissions } from 'expo'
 import MapView from 'react-native-maps';
+import * as Permissions from 'expo-permissions';
 
 
 const { width, height } = Dimensions.get('window');
@@ -11,30 +12,57 @@ const LONGITUDE = -90.0852767;
 const LATITUDE_DELTA = 0.0922;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
-export default function RouteScreen({ provider }){
-    const [region, setRegion] = useState({
-        latitude: LATITUDE,    // initial location latitude
-        longitude: LONGITUDE,  // initial location longitude
-        latitudeDelta: LATITUDE_DELTA,
-        longitudeDelta: LONGITUDE_DELTA,
-    });
-    return ( 
-       
+export default class RouteScreen extends React.Component {
+    state = {
+        latitude: null,
+        longitude: null,
+
+    }
+
+    async componentDidMount() {
+        const { status } = await Permissions.getAsync(Permissions.LOCATION)
+        Geolocation.getCurrentPosition(info => console.log(info));
+
+
+        if (status !== 'granted') {
+            const response = await Permissions.askAsync(Permissions.LOCATION)
+        }
+        navigator.geolocation.getCurrentPosition(
+            ({ coords: { latitude, longitude } }) => this.setState({ latitude, longitude }, this.mergeCoords),
+            (error) => console.log('Error:', error)
+        )
+    }
+
+    render() {
+
+        return (
+
             <MapView
-                provider={provider}
-                style={styles.map}
-                initialRegion={region}
-                zoomTapEnabled={false}
+                showsUserLocation={true}
+                style={{ flex: 1 }}
+                initialRegion={{
+                    // latitude,
+                    // longitude,
+                    latitudeDelta: 0.0922,
+                    longitudeDelta: 0.0421
+                }}
             ></MapView>
-       
-    );
+
+        );
+
+
+    }
+
+
+
+
 
 }
 
 
 
-const styles = StyleSheet.create({ 
+const styles = StyleSheet.create({
     map: {
         ...StyleSheet.absoluteFillObject,
-      },
+    },
 })
