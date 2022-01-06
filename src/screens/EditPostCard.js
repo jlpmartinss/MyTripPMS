@@ -1,10 +1,15 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState } from 'react';
-import { View, Text, Button, TextInput, TouchableOpacity, StyleSheet, Alert, Dimensions } from 'react-native';
+import { View, Text, Button, TextInput, TouchableOpacity, StyleSheet, Alert, Dimensions, ImageBackground } from 'react-native';
 import * as FileSystem from 'expo-file-system';
 import data from "./../../jsons/Trips.json";
 import Rating from 'react-native-easy-rating';
 //import {writeJsonFile} from 'write-json-file';
+
+import * as ImagePicker from 'expo-image-picker';
+import * as Sharing from 'expo-sharing';
+import { ScrollView } from 'react-native-gesture-handler';
+
 
 let ITEM_WIDTH = Dimensions.get('window').width;
 
@@ -24,6 +29,42 @@ export default function EditPostCard({ route, navigation }) {
   const [rating, setRating] = useState();
   const [editComment, setComment] = useState('');
   //console.log(editedrating);
+  let [selectedImage, setSelectedImage] = React.useState(null);
+  var count = 0;
+  let ImageList = [];
+
+  let openImagePickerAsync = async () => {
+    let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    
+    if (permissionResult.granted === false) {
+      alert('Permission to access camera roll is required!');
+      return;
+    }
+
+    let pickerResult = await ImagePicker.launchImageLibraryAsync( {
+      
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      //allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    })
+      
+    ;
+    if (pickerResult.cancelled === true) {
+      return;
+    }
+
+    setSelectedImage({ localUri: pickerResult.uri });
+  };
+
+  let openShareDialogAsync = async () => {
+    if (!(await Sharing.isAvailableAsync())) {
+      alert(`Uh oh, sharing isn't available on your platform`);
+      return;
+    }
+    await Sharing.shareAsync(selectedImage.localUri);
+  };
+
 
   const setData = async () => {
     if (editComment == '') {
@@ -43,7 +84,20 @@ export default function EditPostCard({ route, navigation }) {
 }
 
   return (
+
+    
 <View style={styles.container}>
+
+<View style= {styles.headerbox}>
+        <Text style= {styles.textSubTitle}>Select photo</Text>
+      </View>
+          
+
+        <TouchableOpacity onPress={openImagePickerAsync} style={styles.buttom}>
+          <Text style={styles.textButton}>Pick a photo</Text>
+        </TouchableOpacity>
+
+
 <Text style={styles.textSubTitle}>Leave a comment of your Trip</Text>
 
 <TextInput
@@ -65,10 +119,22 @@ export default function EditPostCard({ route, navigation }) {
       />
 <Text style ={{textAlign: 'center'}}  /* passar este valor para o json da viagem (para depois aparecer no postcard preview) */  >Selected Rating: {rating} stars</Text>
 
+
+
+
+
 <TouchableOpacity style={styles.buttom}  onPress={() => {setData()}}>
     <Text style={styles.textButton}>Finish Editing</Text>
 </TouchableOpacity>
-</View>
+
+
+
+
+
+      
+
+  
+      </View>
 
   );
 
