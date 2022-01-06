@@ -116,11 +116,9 @@ const Home = ({ route, navigation }) => {
 
     }
 
-
     //teste
     if(idTrip == 0) {
         var img = Images.trip0;
-
     }
     else if(idTrip == 1) {
         var img = Images.trip1;
@@ -128,10 +126,18 @@ const Home = ({ route, navigation }) => {
     else if(idTrip == 2) {
         var img = Images.trip2;
     }
-
+    else if(idTrip == 3) {
+        var img = Images.trip3;
+    }
+    else if(idTrip == 4) {
+        var img = Images.trip4;
+    }
+    else if(idTrip == 5) {
+        var img = Images.trip5;
+    }
     console.log("id trip = " + Number(idTrip));
 
-    console.log("home" + array_);
+    console.log("home" , array_);
     /*
     if(Number(idTrip)){
         try {
