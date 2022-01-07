@@ -1,6 +1,7 @@
 import React from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableOpacity, ImageBackground, Dimensions} from 'react-native';
+import {AntDesign} from '@expo/vector-icons';
 import { createStackNavigator } from '@react-navigation/stack';
 
 
@@ -12,6 +13,16 @@ export default function OthersScreen({ navigation }){
     return(
         <ScrollView>
             <ImageBackground blurRadius = {50} source={require("../../assets/Others/1Others.jpg") } resizeMode="cover" style={styles.imageBackground}> 
+            
+            <View style= {styles.headerbox}>
+                <Text style= {styles.textHeader}>Others</Text>
+                <View style={styles.buttonBack}>
+                    <TouchableOpacity style={styles.icon} onPress={() => {navigation.navigate("Species");}}>
+                        <AntDesign name="arrowleft" size={30} color="#fff"/>
+                    </TouchableOpacity>
+                </View>
+            </View>  
+            
             <View style ={styles.container}>      
 
             <TouchableOpacity /*onPress={() => navigation.push("Whales")}*/>       
@@ -92,6 +103,32 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
       
+    },
+    headerbox: {
+        width: ITEM_WIDTH,
+        paddingTop: 32,
+        flex: 1        
+    },
+    buttonBack: {
+        alignSelf: 'flex-end',
+        width: 30,
+        height: 30,
+        marginTop: 0,
+        position: 'absolute',
+    },
+    textHeader: {
+        flex:1,
+        width: ITEM_WIDTH,
+        position: 'absolute',
+        color: 'white',
+        paddingLeft:10,
+        paddingBottom: 2,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 2,
+        fontWeight: 'bold',
+        fontSize: 22,       
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
+        zIndex: 10
     },
     item: {
         padding:5,

@@ -2,6 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useEffect, useState } from "react";
 import { Image, ScrollView, TouchableOpacity } from "react-native";
 import { View, Text, Button, StyleSheet, TextInput, Alert, ImageBackground, Dimensions } from 'react-native';
+import {AntDesign} from '@expo/vector-icons';
 import { TouchableHighlight } from "react-native-gesture-handler";
 import Data from "./../../jsons/Trips.json";
 
@@ -119,6 +120,11 @@ const AddTripScreen = ({ route, navigation }) => {
 
             <View style= {styles.headerbox}>
                 <Text style= {styles.textHeader}>Add Trip</Text>
+                <View style={styles.buttonBack}>
+                    <TouchableOpacity style={styles.icon} onPress={() => {navigation.navigate("Welcome");}}>
+                        <AntDesign name="arrowleft" size={30} color="#fff"/>
+                    </TouchableOpacity>
+                </View>
             </View> 
                 <Text  style={styles.textSubTitle}> Start a Trip or {"\n"} See Your Trips </Text>
 
@@ -150,6 +156,13 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
 
+    },
+    buttonBack: {
+        alignSelf: 'flex-end',
+        width: 30,
+        height: 30,
+        marginTop: 0,
+        position: 'absolute',
     },
     textInput: {
         padding: 10, height: 40, width: 150, alignSelf: 'center'

@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, StyleSheet, Dimensions, Image, Button } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Image, Button, TouchableOpacity } from 'react-native';
+import {AntDesign} from '@expo/vector-icons';
 import { ScrollView } from "react-native-gesture-handler";
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
 import Images from "../Images";
@@ -56,6 +57,11 @@ export default function Dolphin1({ route, navigation}) {
             <ImageBackground blurRadius={50} source={imgPath} resizeMode="cover" style={styles.imageBackground}>
             <View style= {styles.headerbox}>
                 <Text style= {styles.textHeader}>{name}</Text>
+                <View style={styles.buttonBack}>
+                    <TouchableOpacity style={styles.icon} onPress={() => {navigation.navigate("Dolphins");}}>
+                        <AntDesign name="arrowleft" size={30} color="#fff"/>
+                    </TouchableOpacity>
+                </View>
             </View> 
 
                 <ScrollView>
@@ -121,7 +127,14 @@ const styles = StyleSheet.create({
     headerbox: {
         width: ITEM_WIDTH,
         paddingTop: 32,
-        flex:1        
+        flex: 1        
+    },
+    buttonBack: {
+        alignSelf: 'flex-end',
+        width: 30,
+        height: 30,
+        marginTop: 0,
+        position: 'absolute',
     },
     textHeader: {
         flex:1,

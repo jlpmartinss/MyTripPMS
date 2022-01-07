@@ -1,6 +1,7 @@
 import React from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableOpacity, ImageBackground, Dimensions} from 'react-native';
+import {AntDesign} from '@expo/vector-icons';
 import { createStackNavigator } from '@react-navigation/stack';
 import Data from "./../../jsons/WhalesData.json"
 
@@ -12,8 +13,14 @@ export default function WhalesScreen({ navigation }){
     
     return(
         <ImageBackground blurRadius = {50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg") } resizeMode="cover" style={styles.imageBackground}> 
+            
             <View style= {styles.headerbox}>
                 <Text style= {styles.textHeader}>Whales</Text>
+                <View style={styles.buttonBack}>
+                    <TouchableOpacity style={styles.icon} onPress={() => {navigation.navigate("Species");}}>
+                        <AntDesign name="arrowleft" size={30} color="#fff"/>
+                    </TouchableOpacity>
+                </View>
             </View>  
 
             <ScrollView>
@@ -177,6 +184,13 @@ const styles = StyleSheet.create({
         width: ITEM_WIDTH,
         paddingTop: 32,
         flex: 1        
+    },
+    buttonBack: {
+        alignSelf: 'flex-end',
+        width: 30,
+        height: 30,
+        marginTop: 0,
+        position: 'absolute',
     },
     textHeader: {
         flex:1,

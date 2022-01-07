@@ -2,6 +2,7 @@ import React from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import {View, Text, Button, ScrollView, StyleSheet, Image, TouchableOpacity, ImageBackground, Dimensions} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
+import {AntDesign} from '@expo/vector-icons';
 import Data from "./../../jsons/DolphinsData.json"
 
 
@@ -12,9 +13,15 @@ export default function DolphinsScreen({ navigation }){
 
     return(
         <ImageBackground blurRadius = {50} source={require("../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg") } resizeMode="cover" style={styles.imageBackground}> 
+            
             <View style= {styles.headerbox}>
                 <Text style= {styles.textHeader}>Dolphins</Text>
-            </View> 
+                <View style={styles.buttonBack}>
+                    <TouchableOpacity style={styles.icon} onPress={() => {navigation.navigate("Species");}}>
+                        <AntDesign name="arrowleft" size={30} color="#fff"/>
+                    </TouchableOpacity>
+                </View>
+            </View>   
 
             <ScrollView>
                 <View style ={styles.container}>
@@ -86,6 +93,13 @@ const styles = StyleSheet.create({
         paddingTop: 32,
         flex: 1        
     },
+    buttonBack: {
+        alignSelf: 'flex-end',
+        width: 30,
+        height: 30,
+        marginTop: 0,
+        position: 'absolute',
+    },
     textHeader: {
         flex:1,
         width: ITEM_WIDTH,
@@ -116,7 +130,7 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        width: ITEM_WIDTH/2.11,
+        width: ITEM_WIDTH/2.15,
         height: ITEM_WIDTH/3.15,
         backgroundColor: 'white',
         borderRadius: 15

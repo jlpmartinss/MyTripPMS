@@ -78,9 +78,14 @@ const PostCardPreview = ({navigation , route }) => {
     return (
         <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
             <View style={styles.darkerimage}>
-
+                
                 <View style= {styles.headerbox}>
                     <Text style= {styles.textHeader}>PostCard</Text>
+                    <View style={styles.buttonBack}>
+                        <TouchableOpacity onPress={() => {navigation.navigate("Home");}}>
+                            <AntDesign name="arrowleft" size={30} color="#fff"/>
+                        </TouchableOpacity>
+                    </View>
                 </View>  
 
                 <ScrollView scrollEventThrottle = {16}/*Scrollview da página toda */>
@@ -157,7 +162,7 @@ const PostCardPreview = ({navigation , route }) => {
                                     <Text style={styles.textIcons}>Edit PostCard</Text>
                                     
                                         <View style = {{ height: 45, width: 50, marginTop: 5, alignSelf: 'center'}}>
-                                            <TouchableOpacity onPress={() => navigation.navigate("EditCard", tripId)}>
+                                            <TouchableOpacity onPress={() => navigation.navigate("EditCard", {tripId: tripId})}>
                                                 <FontAwesome name="edit" size={50} color="#12AEB7"/>
                                             </TouchableOpacity>
                                         </View>
@@ -165,9 +170,6 @@ const PostCardPreview = ({navigation , route }) => {
 
                             </View>
                         </View>
-                        
-                        
-                    
                     <View>
                         <Text style={styles.textTitles}> Sighted Species: </Text>
 
@@ -271,8 +273,15 @@ const styles = StyleSheet.create({
     },
     headerbox: {
         width: ITEM_WIDTH,
-        paddingTop: 35,
-        padding:8        
+        paddingTop: 32,
+        flex: 1,
+    },
+    buttonBack: {
+        alignSelf: 'flex-end',
+        width: 30,
+        height: 30,
+        marginTop: 0,
+        position: 'absolute',
     },
     textHeader: {
         flex:1,

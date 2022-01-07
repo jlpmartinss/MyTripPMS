@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Dimensions, Image, Button, TouchableOpacity } f
 import { color } from "react-native-elements/dist/helpers";
 import { ScrollView } from "react-native-gesture-handler";
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
+import {AntDesign} from '@expo/vector-icons';
 import Images from "../Images";
 
 const ITEM_WIDTH = Dimensions.get('window').width
@@ -18,6 +19,11 @@ export default function WhaleWatchingScreen({ navigation}) {
 
                 <View style= {styles.headerbox}>
                     <Text style= {styles.textHeader}>Whale Watching</Text>
+                    <View style={styles.buttonBack}>
+                        <TouchableOpacity style={styles.icon} onPress={() => {navigation.navigate("TripList");}}>
+                            <AntDesign name="arrowleft" size={30} color="#fff"/>
+                        </TouchableOpacity>
+                    </View>
                 </View>   
 
                 <ScrollView>                 
@@ -160,9 +166,15 @@ const styles = StyleSheet.create({
     },
     headerbox: {
         width: ITEM_WIDTH,
-        paddingTop: 35,
-        padding:8,
-        flex:1,      
+        paddingTop: 32,
+        flex: 1        
+    },
+    buttonBack: {
+        alignSelf: 'flex-end',
+        width: 30,
+        height: 30,
+        marginTop: 0,
+        position: 'absolute',
     },
     textHeader: {
         flex:1,

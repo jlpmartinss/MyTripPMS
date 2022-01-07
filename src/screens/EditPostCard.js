@@ -64,7 +64,7 @@ export default function EditPostCard({ route, navigation }) {
         try {
             const imageSelected = selectedImage.localUri;
             await AsyncStorage.setItem('newComment', editComment);
-            navigation.navigate('PostCardEdited', {rating:rating, imageSelected:imageSelected});
+            navigation.navigate('PostCardEdited', {rating:rating, imageSelected:imageSelected, tripId: tripId});
         } catch (error) {
             console.log(console.error);
 

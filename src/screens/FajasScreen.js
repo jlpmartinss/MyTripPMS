@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, Dimensions, Image, Button, TouchableOpacity } from 'react-native';
 import { color } from "react-native-elements/dist/helpers";
 import { ScrollView } from "react-native-gesture-handler";
+import {AntDesign} from '@expo/vector-icons';
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
 import Images from "../Images";
 
@@ -18,6 +19,11 @@ export default function FajasScreen({ route, navigation}) {
                 
                 <View style= {styles.headerbox}>
                     <Text style= {styles.textHeader}>Fajãs</Text>
+                    <View style={styles.buttonBack}>
+                        <TouchableOpacity style={styles.icon} onPress={() => {navigation.navigate("TripList");}}>
+                            <AntDesign name="arrowleft" size={30} color="#fff"/>
+                        </TouchableOpacity>
+                    </View>
                 </View>  
                 
                 <ScrollView>                    
@@ -170,9 +176,15 @@ const styles = StyleSheet.create({
     },
     headerbox: {
         width: ITEM_WIDTH,
-        paddingTop: 35,
-        padding: 8,
-        flex:1,     
+        paddingTop: 32,
+        flex: 1        
+    },
+    buttonBack: {
+        alignSelf: 'flex-end',
+        width: 30,
+        height: 30,
+        marginTop: 0,
+        position: 'absolute',
     },
     textHeader: {
         flex:1,

@@ -18,7 +18,7 @@ let ITEM_WIDTH = Dimensions.get('window').width;
 const PostCardEdited = ({navigation , route }) => {
 
     const { rating, imageSelected, tripId } = route.params;
-
+    console.log (tripId);
     console.log(imageSelected);
 
     const id = data[tripId].id;
@@ -81,6 +81,11 @@ const PostCardEdited = ({navigation , route }) => {
 
                 <View style= {styles.headerbox}>
                     <Text style= {styles.textHeader}>PostCard</Text>
+                    <View style={styles.buttonBack}>
+                        <TouchableOpacity onPress={() => {navigation.navigate("EditCard");}}>
+                            <AntDesign name="arrowleft" size={30} color="#fff"/>
+                        </TouchableOpacity>
+                    </View>
                 </View>  
 
                 <ScrollView scrollEventThrottle = {16}/*Scrollview da página toda */>
@@ -264,8 +269,15 @@ const styles = StyleSheet.create({
     },
     headerbox: {
         width: ITEM_WIDTH,
-        paddingTop: 35,
-        padding:8        
+        paddingTop: 32,
+        flex: 1,
+    },
+    buttonBack: {
+        alignSelf: 'flex-end',
+        width: 30,
+        height: 30,
+        marginTop: 0,
+        position: 'absolute',
     },
     textHeader: {
         flex:1,
