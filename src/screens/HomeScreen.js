@@ -94,12 +94,12 @@ const Home = ({ route, navigation }) => {
                     {!isEmpty(Data[idTrip]) ?
                     array_.map((idTrip, key) => {
                         return (
-                            <TouchableOpacity onPress={() => navigation.navigate("PostCard", {tripId: idTrip})}>
+                            <TouchableOpacity key={key} onPress={() => navigation.navigate("PostCard", {tripId: idTrip})}>
                                 <View style={styles.item}>
                                     {console.log(idTrip)}
-                                    <Image style={styles.image} key={key} source={ImageTest(key)} />
-                                    <Text style={styles.textSubTitle}>{Data[key].name}{"\n"}</Text>
-                                    <Text style={styles.text}>{"\n"}{Data[key].location}{"\n"}{Data[key].date} </Text>
+                                    <Image style={styles.image} source={ImageTest(idTrip)} />
+                                    <Text style={styles.textSubTitle}>{Data[idTrip].name}{"\n"}</Text>
+                                    <Text style={styles.text}>{"\n"}{Data[idTrip].location}{"\n"}{Data[idTrip].date} </Text>
                                 </View>
                             </TouchableOpacity>
                         )
