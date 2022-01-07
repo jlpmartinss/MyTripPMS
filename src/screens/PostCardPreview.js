@@ -14,34 +14,31 @@ import { Card } from "react-native-elements/dist/card/Card";
 
 const { height, width } = Dimensions.get('window')
 
-var tripId = 0;
-
-const id = data[tripId].id;
-const ongoing = data[tripId].ongoing;
-const location = data[tripId].location;
-const latitude = data[tripId].lat;
-const longitude = data[tripId].long;
-const seaState = data[tripId].seaState;
-const name = data[tripId].name;
-const imagecollection = data[tripId].imagecollection;
-const date = data[tripId].date;
-const time = data[tripId].time;
-const hours = data[tripId].hours;
-const imgPath = data[tripId].imgPath;
-const rating = data[tripId].rating;
-const comment = data[tripId].comments;
-const sightedSpecies = data[tripId].animals;
-const routetrip = data[tripId].route;
-const boatName = data[tripId].boatName;
-const behaviour = sightedSpecies.Behaviours;
-
-
 let ITEM_WIDTH = Dimensions.get('window').width;
 
 
 const PostCardPreview = ({navigation , route }) => {
-    let data = route.params; 
-    const rating = data;
+
+    const {tripId} = route.params;
+
+    const id = data[tripId].id;
+    const ongoing = data[tripId].ongoing;
+    const location = data[tripId].location;
+    const latitude = data[tripId].lat;
+    const longitude = data[tripId].long;
+    const seaState = data[tripId].seaState;
+    const name = data[tripId].name;
+    const imagecollection = data[tripId].imagecollection;
+    const date = data[tripId].date;
+    const time = data[tripId].time;
+    const hours = data[tripId].hours;
+    const imgPath = data[tripId].imgPath;
+    const rating = data[tripId].rating;
+    const comment = data[tripId].comments;
+    const sightedSpecies = data[tripId].animals;
+    const routetrip = data[tripId].route;
+    const boatName = data[tripId].boatName;
+    const behaviour = sightedSpecies.Behaviours;
 
     //const [editedrating, setRating] = useState('');
     const [editComment, setComment] = useState('');
@@ -160,7 +157,7 @@ const PostCardPreview = ({navigation , route }) => {
                                     <Text style={styles.textIcons}>Edit PostCard</Text>
                                     
                                         <View style = {{ height: 45, width: 50, marginTop: 5, alignSelf: 'center'}}>
-                                            <TouchableOpacity onPress={() => navigation.navigate("EditCard")}>
+                                            <TouchableOpacity onPress={() => navigation.navigate("EditCard", tripId)}>
                                                 <FontAwesome name="edit" size={50} color="#12AEB7"/>
                                             </TouchableOpacity>
                                         </View>

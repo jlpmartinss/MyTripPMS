@@ -30,7 +30,7 @@ const AddTripScreen = ({ route, navigation }) => {
         setCurrentDate(
             date + '/' + month + '/' + year + ' ' + hours + ':' + minutes
         )
-        //getDataArray();
+        getDataArray();
     }, [])
 
     function isEmpty(obj) {
@@ -104,7 +104,7 @@ const AddTripScreen = ({ route, navigation }) => {
                     if (value != null) {
                         //volta a converter num objeto
                         let array_ = JSON.parse(value);
-                        console.log("array do home" + array_);
+                        console.log("array do home", array_);
                         setArray(array_);
                     }
                 })

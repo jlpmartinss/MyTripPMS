@@ -10,41 +10,38 @@ import Category from '../../Category';
 import * as Sharing from 'expo-sharing';
 import Images from '../Images';
 
-
 const { height, width } = Dimensions.get('window')
-
-var tripId = 0;
-
-const id = data[tripId].id;
-const ongoing = data[tripId].ongoing;
-const location = data[tripId].location;
-const latitude = data[tripId].lat;
-const longitude = data[tripId].long;
-const seaState = data[tripId].seaState;
-const name = data[tripId].name;
-const imagecollection = data[tripId].imagecollection;
-const date = data[tripId].date;
-const time = data[tripId].time;
-const hours = data[tripId].hours;
-const imgPath = data[tripId].imgPath;
-const rating = data[tripId].rating;
-const comment = data[tripId].comments;
-const sightedSpecies = data[tripId].animals;
-const routetrip = data[tripId].route;
-const boatName = data[tripId].boatName;
-const behaviour = sightedSpecies.Behaviours;
-
 
 let ITEM_WIDTH = Dimensions.get('window').width;
 
 
 const PostCardEdited = ({navigation , route }) => {
-    //let data = route.params; 
-    //const rating = data;
-    const { rating, imageSelected } = route.params;
+
+    const { rating, imageSelected, tripId } = route.params;
+
     console.log(imageSelected);
+
+    const id = data[tripId].id;
+    const ongoing = data[tripId].ongoing;
+    const location = data[tripId].location;
+    const latitude = data[tripId].lat;
+    const longitude = data[tripId].long;
+    const seaState = data[tripId].seaState;
+    const name = data[tripId].name;
+    const imagecollection = data[tripId].imagecollection;
+    const date = data[tripId].date;
+    const time = data[tripId].time;
+    const hours = data[tripId].hours;
+    const imgPath = data[tripId].imgPath;
+    const comment = data[tripId].comments;
+    const sightedSpecies = data[tripId].animals;
+    const routetrip = data[tripId].route;
+    const boatName = data[tripId].boatName;
+    const behaviour = sightedSpecies.Behaviours;
+
     //const [editedrating, setRating] = useState('');
     const [editComment, setComment] = useState('');
+
     const getData = () => {
         try {
             AsyncStorage.getItem('newComment')
