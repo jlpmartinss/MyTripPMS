@@ -9,6 +9,7 @@ import data from "./../../jsons/Trips.json";
 import Category from '../../Category';
 import * as Sharing from 'expo-sharing';
 import Images from '../Images';
+import { Card } from "react-native-elements/dist/card/Card";
 
 
 const { height, width } = Dimensions.get('window')
@@ -93,11 +94,16 @@ const PostCardPreview = ({navigation , route }) => {
                             <Text style={styles.text}>Sea State: {seaState}m </Text>
                             <Text style={styles.textSubTitles}>Your Gallery: </Text>
 
-                            <View style={{ height: 130, marginTop: 0 }}>
-                                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                                    <Category imageUri={require('../../assets/Dolphins/1Atlantic_spotted_dolphin.jpg')}  name="" /*se quisermos adicionar titulo às imagens *//>
-                                    <Category imageUri={require('../../assets/whale.jpg')}  name=""/>
-                                    <Category imageUri={require('../../assets/586396-dophin-animals.jpg')} name=""/>
+                            <View>
+                                <ScrollView horizontal={true} height = {130} >
+                                    
+                                <Card width={ITEM_WIDTH/3} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
+                                <Card width={ITEM_WIDTH/3} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
+                                <Card width={ITEM_WIDTH/3} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
+                                <Card width={ITEM_WIDTH/3} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
+                                <Card width={ITEM_WIDTH/3} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
+                                <Card width={ITEM_WIDTH/3} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
+                                
                                 </ScrollView>
                             </View>
 
