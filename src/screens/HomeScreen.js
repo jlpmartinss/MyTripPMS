@@ -116,28 +116,28 @@ const Home = ({ route, navigation }) => {
 
     }
 
-    //teste
-    if(idTrip == 0) {
-        var img = Images.trip0;
-    }
-    else if(idTrip == 1) {
-        var img = Images.trip1;
-    }
-    else if(idTrip == 2) {
-        var img = Images.trip2;
-    }
-    else if(idTrip == 3) {
-        var img = Images.trip3;
-    }
-    else if(idTrip == 4) {
-        var img = Images.trip4;
-    }
-    else if(idTrip == 5) {
-        var img = Images.trip5;
-    }
-    console.log("id trip = " + Number(idTrip));
+    // //teste
+    // if(idTrip == 0) {
+    //     var img = Images.trip0;
+    // }
+    // else if(idTrip == 1) {
+    //     var img = Images.trip1;
+    // }
+    // else if(idTrip == 2) {
+    //     var img = Images.trip2;
+    // }
+    // else if(idTrip == 3) {
+    //     var img = Images.trip3;
+    // }
+    // else if(idTrip == 4) {
+    //     var img = Images.trip4;
+    // }
+    // else if(idTrip == 5) {
+    //     var img = Images.trip5;
+    // }
+    // console.log("id trip = " + Number(idTrip));
 
-    console.log("home" , array_);
+    // console.log("home" , array_);
     /*
     if(Number(idTrip)){
         try {
@@ -149,6 +149,37 @@ const Home = ({ route, navigation }) => {
             console.log(console.error())
         }
     } */
+
+    function showTrips () {
+        console.log("entrei no show trips")
+        for(let i=0; i < array_.length; i++){
+            if(i == 0) {
+                var img = Images.trip0;
+            }
+            else if(i == 1) {
+                var img = Images.trip1;
+            }
+            else if(i == 2) {
+                var img = Images.trip2;
+            }
+            else if(i == 3) {
+                var img = Images.trip3;
+            }
+            <ScrollView>
+                  {!isEmpty(Data[idTrip]) ?
+                        <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
+                            <View style={styles.item}>
+                                <Image style={styles.image} source={img} />
+                                {/* <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
+                                <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text> */}
+                            </View>
+                        </TouchableOpacity> : null}
+
+            </ScrollView>
+        }
+
+
+    }
 
     return (
         <View style={styles.container}>
@@ -165,15 +196,15 @@ const Home = ({ route, navigation }) => {
                         <Text style={styles.textButton}>Add a New Trip</Text>
                     </TouchableOpacity>
 
-
-                    {!isEmpty(Data[idTrip]) ?
+                    {showTrips()}
+                    {/* {!isEmpty(Data[idTrip]) ?
                         <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
                             <View style={styles.item}>
                                 <Image style={styles.image} source={img} />
-                                {/* <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
-                                <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text> */}
+                                <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
+                                <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text>
                             </View>
-                        </TouchableOpacity> : null}
+                        </TouchableOpacity> : null} */}
 
                     <TouchableOpacity style={styles.buttom} onPress={() => { navigation.navigate("SelectedPictureScreen"); }}>
                         <Text style={styles.textButton}>Select Pic TEST! </Text>
