@@ -159,8 +159,7 @@ const styles = StyleSheet.create({
     },
     headerbox: {
         width: ITEM_WIDTH,
-        paddingTop: 35,
-        padding:8,
+        paddingTop: 32,
         flex:1        
     },
     textHeader: {
