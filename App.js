@@ -72,6 +72,8 @@ export default () => (
         <Stack.Screen name="Fajas" component={FajasScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
         <Stack.Screen name="Sunset" component={SunsetScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
         <Stack.Screen name="RouteScreen" component={RouteScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="location-pin" size={size} color={color} /> )}}/>
+        <Stack.Screen name="Seabirds" component={SeabirdsScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
+        <Stack.Screen name="Others" component={OthersScreen} options={{tabBarIcon: ({size,color}) => (<Entypo name="home" size={size} color={color} /> )}}/>
       </Stack.Navigator>
     </NavigationContainer>
 
