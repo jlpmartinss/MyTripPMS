@@ -30,7 +30,8 @@ const LoginScreen = ({ route, navigation }) => {
                         else{
                             var user = {
                                 Name: username,
-                                Password: password
+                                Password: password,
+
                             }
                             //converte em string para poder passar
                             await AsyncStorage.setItem('UserData', JSON.stringify(user));
