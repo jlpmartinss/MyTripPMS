@@ -42,11 +42,6 @@ const HomeTabs = () => {
                 options={{ tabBarIcon: ({ size, color }) => (<Feather name="search" size={size} color={color} />) }}
             />
             <Tab.Screen
-                name="PostCard"
-                component={PostCardPreviewScreen}
-                options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color}/>)}} 
-            />
-            <Tab.Screen
                 name="TripList"
                 component={TripListScreen} options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color} />) }}
             />
