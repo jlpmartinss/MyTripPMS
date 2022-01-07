@@ -118,26 +118,10 @@ const styles = StyleSheet.create({
         borderRadius: 15,
 
     },
-    imageBackground: {
-        flex: 1,        
-        minHeight: ITEM_HEIGHT,
-    },
-    textTitle: {
-        color: 'white',
-        fontSize: 24,
-        marginHorizontal: 10,
-        marginTop: 10,
-        marginLeft: 20,
-        textShadowColor: 'rgba(0, 0, 0, 1)',
-        fontWeight: '700',
-        textShadowRadius: 5
-    },
-    
     headerbox: {
         width: ITEM_WIDTH,
-        paddingTop: 35,
-        padding:8,
-        flex:1,      
+        paddingTop: 32,
+        flex:1        
     },
     textHeader: {
         flex:1,
@@ -152,6 +136,19 @@ const styles = StyleSheet.create({
         fontSize: 22,       
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         zIndex: 10
+    },
+    imageBackground: {
+        flex: 1
+    },
+    textTitle: {
+        color: 'white',
+        fontSize: 24,
+        marginHorizontal: 10,
+        marginTop: 10,
+        marginLeft: 20,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        fontWeight: '700',
+        textShadowRadius: 5
     },
     textSubTitle: {
         color: 'white',
