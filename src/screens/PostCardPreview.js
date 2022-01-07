@@ -91,15 +91,35 @@ const PostCardPreview = ({navigation , route }) => {
                             <Text style={styles.text}>Sea State: {seaState}m </Text>
                             <Text style={styles.textSubTitles}>Your Gallery: </Text>
 
-                            <View>
-                                <ScrollView horizontal={true} height = {130} >
-                                    
-                                <Card width={ITEM_WIDTH/3} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
-                                <Card width={ITEM_WIDTH/3} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
-                                <Card width={ITEM_WIDTH/3} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
-                                <Card width={ITEM_WIDTH/3} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
-                                <Card width={ITEM_WIDTH/3} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
-                                <Card width={ITEM_WIDTH/3} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
+                            <View style={{ height: 130, marginTop: 0}}>
+                                <ScrollView horizontal={true} height = {140} >
+                                
+                                <Card width={ITEM_WIDTH/3} /*Imagem 1 */>
+                                <Image  style={{  width: 100, height:80 }}source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} />
+                                <TouchableOpacity>
+                                <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
+                                </TouchableOpacity>
+                                </Card>
+
+                                <Card width={ITEM_WIDTH/3} /*Imagem 2 */>
+                                <Image  style={{  width: 100, height:80 }}source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} />
+                                <TouchableOpacity>
+                                <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
+                                </TouchableOpacity>
+                                </Card>
+
+                                <Card width={ITEM_WIDTH/3} /*Imagem 3 */>
+                                <Image  style={{  width: 100, height:80 }}source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} />
+                                <TouchableOpacity>
+                                <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
+                                </TouchableOpacity>
+                                </Card>
+                                <Card width={ITEM_WIDTH/3} /*Imagem 4 */>
+                                <Image  style={{  width: 100, height:80 }}source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} />
+                                <TouchableOpacity>
+                                <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
+                                </TouchableOpacity>
+                                </Card>
                                 
                                 </ScrollView>
                             </View>
