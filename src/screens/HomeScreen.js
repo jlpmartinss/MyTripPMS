@@ -60,8 +60,8 @@ const Home = ({ route, navigation }) => {
         }
     }
 
-    
-    
+
+
     const getDataArray = () => {
         try {
             AsyncStorage.getItem('NewArray')
@@ -83,58 +83,58 @@ const Home = ({ route, navigation }) => {
     }, []);
 
 
-    function checkIdTrip(idTrip) {
-        //console.log("id trip = ", idTrip);
-        if (idTrip !== '') {
-            //converter em int, era por isso que dava undefined
-            const id = Number(idTrip);
-            console.log("id trip do IF = ", idTrip)
-            var ongoing = Data[id].ongoing;
-            var location = Data[id].location;
-            var name = Data[id].name;
-            var imagecollection = Data[id].imagecollection;
-            var date = Data[id].date;
-            var imgPath = Data[id].imgPath;
-            var rating = Data[id].rating;
-            var comment = Data[id].comment;
-            var sightedSpecies = Data[id].sightedSpecies;
-            var routeTrip = Data[id].route;
-        } else {
-            console.log("Entrou no else")
-            var id = 1;
-            var ongoing = "";
-            var location = "";
-            var name = "";
-            var imagecollection = "";
-            var date = "";
-            var imgPath = "";
-            var rating = "";
-            var comment = "";
-            var sightedSpecies = "";
-            var routeTrip = "";
-        }
+    // function checkIdTrip(idTrip) {
+    //     //console.log("id trip = ", idTrip);
+    //     if (idTrip !== '') {
+    //         //converter em int, era por isso que dava undefined
+    //         const id = Number(idTrip);
+    //         console.log("id trip do IF = ", idTrip)
+    //         var ongoing = Data[id].ongoing;
+    //         var location = Data[id].location;
+    //         
+    //         var imagecollection = Data[id].imagecollection;
+    //         var date = Data[id].date;
+    //         var imgPath = Data[id].imgPath;
+    //         var rating = Data[id].rating;
+    //         var comment = Data[id].comment;
+    //         var sightedSpecies = Data[id].sightedSpecies;
+    //         var routeTrip = Data[id].route;
+    //     } else {
+    //         console.log("Entrou no else")
+    //         var id = 1;
+    //         var ongoing = "";
+    //         var location = "";
+    //         var name = "";
+    //         var imagecollection = "";
+    //         var date = "";
+    //         var imgPath = "";
+    //         var rating = "";
+    //         var comment = "";
+    //         var sightedSpecies = "";
+    //         var routeTrip = "";
+    //     }
 
-    }
+    // }
 
     // //teste
-    // if(idTrip == 0) {
-    //     var img = Images.trip0;
-    // }
-    // else if(idTrip == 1) {
-    //     var img = Images.trip1;
-    // }
-    // else if(idTrip == 2) {
-    //     var img = Images.trip2;
-    // }
-    // else if(idTrip == 3) {
-    //     var img = Images.trip3;
-    // }
-    // else if(idTrip == 4) {
-    //     var img = Images.trip4;
-    // }
-    // else if(idTrip == 5) {
-    //     var img = Images.trip5;
-    // }
+    if (idTrip == 0) {
+        var img = Images.trip0;
+    }
+    else if (idTrip == 1) {
+        var img = Images.trip1;
+    }
+    else if (idTrip == 2) {
+        var img = Images.trip2;
+    }
+    else if (idTrip == 3) {
+        var img = Images.trip3;
+    }
+    else if (idTrip == 4) {
+        var img = Images.trip4;
+    }
+    else if (idTrip == 5) {
+        var img = Images.trip5;
+    }
     // console.log("id trip = " + Number(idTrip));
 
     // console.log("home" , array_);
@@ -150,36 +150,62 @@ const Home = ({ route, navigation }) => {
         }
     } */
 
-    function showTrips () {
+    function showTrips() {
         console.log("entrei no show trips")
-        for(let i=0; i < array_.length; i++){
-            if(i == 0) {
+        for (let i = 0; i < array_.length; i++) {
+            if (i == 0) {
                 var img = Images.trip0;
             }
-            else if(i == 1) {
+            else if (i == 1) {
                 var img = Images.trip1;
             }
-            else if(i == 2) {
+            else if (i == 2) {
                 var img = Images.trip2;
             }
-            else if(i == 3) {
+            else if (i == 3) {
                 var img = Images.trip3;
             }
             <ScrollView>
-                  {!isEmpty(Data[idTrip]) ?
-                        <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
-                            <View style={styles.item}>
-                                <Image style={styles.image} source={img} />
-                                {/* <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
-                                <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text> */}
-                            </View>
-                        </TouchableOpacity> : null}
+                {!isEmpty(Data[idTrip]) ?
+                    array_.map((idTrip, key) => {
+                        return (
+                            <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
+                                <View style={styles.item}>
+                                    {console.log(idTrip)}
+                                    <Image style={styles.image} key={key} source={image(idTrip)} />
+                                    {/* <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
+                                    <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text> */}
+                                </View>
+                            </TouchableOpacity>
+                        )
+                    }) : null}
 
             </ScrollView>
         }
 
 
+        
+
+
     }
+    function ImageTest (number){
+        if(Number(number) == 0) {
+            var img = Images.trip0;
+        }
+        else if(Number(number) == 1) {
+            var img = Images.trip1;
+        }
+        else if(Number(number) == 2) {
+            var img = Images.trip2;
+        }
+        else if(Number(number) == 3) {
+            var img = Images.trip3;
+        }
+
+        return img;
+    }
+
+
 
     return (
         <View style={styles.container}>
@@ -196,15 +222,20 @@ const Home = ({ route, navigation }) => {
                         <Text style={styles.textButton}>Add a New Trip</Text>
                     </TouchableOpacity>
 
-                    {showTrips()}
-                    {/* {!isEmpty(Data[idTrip]) ?
-                        <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
-                            <View style={styles.item}>
-                                <Image style={styles.image} source={img} />
-                                <Text style={styles.textSubTitle}>{name}{"\n"}</Text>
-                                <Text style={styles.text}>{"\n"}{location}{"\n"}{date} </Text>
-                            </View>
-                        </TouchableOpacity> : null} */}
+
+                    {!isEmpty(Data[idTrip]) ?
+                    array_.map((idTrip, key) => {
+                        return (
+                            <TouchableOpacity onPress={() => navigation.navigate("PostCard")}>
+                                <View style={styles.item}>
+                                    {console.log(idTrip)}
+                                    <Image style={styles.image} key={key} source={ImageTest(key)} />
+                                    <Text style={styles.textSubTitle}>{Data[key].name}{"\n"}</Text>
+                                    <Text style={styles.text}>{"\n"}{Data[key].location}{"\n"}{Data[key].date} </Text>
+                                </View>
+                            </TouchableOpacity>
+                        )
+                    }) : null}
 
                     <TouchableOpacity style={styles.buttom} onPress={() => { navigation.navigate("SelectedPictureScreen"); }}>
                         <Text style={styles.textButton}>Select Pic TEST! </Text>
