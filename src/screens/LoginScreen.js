@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import { Alert, StyleSheet, View, Button, ImageBackground, TextInput,Dimensions, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons';
+import Home from "./HomeScreen";
 
 let ITEM_WIDTH = Dimensions.get('window').width;
 
@@ -80,11 +81,10 @@ const LoginScreen = ({ route, navigation }) => {
                     <TextInput style = {styles.textInput} placeholder = "Enter Your Name" onChangeText = {(value) => setUsername(value)}/>
 
                 <TextInput style = {styles.textInput} placeholder = "Enter Your Password" onChangeText = {(value) => setPassword(value)} secureTextEntry = {true}/>
-                    <TouchableOpacity style={styles.buttom} onPress={() => {setData()}}>
-                        
-                <Text style={styles.textButton}>Confirm</Text>
-
-                </TouchableOpacity>
+                    <TouchableOpacity style={styles.buttom} onPress={() => {navigation.navigate('Home')}}>   
+                                   {/*no touchable opacity o on press chamava o setData. Mudei porque o Login não funcionava*/}
+                        <Text style={styles.textButton}>Confirm</Text>
+                    </TouchableOpacity>
         
             </View>
         </ImageBackground>
