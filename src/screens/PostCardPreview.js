@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState, useEffect } from 'react';
-import { View, Text, Button, ScrollView, StyleSheet, Image, TouchableHighlight, TextInput, ImageBackground, Dimensions, Touchable} from 'react-native';
+import { View, Text, Button, ScrollView, StyleSheet, Image, TouchableHighlight, TextInput, ImageBackground, Dimensions, Touchable } from 'react-native';
 import { Rating, RatingProps } from 'react-native-elements';
 import { Entypo, Feather, Ionicons, Icon, AntDesign, FontAwesome } from '@expo/vector-icons'
 import { RectButton, TouchableOpacity } from 'react-native-gesture-handler';
@@ -17,8 +17,8 @@ const { height, width } = Dimensions.get('window')
 let ITEM_WIDTH = Dimensions.get('window').width;
 
 
-const PostCardPreview = ({navigation , route }) => {
-    const {  imageSelected, tripId } = route.params;
+const PostCardPreview = ({ navigation, route }) => {
+    const { imageSelected, tripId } = route.params;
     //const {tripId} = route.params;
 
     const id = data[tripId].id;
@@ -66,7 +66,7 @@ const PostCardPreview = ({navigation , route }) => {
     const onShare = async () => {
         const shareOptions = {
             message:
-            'React Native | A framework for building native apps using React',
+                'React Native | A framework for building native apps using React',
             url: Images.dolphin1
         }
 
@@ -75,276 +75,298 @@ const PostCardPreview = ({navigation , route }) => {
     };
 
     let [selectedImage1, setSelectedImage1] = React.useState(null);
-    
+
     let openImagePickerAsync1 = async () => {
         let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
-        
+
         if (permissionResult.granted === false) {
             alert('Permission to access camera roll is required!');
             return;
         }
-        
-        let pickerResult = await ImagePicker.launchImageLibraryAsync( {      
+
+        let pickerResult = await ImagePicker.launchImageLibraryAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.All,
             //allowsEditing: true,
             aspect: [4, 3],
             quality: 1,
         })
-        
-        ;
+
+            ;
         if (pickerResult.cancelled === true) {
             return;
         }
-        
+
         setSelectedImage1({ localUri: pickerResult.uri });
-        
+
     };
-    
+
     let [selectedImage2, setSelectedImage2] = React.useState(null);
     let openImagePickerAsync2 = async () => {
         let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
-        
+
         if (permissionResult.granted === false) {
-          alert('Permission to access camera roll is required!');
-          return;
+            alert('Permission to access camera roll is required!');
+            return;
         }
-    
-        let pickerResult = await ImagePicker.launchImageLibraryAsync( {      
-          mediaTypes: ImagePicker.MediaTypeOptions.All,
-          //allowsEditing: true,
-          aspect: [4, 3],
-          quality: 1,
+
+        let pickerResult = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.All,
+            //allowsEditing: true,
+            aspect: [4, 3],
+            quality: 1,
         })
-          
-        ;
+
+            ;
         if (pickerResult.cancelled === true) {
-          return;
+            return;
         }
-        
+
         setSelectedImage2({ localUri: pickerResult.uri });
-        
-      };
+
+    };
 
     let [selectedImage3, setSelectedImage3] = React.useState(null);
     let openImagePickerAsync3 = async () => {
         let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
-        
+
         if (permissionResult.granted === false) {
-          alert('Permission to access camera roll is required!');
-          return;
+            alert('Permission to access camera roll is required!');
+            return;
         }
-    
-        let pickerResult = await ImagePicker.launchImageLibraryAsync( {      
-          mediaTypes: ImagePicker.MediaTypeOptions.All,
-          //allowsEditing: true,
-          aspect: [4, 3],
-          quality: 1,
+
+        let pickerResult = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.All,
+            //allowsEditing: true,
+            aspect: [4, 3],
+            quality: 1,
         })
-          
-        ;
+
+            ;
         if (pickerResult.cancelled === true) {
-          return;
+            return;
         }
-        
+
         setSelectedImage3({ localUri: pickerResult.uri });
-        
-      };
+
+    };
 
     let [selectedImage4, setSelectedImage4] = React.useState(null);
     let openImagePickerAsync4 = async () => {
         let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
-        
-        if (permissionResult.granted === false) {
-          alert('Permission to access camera roll is required!');
-          return;
-        }
-    
-        let pickerResult = await ImagePicker.launchImageLibraryAsync( {      
-          mediaTypes: ImagePicker.MediaTypeOptions.All,
-          //allowsEditing: true,
-          aspect: [4, 3],
-          quality: 1,
-        })
-          
-        ;
-        if (pickerResult.cancelled === true) {
-          return;
-        }
-        
-        setSelectedImage4({ localUri: pickerResult.uri });
-        
-      };
 
-      
+        if (permissionResult.granted === false) {
+            alert('Permission to access camera roll is required!');
+            return;
+        }
+
+        let pickerResult = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.All,
+            //allowsEditing: true,
+            aspect: [4, 3],
+            quality: 1,
+        })
+
+            ;
+        if (pickerResult.cancelled === true) {
+            return;
+        }
+
+        setSelectedImage4({ localUri: pickerResult.uri });
+
+    };
+
+    function ImageTest(name) {
+        if (name == "Atlantic Spotted dolphin") {
+            var img = Images.dolphin1;
+        }
+        else if (name == "Bottlenose Dolphin") {
+            var img = Images.dolphin2;
+        }
+        else if (name == "Sperm Whale") {
+            var img = Images.dolphin3;
+        }
+        else if (name == "Trues beaked whale") {
+            var img = Images.dolphin4;
+        }
+        else if (name == "Long finned pilot whale") {
+            var img = Images.dolphin5;
+        }
+
+        return img;
+    }
+
+
     return (
         <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
             <View style={styles.darkerimage}>
-                
-                <View style= {styles.headerbox}>
 
-                    <Text style= {styles.textHeader}>PostCard</Text>
+                <View style={styles.headerbox}>
+
+                    <Text style={styles.textHeader}>PostCard</Text>
 
                     <View style={styles.buttonBack}>
-                        <TouchableOpacity onPress={() => {navigation.goBack();}}>
-                            <AntDesign name="arrowleft" size={30} color="#fff"/>
+                        <TouchableOpacity onPress={() => { navigation.goBack(); }}>
+                            <AntDesign name="arrowleft" size={30} color="#fff" />
                         </TouchableOpacity>
                     </View>
 
-                </View>  
+                </View>
 
-                <ScrollView scrollEventThrottle = {16}/*Scrollview da página toda */>
-                        <View style={{flex: 1,paddingTop: 20 }}>
+                <ScrollView scrollEventThrottle={16}/*Scrollview da página toda */>
+                    <View style={{ flex: 1, paddingTop: 20 }}>
 
-                            <Text style={styles.textTitles}>{location} </Text>
-                            <Text style={styles.text}>Coordinates: {latitude} , {longitude}</Text>
-                            <Text style={styles.text}>Sea State: {seaState}m </Text>
-                            <Text style={styles.textSubTitles}>Your Gallery: </Text>
+                        <Text style={styles.textTitles}>{location} </Text>
+                        <Text style={styles.text}>Coordinates: {latitude} , {longitude}</Text>
+                        <Text style={styles.text}>Sea State: {seaState}m </Text>
+                        <Text style={styles.textSubTitles}>Your Gallery: </Text>
 
-                            <View style={{ height: 150, marginTop: 0}}>
+                        <View style={{ height: 150, marginTop: 0 }}>
 
-                                <ScrollView horizontal={true}>
+                            <ScrollView horizontal={true}>
 
-                                    <TouchableOpacity onPress={openImagePickerAsync1}>                                        
-                                        {selectedImage1 == undefined ?
-                                            <Category 
-                                            imageUri = {require('../../assets/Icons/addImage.png')}
-                                            />
-                                        : 
-                                            <Category 
-                                            imageUri = {{uri : selectedImage1.localUri}}/>}
-                                    </TouchableOpacity>
+                                <TouchableOpacity onPress={openImagePickerAsync1}>
+                                    {selectedImage1 == undefined ?
+                                        <Category
+                                            imageUri={require('../../assets/Icons/addImage.png')}
+                                        />
+                                        :
+                                        <Category
+                                            imageUri={{ uri: selectedImage1.localUri }} />}
+                                </TouchableOpacity>
 
-                                    <TouchableOpacity onPress={openImagePickerAsync2}>                                        
-                                        {selectedImage2 == undefined ?
-                                            <Category 
-                                            imageUri = {require('../../assets/Icons/addImage.png')}
-                                            />
-                                        : 
-                                            <Category 
-                                            imageUri = {{uri : selectedImage2.localUri}}/>}
-                                    </TouchableOpacity>
+                                <TouchableOpacity onPress={openImagePickerAsync2}>
+                                    {selectedImage2 == undefined ?
+                                        <Category
+                                            imageUri={require('../../assets/Icons/addImage.png')}
+                                        />
+                                        :
+                                        <Category
+                                            imageUri={{ uri: selectedImage2.localUri }} />}
+                                </TouchableOpacity>
 
-                                    <TouchableOpacity onPress={openImagePickerAsync3}>                                        
-                                        {selectedImage3 == undefined ?
-                                            <Category 
-                                            imageUri = {require('../../assets/Icons/addImage.png')}
-                                            />
-                                        : 
-                                            <Category 
-                                            imageUri = {{uri : selectedImage3.localUri}}/>}
-                                    </TouchableOpacity>
+                                <TouchableOpacity onPress={openImagePickerAsync3}>
+                                    {selectedImage3 == undefined ?
+                                        <Category
+                                            imageUri={require('../../assets/Icons/addImage.png')}
+                                        />
+                                        :
+                                        <Category
+                                            imageUri={{ uri: selectedImage3.localUri }} />}
+                                </TouchableOpacity>
 
-                                    <TouchableOpacity onPress={openImagePickerAsync4}>                                        
-                                        {selectedImage4 == undefined ?
-                                            <Category 
-                                            imageUri = {require('../../assets/Icons/addImage.png')}
-                                            />
-                                        : 
-                                            <Category 
-                                            imageUri = {{uri : selectedImage4.localUri}}/>}
-                                    </TouchableOpacity>
+                                <TouchableOpacity onPress={openImagePickerAsync4}>
+                                    {selectedImage4 == undefined ?
+                                        <Category
+                                            imageUri={require('../../assets/Icons/addImage.png')}
+                                        />
+                                        :
+                                        <Category
+                                            imageUri={{ uri: selectedImage4.localUri }} />}
+                                </TouchableOpacity>
 
-                                </ScrollView>
-                                
-                            </View>
+                            </ScrollView>
 
-                            <View style={{ flex: 1, paddingTop: 20 }}>
+                        </View>
 
-                                <Text style={styles.textTitles}>{name} | {boatName}</Text>
-                                <Text style={styles.text}>{date} at {time}</Text>
-                                
-                                <View style = {styles.RatingBox}>
-                                    { rating != undefined ? <Rating style = {{ marginTop: 0, alignSelf: 'center' }}
-                                        readonly
-                                        showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
-                                        type="star"
-                                        startingValue={rating}
-                                        imageSize={22}
-                                    ></Rating> :
-                                    <Rating style = {{ marginTop: 0, alignSelf: 'center' }}
+                        <View style={{ flex: 1, paddingTop: 20 }}>
+
+                            <Text style={styles.textTitles}>{name} | {boatName}</Text>
+                            <Text style={styles.text}>{date} at {time}</Text>
+
+                            <View style={styles.RatingBox}>
+                                {rating != undefined ? <Rating style={{ marginTop: 0, alignSelf: 'center' }}
+                                    readonly
+                                    showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
+                                    type="star"
+                                    startingValue={rating}
+                                    imageSize={22}
+                                ></Rating> :
+                                    <Rating style={{ marginTop: 0, alignSelf: 'center' }}
                                         readonly
                                         showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
                                         type="star"
                                         startingValue={3}
                                         imageSize={22}
-                                    ></Rating> }
-                                </View>
+                                    ></Rating>}
+                            </View>
 
-                                <View style = {styles.textBoxSocial}>
-                                    <Text style={styles.textIcons}>Share on social </Text>
-                                    <View style = {{flexWrap: 'wrap', alignContent: 'center', flex: 1}}>
+                            <View style={styles.textBoxSocial}>
+                                <Text style={styles.textIcons}>Share on social </Text>
+                                <View style={{ flexWrap: 'wrap', alignContent: 'center', flex: 1 }}>
 
-                                        <View style = {{ alignSelf: 'center', height: 50}}>
-                                            <TouchableOpacity style={styles.icon} onPress={() => onShare()}>
-                                                <AntDesign name="facebook-square" size={50} color="#4267B2" />
-                                            </TouchableOpacity>
-                                        </View>
+                                    <View style={{ alignSelf: 'center', height: 50 }}>
+                                        <TouchableOpacity style={styles.icon} onPress={() => onShare()}>
+                                            <AntDesign name="facebook-square" size={50} color="#4267B2" />
+                                        </TouchableOpacity>
+                                    </View>
 
-                                        <View style = {{ alignSelf: 'center', height: 50}}>
-                                            <TouchableOpacity style={styles.icon} onPress={() => onShare()}>
-                                                <AntDesign name="instagram" size={50} color="#c13584" />
-                                            </TouchableOpacity>
-                                        </View>
-
+                                    <View style={{ alignSelf: 'center', height: 50 }}>
+                                        <TouchableOpacity style={styles.icon} onPress={() => onShare()}>
+                                            <AntDesign name="instagram" size={50} color="#c13584" />
+                                        </TouchableOpacity>
                                     </View>
 
                                 </View>
 
-                                <Text style={styles.textSubTitles}>Your Featured Photo: </Text>
-                                
-                                <View style={{ width: ITEM_WIDTH/1.1, height: 300, marginTop: 0, alignSelf: 'center'}}>
-                                    
-                                    { imageSelected == undefined ? <Image style={styles.image} source={require('../../assets/Trips/imsunset.jpg')}  /> : <Image style={styles.image} source={{ uri: imageSelected }} />   }
+                            </View>
 
-                                    { editComment == '' ? <Text style={styles.textComment} /*Comentário da viagem */ > {comment} 
-                                    </Text> : <Text style={styles.textComment}> {editComment}
+                            <Text style={styles.textSubTitles}>Your Featured Photo: </Text>
 
-                                    </Text>
-                                    }
-                                 </View>
+                            <View style={{ width: ITEM_WIDTH / 1.1, height: 300, marginTop: 0, alignSelf: 'center' }}>
 
-                                <View style = {styles.textBoxPostCard} >
-                                    <Text style={styles.textIcons}>Edit PostCard</Text>
-                                   
-                                        <View style = {{ height: 45, width: 50, marginTop: 5, alignSelf: 'center'}}>
-                                            <TouchableOpacity onPress={() => navigation.navigate("EditCard", {tripId: tripId, selectedImage1:selectedImage1,selectedImage2:selectedImage2,selectedImage3:selectedImage3,selectedImage4:selectedImage4})}>
-                                                <FontAwesome name="edit" size={50} color="#12AEB7"/>
-                                            </TouchableOpacity>
-                                        </View>
+                                {imageSelected == undefined ? <Image style={styles.image} source={require('../../assets/Trips/imsunset.jpg')} /> : <Image style={styles.image} source={{ uri: imageSelected }} />}
 
+                                {editComment == '' ? <Text style={styles.textComment} /*Comentário da viagem */ > {comment}
+                                </Text> : <Text style={styles.textComment}> {editComment}
+
+                                </Text>
+                                }
+                            </View>
+
+                            <View style={styles.textBoxPostCard} >
+                                <Text style={styles.textIcons}>Edit PostCard</Text>
+
+                                <View style={{ height: 45, width: 50, marginTop: 5, alignSelf: 'center' }}>
+                                    <TouchableOpacity onPress={() => navigation.navigate("EditCard", { tripId: tripId, selectedImage1: selectedImage1, selectedImage2: selectedImage2, selectedImage3: selectedImage3, selectedImage4: selectedImage4 })}>
+                                        <FontAwesome name="edit" size={50} color="#12AEB7" />
+                                    </TouchableOpacity>
                                 </View>
 
                             </View>
 
                         </View>
-                        
+
+                    </View>
+
                     <View>
                         <Text style={styles.textTitles}> Sighted Species: </Text>
 
-                            <View style = {styles.textBoxSpecies}/* Adicionar textbox*/ >
-                                {sightedSpecies.map((specie, key) => {
-                                    return (
-                                        <Text style={styles.textSightedSpecies} key={key}>{specie.SpeciesName}
-                                            <Text style={styles.text}> {"\n\n"} First Seen at: {specie.Sighted}</Text>
-                                            <Text style={styles.text}> {"\n"} Behaviours: {specie.Behaviours}</Text>
-                                            {/* { specie.Behaviours.map((behaviour, key1) => {
-                                                    <Text style={styles.text} key={key1}>{behaviour}</Text>
-                                                })} */}
-                                            <Text style={styles.text}> {"\n"} Reactions to boat: {specie.ReactionsToBoat}</Text>
-                                        </Text>
-                                )})}
-                            </View>
+                        <View style={styles.textBoxSpecies}/* Adicionar textbox*/ >
+                            {sightedSpecies.map((specie, key) => {
+                                return (
+                                    <Text style={styles.textSightedSpecies} key={key}>{specie.SpeciesName}
+                                        <Image style={styles.imageSpecies} source={ImageTest(specie.SpeciesName)} />
+                                        <Text style={styles.text}> {"\n\n"} First Seen at: {specie.Sighted}</Text>
+                                        <Text style={styles.text}> {"\n"} Behaviours: {specie.Behaviours}</Text>
+                                        {console.log("name", specie.SpeciesName)}
+
+
+                                        <Text style={styles.text}> {"\n"} Reactions to boat: {specie.ReactionsToBoat}</Text>
+                                    </Text>
+                                )
+                            })}
+                        </View>
 
                         <Text style={styles.textTitles}>Description: </Text>
-                            {/*Adicionar descrição*/}
+                        {/*Adicionar descrição*/}
                         <Text style={styles.textTitles}>Route: {routetrip} </Text>
-                            <Image  /*Insert route image*/ />
+                        <Image  /*Insert route image*/ />
                     </View>
 
                 </ScrollView>
 
             </View>
-            
+
         </ImageBackground>
     );
 }
@@ -406,18 +428,18 @@ const styles = StyleSheet.create({
         textShadowColor: 'rgba(0, 0, 0, 1)',
     },
     image: {
-        flex: 1, 
-        height: null, 
-        width: null, 
-        resizeMode: 'cover', 
-        borderRadius: 10, 
-        borderWidth: 1, 
+        flex: 1,
+        height: null,
+        width: null,
+        resizeMode: 'cover',
+        borderRadius: 10,
+        borderWidth: 1,
         borderColor: '#dddddd'
     },
     imageCard: {
         resizeMode: 'cover',
-        borderRadius: 10, 
-        width: 180, 
+        borderRadius: 10,
+        width: 180,
         height: 150,
 
     },
@@ -426,7 +448,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         margin: 15,
         borderRadius: 15,
-        width: ITEM_WIDTH/1.1
+        width: ITEM_WIDTH / 1.1
     },
     headerbox: {
         width: ITEM_WIDTH,
@@ -441,16 +463,16 @@ const styles = StyleSheet.create({
         zIndex: 15
     },
     textHeader: {
-        flex:1,
+        flex: 1,
         width: ITEM_WIDTH,
         position: 'absolute',
         color: 'white',
-        paddingLeft:10,
+        paddingLeft: 10,
         paddingBottom: 2,
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 2,
         fontWeight: 'bold',
-        fontSize: 22,       
+        fontSize: 22,
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         zIndex: 10
     },
@@ -461,7 +483,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         margin: 10,
         borderRadius: 15,
-        width: ITEM_WIDTH/1.1,
+        width: ITEM_WIDTH / 1.1,
         height: 95,
         alignSelf: 'center',
     },
@@ -469,7 +491,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         margin: 20,
         borderRadius: 15,
-        width: ITEM_WIDTH/1.1,
+        width: ITEM_WIDTH / 1.1,
         height: 95,
         alignSelf: 'center',
     },
@@ -479,7 +501,7 @@ const styles = StyleSheet.create({
         marginTop: 40,
         borderRadius: 15,
         padding: 5,
-        width: ITEM_WIDTH/1.1,
+        width: ITEM_WIDTH / 1.1,
         alignSelf: 'center',
         height: 100
     },
@@ -487,18 +509,18 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         marginTop: 5,
         borderRadius: 15,
-        width: ITEM_WIDTH/1.1,
+        width: ITEM_WIDTH / 1.1,
         paddingBottom: 10,
         alignSelf: 'center',
     },
     imageBackground: {
-        flex: 1,        
+        flex: 1,
     },
     darkerimage: {
         backgroundColor: 'rgba(0, 0, 0, 0.3)'
     },
-    icon: {      
-        flex:1,  
+    icon: {
+        flex: 1,
         alignSelf: 'flex-start',
         alignContent: "center",
         alignItems: 'center',
