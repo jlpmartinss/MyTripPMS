@@ -14,15 +14,19 @@ export default function DesertasScreen({ route, navigation}) {
 
     return (
         <View style={styles.container}>
+            
             <ImageBackground blurRadius={50} source={require("../../assets/Trips/imdesertas.jpg")} resizeMode="cover" style={styles.imageBackground}>
                 
                 <View style= {styles.headerbox}>
+
                     <Text style= {styles.textHeader}>Desertas</Text>
+
                     <View style={styles.buttonBack}>
                         <TouchableOpacity style={styles.icon} onPress={() => {navigation.goBack();}}>
                             <AntDesign name="arrowleft" size={30} color="#fff"/>
                         </TouchableOpacity>
                     </View>
+
                 </View>  
                 
                 <ScrollView> 
@@ -59,8 +63,7 @@ export default function DesertasScreen({ route, navigation}) {
 
                     <View style={styles.textBox}>
                         <Text style={styles.textTitle}>Description</Text>
-                        <Text style={styles.textNormal}>Leaving from the Funchal Marina and heading out to sea towards the horizon, we reach a group of 3 islands, that although they are called Desert islands, are inhabited by numerous wildlife species both marine and land animals. This is only one reason that makes it worth the effort to disembark from the catamaran onto the virgin beach.{"\n"}{"\n"}
-                    Come and see this natural paradise for yourself and participate in activities such as standup paddle and snorkelling. All this as part of a memorable 9 hour excursion, with plenty of swimming and a delicious Madeiran buffet lunch on board. Reserve now!</Text>
+                        <Text style={styles.textNormal}>Leaving from the Funchal Marina and heading out to sea towards the horizon, we reach a group of 3 islands, that although they are called Desert islands, are inhabited by numerous wildlife species both marine and land animals. This is only one reason that makes it worth the effort to disembark from the catamaran onto the virgin beach.{"\n"}{"\n"}Come and see this natural paradise for yourself and participate in activities such as standup paddle and snorkelling. All this as part of a memorable 9 hour excursion, with plenty of swimming and a delicious Madeiran buffet lunch on board. Reserve now!</Text>
                     </View>
 
                     <View style={styles.textBoxMap}>
@@ -89,8 +92,7 @@ export default function DesertasScreen({ route, navigation}) {
                                 </View>
 
                     
-                            <Text style={styles.textTitle}>Biologists:</Text> 
-                            
+                            <Text style={styles.textTitle}>Biologists:</Text>                             
                                 <View style ={styles.containerHorizontal}>                        
                                     <View width = {ITEM_WIDTH/2 - 30}>
                                         <Text style = {styles.textSubTitle}>João Martins:</Text> 
@@ -108,7 +110,6 @@ export default function DesertasScreen({ route, navigation}) {
                                 </View>
 
                             <Text style={styles.textTitle}>Tourist Guides:</Text> 
-
                                 <View style ={styles.containerHorizontal}>                        
                                     <View width = {ITEM_WIDTH/2 - 30}>
                                         <Text style = {styles.textSubTitle}>Francisco Vasconcelos:</Text> 
@@ -126,7 +127,6 @@ export default function DesertasScreen({ route, navigation}) {
                                 </View>
 
                             <Text style={styles.textTitle}>Barmans:</Text> 
-
                                 <View style ={styles.containerHorizontal}>                        
                                     <View width = {ITEM_WIDTH/2 - 30}>
                                         <Text style = {styles.textSubTitle}>Marcos Silva:</Text> 
@@ -146,7 +146,9 @@ export default function DesertasScreen({ route, navigation}) {
                         </View>                    
 
                 </ScrollView>
+
             </ImageBackground>
+
         </View >       
     );
 }

@@ -16,7 +16,6 @@ export default class RouteScreen extends React.Component {
     state = {
         latitude: null,
         longitude: null,
-
     }
 
     async componentDidMount() {
@@ -36,7 +35,6 @@ export default class RouteScreen extends React.Component {
     render() {
 
         return (
-
             <MapView
                 showsUserLocation={true}
                 style={{ flex: 1 }}
@@ -47,19 +45,11 @@ export default class RouteScreen extends React.Component {
                     longitudeDelta: 0.0421
                 }}
             ></MapView>
-
         );
-
 
     }
 
-
-
-
-
 }
-
-
 
 const styles = StyleSheet.create({
     map: {

@@ -15,16 +15,21 @@ export default function WhalesScreen({ navigation }){
         <ImageBackground blurRadius = {50} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg") } resizeMode="cover" style={styles.imageBackground}> 
             
             <View style= {styles.headerbox}>
+                
                 <Text style= {styles.textHeader}>Whales</Text>
+
                 <View style={styles.buttonBack}>
                     <TouchableOpacity style={styles.icon} onPress={() => {navigation.goBack();}}>
                         <AntDesign name="arrowleft" size={30} color="#fff"/>
                     </TouchableOpacity>
                 </View>
+
             </View>  
 
             <ScrollView>
+
                 <View style ={styles.container}>
+
                     <TouchableOpacity onPress={() => navigation.navigate('Whale1', Data[0])}>       
                         <View style ={styles.item}>
                             <Image style = {styles.image} source={require("../../assets/Whales/1Blainvilles_beaked_whale.jpg") }/>
@@ -166,7 +171,9 @@ export default function WhalesScreen({ navigation }){
                     </TouchableOpacity>
 
                 </View>
+
             </ScrollView>
+
         </ImageBackground>
     );
 }

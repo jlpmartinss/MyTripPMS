@@ -13,46 +13,49 @@ export default function SpeciesScreen({ navigation }){
     console.log("I'm in SpeciesScreen");
     
     return(
-        
-        <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
-            <View style={styles.darkerimage}>
-
-                
-                <View style= {styles.headerbox}>
-                    <Text style= {styles.textHeader}>Species</Text>
-                </View>                
+        <View style ={styles.container}>
+            
+            <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
                     
-                <ScrollView>
-                    <TouchableOpacity onPress={() => navigation.navigate("Whales")}>       
-                        <View style ={styles.item}>                    
-                            <Image style = {styles.image} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
-                                <Text style = {styles.textSubTitle}>Whales</Text>
-                        </View>
-                    </TouchableOpacity>
+                    <View style= {styles.headerbox}>
+                        <Text style= {styles.textHeader}>Species</Text>
+                    </View>                
+                        
+                    <ScrollView>
 
-                    <TouchableOpacity onPress={() => navigation.navigate("Dolphins")}>
-                        <View style ={styles.item}>
-                            <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg")}/>
-                                <Text style = {styles.textSubTitle}>Dolphins</Text>
-                        </View>
-                    </TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate("Whales")}>       
+                            <View style ={styles.item}>                    
+                                <Image style = {styles.image} source={require("../../assets/Whales/10Killer_whale_or_Orca.jpg") }/>
+                                    <Text style = {styles.textSubTitle}>Whales</Text>
+                            </View>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => navigation.navigate("Seabirds")}>
-                        <View style ={styles.item}>
-                            <Image style = {styles.image} source={require("../../assets/Seabirds/worldseabirdday.jpg")}/>
-                                <Text style = {styles.textSubTitle}>Seabirds</Text>
-                        </View>
-                    </TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate("Dolphins")}>
+                            <View style ={styles.item}>
+                                <Image style = {styles.image} source={require("../../assets/586396-dophin-animals.jpg")}/>
+                                    <Text style = {styles.textSubTitle}>Dolphins</Text>
+                            </View>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => navigation.navigate("Others")}>
-                        <View style ={styles.item}>
-                            <Image style = {styles.image} source={require("../../assets/Others/1Others.jpg")}/>
-                                <Text style = {styles.textSubTitle}>Others</Text>
-                        </View>  
-                    </TouchableOpacity>                              
-                </ScrollView>
-            </View>
-        </ImageBackground>
+                        <TouchableOpacity onPress={() => navigation.navigate("Seabirds")}>
+                            <View style ={styles.item}>
+                                <Image style = {styles.image} source={require("../../assets/Seabirds/worldseabirdday.jpg")}/>
+                                    <Text style = {styles.textSubTitle}>Seabirds</Text>
+                            </View>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={() => navigation.navigate("Others")}>
+                            <View style ={styles.item}>
+                                <Image style = {styles.image} source={require("../../assets/Others/1Others.jpg")}/>
+                                    <Text style = {styles.textSubTitle}>Others</Text>
+                            </View>  
+                        </TouchableOpacity>  
+
+                    </ScrollView>
+
+            </ImageBackground>
+
+        </View>
     );
 }
 
@@ -61,19 +64,30 @@ const styles = StyleSheet.create({
         flex: 1,
         //alignItems: 'center',
         flexDirection: 'row',
-        flexWrap: 'wrap',     
+        flexWrap: 'wrap',      
     },
     item: {
-        width: ITEM_WIDTH,
-        paddingTop: 0,
+        marginTop: 15,
         padding:5,
         flex:1,
-        fontSize: 20,        
+        fontSize: 20,
+        
+    },
+    textSubTitle: {
+        position:'absolute',
+        color: 'white',
+        marginHorizontal: 10,
+        marginVertical: 25,
+        marginLeft: 30,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 8,
+        fontSize: 18
     },
     headerbox: {
         width: ITEM_WIDTH,
         paddingTop: 32,
-        flex:1,    
+        flex:1,
+        fontSize: 20,        
     },
     textHeader: {
         flex:1,
@@ -89,36 +103,15 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         zIndex: 10
     },
-    textSubTitle: {
-        position:'absolute',
-        color: 'white',
-        fontSize: 20,
-        marginHorizontal: 20,
-        marginVertical: 20,
-        marginLeft: ITEM_WIDTH / 12,
-        textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowRadius: 8
-    },
-    textMarine: {
-        marginHorizontal: 20,
-        alignSelf: "flex-start",
-        color: 'white',
-        fontSize: 18,
-        marginTop: 20,
-        lineHeight: 20
-    },
     image: {
         marginTop: 15,
+        marginLeft: 15,
         flex: 1,
-        width: ITEM_WIDTH / 1.1,
-        height: ITEM_WIDTH / 1.5,
+        width: ITEM_WIDTH - 35,
+        height: ITEM_WIDTH/1.5,
         borderRadius: 15,
-        alignSelf: 'center'
     },
     imageBackground: {
-        flex: 1,        
-    },
-    darkerimage: {
-        backgroundColor: 'rgba(0, 0, 0, 0.3)'
+        flex: 1
     },
 })

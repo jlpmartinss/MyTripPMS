@@ -46,6 +46,7 @@ export default function SelectPictureScreen() {
   //       </View>
   //   );
   // }
+
   let [selectedImage, setSelectedImage] = React.useState(null);
   var count = 0;
   let ImageList = [];
@@ -91,17 +92,19 @@ export default function SelectPictureScreen() {
         <ImageBackground blurRadius = {50} source={{ uri: selectedImage.localUri }} 
         resizeMode="cover" style={styles.imageBackground}> 
 
-        <View style= {styles.headerbox}>
-          <Text style= {styles.textHeader}>Select photo</Text>
-        </View>
+          <View style= {styles.headerbox}>
+            <Text style= {styles.textHeader}>Select photo</Text>
+          </View>
         
-          <ScrollView>
-            <Image source={{ uri: selectedImage.localUri }} style={styles.thumbnail} />
-            <TouchableOpacity onPress={openShareDialogAsync} style={styles.buttom}  >
-            <Text style={styles.textButton}>Share this photo</Text>
-            </TouchableOpacity>
-          </ScrollView>
+            <ScrollView>
+              <Image source={{ uri: selectedImage.localUri }} style={styles.thumbnail} />
+                <TouchableOpacity onPress={openShareDialogAsync} style={styles.buttom}  >
+                <Text style={styles.textButton}>Share this photo</Text>
+                </TouchableOpacity>
+            </ScrollView>
+
         </ImageBackground> 
+
       </View>
     );
   }
@@ -109,19 +112,24 @@ export default function SelectPictureScreen() {
   return (
     
     <View style={styles.container}>
-      <ImageBackground blurRadius = {50} source={require("../../assets/Trips/imdesertas.jpg")} resizeMode="cover" style={styles.imageBackground}> 
-      <View style= {styles.headerbox}>
-        <Text style= {styles.textHeader}>Select photo</Text>
-      </View>
-        <ScrollView>
-        <View style={styles.textBox}>
-          <Text style={styles.instructions}>To share a photo from your phone with a friend, just press the button below!</Text>
-        </View>        
 
-        <TouchableOpacity onPress={openImagePickerAsync} style={styles.buttom}>
-          <Text style={styles.textButton}>Pick a photo</Text>
-        </TouchableOpacity>
-        </ScrollView>
+      <ImageBackground blurRadius = {50} source={require("../../assets/Trips/imdesertas.jpg")} resizeMode="cover" style={styles.imageBackground}> 
+
+        <View style= {styles.headerbox}>
+          <Text style= {styles.textHeader}>Select photo</Text>
+        </View>
+
+          <ScrollView>
+            <View style={styles.textBox}>
+              <Text style={styles.instructions}>To share a photo from your phone with a friend, just press the button below!</Text>
+            </View>        
+
+            <TouchableOpacity onPress={openImagePickerAsync} style={styles.buttom}>
+              <Text style={styles.textButton}>Pick a photo</Text>
+            </TouchableOpacity>
+            
+          </ScrollView>
+          
       </ImageBackground>
     </View>
   );

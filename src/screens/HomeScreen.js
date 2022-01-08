@@ -79,10 +79,13 @@ const Home = ({ route, navigation }) => {
     return (
         <View style={styles.container}>
             <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
+
                 <ScrollView style={styles.darkerimage}>
 
                     <View style={styles.headerbox}>
+
                         <Text style={styles.textHeader}> My Trips </Text>
+
                         <View style={styles.buttonBack}>
 
                             <TouchableOpacity style={styles.icon} onPress={() => {navigation.navigate("Login");}}>                                
@@ -90,14 +93,16 @@ const Home = ({ route, navigation }) => {
                             </TouchableOpacity>
 
                         </View>
+
                     </View>
+
                     <Text style={styles.welcomeText}>
                         Here you can see your trips. If you haven't done one yet, join!
                     </Text>
+
                     <TouchableOpacity style={styles.buttom} onPress={() => { navigation.navigate("AddTrip"); }}>
                         <Text style={styles.textButton}>Add a New Trip</Text>
                     </TouchableOpacity>
-
 
                     {!isEmpty(Data[idTrip]) ?
                     array_.map((idTrip, key) => {
@@ -118,7 +123,9 @@ const Home = ({ route, navigation }) => {
                     </TouchableOpacity>
 
                 </ScrollView>
+
             </ImageBackground>
+            
         </View >
     );
 }

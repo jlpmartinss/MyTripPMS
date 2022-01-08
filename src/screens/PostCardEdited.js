@@ -81,12 +81,14 @@ const PostCardEdited = ({navigation , route }) => {
             <View style={styles.darkerimage}>
 
                 <View style= {styles.headerbox}>
+
                     <Text style= {styles.textHeader}>PostCard</Text>
                     <View style={styles.buttonBack}>
                         <TouchableOpacity onPress={() => {navigation.goBack();}}>
                             <AntDesign name="arrowleft" size={30} color="#fff"/>
                         </TouchableOpacity>
                     </View>
+
                 </View>  
 
                 <ScrollView scrollEventThrottle = {16}/*Scrollview da página toda */>
@@ -98,50 +100,57 @@ const PostCardEdited = ({navigation , route }) => {
                             <Text style={styles.textSubTitles}>Your Gallery: </Text>
 
                             <View style={{ height: 130, marginTop: 0 }}>
+
                             <ScrollView horizontal={true} height = {140} >
                                 
                                 <Card width={ITEM_WIDTH/3} /*Imagem 1 */>
-                                <Image  style={{  width: 100, height:80 }}source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} />
-                                <TouchableOpacity>
-                                <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
-                                </TouchableOpacity>
+                                    <Image  style={{  width: 100, height:80 }}source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} />
+                                    <TouchableOpacity>
+                                    <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
+                                    </TouchableOpacity>
                                 </Card>
 
                                 <Card width={ITEM_WIDTH/3} /*Imagem 2 */>
-                                <Image  style={{  width: 100, height:80 }}source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} />
-                                <TouchableOpacity>
-                                <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
-                                </TouchableOpacity>
+                                    <Image  style={{  width: 100, height:80 }}source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} />
+                                    <TouchableOpacity>
+                                    <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
+                                    </TouchableOpacity>
                                 </Card>
 
                                 <Card width={ITEM_WIDTH/3} /*Imagem 3 */>
-                                <Image  style={{  width: 100, height:80 }}source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} />
-                                <TouchableOpacity>
-                                <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
-                                </TouchableOpacity>
+                                    <Image  style={{  width: 100, height:80 }}source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} />
+                                    <TouchableOpacity>
+                                    <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
+                                    </TouchableOpacity>
                                 </Card>
+
                                 <Card width={ITEM_WIDTH/3} /*Imagem 4 */>
-                                <Image  style={{  width: 100, height:80 }}source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} />
-                                <TouchableOpacity>
-                                <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
-                                </TouchableOpacity>
+                                    <Image  style={{  width: 100, height:80 }}source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} />
+                                    <TouchableOpacity>
+                                    <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
+                                    </TouchableOpacity>
                                 </Card>
                                 
                                 </ScrollView>
+                                
                             </View>
 
                             <View style={{ flex: 1, paddingTop: 20 }}>
 
                                 <Text style={styles.textTitles}>{name} | {boatName}</Text>
                                 <Text style={styles.text}>{date} at {time}</Text>
+
                                 <View style = {styles.RatingBox}>
-                                    { rating != undefined ? <Rating style = {{ marginTop: 0, alignSelf: 'center' }}
+
+                                    { rating != undefined ?
+                                        <Rating style = {{ marginTop: 0, alignSelf: 'center' }}
                                         readonly
                                         showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
                                         type="star"
                                         startingValue={rating}
                                         imageSize={22}
-                                    ></Rating> :
+                                    ></Rating>
+                                    :
                                     <Rating style = {{ marginTop: 0, alignSelf: 'center' }}
                                         readonly
                                         showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
@@ -149,21 +158,28 @@ const PostCardEdited = ({navigation , route }) => {
                                         startingValue={3}
                                         imageSize={22}
                                     ></Rating> }
+
                                 </View>
+
                                 <View style = {styles.textBoxSocial}>
+
                                     <Text style={styles.textIcons}>Share on social </Text>
                                     <View style = {{flexWrap: 'wrap', alignContent: 'center', flex: 1}}>
+
                                         <View style = {{ alignSelf: 'center', height: 50}}>
                                             <TouchableOpacity style={styles.icon} onPress={() => onShare()}>
                                                 <AntDesign name="facebook-square" size={50} color="#4267B2" />
                                             </TouchableOpacity>
                                         </View>
+
                                         <View style = {{ alignSelf: 'center', height: 50}}>
                                             <TouchableOpacity style={styles.icon} onPress={() => onShare()}>
                                                 <AntDesign name="instagram" size={50} color="#c13584" />
                                             </TouchableOpacity>
                                         </View>
+
                                     </View>
+                                    
                                 </View>
 
                                 <Text style={styles.textSubTitles}>Your Featured Photo: </Text>
@@ -180,6 +196,7 @@ const PostCardEdited = ({navigation , route }) => {
                                 </View>
 
                                 <View style = {styles.textBoxPostCard} >
+
                                     <Text style={styles.textIcons}>Edit PostCard</Text>
                                     
                                         <View style = {{ height: 45, width: 50, marginTop: 5, alignSelf: 'center'}}>
@@ -187,9 +204,11 @@ const PostCardEdited = ({navigation , route }) => {
                                                 <FontAwesome name="edit" size={50} color="#12AEB7"/>
                                             </TouchableOpacity>
                                         </View>
+
                                 </View>
 
                             </View>
+
                         </View>
                         
                         
@@ -218,7 +237,9 @@ const PostCardEdited = ({navigation , route }) => {
                     </View>
 
                 </ScrollView>
+
             </View>
+            
         </ImageBackground>
     );
 }

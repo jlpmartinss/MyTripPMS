@@ -18,12 +18,14 @@ export default function FajasScreen({ route, navigation}) {
             <ImageBackground blurRadius={50} source={require("../../assets/Trips/imfaja.jpg")} resizeMode="cover" style={styles.imageBackground}>
                 
                 <View style= {styles.headerbox}>
+
                     <Text style= {styles.textHeader}>Fajãs</Text>
                     <View style={styles.buttonBack}>
                         <TouchableOpacity style={styles.icon} onPress={() => {navigation.goBack();}}>
                             <AntDesign name="arrowleft" size={30} color="#fff"/>
                         </TouchableOpacity>
                     </View>
+
                 </View>  
                 
                 <ScrollView>                    
@@ -94,7 +96,6 @@ export default function FajasScreen({ route, navigation}) {
                                     </View>
                                     <Image style = {styles.imageFace} source={require("../../assets/Crew/marcelo-rebelo-de-sousa-foto-rodrigo-antunes-lusa1315263edefaultlarge_1024.jpg") }/>
                                 </View>
-
                     
                             <Text style={styles.textTitle}>Biologists:</Text> 
                             
@@ -153,7 +154,9 @@ export default function FajasScreen({ route, navigation}) {
                         </View>                    
 
                 </ScrollView>
+
             </ImageBackground>
+            
         </View >       
     );
 }

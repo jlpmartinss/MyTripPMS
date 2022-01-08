@@ -18,12 +18,16 @@ export default function WhaleWatchingScreen({ navigation}) {
             <ImageBackground blurRadius={50} source={require("../../assets/Trips/imcetaceos.jpg")} resizeMode="cover" style={styles.imageBackground}>
 
                 <View style= {styles.headerbox}>
+
                     <Text style= {styles.textHeader}>Whale Watching</Text>
                     <View style={styles.buttonBack}>
+
                         <TouchableOpacity style={styles.icon} onPress={() => {navigation.goBack();}}>
                             <AntDesign name="arrowleft" size={30} color="#fff"/>
                         </TouchableOpacity>
+
                     </View>
+
                 </View>   
 
                 <ScrollView>                 
@@ -65,10 +69,12 @@ export default function WhaleWatchingScreen({ navigation}) {
                         <Image style={styles.image} source={require("../../assets/Trips/mapasVMT_cetaceos.png")} />
                     </View>   
 
-                    <View style={styles.textBox}>
+                         <View style={styles.textBox}>
+
                         <Text style={styles.textTitle}>Crew:</Text> 
                                 
                             <Text style={styles.textTitle}>Skippers:</Text>
+                            
                                 <View style ={styles.containerHorizontal}>                        
                                     <View width = {ITEM_WIDTH/2 - 30} >
                                         <Text style = {styles.textSubTitle}>Luana Mendonça:</Text> 
@@ -80,11 +86,10 @@ export default function WhaleWatchingScreen({ navigation}) {
                                 <View style ={styles.containerHorizontal}>                        
                                     <View width = {ITEM_WIDTH/2 - 30} >
                                         <Text style = {styles.textSubTitle}>Marcelo Sousa:</Text> 
-                                        <Text style = {styles.textCrew}>Luana is an experienced skipper with more than 5000 sailing hours. {"\n"} Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla. </Text>
+                                        <Text style = {styles.textCrew}>Marcelo is an experienced skipper with more than 5000 sailing hours. {"\n"} Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla. </Text>
                                     </View>
                                     <Image style = {styles.imageFace} source={require("../../assets/Crew/marcelo-rebelo-de-sousa-foto-rodrigo-antunes-lusa1315263edefaultlarge_1024.jpg") }/>
                                 </View>
-
                     
                             <Text style={styles.textTitle}>Biologists:</Text> 
                             
@@ -99,7 +104,7 @@ export default function WhaleWatchingScreen({ navigation}) {
                                 <View style ={styles.containerHorizontal}>                        
                                     <View width = {ITEM_WIDTH/2 - 30}>
                                         <Text style = {styles.textSubTitle}>Antonio Costa:</Text> 
-                                        <Text style = {styles.textCrew}>João is a biologist that knows all the the waters of Madeira Island like the palm of his hand. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.  </Text>
+                                        <Text style = {styles.textCrew}>Antonio is a biologist that knows all the the waters of Madeira Island like the palm of his hand. Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.  </Text>
                                     </View>
                                     <Image style = {styles.imageFace} source={require("../../assets/Crew/QvhnkTYJ_400x400.png") }/>
                                 </View>
@@ -117,7 +122,7 @@ export default function WhaleWatchingScreen({ navigation}) {
                                 <View style ={styles.containerHorizontal}>                        
                                     <View width = {ITEM_WIDTH/2 - 30}>
                                         <Text style = {styles.textSubTitle}>Angelina Jolie:</Text> 
-                                        <Text style = {styles.textCrew}>Francisco is your tour guide. He will guide you throug your trip and identify all the important landmarks.</Text>
+                                        <Text style = {styles.textCrew}>Angelina is your tour guide. He will guide you throug your trip and identify all the important landmarks.</Text>
                                     </View>
                                     <Image style = {styles.imageFace} source={require("../../assets/Crew/angelina-jolie.jpg") }/>
                                 </View>
@@ -135,7 +140,7 @@ export default function WhaleWatchingScreen({ navigation}) {
                                 <View style ={styles.containerHorizontal}>                        
                                     <View width = {ITEM_WIDTH/2 - 30}>
                                         <Text style = {styles.textSubTitle}>Brad Pitt:</Text> 
-                                        <Text style = {styles.textCrew}>Marcos will be your barman. He knows everything about your drinks. You can be asured that you will serve you very well. Bla bla bla bla.</Text>
+                                        <Text style = {styles.textCrew}>Brad will be your barman. He knows everything about your drinks. You can be asured that you will serve you very well. Bla bla bla bla.</Text>
                                     </View>
                                     <Image style = {styles.imageFace} source={require("../../assets/Crew/Brad-Pitt-2.jpg") }/>
                                 </View>
@@ -164,6 +169,11 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         color: 'red'    
     },
+    item: {
+        padding:5,
+        flex:1,
+        fontSize: 20        
+    },
     headerbox: {
         width: ITEM_WIDTH,
         paddingTop: 32,
@@ -189,11 +199,6 @@ const styles = StyleSheet.create({
         fontSize: 22,       
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         zIndex: 10
-    },
-    item: {
-        padding:5,
-        flex:1,
-        fontSize: 20        
     },
     image: {
         alignSelf:'center',
@@ -247,7 +252,7 @@ const styles = StyleSheet.create({
         color: 'white',
         textAlign: 'justify',
         fontSize: 14,
-        marginRight:10,
+        marginRight: 10,
         lineHeight: 20
 
     },
