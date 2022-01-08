@@ -78,23 +78,25 @@ const Home = ({ route, navigation }) => {
 
     return (
         <View style={styles.container}>
+            
             <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
 
-                <ScrollView style={styles.darkerimage}>
+                <View style={styles.headerbox}>
 
-                    <View style={styles.headerbox}>
+                    <Text style={styles.textHeader}> My Trips </Text>
 
-                        <Text style={styles.textHeader}> My Trips </Text>
+                    <View style={styles.buttonBack}>
 
-                        <View style={styles.buttonBack}>
-
-                            <TouchableOpacity style={styles.icon} onPress={() => {navigation.navigate("Login");}}>                                
-                                <MaterialCommunityIcons name="logout" size={30} color="#fff"/>
-                            </TouchableOpacity>
-
-                        </View>
+                        <TouchableOpacity style={styles.icon} onPress={() => {navigation.navigate("Login");}}>                                
+                            <MaterialCommunityIcons name="logout" size={30} color="#fff"/>
+                        </TouchableOpacity>
 
                     </View>
+
+                </View>
+                
+                <ScrollView style={styles.darkerimage}>
+
 
                     <Text style={styles.welcomeText}>
                         Here you can see your trips. If you haven't done one yet, join!
