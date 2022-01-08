@@ -1,6 +1,6 @@
 //Screens
 import HomeScreen from './HomeScreen';
-import { Entypo, Feather, Ionicons } from '@expo/vector-icons'
+import { Entypo, Feather, Fontisto, Ionicons, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons'
 import SpeciesScreen from './SpeciesScreen';
 import AddTripScreen from './AddTripScreen';
 import WhalesScreen from './WhalesScreen';
@@ -32,20 +32,20 @@ const HomeTabs = () => {
     return (
         <Tab.Navigator screenOptions={{ headerShown: false, showLabel: false}}>
             <Tab.Screen
-                name="Home"
+                name="My trips"
                 component={HomeScreen}
-                options={{ tabBarIcon: ({ size, color }) => (<Entypo name="home" size={size} color={color} />) }}
+                options={{ tabBarIcon: ({ size, color }) => (<Fontisto name="sait-boat" size={size} color={color} />) }}
             />
             <Tab.Screen
                 name="Species"
                 component={SpeciesScreen}
-                options={{ tabBarIcon: ({ size, color }) => (<Feather name="search" size={size} color={color} />) }}
+                options={{ tabBarIcon: ({ size, color }) => (<MaterialCommunityIcons name="fish" size={size} color={color} />) }}
             />
             <Tab.Screen
-                name="TripList"
-                component={TripListScreen} options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color} />) }}
+                name="Routes"
+                component={TripListScreen}
+                options={{ tabBarIcon: ({ size, color }) => (<FontAwesome5 name="route" size={size} color={color} />) }}
             />
-           
             <Tab.Screen name="SelectedPictureScreen"
                 component={SelectPictureScreen}
                 options={{ tabBarIcon: ({ size, color }) => (<Entypo name="location-pin" size={size} color={color}/>)}} 
