@@ -18,9 +18,9 @@ let ITEM_WIDTH = Dimensions.get('window').width;
 
 const PostCardEdited = ({navigation , route }) => {
 
-    const { rating, imageSelected, tripId,  } = route.params;
+    const {tripId} = route.params;
     console.log (tripId);
-    console.log(imageSelected);
+    //console.log(imageSelected);
 
     const id = data[tripId].id;
     const ongoing = data[tripId].ongoing;
@@ -42,8 +42,10 @@ const PostCardEdited = ({navigation , route }) => {
 
     //const [editedrating, setRating] = useState('');
     const [editComment, setComment] = useState('');
+    const [editRating, setRating] = useState('');
+    const [editPhoto, setPhoto] = useState('');
 
-    const getData = () => {
+    const getComment = () => {
         try {
             AsyncStorage.getItem('newComment')
                 .then(value => {
@@ -56,11 +58,41 @@ const PostCardEdited = ({navigation , route }) => {
         }
     }
 
+    const getRating = () => {
+        try {
+            AsyncStorage.getItem('newRating')
+                .then(value => {
+                    if (value != null) {
+                        let rating = JSON.parse(value);
+                        setRating(rating);
+                    }
+                })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const getPhoto = () => {
+        try {
+            AsyncStorage.getItem('newPhoto')
+                .then(value => {
+                    if (value != null) {
+                        let photo = JSON.parse(value);
+                        setPhoto(photo);
+                    }
+                })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     useEffect(() => {
-        getData();
+        getComment();
+        getRating();
+        getPhoto();
     }, []);
 
-    console.log('comment:' + editComment);
+    //console.log('comment:' + editComment);
 
     const [text, setText] = useState('');
 
@@ -243,12 +275,12 @@ const PostCardEdited = ({navigation , route }) => {
 
                                 <View style = {styles.RatingBox}>
 
-                                    { rating != undefined ?
+                                    { editRating != '' ?
                                         <Rating style = {{ marginTop: 0, alignSelf: 'center' }}
                                         readonly
                                         showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
                                         type="star"
-                                        startingValue={rating}
+                                        startingValue={editRating}
                                         imageSize={22}
                                     ></Rating>
                                     :
@@ -287,7 +319,7 @@ const PostCardEdited = ({navigation , route }) => {
                                 
                                 <View style={{ width: ITEM_WIDTH/1.1, height: 300, marginTop: 0, alignSelf: 'center'}}>
                                     
-                                        { imageSelected == undefined ? <Image style={styles.image} source={require('../../assets/Trips/imsunset.jpg')}  /> : <Image style={styles.image} source={{ uri: imageSelected }} />   }
+                                        { editPhoto == '' ? <Image style={styles.image} source={require('../../assets/Trips/imsunset.jpg')}  /> : <Image style={styles.image} source={{ uri: editPhoto }} />   }
 
                                         { editComment == '' ? <Text style={styles.textComment} /*Comentário da viagem */ > {comment} 
                                         </Text> : <Text style={styles.textComment}> {editComment}
@@ -328,7 +360,7 @@ const PostCardEdited = ({navigation , route }) => {
                                                 })} */}
                                             <Text style={styles.text}> {"\n"} Reactions to boat: {specie.ReactionsToBoat}</Text>
                                         </Text>
-                                )})}
+                                            )})}
                             </View>
 
                         <Text style={styles.textTitles}>Description: </Text>

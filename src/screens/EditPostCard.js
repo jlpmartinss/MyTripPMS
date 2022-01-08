@@ -42,7 +42,7 @@ export default function EditPostCard({ route, navigation }) {
     setSelectedImage({ localUri: pickerResult.uri });
   };
 
-  let openShareDialogAsync = async () => {
+  let openShareDialogAsync = async () => { //não é usado
     if (!(await Sharing.isAvailableAsync())) {
       alert(`Uh oh, sharing isn't available on your platform`);
       return;
@@ -51,8 +51,8 @@ export default function EditPostCard({ route, navigation }) {
   };
 
 
-  const setData = async () => {
-    if (editComment == '') {
+  const setcomment = async () => {
+    if (editComment == '' ) {
       //console.log(editedrating);
       Alert.alert('Warning!', 'Please write a comment')
     }
@@ -61,7 +61,9 @@ export default function EditPostCard({ route, navigation }) {
             
             
             await AsyncStorage.setItem('newComment', editComment);
-            navigation.navigate('PostCardEdited', {rating:rating,tripId: tripId});
+            await AsyncStorage.setItem('newRating', JSON.stringify(rating));
+            //await AsyncStorage.setItem('newRating', JSON.stringify(rating)); fazer para a imagem
+           /* navigation.navigate('PostCardEdited', {rating:rating,tripId: tripId});
             if(selectedImage.localUri != undefined){
               const imageSelected = selectedImage.localUri;
               navigation.navigate('PostCardEdited', {rating:rating, imageSelected:imageSelected, tripId: tripId});
@@ -70,14 +72,38 @@ export default function EditPostCard({ route, navigation }) {
               
               navigation.navigate('PostCardEdited', {rating:rating,tripId: tripId});
               
-            }
+            }*/
         } catch (error) {
             console.log(console.error);
 
         }
     }
     
-}
+};
+
+
+const setrating = async () => {
+  if (rating == '' ) {
+    Alert.alert('Warning!', 'Please select a rating')
+  }
+  else {
+    try {
+          await AsyncStorage.setItem('newRating', JSON.stringify(rating));
+      } catch (error) {
+          console.log(console.error);
+
+      }
+  }
+  
+};
+
+const setPhoto = async () => {
+          if(selectedImage.localUri != undefined){
+            const imageSelected = selectedImage.localUri;
+            await AsyncStorage.setItem('newPhoto', JSON.stringify(imageSelected)); 
+          }
+};
+
   return (
     
     <View style={styles.container}>
@@ -119,7 +145,7 @@ export default function EditPostCard({ route, navigation }) {
 
       <Text style ={{textAlign: 'center'}}  /* passar este valor para o json da viagem (para depois aparecer no postcard preview) */  >Selected Rating: {rating} stars</Text>
 
-      <TouchableOpacity style={styles.buttom}  onPress={() => {setData()}}>
+      <TouchableOpacity style={styles.buttom}  onPress={() => {setcomment(),setrating(),setPhoto(),navigation.navigate('PostCardEdited', {tripId: tripId})}}>
         <Text style={styles.textButton}>Finish Editing</Text>
       </TouchableOpacity>
 
