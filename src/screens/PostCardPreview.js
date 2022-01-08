@@ -211,7 +211,7 @@ const PostCardPreview = ({navigation , route }) => {
                                     </TouchableOpacity>
                                 </Card>
 
-                                <Card width={ITEM_WIDTH/3} marginTop = {0} /*Imagem 2 */>
+                                <Card width={ITEM_WIDTH/3}  marginTop = {0} /*Imagem 2 */>
                                 {selectedImage2 == undefined ? <Image style={styles.imageCard} source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} /> 
                                     :  <Image style={styles.imageCard} source={{uri : selectedImage2.localUri}} />}
                                     <TouchableOpacity onPress={openImagePickerAsync2}>
@@ -428,10 +428,10 @@ const styles = StyleSheet.create({
     },
     buttonBack: {
         alignSelf: 'flex-end',
-        width: 30,
+        width: 35,
         height: 30,
-        marginTop: 0,
         position: 'absolute',
+        zIndex: 15
     },
     textHeader: {
         flex:1,

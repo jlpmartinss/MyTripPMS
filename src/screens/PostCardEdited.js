@@ -183,7 +183,7 @@ const PostCardEdited = ({navigation , route }) => {
 
                     <Text style= {styles.textHeader}>PostCard</Text>
                     <View style={styles.buttonBack}>
-                        <TouchableOpacity onPress={() => {navigation.goBack();}}>
+                        <TouchableOpacity onPress={() => {navigation.navigate("Home");}}>
                             <AntDesign name="arrowleft" size={30} color="#fff"/>
                         </TouchableOpacity>
                     </View>
