@@ -1,18 +1,18 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import React, {useState, useEffect} from 'react';
-import { Alert, StyleSheet, View, Button, ImageBackground, TextInput,Dimensions, Text } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Alert, StyleSheet, View, Button, ImageBackground, TextInput, Dimensions, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons';
 import Home from "./HomeScreen";
 
 let ITEM_WIDTH = Dimensions.get('window').width;
 
-const LoginScreen = ({ route, navigation }) => { 
+const LoginScreen = ({ route, navigation }) => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    
+
     const setData = async () => {
-        if (username.length == 0 || password.length == 0){
+        if (username.length == 0 || password.length == 0) {
             Alert.alert('WARNING: Please write your credentials!');
         }
         else {
@@ -24,11 +24,11 @@ const LoginScreen = ({ route, navigation }) => {
                     console.log("aqui: ", userPre.Password);
                     console.log("aqui: ", username);
                     console.log("aqui: ", password);
-                    if (userPre.Name == username){
-                        if (userPre.Password != password){
+                    if (userPre.Name == username) {
+                        if (userPre.Password != password) {
                             Alert.alert('WARNING: This is not your password! Please try again!');
                         }
-                        else{
+                        else {
                             var user = {
                                 Name: username,
                                 Password: password,
@@ -39,7 +39,7 @@ const LoginScreen = ({ route, navigation }) => {
                             navigation.navigate("Welcome")
                         }
                     }
-                    else{
+                    else {
                         var user = {
                             Name: username,
                             Password: password
@@ -77,75 +77,75 @@ const LoginScreen = ({ route, navigation }) => {
         <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
             <View style={styles.darkerimage}>
 
-                <Text style = {styles.textSubTitle}> Sign In </Text>
-                    <TextInput style = {styles.textInput} placeholder = "Enter Your Name" onChangeText = {(value) => setUsername(value)}/>
+                <Text style={styles.textSubTitle}> Sign In </Text>
+                <TextInput style={styles.textInput} placeholder="Enter Your Name" onChangeText={(value) => setUsername(value)} />
 
-                <TextInput style = {styles.textInput} placeholder = "Enter Your Password" onChangeText = {(value) => setPassword(value)} secureTextEntry = {true}/>
-                    <TouchableOpacity style={styles.buttom} onPress={() => {navigation.navigate('Home')}}>   
-                                   {/*no touchable opacity o on press chamava o setData. Mudei porque o Login não funcionava*/}
-                        <Text style={styles.textButton}>Confirm</Text>
-                    </TouchableOpacity>
-        
+                <TextInput style={styles.textInput} placeholder="Enter Your Password" onChangeText={(value) => setPassword(value)} secureTextEntry={true} />
+                <TouchableOpacity style={styles.buttom} onPress={() => { setData(); }}>
+                    {/*no touchable opacity o on press chamava o setData. Mudei porque o Login não funcionava*/}
+                    <Text style={styles.textButton}>Confirm</Text>
+                </TouchableOpacity>
+
             </View>
         </ImageBackground>
     );
 }
 
-    const styles = StyleSheet.create({
-        container: {
-            flex: 1,
-            alignItems: 'center',
-    
-        },
-        textSubTitle: {
-            color: 'white',
-            fontWeight: 'bold',
-            fontSize: 32,
-            alignSelf: 'center',
-            marginHorizontal: 20,
-            marginTop: 150,
-            textShadowColor: 'rgba(0, 0, 0, 1)',
-            textShadowRadius: 3
-        },
-        text: {
-            fontSize: 15,
-            color: 'white',
-            marginTop: 10
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
 
-        },
-        textInput: {
-            backgroundColor: 'white',
-            borderRadius: 8,
-            padding: 10, 
-            height: 40, 
-            width: '50%', 
-            alignSelf: 'center',
-            marginTop: 20,
-            textAlign: 'center'
-        },
-        imageBackground: {
-            flex: 1,        
-        },
-        darkerimage: {
-            flex: 1,
-            backgroundColor: 'rgba(0, 0, 0, 0.3)',            
-            alignItems: 'center',
-        },
-        textButton: {
-            color: 'white',
-            fontSize: 18,
-            fontWeight: 'bold'
-        },
-        buttom: {
-            width: ITEM_WIDTH/2,
-            height: 40,
-            marginTop: 20,
-            justifyContent: 'center',
-            alignItems: 'center',
-            borderRadius: 8,
-            backgroundColor: '#12AEB7',
-            alignSelf: 'center'
-        }
-    })
+    },
+    textSubTitle: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 32,
+        alignSelf: 'center',
+        marginHorizontal: 20,
+        marginTop: 150,
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowRadius: 3
+    },
+    text: {
+        fontSize: 15,
+        color: 'white',
+        marginTop: 10
+
+    },
+    textInput: {
+        backgroundColor: 'white',
+        borderRadius: 8,
+        padding: 10,
+        height: 40,
+        width: '50%',
+        alignSelf: 'center',
+        marginTop: 20,
+        textAlign: 'center'
+    },
+    imageBackground: {
+        flex: 1,
+    },
+    darkerimage: {
+        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+        alignItems: 'center',
+    },
+    textButton: {
+        color: 'white',
+        fontSize: 18,
+        fontWeight: 'bold'
+    },
+    buttom: {
+        width: ITEM_WIDTH / 2,
+        height: 40,
+        marginTop: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+        backgroundColor: '#12AEB7',
+        alignSelf: 'center'
+    }
+})
 
 export default LoginScreen
