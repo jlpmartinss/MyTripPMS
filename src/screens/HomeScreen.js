@@ -7,6 +7,7 @@ import {AntDesign, MaterialCommunityIcons} from '@expo/vector-icons'
 import Data from "./../../jsons/Trips.json";
 
 const ITEM_WIDTH = Dimensions.get('window').width
+const ITEM_HEIGHT = Dimensions.get('window').height
 
 
 //we will loop through object properties and if an object has at least one property, then it will enter the loop and return false. If the object doesn’t have any properties then it will return true.
@@ -22,6 +23,7 @@ const Home = ({ route, navigation }) => {
 
     const [idTrip, setIdTrip] = useState('');
     const [array_, setArray] = useState([]);
+    const [username, setUsername] = useState('');
 
     const getData = () => {
         try {
@@ -32,6 +34,21 @@ const Home = ({ route, navigation }) => {
                         //volta a converter num objeto
                         let trip = JSON.parse(value);
                         setIdTrip(trip.Id);
+                    }
+                })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const getUserName = () => {
+        try {
+            AsyncStorage.getItem('UserData')
+                .then(value => {
+                    if (value != null) {
+                        //volta a converter num objeto
+                        let user = JSON.parse(value);
+                        setUsername(user.Name);
                     }
                 })
         } catch (error) {
@@ -57,6 +74,7 @@ const Home = ({ route, navigation }) => {
     useEffect(() => {
         getData();
         getDataArray();
+        getUserName();
     }, []);
     
     function ImageTest (number){
@@ -94,12 +112,12 @@ const Home = ({ route, navigation }) => {
                     </View>
 
                 </View>
-                
+
                 <ScrollView style={styles.darkerimage}>
 
 
                     <Text style={styles.welcomeText}>
-                        Here you can see your trips. If you haven't done one yet, join!
+                        Hello {username}. Here you can see your trips. If you haven't done one yet, join!
                     </Text>
 
                     <TouchableOpacity style={styles.buttom} onPress={() => { navigation.navigate("AddTrip"); }}>
@@ -119,10 +137,6 @@ const Home = ({ route, navigation }) => {
                             </TouchableOpacity>
                         )
                     }) : null}
-
-                    <TouchableOpacity style={styles.buttom} onPress={() => { navigation.navigate("SelectedPictureScreen"); }}>
-                        <Text style={styles.textButton}>Select Pic TEST! </Text>
-                    </TouchableOpacity>
 
                 </ScrollView>
 
