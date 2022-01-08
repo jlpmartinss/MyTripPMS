@@ -3,11 +3,11 @@
     "name": "MyTrip",
     "slug": "MyTrip",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./assets/Icons/golfinho_icon.png",
     "splash": {
       "image": "./assets/Icons/golfinho_icon.png",
-      "resizeMode": "adaptiveIcon",
+      "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -20,6 +20,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package":"google.pt",
       "adaptiveIcon": {
         "foregroundImage": "./assets/Icons/golfinho_icon.png",
         "backgroundColor": "#FFFFFF"
