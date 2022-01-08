@@ -42,7 +42,9 @@ export default function SunsetScreen({ route, navigation}) {
 
     return (
         <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
+
             <ScrollView style={styles.darkerimage}>
+
                 <View style={styles.container}>
                     <Text style={styles.textSubTitle}>My Trip</Text>
 
@@ -58,8 +60,11 @@ export default function SunsetScreen({ route, navigation}) {
                     <TouchableOpacity style={styles.buttom} onPress={() => {navigation.navigate("AddTrip")}}>
                         <Text style={styles.textButton}>Get Started</Text>
                     </TouchableOpacity>
+
                 </View>
+
             </ScrollView>
+            
         </ImageBackground>
     );
 }

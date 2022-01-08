@@ -18,9 +18,6 @@ const AddTripScreen = ({ route, navigation }) => {
     var isClicked = false;
     
     var dataAtual = new Date().toLocaleString();
-    
-    //console.log(Data);
-
 
     useEffect(() => {
         var date = new Date().getDate()
@@ -28,9 +25,11 @@ const AddTripScreen = ({ route, navigation }) => {
         var year = new Date().getFullYear()
         var hours = new Date().getHours()
         var minutes = new Date().getMinutes()
+
         setCurrentDate(
             date + '/' + month + '/' + year + ' ' + hours + ':' + minutes
         )
+
         getDataArray();
     }, [])
 
@@ -57,8 +56,7 @@ const AddTripScreen = ({ route, navigation }) => {
             else {
                 console.log("Your trip is not over yet!");
                 Alert.alert("Your trip is not over yet!");   
-            }
-            
+            }            
         }
         else {
             console.log("This trip id does not exist");
@@ -72,9 +70,7 @@ const AddTripScreen = ({ route, navigation }) => {
         }
         else {
             try {
-                var trip = {
-                    Id: idTrip
-                }
+                var trip = {Id: idTrip}
                 await AsyncStorage.setItem('IdNewTrip',  JSON.stringify(trip));
                 if(!array_.includes(Number(idTrip))){
                     array_.push(Number(idTrip));
@@ -116,6 +112,7 @@ const AddTripScreen = ({ route, navigation }) => {
 
     return (
         <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
+            
             <ScrollView style={styles.darkerimage}>
 
             <View style= {styles.headerbox}>
@@ -126,6 +123,7 @@ const AddTripScreen = ({ route, navigation }) => {
                     </TouchableOpacity>
                 </View>
             </View> 
+
                 <Text  style={styles.textSubTitle}> Start a Trip or {"\n"} See Your Trips </Text>
 
                 <TextInput
@@ -141,11 +139,13 @@ const AddTripScreen = ({ route, navigation }) => {
                 <TouchableOpacity style={styles.button} onPress={() => { checkTripTime();}}>
                     <Text style={styles.textButton}>Join Trip</Text>
                 </TouchableOpacity>
+
                 <TouchableOpacity style={styles.button} onPress={() => { setIdTrip(''); navigation.navigate("Home")}}>
                     <Text style={styles.textButton}>See My Trips</Text>
                 </TouchableOpacity>
                 
             </ScrollView>
+
         </ImageBackground>
     
     );

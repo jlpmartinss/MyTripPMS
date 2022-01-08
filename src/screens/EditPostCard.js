@@ -29,8 +29,7 @@ export default function EditPostCard({ route, navigation }) {
       return;
     }
 
-    let pickerResult = await ImagePicker.launchImageLibraryAsync( {
-      
+    let pickerResult = await ImagePicker.launchImageLibraryAsync( {      
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       //allowsEditing: true,
       aspect: [4, 3],
@@ -72,35 +71,32 @@ export default function EditPostCard({ route, navigation }) {
     }
     
 }
-
   return (
-
     
-<View style={styles.container}>
+    <View style={styles.container}>
 
-<View style= {styles.headerbox}>
+      <View style= {styles.headerbox}>
         <Text style= {styles.textSubTitle}>Select photo</Text>
       </View>
-          
+                
 
-        <TouchableOpacity onPress={openImagePickerAsync} style={styles.buttom}>
-        
-          <Text style={styles.textButton}>Pick a photo</Text>
-        </TouchableOpacity>
+      <TouchableOpacity onPress={openImagePickerAsync} style={styles.buttom}>    
+        <Text style={styles.textButton}>Pick a photo</Text>
+      </TouchableOpacity>
 
 
-<Text style={styles.textSubTitle}>Leave a comment of your Trip</Text>
+      <Text style={styles.textSubTitle}>Leave a comment of your Trip</Text>
 
-<TextInput
-    style={styles.texInput}
-    backgroundColor='#FFFFFF'
-                    placeholder="Enter Your Comment"
+      <TextInput
+        style={styles.texInput}
+        backgroundColor='#FFFFFF'
+        placeholder="Enter Your Comment"
+        onChangeText={editComment => setComment(editComment)}
+      />
 
-                    onChangeText={editComment => setComment(editComment)}
-/>
+      <Text style={styles.textSubTitle}>Rate your Trip</Text>
 
-<Text style={styles.textSubTitle}>Rate your Trip</Text>
-<Rating
+      <Rating
         style ={{paddingHorizontal: 130 }}
         rating={rating}
         max={5}
@@ -108,17 +104,14 @@ export default function EditPostCard({ route, navigation }) {
         iconHeight={24}
         onRate={setRating}
       />
-<Text style ={{textAlign: 'center'}}  /* passar este valor para o json da viagem (para depois aparecer no postcard preview) */  >Selected Rating: {rating} stars</Text>
 
+      <Text style ={{textAlign: 'center'}}  /* passar este valor para o json da viagem (para depois aparecer no postcard preview) */  >Selected Rating: {rating} stars</Text>
 
+      <TouchableOpacity style={styles.buttom}  onPress={() => {setData()}}>
+        <Text style={styles.textButton}>Finish Editing</Text>
+      </TouchableOpacity>
 
-
-
-<TouchableOpacity style={styles.buttom}  onPress={() => {setData()}}>
-    <Text style={styles.textButton}>Finish Editing</Text>
-</TouchableOpacity>
-
-      </View>
+    </View>
 
   );
 
