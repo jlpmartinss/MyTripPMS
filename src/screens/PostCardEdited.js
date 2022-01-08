@@ -194,48 +194,57 @@ const PostCardEdited = ({navigation , route }) => {
                         <View style={{flex: 1,paddingTop: 20 }}>
 
                             <Text style={styles.textTitles}>{location} </Text>
-                            <Text style={styles.text}>Coordinates: {latitude} , {longitude} É para incluir??!?! </Text>
+                            <Text style={styles.text}>Coordinates: {latitude} , {longitude}</Text>
                             <Text style={styles.text}>Sea State: {seaState}m </Text>
                             <Text style={styles.textSubTitles}>Your Gallery: </Text>
 
-                            <View style={{ height: 130, marginTop: 0}}>
-                                <ScrollView horizontal={true} height = {140} >
-                                
-                                <Card width={ITEM_WIDTH/3} marginTop = {0}/*Imagem 1 */>
-                                    {selectedImage1 == undefined ? <Image style={styles.imageCard} source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} /> 
-                                    :  <Image style={styles.imageCard} source={{uri : selectedImage1.localUri}} />}
-                                    <TouchableOpacity onPress={openImagePickerAsync1}>
-                                    <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
-                                    </TouchableOpacity>
-                                </Card>
+                            <View style={{ height: 150, marginTop: 0}}>
 
-                                <Card width={ITEM_WIDTH/3} marginTop = {0} /*Imagem 2 */>
-                                {selectedImage2 == undefined ? <Image style={styles.imageCard} source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} /> 
-                                    :  <Image style={styles.imageCard} source={{uri : selectedImage2.localUri}} />}
-                                    <TouchableOpacity onPress={openImagePickerAsync2}>
-                                    <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
-                                    </TouchableOpacity>
-                                </Card>
+                                <ScrollView horizontal={true}>
 
-                                <Card width={ITEM_WIDTH/3} marginTop = {0}/*Imagem 3 */>
-                                {selectedImage3 == undefined ? <Image style={styles.imageCard} source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} /> 
-                                    :  <Image style={styles.imageCard} source={{uri : selectedImage3.localUri}} />}
-                                    <TouchableOpacity onPress={openImagePickerAsync3}>
-                                    <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
+                                    <TouchableOpacity onPress={openImagePickerAsync1}>                                        
+                                        {selectedImage1 == undefined ?
+                                            <Category 
+                                            imageUri = {require('../../assets/Icons/addImage.png')}
+                                            />
+                                        : 
+                                            <Category 
+                                            imageUri = {{uri : selectedImage1.localUri}}/>}
                                     </TouchableOpacity>
-                                </Card>
 
-                                <Card width={ITEM_WIDTH/3} marginTop = {0}/*Imagem 4 */>
-                                {selectedImage4 == undefined ? <Image style={styles.imageCard} source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} /> 
-                                    :  <Image style={styles.imageCard} source={{uri : selectedImage4.localUri}} />}
-                                    <TouchableOpacity onPress={openImagePickerAsync4}>
-                                    <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
+                                    <TouchableOpacity onPress={openImagePickerAsync2}>                                        
+                                        {selectedImage2 == undefined ?
+                                            <Category 
+                                            imageUri = {require('../../assets/Icons/addImage.png')}
+                                            />
+                                        : 
+                                            <Category 
+                                            imageUri = {{uri : selectedImage2.localUri}}/>}
                                     </TouchableOpacity>
-                                    </Card>
-                                
+
+                                    <TouchableOpacity onPress={openImagePickerAsync3}>                                        
+                                        {selectedImage3 == undefined ?
+                                            <Category 
+                                            imageUri = {require('../../assets/Icons/addImage.png')}
+                                            />
+                                        : 
+                                            <Category 
+                                            imageUri = {{uri : selectedImage3.localUri}}/>}
+                                    </TouchableOpacity>
+
+                                    <TouchableOpacity onPress={openImagePickerAsync4}>                                        
+                                        {selectedImage4 == undefined ?
+                                            <Category 
+                                            imageUri = {require('../../assets/Icons/addImage.png')}
+                                            />
+                                        : 
+                                            <Category 
+                                            imageUri = {{uri : selectedImage4.localUri}}/>}
+                                    </TouchableOpacity>
+
                                 </ScrollView>
+                                
                             </View>
-
                             <View style={{ flex: 1, paddingTop: 20 }}>
 
                                 <Text style={styles.textTitles}>{name} | {boatName}</Text>

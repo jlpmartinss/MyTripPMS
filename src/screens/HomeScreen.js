@@ -113,12 +113,13 @@ const Home = ({ route, navigation }) => {
 
                 </View>
 
-                <ScrollView style={styles.darkerimage}>
-
-
-                    <Text style={styles.welcomeText}>
-                        Hello {username}. Here you can see your trips. If you haven't done one yet, join!
-                    </Text>
+                <ScrollView>
+                    <View style = {styles.textBox}>
+                        <Text style={styles.welcomeText}>
+                            Hello {username}!{"\n"}{"\n"}
+                            Here you can see your trips. If you haven't done one yet, join!
+                        </Text>
+                    </View>
 
                     <TouchableOpacity style={styles.buttom} onPress={() => { navigation.navigate("AddTrip"); }}>
                         <Text style={styles.textButton}>Add a New Trip</Text>
@@ -187,8 +188,6 @@ const styles = StyleSheet.create({
         alignSelf: "flex-start",
         color: 'white',
         fontSize: 15,
-        marginTop: 40,
-        lineHeight: 20
     },
     headerbox: {
         width: ITEM_WIDTH,
@@ -251,5 +250,12 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 18,
         fontWeight: 'bold'
+    },
+    textBox: {
+        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.33)',
+        margin: 15,
+        borderRadius: 15,
+        paddingVertical: 15
     }
 })

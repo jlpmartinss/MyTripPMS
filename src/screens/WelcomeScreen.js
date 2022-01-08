@@ -11,7 +11,7 @@ let ITEM_WIDTH = Dimensions.get('window').width;
 export default function SunsetScreen({ route, navigation}) {
 
     const [username, setUsername] = useState('');
-    const[password, setPassword] = useState('');
+    const [password, setPassword] = useState('');
 
     const getData = () => {
         try {
