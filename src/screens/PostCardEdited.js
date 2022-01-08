@@ -9,6 +9,7 @@ import data from "./../../jsons/Trips.json";
 import Category from '../../Category';
 import * as Sharing from 'expo-sharing';
 import Images from '../Images';
+import { Card } from "react-native-elements/dist/card/Card";
 
 const { height, width } = Dimensions.get('window')
 
@@ -82,7 +83,7 @@ const PostCardEdited = ({navigation , route }) => {
                 <View style= {styles.headerbox}>
                     <Text style= {styles.textHeader}>PostCard</Text>
                     <View style={styles.buttonBack}>
-                        <TouchableOpacity onPress={() => {navigation.navigate("EditCard");}}>
+                        <TouchableOpacity onPress={() => {navigation.goBack();}}>
                             <AntDesign name="arrowleft" size={30} color="#fff"/>
                         </TouchableOpacity>
                     </View>
@@ -299,10 +300,10 @@ const styles = StyleSheet.create({
     },
     buttonBack: {
         alignSelf: 'flex-end',
-        width: 30,
+        width: 35,
         height: 30,
-        marginTop: 0,
         position: 'absolute',
+        zIndex: 15
     },
     textHeader: {
         flex:1,
@@ -352,7 +353,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
         borderRadius: 15,
         width: ITEM_WIDTH/1.1,
-        height: 530,
+        paddingBottom: 10,
         alignSelf: 'center',
     },
     imageBackground: {

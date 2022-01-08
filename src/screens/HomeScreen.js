@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, Button, StyleSheet, FlatList, Dimensions, Image, ScrollView, ImageBackground } from 'react-native';
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Images from "../Images"
-import {AntDesign} from '@expo/vector-icons'
+import {AntDesign, MaterialCommunityIcons} from '@expo/vector-icons'
 import Data from "./../../jsons/Trips.json";
 
 const ITEM_WIDTH = Dimensions.get('window').width
@@ -84,9 +84,11 @@ const Home = ({ route, navigation }) => {
                     <View style={styles.headerbox}>
                         <Text style={styles.textHeader}> My Trips </Text>
                         <View style={styles.buttonBack}>
-                            <TouchableOpacity style={styles.icon} onPress={() => {navigation.navigate("AddTrip");}}>
-                                <AntDesign name="arrowleft" size={30} color="#fff"/>
+
+                            <TouchableOpacity style={styles.icon} onPress={() => {navigation.navigate("Login");}}>                                
+                                <MaterialCommunityIcons name="logout" size={30} color="#fff"/>
                             </TouchableOpacity>
+
                         </View>
                     </View>
                     <Text style={styles.welcomeText}>
@@ -171,11 +173,13 @@ const styles = StyleSheet.create({
         flex: 1
     },
     buttonBack: {
+        flex:1,
+        flexDirection: 'row',
         alignSelf: 'flex-end',
-        width: 30,
+        width: 35,
         height: 30,
-        marginTop: 0,
         position: 'absolute',
+        zIndex: 15
     },
     textHeader: {
         flex: 1,

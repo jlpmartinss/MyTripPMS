@@ -44,7 +44,7 @@ const AddTripScreen = ({ route, navigation }) => {
     
     const checkTripTime = () => {
 
-        if(!isEmpty(Data[idTrip])) {
+        if(Data[idTrip]) {
             var tripTime = Data[idTrip].fullDate;
             console.log("dataatual" + dataAtual);
             console.log("tripTime:" + tripTime);
@@ -121,7 +121,7 @@ const AddTripScreen = ({ route, navigation }) => {
             <View style= {styles.headerbox}>
                 <Text style= {styles.textHeader}>Add Trip</Text>
                 <View style={styles.buttonBack}>
-                    <TouchableOpacity style={styles.icon} onPress={() => {navigation.navigate("Welcome");}}>
+                    <TouchableOpacity style={styles.icon} onPress={() => {navigation.goBack();}}>
                         <AntDesign name="arrowleft" size={30} color="#fff"/>
                     </TouchableOpacity>
                 </View>
@@ -159,10 +159,10 @@ const styles = StyleSheet.create({
     },
     buttonBack: {
         alignSelf: 'flex-end',
-        width: 30,
+        width: 35,
         height: 30,
-        marginTop: 0,
         position: 'absolute',
+        zIndex: 15
     },
     textInput: {
         padding: 10, height: 40, width: 150, alignSelf: 'center'

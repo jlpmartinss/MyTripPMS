@@ -361,7 +361,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
         borderRadius: 15,
         width: ITEM_WIDTH/1.1,
-        height: 550,
+        paddingBottom: 10,
         alignSelf: 'center',
     },
     imageBackground: {

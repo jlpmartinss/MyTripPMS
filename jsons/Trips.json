@@ -210,7 +210,15 @@
 			"NumberOffspring": "2",
 			"Behaviours": ["jump",", whistle"],
 			"ReactionsToBoat": ["touch"], 
+			"Sighted": "09:34 am"},
+		{
+			"SpeciesName": "Long finned pilot whale",
+			"NumberIndividuals": "1",
+			"NumberOffspring": "2",
+			"Behaviours": ["jump",", whistle"],
+			"ReactionsToBoat": ["touch"], 
 			"Sighted": "09:34 am"}],
+		
 		"seaState": 2,
 		"confidenceLevel": "nao sei",
 		"rating": "5.0",

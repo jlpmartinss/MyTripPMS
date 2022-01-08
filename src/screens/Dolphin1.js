@@ -58,7 +58,7 @@ export default function Dolphin1({ route, navigation}) {
             <View style= {styles.headerbox}>
                 <Text style= {styles.textHeader}>{name}</Text>
                 <View style={styles.buttonBack}>
-                    <TouchableOpacity style={styles.icon} onPress={() => {navigation.navigate("Dolphins");}}>
+                    <TouchableOpacity style={styles.icon} onPress={() => {navigation.goBack();}}>
                         <AntDesign name="arrowleft" size={30} color="#fff"/>
                     </TouchableOpacity>
                 </View>
@@ -131,10 +131,10 @@ const styles = StyleSheet.create({
     },
     buttonBack: {
         alignSelf: 'flex-end',
-        width: 30,
+        width: 35,
         height: 30,
-        marginTop: 0,
         position: 'absolute',
+        zIndex: 15
     },
     textHeader: {
         flex:1,
