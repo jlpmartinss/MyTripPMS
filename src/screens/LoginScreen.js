@@ -16,6 +16,7 @@ const LoginScreen = ({ route, navigation }) => {
             Alert.alert('WARNING: Please write your credentials!');
         }
         else {
+            console.log("here");
             try {
                 let value = await AsyncStorage.getItem('UserData');
                 if (value != null) {
@@ -48,6 +49,20 @@ const LoginScreen = ({ route, navigation }) => {
                         navigation.navigate("Welcome")
                     }
                 }
+                else {
+                    try {
+                        var user = {
+                            Name: username,
+                            Password: password
+                        }
+                        //converte em string para poder passar
+                        await AsyncStorage.setItem('UserData', JSON.stringify(user));
+                        navigation.navigate("Welcome")
+                    } catch (error) {
+                        console.log(console.error);
+                    }
+                }
+
             } catch (error) {
                 console.log(console.error);
             }
