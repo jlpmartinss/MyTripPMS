@@ -52,7 +52,8 @@ export default function EditPostCard({ route, navigation }) {
 
 
   const setcomment = async () => {
-    if (editComment == '' ) {
+    await AsyncStorage.setItem('newComment', editComment);
+   /* if (editComment == '' ) {
       //console.log(editedrating);
       Alert.alert('Warning!', 'Please write a comment')
     }
@@ -73,11 +74,11 @@ export default function EditPostCard({ route, navigation }) {
               navigation.navigate('PostCardEdited', {rating:rating,tripId: tripId});
               
             }*/
-        } catch (error) {
+       /* } catch (error) {
             console.log(console.error);
 
         }
-    }
+    }*/
     
 };
 
