@@ -1,7 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState } from 'react';
 import { View, Text, Button, TextInput, TouchableOpacity, StyleSheet, Alert, Dimensions, ImageBackground } from 'react-native';
-
+import { AntDesign } from '@expo/vector-icons'
 import Rating from 'react-native-easy-rating';
 
 import * as ImagePicker from 'expo-image-picker';
@@ -57,13 +57,18 @@ export default function EditPostCard({ route, navigation }) {
     if (editComment == '') {
       //console.log(editedrating);
       Alert.alert('Warning!', 'Please write a comment')
-      
     }
     else {
-        try {
+      try {
             const imageSelected = selectedImage.localUri;
+            console.log(imageSelected);
             await AsyncStorage.setItem('newComment', editComment);
-            navigation.navigate('PostCardEdited', {rating:rating, imageSelected:imageSelected, tripId: tripId});
+            if(imageSelected!=null){
+              navigation.navigate('PostCardEdited', {rating:rating, imageSelected:imageSelected, tripId: tripId});
+            }
+            else{
+              navigation.navigate('PostCardEdited', {rating:rating,tripId: tripId});
+            }
         } catch (error) {
             console.log(console.error);
 
@@ -75,6 +80,11 @@ export default function EditPostCard({ route, navigation }) {
     
     <View style={styles.container}>
 
+      <View style={styles.buttonBack}>
+        <TouchableOpacity onPress={() => {navigation.goBack();}}>
+          <AntDesign name="arrowleft" size={30} color="#12AEB7"/>
+         </TouchableOpacity>
+      </View>
       <View style= {styles.headerbox}>
         <Text style= {styles.textSubTitle}>Select photo</Text>
       </View>
@@ -162,5 +172,11 @@ textButton: {
     color: 'white',
     fontWeight: 'bold',
     fontSize: 18
+},buttonBack: {
+  alignSelf: 'flex-end',
+  width: 35,
+  height: 30,
+  position: 'absolute',
+  zIndex: 15
 },
 })

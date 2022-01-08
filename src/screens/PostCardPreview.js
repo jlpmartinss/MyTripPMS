@@ -83,7 +83,7 @@ const PostCardPreview = ({navigation , route }) => {
                     <Text style= {styles.textHeader}>PostCard</Text>
 
                     <View style={styles.buttonBack}>
-                        <TouchableOpacity onPress={() => {navigation.navigate("Home");}}>
+                        <TouchableOpacity onPress={() => {navigation.goBack();}}>
                             <AntDesign name="arrowleft" size={30} color="#fff"/>
                         </TouchableOpacity>
                     </View>
