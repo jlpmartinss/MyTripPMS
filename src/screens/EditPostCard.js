@@ -60,14 +60,18 @@ export default function EditPostCard({ route, navigation }) {
     }
     else {
       try {
-            const imageSelected = selectedImage.localUri;
-            console.log(imageSelected);
+            
+            
             await AsyncStorage.setItem('newComment', editComment);
-            if(imageSelected!=null){
+            navigation.navigate('PostCardEdited', {rating:rating,tripId: tripId});
+            if(selectedImage.localUri != undefined){
+              const imageSelected = selectedImage.localUri;
               navigation.navigate('PostCardEdited', {rating:rating, imageSelected:imageSelected, tripId: tripId});
             }
             else{
+              
               navigation.navigate('PostCardEdited', {rating:rating,tripId: tripId});
+              
             }
         } catch (error) {
             console.log(console.error);

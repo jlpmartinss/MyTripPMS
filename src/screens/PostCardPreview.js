@@ -18,8 +18,8 @@ let ITEM_WIDTH = Dimensions.get('window').width;
 
 
 const PostCardPreview = ({navigation , route }) => {
-
-    const {tripId} = route.params;
+    const {  imageSelected, tripId } = route.params;
+    //const {tripId} = route.params;
 
     const id = data[tripId].id;
     const ongoing = data[tripId].ongoing;
@@ -178,7 +178,7 @@ const PostCardPreview = ({navigation , route }) => {
                                 
                                 <View style={{ width: ITEM_WIDTH/1.1, height: 300, marginTop: 0, alignSelf: 'center'}}>
                                     
-                                    <Image style={styles.image} source={require('../../assets/Trips/imsunset.jpg')} />
+                                    { imageSelected == undefined ? <Image style={styles.image} source={require('../../assets/Trips/imsunset.jpg')}  /> : <Image style={styles.image} source={{ uri: imageSelected }} />   }
 
                                     { editComment == '' ? <Text style={styles.textComment} /*Comentário da viagem */ > {comment} 
                                     </Text> : <Text style={styles.textComment}> {editComment}

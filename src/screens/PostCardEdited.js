@@ -186,7 +186,7 @@ const PostCardEdited = ({navigation , route }) => {
                                 
                                 <View style={{ width: ITEM_WIDTH/1.1, height: 300, marginTop: 0, alignSelf: 'center'}}>
                                     
-                                        { imageSelected == '' ? <Image style={styles.image} source={require('../../assets/Trips/imsunset.jpg')}  /> : <Image style={styles.image} source={{ uri: imageSelected }} />   }
+                                        { imageSelected == undefined ? <Image style={styles.image} source={require('../../assets/Trips/imsunset.jpg')}  /> : <Image style={styles.image} source={{ uri: imageSelected }} />   }
 
                                         { editComment == '' ? <Text style={styles.textComment} /*Comentário da viagem */ > {comment} 
                                         </Text> : <Text style={styles.textComment}> {editComment}
