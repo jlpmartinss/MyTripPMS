@@ -10,7 +10,7 @@ import Category from '../../Category';
 import * as Sharing from 'expo-sharing';
 import Images from '../Images';
 import { Card } from "react-native-elements/dist/card/Card";
-
+import * as ImagePicker from 'expo-image-picker';
 
 const { height, width } = Dimensions.get('window')
 
@@ -72,8 +72,110 @@ const PostCardPreview = ({navigation , route }) => {
 
         try { const result = await Share.share(shareOptions); }
         catch (error) { alert(error.message); }
-    }
+    };
 
+    let [selectedImage1, setSelectedImage1] = React.useState(null);
+    
+    let openImagePickerAsync1 = async () => {
+        let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        
+        if (permissionResult.granted === false) {
+            alert('Permission to access camera roll is required!');
+            return;
+        }
+        
+        let pickerResult = await ImagePicker.launchImageLibraryAsync( {      
+            mediaTypes: ImagePicker.MediaTypeOptions.All,
+            //allowsEditing: true,
+            aspect: [4, 3],
+            quality: 1,
+        })
+        
+        ;
+        if (pickerResult.cancelled === true) {
+            return;
+        }
+        
+        setSelectedImage1({ localUri: pickerResult.uri });
+        
+    };
+    
+    let [selectedImage2, setSelectedImage2] = React.useState(null);
+    let openImagePickerAsync2 = async () => {
+        let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        
+        if (permissionResult.granted === false) {
+          alert('Permission to access camera roll is required!');
+          return;
+        }
+    
+        let pickerResult = await ImagePicker.launchImageLibraryAsync( {      
+          mediaTypes: ImagePicker.MediaTypeOptions.All,
+          //allowsEditing: true,
+          aspect: [4, 3],
+          quality: 1,
+        })
+          
+        ;
+        if (pickerResult.cancelled === true) {
+          return;
+        }
+        
+        setSelectedImage2({ localUri: pickerResult.uri });
+        
+      };
+
+    let [selectedImage3, setSelectedImage3] = React.useState(null);
+    let openImagePickerAsync3 = async () => {
+        let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        
+        if (permissionResult.granted === false) {
+          alert('Permission to access camera roll is required!');
+          return;
+        }
+    
+        let pickerResult = await ImagePicker.launchImageLibraryAsync( {      
+          mediaTypes: ImagePicker.MediaTypeOptions.All,
+          //allowsEditing: true,
+          aspect: [4, 3],
+          quality: 1,
+        })
+          
+        ;
+        if (pickerResult.cancelled === true) {
+          return;
+        }
+        
+        setSelectedImage3({ localUri: pickerResult.uri });
+        
+      };
+
+    let [selectedImage4, setSelectedImage4] = React.useState(null);
+    let openImagePickerAsync4 = async () => {
+        let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        
+        if (permissionResult.granted === false) {
+          alert('Permission to access camera roll is required!');
+          return;
+        }
+    
+        let pickerResult = await ImagePicker.launchImageLibraryAsync( {      
+          mediaTypes: ImagePicker.MediaTypeOptions.All,
+          //allowsEditing: true,
+          aspect: [4, 3],
+          quality: 1,
+        })
+          
+        ;
+        if (pickerResult.cancelled === true) {
+          return;
+        }
+        
+        setSelectedImage4({ localUri: pickerResult.uri });
+        
+      };
+
+      
     return (
         <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
             <View style={styles.darkerimage}>
@@ -102,29 +204,33 @@ const PostCardPreview = ({navigation , route }) => {
                                 <ScrollView horizontal={true} height = {140} >
                                 
                                 <Card width={ITEM_WIDTH/3} marginTop = {0}/*Imagem 1 */>
-                                    <Image style={styles.imageCard} source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} />
-                                    <TouchableOpacity>
+                                    {selectedImage1 == undefined ? <Image style={styles.imageCard} source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} /> 
+                                    :  <Image style={styles.imageCard} source={{uri : selectedImage1.localUri}} />}
+                                    <TouchableOpacity onPress={openImagePickerAsync1}>
                                     <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
                                     </TouchableOpacity>
                                 </Card>
 
                                 <Card width={ITEM_WIDTH/3} marginTop = {0} /*Imagem 2 */>
-                                    <Image style={styles.imageCard} source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} />
-                                    <TouchableOpacity>
+                                {selectedImage2 == undefined ? <Image style={styles.imageCard} source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} /> 
+                                    :  <Image style={styles.imageCard} source={{uri : selectedImage2.localUri}} />}
+                                    <TouchableOpacity onPress={openImagePickerAsync2}>
                                     <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
                                     </TouchableOpacity>
                                 </Card>
 
                                 <Card width={ITEM_WIDTH/3} marginTop = {0}/*Imagem 3 */>
-                                    <Image style={styles.imageCard} source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} />
-                                    <TouchableOpacity>
+                                {selectedImage3 == undefined ? <Image style={styles.imageCard} source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} /> 
+                                    :  <Image style={styles.imageCard} source={{uri : selectedImage3.localUri}} />}
+                                    <TouchableOpacity onPress={openImagePickerAsync3}>
                                     <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
                                     </TouchableOpacity>
                                 </Card>
 
                                 <Card width={ITEM_WIDTH/3} marginTop = {0}/*Imagem 4 */>
-                                    <Image style={styles.imageCard} source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} />
-                                    <TouchableOpacity>
+                                {selectedImage4 == undefined ? <Image style={styles.imageCard} source={require('../../assets/Whales/10Killer_whale_or_Orca.jpg')} /> 
+                                    :  <Image style={styles.imageCard} source={{uri : selectedImage4.localUri}} />}
+                                    <TouchableOpacity onPress={openImagePickerAsync4}>
                                     <Text style={{color:"white"}} >Edit picture <AntDesign name="picture" /> </Text>
                                     </TouchableOpacity>
                                     </Card>
@@ -189,9 +295,9 @@ const PostCardPreview = ({navigation , route }) => {
 
                                 <View style = {styles.textBoxPostCard} >
                                     <Text style={styles.textIcons}>Edit PostCard</Text>
-                                    
+                                   
                                         <View style = {{ height: 45, width: 50, marginTop: 5, alignSelf: 'center'}}>
-                                            <TouchableOpacity onPress={() => navigation.navigate("EditCard", {tripId: tripId})}>
+                                            <TouchableOpacity onPress={() => navigation.navigate("EditCard", {tripId: tripId, selectedImage1:selectedImage1,selectedImage2:selectedImage2,selectedImage3:selectedImage3,selectedImage4:selectedImage4})}>
                                                 <FontAwesome name="edit" size={50} color="#12AEB7"/>
                                             </TouchableOpacity>
                                         </View>

@@ -18,8 +18,6 @@ export default function EditPostCard({ route, navigation }) {
   const [editComment, setComment] = useState('');
   //console.log(editedrating);
   let [selectedImage, setSelectedImage] = React.useState(null);
-  var count = 0;
-  let ImageList = [];
 
   let openImagePickerAsync = async () => {
     let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
