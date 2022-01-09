@@ -283,7 +283,9 @@ const PostCardEdited = ({ navigation, route }) => {
         return (img = Images.dolphin7);
 
       default:
-        console.log("Something went wrong with image id!!!!");
+        console.log(
+          "Something went wrong with image name. Check if the name is the same in both JSONS!!!!"
+        );
     }
   }
 
