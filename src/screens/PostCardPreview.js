@@ -377,10 +377,10 @@ const PostCardPreview = ({ navigation, route }) => {
                 {editRating != "" ? (
                   <Rating
                     style={{ marginTop: 0, alignSelf: "center" }}
-                    readonly
                     showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
                     type="star"
                     startingValue={editRating}
+                    readonly
                     imageSize={22}
                   ></Rating>
                 ) : (
