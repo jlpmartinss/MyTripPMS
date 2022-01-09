@@ -496,12 +496,12 @@ const PostCardPreview = ({ navigation, route }) => {
 
                   <Text style={styles.text}>
                     {" "}
-                    {"\n\n"} First Seen at: {specie.Sighted}
+                    First Seen at: {specie.Sighted}
                   </Text>
 
                   <Text style={styles.text}>
                     {" "}
-                    {"\n"} Behaviours: {specie.Behaviours}
+                    Behaviours: {specie.Behaviours}
                   </Text>
 
                   {/* { specie.Behaviours.map((behaviour, key1) => {
@@ -509,7 +509,7 @@ const PostCardPreview = ({ navigation, route }) => {
                     })} */}
                   <Text style={styles.text}>
                     {" "}
-                    {"\n"} Reactions to boat: {specie.ReactionsToBoat}
+                    Reactions to boat: {specie.ReactionsToBoat}
                   </Text>
                 </View>
               );
@@ -530,6 +530,7 @@ export default PostCardPreview;
 
 const styles = StyleSheet.create({
   text: {
+    marginTop: 10,
     paddingHorizontal: 20,
     fontSize: 15,
     fontWeight: "500",
