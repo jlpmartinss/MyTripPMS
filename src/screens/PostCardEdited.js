@@ -485,7 +485,7 @@ const PostCardEdited = ({ navigation, route }) => {
 
             {sightedSpecies.map((specie, key) => {
               return (
-                <View style={styles.textBoxSpecies}>
+                <View key = {key} style={styles.textBoxSpecies}>
                   <Text style={styles.textSightedSpecies} key={key}>
                     {specie.SpeciesName}
                   </Text>
