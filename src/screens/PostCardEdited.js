@@ -313,10 +313,12 @@ const PostCardEdited = ({ navigation, route }) => {
         <ScrollView scrollEventThrottle={16} /*Scrollview da página toda */>
           <View style={{ flex: 1, paddingTop: 20 }}>
             <Text style={styles.textTitles}>{location} </Text>
-            <Text style={styles.text}>
+
+            {/* <Text style={styles.text}>
               Coordinates: {latitude} , {longitude}
             </Text>
-            <Text style={styles.text}>Sea State: {seaState}m </Text>
+            <Text style={styles.text}>Sea State: {seaState}m </Text> */}
+
             <Text style={styles.textSubTitles}>Your Gallery: </Text>
 
             <View style={{ height: 150, marginTop: 0 }}>
