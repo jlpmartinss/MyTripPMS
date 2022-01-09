@@ -497,12 +497,12 @@ const PostCardEdited = ({ navigation, route }) => {
 
                   <Text style={styles.text}>
                     {" "}
-                    {"\n\n"} First Seen at: {specie.Sighted}
+                    First Seen at: {specie.Sighted}
                   </Text>
 
                   <Text style={styles.text}>
                     {" "}
-                    {"\n"} Behaviours: {specie.Behaviours}
+                    Behaviours: {specie.Behaviours}
                   </Text>
 
                   {/* { specie.Behaviours.map((behaviour, key1) => {
@@ -510,7 +510,7 @@ const PostCardEdited = ({ navigation, route }) => {
                     })} */}
                   <Text style={styles.text}>
                     {" "}
-                    {"\n"} Reactions to boat: {specie.ReactionsToBoat}
+                    Reactions to boat: {specie.ReactionsToBoat}
                   </Text>
                 </View>
               );
@@ -531,6 +531,7 @@ export default PostCardEdited;
 
 const styles = StyleSheet.create({
   text: {
+    marginTop: 10,
     paddingHorizontal: 20,
     fontSize: 15,
     fontWeight: "500",
@@ -677,9 +678,7 @@ const styles = StyleSheet.create({
   imageBackground: {
     flex: 1,
   },
-  darkerimage: {
-    backgroundColor: "rgba(0, 0, 0, 0.3)",
-  },
+  darkerimage: {},
   icon: {
     flex: 1,
     alignSelf: "flex-start",

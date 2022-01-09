@@ -606,7 +606,7 @@ const styles = StyleSheet.create({
   },
   textBox: {
     flex: 1,
-    backgroundColor: "rgba(0, 0, 0, 0.2)",
+    backgroundColor: "rgba(0, 0, 0, 0.33)",
     margin: 15,
     borderRadius: 15,
     width: ITEM_WIDTH / 1.1,
@@ -634,14 +634,14 @@ const styles = StyleSheet.create({
     textShadowRadius: 2,
     fontWeight: "bold",
     fontSize: 22,
-    backgroundColor: "rgba(0, 0, 0, 0.2)",
+    backgroundColor: "rgba(0, 0, 0, 0.33)",
     zIndex: 10,
   },
   imageBackground: {
     flex: 1,
   },
   textBoxSocial: {
-    backgroundColor: "rgba(0, 0, 0, 0.2)",
+    backgroundColor: "rgba(0, 0, 0, 0.33)",
     margin: 10,
     borderRadius: 15,
     width: ITEM_WIDTH / 1.1,
@@ -657,7 +657,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   textBoxPostCard: {
-    backgroundColor: "rgba(0, 0, 0, 0.2)",
+    backgroundColor: "rgba(0, 0, 0, 0.33)",
     margin: 20,
     marginTop: 40,
     borderRadius: 15,
@@ -669,7 +669,7 @@ const styles = StyleSheet.create({
   textBoxSpecies: {
     flex: 1,
     flexDirection: "column",
-    backgroundColor: "rgba(0, 0, 0, 0.2)",
+    backgroundColor: "rgba(0, 0, 0, 0.33)",
     marginTop: 10,
     borderRadius: 15,
     width: ITEM_WIDTH / 1.1,
@@ -679,9 +679,7 @@ const styles = StyleSheet.create({
   imageBackground: {
     flex: 1,
   },
-  darkerimage: {
-    backgroundColor: "rgba(0, 0, 0, 0.3)",
-  },
+  darkerimage: {},
   icon: {
     flex: 1,
     alignSelf: "flex-start",
