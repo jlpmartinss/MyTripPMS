@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import {
   View,
   Text,
-  Button,
   TextInput,
   TouchableOpacity,
   StyleSheet,
@@ -11,21 +10,20 @@ import {
   Dimensions,
   ImageBackground,
 } from "react-native";
-import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
+import { AntDesign} from "@expo/vector-icons";
 import Rating from "react-native-easy-rating";
 
 import * as ImagePicker from "expo-image-picker";
-import * as Sharing from "expo-sharing";
 import { ScrollView } from "react-native-gesture-handler";
 
 let ITEM_WIDTH = Dimensions.get("window").width;
 
-var tripId = 0;
+
 
 export default function EditPostCard({ route, navigation }) {
+  const {tripId} = route.params;
   const [rating, setRating] = useState();
   const [editComment, setComment] = useState("");
-  //console.log(editedrating);
   let [selectedImage, setSelectedImage] = React.useState(null);
 
   let openImagePickerAsync = async () => {
@@ -39,7 +37,6 @@ export default function EditPostCard({ route, navigation }) {
 
     let pickerResult = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
-      //allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
     });
@@ -51,43 +48,9 @@ export default function EditPostCard({ route, navigation }) {
     setSelectedImage({ localUri: pickerResult.uri });
   };
 
-  let openShareDialogAsync = async () => {
-    //não é usado
-    if (!(await Sharing.isAvailableAsync())) {
-      alert(`Uh oh, sharing isn't available on your platform`);
-      return;
-    }
-    await Sharing.shareAsync(selectedImage.localUri);
-  };
 
   const setcomment = async () => {
     await AsyncStorage.setItem("newComment", editComment);
-    /* if (editComment == '' ) {
-      //console.log(editedrating);
-      Alert.alert('Warning!', 'Please write a comment')
-    }
-    else {
-      try {
-            
-            
-            await AsyncStorage.setItem('newComment', editComment);
-            await AsyncStorage.setItem('newRating', JSON.stringify(rating));
-            //await AsyncStorage.setItem('newRating', JSON.stringify(rating)); fazer para a imagem
-           /* navigation.navigate('PostCardEdited', {rating:rating,tripId: tripId});
-            if(selectedImage.localUri != undefined){
-              const imageSelected = selectedImage.localUri;
-              navigation.navigate('PostCardEdited', {rating:rating, imageSelected:imageSelected, tripId: tripId});
-            }
-            else{
-              
-              navigation.navigate('PostCardEdited', {rating:rating,tripId: tripId});
-              
-            }*/
-    /* } catch (error) {
-            console.log(console.error);
-
-        }
-    }*/
   };
 
   const setrating = async () => {

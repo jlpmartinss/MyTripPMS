@@ -219,7 +219,7 @@ export default function FajasScreen({ route, navigation }) {
                   Brad will be your barman. He knows everything about your
                   drinks. Some say he was once married to Angelina and that he
                   is also an actor. If you ask about his last movie he might
-                  throw you overboard
+                  throw you overboard.
                 </Text>
               </View>
               <Image

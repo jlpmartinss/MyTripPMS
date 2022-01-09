@@ -2,7 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useEffect, useState } from "react";
 import { Image, ScrollView, TouchableOpacity } from "react-native";
 import { View, Text, Button, StyleSheet, TextInput, Alert, ImageBackground, Dimensions } from 'react-native';
-import {AntDesign} from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 import { TouchableHighlight } from "react-native-gesture-handler";
 import Data from "./../../jsons/Trips.json";
 
@@ -10,13 +10,10 @@ let ITEM_WIDTH = Dimensions.get('window').width;
 const ITEM_HEIGHT = Dimensions.get('window').height
 
 const AddTripScreen = ({ route, navigation }) => {
-    //const [teste,setTeste] = useState('');
     const [idTrip, setIdTrip] = useState('');
     const [array_, setArray] = useState([]);
-    const id = '0';
     const [currentDate, setCurrentDate] = useState('');
-    var isClicked = false;
-    
+
     var dataAtual = new Date().toLocaleString();
 
     useEffect(() => {
@@ -40,39 +37,37 @@ const AddTripScreen = ({ route, navigation }) => {
         }
         return true;
     }
-    
+
     const checkTripTime = () => {
 
-        if(Data[idTrip]) {
+        if (Data[idTrip]) {
             var tripTime = Data[idTrip].fullDate;
             console.log("dataatual" + dataAtual);
             console.log("tripTime:" + tripTime);
             if (dataAtual > tripTime) {
                 Alert.alert(idTrip);
                 setData();
-                //Alert.alert("Go to Home and see your Trip");
-                //navigation.navigate('HomeScreen', {screen:"HomeScreen"});
             }
             else {
                 console.log("Your trip is not over yet!");
-                Alert.alert("Your trip is not over yet!");   
-            }            
+                Alert.alert("Your trip is not over yet!");
+            }
         }
         else {
             console.log("This trip id does not exist");
-            Alert.alert("This trip id does not exist");        
+            Alert.alert("This trip id does not exist");
         }
     }
 
     const setData = async () => {
-        if (idTrip.length == 0 || isNaN(idTrip)){
+        if (idTrip.length == 0 || isNaN(idTrip)) {
             Alert.alert('Warning!', 'Please write your data')
         }
         else {
             try {
-                var trip = {Id: idTrip}
-                await AsyncStorage.setItem('IdNewTrip',  JSON.stringify(trip));
-                if(!array_.includes(Number(idTrip))){
+                var trip = { Id: idTrip }
+                await AsyncStorage.setItem('IdNewTrip', JSON.stringify(trip));
+                if (!array_.includes(Number(idTrip))) {
                     array_.push(Number(idTrip));
                 }
                 setArray(array_);
@@ -85,7 +80,7 @@ const AddTripScreen = ({ route, navigation }) => {
         }
     }
 
-    
+
     const setDataArray = async () => {
         try {
             await AsyncStorage.setItem('NewArray', JSON.stringify(array_));
@@ -112,42 +107,39 @@ const AddTripScreen = ({ route, navigation }) => {
 
     return (
         <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
-            
+
             <ScrollView style={styles.darkerimage}>
 
-            <View style= {styles.headerbox}>
-                <Text style= {styles.textHeader}>Add Trip</Text>
-                <View style={styles.buttonBack}>
-                    <TouchableOpacity style={styles.icon} onPress={() => {navigation.goBack();}}>
-                        <AntDesign name="arrowleft" size={30} color="#fff"/>
-                    </TouchableOpacity>
+                <View style={styles.headerbox}>
+                    <Text style={styles.textHeader}>Add Trip</Text>
+                    <View style={styles.buttonBack}>
+                        <TouchableOpacity style={styles.icon} onPress={() => { navigation.goBack(); }}>
+                            <AntDesign name="arrowleft" size={30} color="#fff" />
+                        </TouchableOpacity>
+                    </View>
                 </View>
-            </View> 
 
-                <Text  style={styles.textSubTitle}> Start a Trip or {"\n"} See Your Trips </Text>
+                <Text style={styles.textSubTitle}> Start a Trip or {"\n"} See Your Trips </Text>
 
                 <TextInput
-                    style= {styles.textInput}
+                    style={styles.textInput}
                     backgroundColor='#FFFFFF'
-                    //se o input for números onChangeText = {onChangeNumber} + value = {number} + keyboardType="numeric" 
                     placeholder="Enter Your Trip Code"
-                    //onSubmitEditing={text => setText(text)}
                     onChangeText={idTrip => setIdTrip(idTrip)}
-                    //defaultValue={text}
                 />
 
-                <TouchableOpacity style={styles.button} onPress={() => { checkTripTime();}}>
+                <TouchableOpacity style={styles.button} onPress={() => { checkTripTime(); }}>
                     <Text style={styles.textButton}>Join Trip</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button} onPress={() => { setIdTrip(''); navigation.navigate("Home")}}>
+                <TouchableOpacity style={styles.button} onPress={() => { setIdTrip(''); navigation.navigate("Home") }}>
                     <Text style={styles.textButton}>See My Trips</Text>
                 </TouchableOpacity>
-                
+
             </ScrollView>
 
         </ImageBackground>
-    
+
     );
 }
 
@@ -188,32 +180,32 @@ const styles = StyleSheet.create({
     headerbox: {
         width: ITEM_WIDTH,
         paddingTop: 35,
-        padding:8,
-        flex:1        
+        padding: 8,
+        flex: 1
     },
     textHeader: {
-        flex:1,
+        flex: 1,
         width: ITEM_WIDTH,
         position: 'absolute',
         color: 'white',
-        paddingLeft:10,
+        paddingLeft: 10,
         paddingBottom: 2,
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowRadius: 2,
         fontWeight: 'bold',
-        fontSize: 22,       
+        fontSize: 22,
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         zIndex: 10
     },
     imageBackground: {
-        flex: 1, 
-        minHeight: ITEM_HEIGHT,       
+        flex: 1,
+        minHeight: ITEM_HEIGHT,
     },
     darkerimage: {
         backgroundColor: 'rgba(0, 0, 0, 0.3)'
     },
     button: {
-        width: ITEM_WIDTH/2,
+        width: ITEM_WIDTH / 2,
         height: 40,
         marginTop: 20,
         justifyContent: 'center',
@@ -225,9 +217,9 @@ const styles = StyleSheet.create({
     textInput: {
         backgroundColor: 'white',
         borderRadius: 8,
-        padding: 10, 
-        height: 40, 
-        width: '50%', 
+        padding: 10,
+        height: 40,
+        width: '50%',
         alignSelf: 'center',
         marginTop: 20,
         textAlign: 'center'

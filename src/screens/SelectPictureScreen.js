@@ -8,45 +8,7 @@ let ITEM_WIDTH = Dimensions.get('window').width;
 //Documentation https://docs.expo.dev/versions/latest/sdk/imagepicker/#permissions
 
 export default function SelectPictureScreen() {
-  //const [image, setImage] = useState(null);
-
-  // const pickImage = async () => {
-  //   // No permissions request is necessary for launching the image library
-  //   let result = await ImagePicker.launchImageLibraryAsync({
-  //     mediaTypes: ImagePicker.MediaTypeOptions.All,
-  //     allowsEditing: true,
-  //     aspect: [4, 3],
-  //     quality: 1,
-  //   });
-
-  //   console.log(result);
-
-  //   if (!result.cancelled) {
-  //     setImage(result.uri);
-  //     openShareDialogAsync();
-  //   }
-  // };
-
-  // let openShareDialogAsync = async () => {
-  //   if (!(await Sharing.isAvailableAsync())) {
-  //     alert(`Uh oh, sharing isn't available on your platform`);
-  //     return;
-  //   }
-  //   console.log("hi!");
-
-  //   await Sharing.shareAsync(image.uri);
-  // }; 
-  // if (image !== null) {
-  //   return (
-  //     <View>
-  //       <Image source={{ uri: image }} />
-  //       <TouchableOpacity onPress={openShareDialogAsync} >
-  //         <Text >Share this photo</Text>
-  //       </TouchableOpacity>
-  //       </View>
-  //   );
-  // }
-
+  
   let [selectedImage, setSelectedImage] = React.useState(null);
   var count = 0;
   let ImageList = [];
@@ -64,7 +26,6 @@ export default function SelectPictureScreen() {
     let pickerResult = await ImagePicker.launchImageLibraryAsync( {
       
       mediaTypes: ImagePicker.MediaTypeOptions.All,
-      //allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
     })

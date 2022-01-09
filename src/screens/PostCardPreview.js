@@ -3,22 +3,15 @@ import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
-  Button,
   ScrollView,
   StyleSheet,
   Image,
-  TouchableHighlight,
-  TextInput,
   ImageBackground,
   Dimensions,
   Touchable,
 } from "react-native";
-import { Rating, RatingProps } from "react-native-elements";
+import { Rating } from "react-native-elements";
 import {
-  Entypo,
-  Feather,
-  Ionicons,
-  Icon,
   AntDesign,
   FontAwesome,
 } from "@expo/vector-icons";
@@ -26,9 +19,7 @@ import { RectButton, TouchableOpacity } from "react-native-gesture-handler";
 import { Share } from "react-native";
 import data from "./../../jsons/Trips.json";
 import Category from "../../Category";
-import * as Sharing from "expo-sharing";
 import Images from "../Images";
-import { Card } from "react-native-elements/dist/card/Card";
 import * as ImagePicker from "expo-image-picker";
 
 const { height, width } = Dimensions.get("window");
@@ -38,29 +29,20 @@ let ITEM_WIDTH = Dimensions.get("window").width;
 const PostCardPreview = ({ navigation, route }) => {
   const { tripId } = route.params;
   console.log(tripId);
-  //console.log(imageSelected);
 
-  const id = data[tripId].id;
-  const ongoing = data[tripId].ongoing;
+
   const location = data[tripId].location;
-  const latitude = data[tripId].lat;
-  const longitude = data[tripId].long;
-  const seaState = data[tripId].seaState;
   const name = data[tripId].name;
-  const imagecollection = data[tripId].imagecollection;
   const date = data[tripId].date;
   const time = data[tripId].time;
-  const hours = data[tripId].hours;
-  const imgPath = data[tripId].imgPath;
   const comment = data[tripId].comments;
   const sightedSpecies = data[tripId].animals;
   const routetrip = data[tripId].route;
   const boatName = data[tripId].boatName;
-  const behaviour = sightedSpecies.Behaviours;
 
   var img = "";
 
-  //const [editedrating, setRating] = useState('');
+
   const [editComment, setComment] = useState("");
   const [editRating, setRating] = useState("");
   const [editPhoto, setPhoto] = useState("");
@@ -109,23 +91,8 @@ const PostCardPreview = ({ navigation, route }) => {
     getPhoto();
   }, []);
 
-  //console.log('comment:' + editComment);
 
-  const [text, setText] = useState("");
-
-  const onShare = async () => {
-    const shareOptions = {
-      message:
-        "React Native | A framework for building native apps using React",
-      url: Images.dolphin1,
-    };
-
-    try {
-      const result = await Share.share(shareOptions);
-    } catch (error) {
-      alert(error.message);
-    }
-  };
+  
 
   let [selectedImage1, setSelectedImage1] = React.useState(null);
 
@@ -140,7 +107,6 @@ const PostCardPreview = ({ navigation, route }) => {
 
     let pickerResult = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
-      //allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
     });
@@ -164,7 +130,6 @@ const PostCardPreview = ({ navigation, route }) => {
 
     let pickerResult = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
-      //allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
     });
@@ -187,7 +152,6 @@ const PostCardPreview = ({ navigation, route }) => {
 
     let pickerResult = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
-      //allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
     });
@@ -211,7 +175,6 @@ const PostCardPreview = ({ navigation, route }) => {
 
     let pickerResult = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
-      //allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
     });
@@ -314,12 +277,6 @@ const PostCardPreview = ({ navigation, route }) => {
         <ScrollView scrollEventThrottle={16} /*Scrollview da página toda */>
           <View style={{ flex: 1, paddingTop: 20 }}>
             <Text style={styles.textTitles}>{location} </Text>
-
-            {/* <Text style={styles.text}>
-              Coordinates: {latitude} , {longitude}
-            </Text>
-            <Text style={styles.text}>Sea State: {seaState}m </Text> */}
-
             <Text style={styles.textSubTitles}>Your Gallery: </Text>
 
             <View style={{ height: 150, marginTop: 0 }}>
@@ -394,38 +351,7 @@ const PostCardPreview = ({ navigation, route }) => {
                   ></Rating>
                 )}
               </View>
-
-              <View style={styles.textBoxSocial}>
-                <Text style={styles.textIcons}>Share on social </Text>
-                <View
-                  style={{ flexWrap: "wrap", alignContent: "center", flex: 1 }}
-                >
-                  <View style={{ alignSelf: "center", height: 50 }}>
-                    <TouchableOpacity
-                      style={styles.icon}
-                      onPress={() => onShare()}
-                    >
-                      <AntDesign
-                        name="facebook-square"
-                        size={50}
-                        color="#4267B2"
-                      />
-                    </TouchableOpacity>
-                  </View>
-
-                  <View style={{ alignSelf: "center", height: 50 }}>
-                    <TouchableOpacity
-                      style={styles.icon}
-                      onPress={() => onShare()}
-                    >
-                      <AntDesign name="instagram" size={50} color="#c13584" />
-                    </TouchableOpacity>
-                  </View>
-                </View>
-              </View>
-
               <Text style={styles.textSubTitles}>Your Featured Photo: </Text>
-
               <View
                 style={{
                   width: ITEM_WIDTH / 1.1,
@@ -445,16 +371,15 @@ const PostCardPreview = ({ navigation, route }) => {
 
                 {editComment == "" ? (
                   <Text style={styles.textComment} /*Comentário da viagem */>
-                    {" "}
                     {comment}
                   </Text>
                 ) : (
-                  <Text style={styles.textComment}> {editComment}</Text>
+                  <Text style={styles.textComment}>{editComment}</Text>
                 )}
               </View>
 
               <View style={styles.textBoxPostCard}>
-                <Text style={styles.textIcons}>Edit PostCard</Text>
+                <Text style={styles.textIcons}>Edit PostCard to share</Text>
 
                 <View
                   style={{
@@ -465,15 +390,7 @@ const PostCardPreview = ({ navigation, route }) => {
                   }}
                 >
                   <TouchableOpacity
-                    onPress={() =>
-                      navigation.navigate("EditCard", {
-                        selectedImage1: selectedImage1,
-                        selectedImage2: selectedImage2,
-                        selectedImage3: selectedImage3,
-                        selectedImage4: selectedImage4,
-                      })
-                    }
-                  >
+                    onPress={() => navigation.navigate("EditCard", {tripId: tripId})}>
                     <FontAwesome name="edit" size={50} color="#12AEB7" />
                   </TouchableOpacity>
                 </View>
@@ -497,20 +414,14 @@ const PostCardPreview = ({ navigation, route }) => {
                   />
 
                   <Text style={styles.text}>
-                    {" "}
                     First Seen at: {specie.Sighted}
                   </Text>
 
                   <Text style={styles.text}>
-                    {" "}
                     Behaviours: {specie.Behaviours}
                   </Text>
 
-                  {/* { specie.Behaviours.map((behaviour, key1) => {
-                        <Text style={styles.text} key={key1}>{behaviour}</Text>
-                    })} */}
                   <Text style={styles.text}>
-                    {" "}
                     Reactions to boat: {specie.ReactionsToBoat}
                   </Text>
                 </View>
@@ -560,7 +471,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "700",
     textAlign: "center",
-    marginTop: 5,
     textShadowColor: "rgba(0, 0, 0, 1)",
   },
   textTitles: {
@@ -587,9 +497,9 @@ const styles = StyleSheet.create({
     height: null,
     width: null,
     resizeMode: "cover",
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: "#dddddd",
+    borderRadius: 15,
+
+
   },
   imageSpecies: {
     marginTop: 10,
@@ -642,11 +552,12 @@ const styles = StyleSheet.create({
   },
   textBoxSocial: {
     backgroundColor: "rgba(0, 0, 0, 0.33)",
-    margin: 10,
+    margin: 20,
     borderRadius: 15,
     width: ITEM_WIDTH / 1.1,
-    height: 95,
+    height: 50,
     alignSelf: "center",
+    justifyContent: 'center'
   },
   RatingBox: {
     backgroundColor: "white",

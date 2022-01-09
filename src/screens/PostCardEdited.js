@@ -31,6 +31,7 @@ import Images from "../Images";
 import { Card } from "react-native-elements/dist/card/Card";
 import * as ImagePicker from "expo-image-picker";
 const { height, width } = Dimensions.get("window");
+import ViewShot from "react-native-view-shot";
 
 let ITEM_WIDTH = Dimensions.get("window").width;
 
@@ -58,8 +59,8 @@ const PostCardEdited = ({ navigation, route }) => {
   const behaviour = sightedSpecies.Behaviours;
 
   var img = "";
+  var messageText = 'Text that you want to share goes here';
 
-  //const [editedrating, setRating] = useState('');
   const [editComment, setComment] = useState("");
   const [editRating, setRating] = useState("");
   const [editPhoto, setPhoto] = useState("");
@@ -108,15 +109,13 @@ const PostCardEdited = ({ navigation, route }) => {
     getPhoto();
   }, []);
 
-  //console.log('comment:' + editComment);
 
   const [text, setText] = useState("");
 
   const onShare = async () => {
     const shareOptions = {
-      message:
-        "React Native | A framework for building native apps using React",
-      url: Images.dolphin1,
+      message: editComment,
+      url: editPhoto,
     };
 
     try {
@@ -125,6 +124,19 @@ const PostCardEdited = ({ navigation, route }) => {
       alert(error.message);
     }
   };
+
+  let openShareDialogAsync = async () => {
+
+
+    if (!(await Sharing.isAvailableAsync())) {
+      alert(`Uh oh, sharing isn't available on your platform`);
+      return;
+    }
+    console.log(editPhoto)
+
+    await Sharing.shareAsync(editPhoto);
+  };
+
 
   let [selectedImage1, setSelectedImage1] = React.useState(null);
 
@@ -290,6 +302,7 @@ const PostCardEdited = ({ navigation, route }) => {
   }
 
   return (
+
     <ImageBackground
       blurRadius={50}
       source={require("../../assets/welcomeimage/welcome2.png")}
@@ -313,12 +326,6 @@ const PostCardEdited = ({ navigation, route }) => {
         <ScrollView scrollEventThrottle={16} /*Scrollview da página toda */>
           <View style={{ flex: 1, paddingTop: 20 }}>
             <Text style={styles.textTitles}>{location} </Text>
-
-            {/* <Text style={styles.text}>
-              Coordinates: {latitude} , {longitude}
-            </Text>
-            <Text style={styles.text}>Sea State: {seaState}m </Text> */}
-
             <Text style={styles.textSubTitles}>Your Gallery: </Text>
 
             <View style={{ height: 150, marginTop: 0 }}>
@@ -393,35 +400,16 @@ const PostCardEdited = ({ navigation, route }) => {
                   ></Rating>
                 )}
               </View>
+              <TouchableOpacity
+                style={styles.icon}
+                onPress={() => openShareDialogAsync()}
+              >
+                <View style={styles.textBoxSocial}>
+                  <Text style={styles.textIcons}>Share on social </Text>
 
-              <View style={styles.textBoxSocial}>
-                <Text style={styles.textIcons}>Share on social </Text>
-                <View
-                  style={{ flexWrap: "wrap", alignContent: "center", flex: 1 }}
-                >
-                  <View style={{ alignSelf: "center", height: 50 }}>
-                    <TouchableOpacity
-                      style={styles.icon}
-                      onPress={() => onShare()}
-                    >
-                      <AntDesign
-                        name="facebook-square"
-                        size={50}
-                        color="#4267B2"
-                      />
-                    </TouchableOpacity>
-                  </View>
-
-                  <View style={{ alignSelf: "center", height: 50 }}>
-                    <TouchableOpacity
-                      style={styles.icon}
-                      onPress={() => onShare()}
-                    >
-                      <AntDesign name="instagram" size={50} color="#c13584" />
-                    </TouchableOpacity>
-                  </View>
                 </View>
-              </View>
+              </TouchableOpacity>
+
 
               <Text style={styles.textSubTitles}>Your Featured Photo: </Text>
 
@@ -485,7 +473,7 @@ const PostCardEdited = ({ navigation, route }) => {
 
             {sightedSpecies.map((specie, key) => {
               return (
-                <View key = {key} style={styles.textBoxSpecies}>
+                <View key={key} style={styles.textBoxSpecies}>
                   <Text style={styles.textSightedSpecies} key={key}>
                     {specie.SpeciesName}
                   </Text>
@@ -496,20 +484,15 @@ const PostCardEdited = ({ navigation, route }) => {
                   />
 
                   <Text style={styles.text}>
-                    {" "}
                     First Seen at: {specie.Sighted}
                   </Text>
 
                   <Text style={styles.text}>
-                    {" "}
+             
                     Behaviours: {specie.Behaviours}
                   </Text>
-
-                  {/* { specie.Behaviours.map((behaviour, key1) => {
-                        <Text style={styles.text} key={key1}>{behaviour}</Text>
-                    })} */}
+    
                   <Text style={styles.text}>
-                    {" "}
                     Reactions to boat: {specie.ReactionsToBoat}
                   </Text>
                 </View>
@@ -559,8 +542,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "700",
     textAlign: "center",
-    marginTop: 5,
     textShadowColor: "rgba(0, 0, 0, 1)",
+
   },
   textTitles: {
     color: "white",
@@ -640,12 +623,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   textBoxSocial: {
-    backgroundColor: "rgba(0, 0, 0, 0.2)",
-    margin: 10,
+    backgroundColor: "rgba(0, 0, 0, 0.33)",
+    margin: 20,
     borderRadius: 15,
     width: ITEM_WIDTH / 1.1,
-    height: 95,
+    height: 50,
     alignSelf: "center",
+    justifyContent: 'center',
+    flex: 1,
+    
   },
   RatingBox: {
     backgroundColor: "white",
@@ -678,7 +664,9 @@ const styles = StyleSheet.create({
   imageBackground: {
     flex: 1,
   },
-  darkerimage: {},
+  darkerimage: {
+
+  },
   icon: {
     flex: 1,
     alignSelf: "flex-start",
