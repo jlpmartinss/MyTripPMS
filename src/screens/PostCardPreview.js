@@ -543,7 +543,6 @@ const styles = StyleSheet.create({
   },
   textSightedSpecies: {
     paddingHorizontal: 25,
-    marginLeft: 10,
     fontSize: 18,
     fontWeight: "700",
     marginTop: 10,
