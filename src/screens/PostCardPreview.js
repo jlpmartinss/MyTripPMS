@@ -436,8 +436,8 @@ const PostCardPreview = ({ navigation, route }) => {
             );
           })}
 
+          <Text style={styles.textTitles}>Route: </Text>
           <View style={styles.textBoxMap}>
-            <Text style={styles.textTitles}>Route: </Text>
             <Image style={styles.imageMap} source={getRouteImage(name)} />
           </View>
         </View>
