@@ -444,17 +444,12 @@ const PostCardPreview = ({ navigation, route }) => {
 
             <Text style={styles.textTitles}>Description: </Text>
             {/*Adicionar descrição*/}
-            <Text style={styles.textTitles}>
-              Route:
-              <Image style={styles.image} source={getRouteImage(name)} />
-              {"\n"}
-              {"\n"}
-              {"\n"}
-              {"\n"}
-              {"\n"}
-              {"\n"}
-              {"\n"}
-            </Text>
+            
+            <Text style={styles.textTitles}>Route: </Text>
+            {/*Adicionar descrição*/}
+            <Image style={styles.image} source={getRouteImage(name)} />
+           
+           
           </View>
         </ScrollView>
       </View>
