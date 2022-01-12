@@ -10,7 +10,7 @@ import {
   Dimensions,
   ImageBackground,
 } from "react-native";
-import { AntDesign} from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import Rating from "react-native-easy-rating";
 
 import * as ImagePicker from "expo-image-picker";
@@ -18,10 +18,8 @@ import { ScrollView } from "react-native-gesture-handler";
 
 let ITEM_WIDTH = Dimensions.get("window").width;
 
-
-
 export default function EditPostCard({ route, navigation }) {
-  const {tripId} = route.params;
+  const { tripId } = route.params;
   const [rating, setRating] = useState();
   const [editComment, setComment] = useState("");
   let [selectedImage, setSelectedImage] = React.useState(null);
@@ -47,7 +45,6 @@ export default function EditPostCard({ route, navigation }) {
 
     setSelectedImage({ localUri: pickerResult.uri });
   };
-
 
   const setcomment = async () => {
     await AsyncStorage.setItem("newComment", editComment);

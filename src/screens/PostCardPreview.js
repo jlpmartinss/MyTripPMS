@@ -10,10 +10,7 @@ import {
   Dimensions,
 } from "react-native";
 import { Rating } from "react-native-elements";
-import {
-  AntDesign,
-  FontAwesome,
-} from "@expo/vector-icons";
+import { AntDesign, FontAwesome } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import data from "./../../jsons/Trips.json";
 import Category from "../../Category";
@@ -28,7 +25,6 @@ const PostCardPreview = ({ navigation, route }) => {
   const { tripId } = route.params;
   console.log(tripId);
 
-
   const location = data[tripId].location;
   const name = data[tripId].name;
   const date = data[tripId].date;
@@ -39,7 +35,6 @@ const PostCardPreview = ({ navigation, route }) => {
   const boatName = data[tripId].boatName;
 
   var img = "";
-
 
   const [editComment, setComment] = useState("");
   const [editRating, setRating] = useState("");
@@ -88,9 +83,6 @@ const PostCardPreview = ({ navigation, route }) => {
     getRating();
     getPhoto();
   }, []);
-
-
-  
 
   let [selectedImage1, setSelectedImage1] = React.useState(null);
 
@@ -388,7 +380,10 @@ const PostCardPreview = ({ navigation, route }) => {
                   }}
                 >
                   <TouchableOpacity
-                    onPress={() => navigation.navigate("EditCard", {tripId: tripId})}>
+                    onPress={() =>
+                      navigation.navigate("EditCard", { tripId: tripId })
+                    }
+                  >
                     <FontAwesome name="edit" size={50} color="#12AEB7" />
                   </TouchableOpacity>
                 </View>
@@ -496,8 +491,6 @@ const styles = StyleSheet.create({
     width: null,
     resizeMode: "cover",
     borderRadius: 15,
-
-
   },
   imageSpecies: {
     marginTop: 10,
@@ -555,7 +548,7 @@ const styles = StyleSheet.create({
     width: ITEM_WIDTH / 1.1,
     height: 50,
     alignSelf: "center",
-    justifyContent: 'center'
+    justifyContent: "center",
   },
   RatingBox: {
     backgroundColor: "white",

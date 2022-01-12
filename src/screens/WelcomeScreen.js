@@ -52,7 +52,7 @@ export default function SunsetScreen({ route, navigation }) {
       resizeMode="cover"
       style={styles.imageBackground}
     >
-      <ScrollView style={styles.darkerimage}>
+      <ScrollView>
         <View style={styles.container}>
           <Text style={styles.textSubTitle}>My Trip</Text>
 
@@ -129,8 +129,5 @@ const styles = StyleSheet.create({
   },
   imageBackground: {
     flex: 1,
-  },
-  darkerimage: {
-    backgroundColor: "rgba(0, 0, 0, 0.3)",
   },
 });

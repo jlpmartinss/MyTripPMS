@@ -10,10 +10,7 @@ import {
   Dimensions,
 } from "react-native";
 import { Rating, RatingProps } from "react-native-elements";
-import {
-  AntDesign,
-  FontAwesome,
-} from "@expo/vector-icons";
+import { AntDesign, FontAwesome } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Share } from "react-native";
 import data from "./../../jsons/Trips.json";
@@ -50,7 +47,7 @@ const PostCardEdited = ({ navigation, route }) => {
   const behaviour = sightedSpecies.Behaviours;
 
   var img = "";
-  var messageText = 'Text that you want to share goes here';
+  var messageText = "Text that you want to share goes here";
 
   const [editComment, setComment] = useState("");
   const [editRating, setRating] = useState("");
@@ -100,7 +97,6 @@ const PostCardEdited = ({ navigation, route }) => {
     getPhoto();
   }, []);
 
-
   const [text, setText] = useState("");
 
   const onShare = async () => {
@@ -117,17 +113,14 @@ const PostCardEdited = ({ navigation, route }) => {
   };
 
   let openShareDialogAsync = async () => {
-
-
     if (!(await Sharing.isAvailableAsync())) {
       alert(`Uh oh, sharing isn't available on your platform`);
       return;
     }
-    console.log(editPhoto)
+    console.log(editPhoto);
 
     await Sharing.shareAsync(editPhoto);
   };
-
 
   let [selectedImage1, setSelectedImage1] = React.useState(null);
 
@@ -293,7 +286,6 @@ const PostCardEdited = ({ navigation, route }) => {
   }
 
   return (
-
     <ImageBackground
       blurRadius={50}
       source={require("../../assets/welcomeimage/welcome2.png")}
@@ -397,10 +389,8 @@ const PostCardEdited = ({ navigation, route }) => {
               >
                 <View style={styles.textBoxSocial}>
                   <Text style={styles.textIcons}>Share on social </Text>
-
                 </View>
               </TouchableOpacity>
-
 
               <Text style={styles.textSubTitles}>Your Featured Photo: </Text>
 
@@ -444,8 +434,7 @@ const PostCardEdited = ({ navigation, route }) => {
                 >
                   <TouchableOpacity
                     onPress={() =>
-                      navigation.navigate("EditCard", {tripId: tripId
-                      })
+                      navigation.navigate("EditCard", { tripId: tripId })
                     }
                   >
                     <FontAwesome name="edit" size={50} color="#12AEB7" />
@@ -475,10 +464,9 @@ const PostCardEdited = ({ navigation, route }) => {
                   </Text>
 
                   <Text style={styles.text}>
-             
                     Behaviours: {specie.Behaviours}
                   </Text>
-    
+
                   <Text style={styles.text}>
                     Reactions to boat: {specie.ReactionsToBoat}
                   </Text>
@@ -530,7 +518,6 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     textAlign: "center",
     textShadowColor: "rgba(0, 0, 0, 1)",
-
   },
   textTitles: {
     color: "white",
@@ -616,9 +603,8 @@ const styles = StyleSheet.create({
     width: ITEM_WIDTH / 1.1,
     height: 50,
     alignSelf: "center",
-    justifyContent: 'center',
+    justifyContent: "center",
     flex: 1,
-    
   },
   RatingBox: {
     backgroundColor: "white",
@@ -651,9 +637,7 @@ const styles = StyleSheet.create({
   imageBackground: {
     flex: 1,
   },
-  darkerimage: {
-
-  },
+  darkerimage: {},
   icon: {
     flex: 1,
     alignSelf: "flex-start",

@@ -1,36 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import { Button, Image, View, Platform, TouchableOpacity, Text, StyleSheet, ImageBackground, Dimensions } from 'react-native';
-import * as ImagePicker from 'expo-image-picker';
-import * as Sharing from 'expo-sharing';
-import { ScrollView } from 'react-native-gesture-handler';
+import React, { useState, useEffect } from "react";
+import {
+  Button,
+  Image,
+  View,
+  Platform,
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  Dimensions,
+} from "react-native";
+import * as ImagePicker from "expo-image-picker";
+import * as Sharing from "expo-sharing";
+import { ScrollView } from "react-native-gesture-handler";
 
-let ITEM_WIDTH = Dimensions.get('window').width;
+let ITEM_WIDTH = Dimensions.get("window").width;
 //Documentation https://docs.expo.dev/versions/latest/sdk/imagepicker/#permissions
 
 export default function SelectPictureScreen() {
-  
   let [selectedImage, setSelectedImage] = React.useState(null);
   var count = 0;
   let ImageList = [];
 
-  
-
   let openImagePickerAsync = async () => {
-    let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    
+    let permissionResult =
+      await ImagePicker.requestMediaLibraryPermissionsAsync();
+
     if (permissionResult.granted === false) {
-      alert('Permission to access camera roll is required!');
+      alert("Permission to access camera roll is required!");
       return;
     }
 
-    let pickerResult = await ImagePicker.launchImageLibraryAsync( {
-      
+    let pickerResult = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       aspect: [4, 3],
       quality: 1,
-    })
-      
-    ;
+    });
+
     if (pickerResult.cancelled === true) {
       return;
     }
@@ -49,48 +55,60 @@ export default function SelectPictureScreen() {
   if (selectedImage !== null) {
     return (
       <View style={styles.container}>
-        
-        <ImageBackground blurRadius = {50} source={{ uri: selectedImage.localUri }} 
-        resizeMode="cover" style={styles.imageBackground}> 
-
-          <View style= {styles.headerbox}>
-            <Text style= {styles.textHeader}>Select photo</Text>
+        <ImageBackground
+          blurRadius={50}
+          source={{ uri: selectedImage.localUri }}
+          resizeMode="cover"
+          style={styles.imageBackground}
+        >
+          <View style={styles.headerbox}>
+            <Text style={styles.textHeader}>Select photo</Text>
           </View>
-        
-            <ScrollView>
-              <Image source={{ uri: selectedImage.localUri }} style={styles.thumbnail} />
-                <TouchableOpacity onPress={openShareDialogAsync} style={styles.buttom}  >
-                <Text style={styles.textButton}>Share this photo</Text>
-                </TouchableOpacity>
-            </ScrollView>
 
-        </ImageBackground> 
-
+          <ScrollView>
+            <Image
+              source={{ uri: selectedImage.localUri }}
+              style={styles.thumbnail}
+            />
+            <TouchableOpacity
+              onPress={openShareDialogAsync}
+              style={styles.buttom}
+            >
+              <Text style={styles.textButton}>Share this photo</Text>
+            </TouchableOpacity>
+          </ScrollView>
+        </ImageBackground>
       </View>
     );
   }
 
   return (
-    
     <View style={styles.container}>
-
-      <ImageBackground blurRadius = {50} source={require("../../assets/Trips/imdesertas.jpg")} resizeMode="cover" style={styles.imageBackground}> 
-
-        <View style= {styles.headerbox}>
-          <Text style= {styles.textHeader}>Select photo</Text>
+      <ImageBackground
+        blurRadius={50}
+        source={require("../../assets/Trips/imdesertas.jpg")}
+        resizeMode="cover"
+        style={styles.imageBackground}
+      >
+        <View style={styles.headerbox}>
+          <Text style={styles.textHeader}>Select photo</Text>
         </View>
 
-          <ScrollView>
-            <View style={styles.textBox}>
-              <Text style={styles.instructions}>To share a photo from your phone with a friend, just press the button below!</Text>
-            </View>        
+        <ScrollView>
+          <View style={styles.textBox}>
+            <Text style={styles.instructions}>
+              To share a photo from your phone with a friend, just press the
+              button below!
+            </Text>
+          </View>
 
-            <TouchableOpacity onPress={openImagePickerAsync} style={styles.buttom}>
-              <Text style={styles.textButton}>Pick a photo</Text>
-            </TouchableOpacity>
-            
-          </ScrollView>
-          
+          <TouchableOpacity
+            onPress={openImagePickerAsync}
+            style={styles.buttom}
+          >
+            <Text style={styles.textButton}>Pick a photo</Text>
+          </TouchableOpacity>
+        </ScrollView>
       </ImageBackground>
     </View>
   );
@@ -98,9 +116,9 @@ export default function SelectPictureScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
   logo: {
     width: 305,
@@ -108,63 +126,63 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   instructions: {
-    color: 'white',
+    color: "white",
     fontSize: 16,
     marginHorizontal: 15,
     margin: 10,
-    textAlign: 'center'
+    textAlign: "center",
   },
   buttom: {
-    width: ITEM_WIDTH/2,
+    width: ITEM_WIDTH / 2,
     height: 40,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     borderRadius: 8,
-    backgroundColor: '#12AEB7',
+    backgroundColor: "#12AEB7",
     marginTop: 0,
-    alignSelf: 'center'
+    alignSelf: "center",
   },
   textButton: {
-      color: 'white',
-      fontWeight: 'bold',
-      fontSize: 18
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 18,
   },
   thumbnail: {
-    width: ITEM_WIDTH/1.1,
+    width: ITEM_WIDTH / 1.1,
     height: ITEM_WIDTH,
-    resizeMode: 'contain',
-    alignSelf: 'center',
-    margin: 30,    
+    resizeMode: "contain",
+    alignSelf: "center",
+    margin: 30,
     borderRadius: 15,
   },
   imageBackground: {
     flex: 1,
-    width: ITEM_WIDTH
+    width: ITEM_WIDTH,
   },
   headerbox: {
     width: ITEM_WIDTH,
     paddingTop: 35,
-    padding:8,
-    flex:1     
+    padding: 8,
+    flex: 1,
   },
   textHeader: {
-    flex:1,
+    flex: 1,
     width: ITEM_WIDTH,
-    position: 'absolute',
-    color: 'white',
-    paddingLeft:10,
+    position: "absolute",
+    color: "white",
+    paddingLeft: 10,
     paddingBottom: 2,
-    textShadowColor: 'rgba(0, 0, 0, 1)',
+    textShadowColor: "rgba(0, 0, 0, 1)",
     textShadowRadius: 2,
-    fontWeight: 'bold',
-    fontSize: 22,       
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
-    zIndex: 10
+    fontWeight: "bold",
+    fontSize: 22,
+    backgroundColor: "rgba(0, 0, 0, 0.2)",
+    zIndex: 10,
   },
   textBox: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.33)',
+    backgroundColor: "rgba(0, 0, 0, 0.33)",
     margin: 15,
     borderRadius: 15,
-  }
+  },
 });
