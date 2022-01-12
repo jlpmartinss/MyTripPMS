@@ -3,32 +3,23 @@ import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
-  Button,
   ScrollView,
   StyleSheet,
   Image,
-  TouchableHighlight,
-  TextInput,
   ImageBackground,
   Dimensions,
-  Touchable,
 } from "react-native";
 import { Rating, RatingProps } from "react-native-elements";
 import {
-  Entypo,
-  Feather,
-  Ionicons,
-  Icon,
   AntDesign,
   FontAwesome,
 } from "@expo/vector-icons";
-import { RectButton, TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import { Share } from "react-native";
 import data from "./../../jsons/Trips.json";
 import Category from "../../Category";
 import * as Sharing from "expo-sharing";
 import Images from "../Images";
-import { Card } from "react-native-elements/dist/card/Card";
 import * as ImagePicker from "expo-image-picker";
 const { height, width } = Dimensions.get("window");
 import ViewShot from "react-native-view-shot";
@@ -453,11 +444,7 @@ const PostCardEdited = ({ navigation, route }) => {
                 >
                   <TouchableOpacity
                     onPress={() =>
-                      navigation.navigate("EditCard", {
-                        selectedImage1: selectedImage1,
-                        selectedImage2: selectedImage2,
-                        selectedImage3: selectedImage3,
-                        selectedImage4: selectedImage4,
+                      navigation.navigate("EditCard", {tripId: tripId
                       })
                     }
                   >

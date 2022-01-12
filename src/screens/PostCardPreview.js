@@ -8,15 +8,13 @@ import {
   Image,
   ImageBackground,
   Dimensions,
-  Touchable,
 } from "react-native";
 import { Rating } from "react-native-elements";
 import {
   AntDesign,
   FontAwesome,
 } from "@expo/vector-icons";
-import { RectButton, TouchableOpacity } from "react-native-gesture-handler";
-import { Share } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import data from "./../../jsons/Trips.json";
 import Category from "../../Category";
 import Images from "../Images";
