@@ -35,6 +35,7 @@ const PostCardPreview = ({ navigation, route }) => {
   const boatName = data[tripId].boatName;
 
   var img = "";
+  var routeImage = "";
 
   const [editComment, setComment] = useState("");
   const [editRating, setRating] = useState("");
@@ -77,6 +78,26 @@ const PostCardPreview = ({ navigation, route }) => {
       console.log(error);
     }
   };
+
+  function getRouteImage(name) {
+    switch (name) {
+      case "Whale Watching Trip":
+        return require("../../assets/Trips/mapasVMT_cetaceos.png");
+        break;
+      case "Desertas Island Trip":
+        return require("../../assets/Trips/mapasVMT_desertas-1.png");
+        break;
+      case "Fajãs Trip":
+        return require("../../assets/Trips/mapa_fajas.png");
+        break;
+      case "Sunset Trip":
+        return require("../../assets/Trips/mapa_por-do-sol.png");
+        break;
+      default:
+        console.log("There is something wrong with route image");
+        return;
+    }
+  }
 
   useEffect(() => {
     getComment();
@@ -176,8 +197,8 @@ const PostCardPreview = ({ navigation, route }) => {
     setSelectedImage4({ localUri: pickerResult.uri });
   };
 
-  function SpeciesImageFinder(name) {
-    switch (name) {
+  function SpeciesImageFinder(routeName) {
+    switch (routeName) {
       //Whales
       case "Blainvilles beaked Whale":
         return (img = Images.whale1);
@@ -423,8 +444,17 @@ const PostCardPreview = ({ navigation, route }) => {
 
             <Text style={styles.textTitles}>Description: </Text>
             {/*Adicionar descrição*/}
-            <Text style={styles.textTitles}>Route: {routetrip} </Text>
-            <Image /*Insert route image*/ />
+            <Text style={styles.textTitles}>
+              Route:
+              <Image style={styles.image} source={getRouteImage(name)} />
+              {"\n"}
+              {"\n"}
+              {"\n"}
+              {"\n"}
+              {"\n"}
+              {"\n"}
+              {"\n"}
+            </Text>
           </View>
         </ScrollView>
       </View>
@@ -486,10 +516,11 @@ const styles = StyleSheet.create({
     textShadowColor: "rgba(0, 0, 0, 1)",
   },
   image: {
+    alignSelf: "center",
+    marginTop: 15,
     flex: 1,
-    height: null,
-    width: null,
-    resizeMode: "cover",
+    width: ITEM_WIDTH - 30,
+    height: ITEM_WIDTH / 1.5,
     borderRadius: 15,
   },
   imageSpecies: {
