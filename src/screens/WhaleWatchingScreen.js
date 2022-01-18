@@ -13,6 +13,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import ImageBackground from "react-native/Libraries/Image/ImageBackground";
 import { AntDesign } from "@expo/vector-icons";
 import Images from "../Images";
+import ReactNativeZoomableView from '@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView';
 
 const ITEM_WIDTH = Dimensions.get("window").width;
 
@@ -90,10 +91,23 @@ export default function WhaleWatchingScreen({ navigation }) {
 
           <View style={styles.textBoxMap}>
             <Text style={styles.textTitle}>Route:</Text>
+            <ReactNativeZoomableView
+                    maxZoom={3}
+                    minZoom={1}
+                    zoomStep={0.5}
+                    initialZoom={1}
+                    captureEvent={true}
+                    //bindToBorders={true}
+                    //onZoomAfter={this.logOutZoomState}
+                    style={{
+                        padding: 10,
+                        
+                    }}>
             <Image
-              style={styles.image}
+              style={styles.imageRoute}
               source={require("../../assets/Trips/mapasVMT_cetaceos.png")}
             />
+            </ReactNativeZoomableView>
           </View>
 
           <View style={styles.textBox}>
@@ -285,6 +299,10 @@ const styles = StyleSheet.create({
     height: ITEM_WIDTH / 1.5,
     borderRadius: 15,
   },
+  imageRoute: {
+    width: ITEM_WIDTH - 30,
+    height: ITEM_WIDTH / 1.5,
+  },
   imageFace: {
     flex: 1,
     height: ITEM_WIDTH / 2.5,
@@ -343,5 +361,6 @@ const styles = StyleSheet.create({
     margin: 15,
     borderRadius: 15,
     backgroundColor: "rgba(0, 200, 255, 0.33)",
+    overflow:'hidden',
   },
 });

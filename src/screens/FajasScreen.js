@@ -21,8 +21,6 @@ const ITEM_WIDTH = Dimensions.get("window").width;
 export default function FajasScreen({ route, navigation }) {
   console.log("I'm in Fajas Screen ");
 
-  //const scale = React.useRef(new Animated.Value(1)).current;
-  //const handlePinch = Animated.event([ { nativeEvent: {scale: scale} }]);
 
   return (
     <View style={styles.container}>
@@ -101,18 +99,18 @@ export default function FajasScreen({ route, navigation }) {
           <View style={styles.textBoxMap}>
             <Text style={styles.textTitle}>Route</Text>
 
-            <ReactNativeZoomableView
-   maxZoom={3}
-   minZoom={1}
-   zoomStep={0.5}
-   initialZoom={1}
-   captureEvent={true}
-   //bindToBorders={true}
-   //onZoomAfter={this.logOutZoomState}
-   style={{
-      padding: 10,
-      
-   }}>
+              <ReactNativeZoomableView
+                maxZoom={3}
+                minZoom={1}
+                zoomStep={0.5}
+                initialZoom={1}
+                captureEvent={true}
+                //bindToBorders={true}
+                //onZoomAfter={this.logOutZoomState}
+                style={{
+                    padding: 10,
+                    
+                }}>
             <Image
               style={styles.imageRoute }
               source={require("../../assets/Trips/mapa_fajas.png")}
@@ -312,13 +310,8 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   imageRoute: {
-    //alignSelf: "center",
-    //marginTop: 15,
-    //flex: 1,
-    
     width: ITEM_WIDTH - 30,
     height: ITEM_WIDTH / 1.5,
-    //borderRadius: 15,
   },
   imageFace: {
     flex: 1,
