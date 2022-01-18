@@ -21,6 +21,8 @@ import * as ImagePicker from "expo-image-picker";
 const { height, width } = Dimensions.get("window");
 import ViewShot from "react-native-view-shot";
 
+import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView";
+
 let ITEM_WIDTH = Dimensions.get("window").width;
 
 const PostCardEdited = ({ navigation, route }) => {
@@ -491,7 +493,20 @@ const PostCardEdited = ({ navigation, route }) => {
 
           <Text style={styles.textTitles}>Route: </Text>
           <View style={styles.textBoxMap}>
-            <Image style={styles.imageMap} source={getRouteImage(name)} />
+          <ReactNativeZoomableView
+                    maxZoom={3}
+                    minZoom={1}
+                    zoomStep={0.5}
+                    initialZoom={1}
+                    captureEvent={true}
+                    //bindToBorders={true}
+                    //onZoomAfter={this.logOutZoomState}
+                    style={{
+                        padding: 10,
+                        
+                    }}>
+            <Image style={styles.imageRoute} source={getRouteImage(name)} />
+            </ReactNativeZoomableView>
           </View>
         </View>
       </ScrollView>
@@ -667,6 +682,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     alignSelf: "center",
     backgroundColor: "rgba(0, 200, 255, 0.33)",
+    overflow:'hidden'
   },
   imageMap: {
     alignSelf: "center",
@@ -675,5 +691,13 @@ const styles = StyleSheet.create({
     width: ITEM_WIDTH - 30,
     height: ITEM_WIDTH / 1.7,
     borderRadius: 15,
+  },
+  imageRoute: {
+    alignSelf: "center",
+    //alignContent: "center",
+    //marginTop: 15,
+    width: ITEM_WIDTH - 30,
+    height: ITEM_WIDTH / 1.7,
+    //borderRadius: 15,
   },
 });
