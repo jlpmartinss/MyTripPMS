@@ -16,7 +16,6 @@ import data from "./../../jsons/Trips.json";
 import Category from "../../Category";
 import Images from "../Images";
 import * as ImagePicker from "expo-image-picker";
-
 import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView";
 
 const { height, width } = Dimensions.get("window");
@@ -417,7 +416,7 @@ const PostCardPreview = ({ navigation, route }) => {
 
           {sightedSpecies.map((specie, key) => {
             return (
-              <View key={key} style={styles.textBoxSpecies}>
+              <View style={styles.textBoxSpecies}>
                 <Text style={styles.textSightedSpecies} key={key}>
                   {specie.SpeciesName}
                 </Text>
@@ -437,22 +436,16 @@ const PostCardPreview = ({ navigation, route }) => {
               </View>
             );
           })}
-
-          <Text style={styles.textTitles}>Route: </Text>
           <View style={styles.textBoxMap}>
-          <ReactNativeZoomableView
-                    maxZoom={3}
-                    minZoom={1}
-                    zoomStep={0.5}
-                    initialZoom={1}
-                    captureEvent={true}
-                    //bindToBorders={true}
-                    //onZoomAfter={this.logOutZoomState}
-                    style={{
-                        padding: 10,
-                        
-                    }}>
-            <Image style={styles.imageRoute} source={getRouteImage(name)} />
+            <ReactNativeZoomableView
+              maxZoom={1.5}
+              minZoom={1}
+              zoomStep={0.5}
+              initialZoom={1}
+              captureEvent={true}
+            >
+              <Text style={styles.textTitles}>Route</Text>
+              <Image style={styles.imageMap} source={getRouteImage(name)} />
             </ReactNativeZoomableView>
           </View>
         </View>
@@ -534,14 +527,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: 180,
     height: 150,
-  },
-  imageRoute: {
-    alignSelf: "center",
-    //alignContent: "center",
-    //marginTop: 15,
-    width: ITEM_WIDTH - 30,
-    height: ITEM_WIDTH / 1.7,
-    //borderRadius: 15,
   },
   textBox: {
     flex: 1,
@@ -635,7 +620,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     alignSelf: "center",
     backgroundColor: "rgba(0, 200, 255, 0.33)",
-    overflow:'hidden'
+    overflow: "hidden",
   },
   imageMap: {
     alignSelf: "center",
