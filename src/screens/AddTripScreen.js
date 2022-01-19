@@ -49,9 +49,9 @@ const AddTripScreen = ({ route, navigation }) => {
   const checkTripTime = () => {
     if (Data[idTrip]) {
       var tripTime = Data[idTrip].fullDate;
-      console.log("dataatual" + dataAtual);
-      console.log("tripTime:" + tripTime);
-      if (dataAtual > tripTime) {
+      console.log("dataatual" + new Date(dataAtual));
+      console.log("tripTime:" + new Date(tripTime));
+      if (new Date(dataAtual) > new Date(tripTime)) {
         Alert.alert("You have successfully added trip " + idTrip);
         setData();
       } else {
