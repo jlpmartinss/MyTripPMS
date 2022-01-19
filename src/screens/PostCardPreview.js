@@ -286,7 +286,85 @@ const PostCardPreview = ({ navigation, route }) => {
 
       <ScrollView scrollEventThrottle={16} /*Scrollview da página toda */>
         <View style={{ flex: 1, paddingTop: 20 }}>
-          <Text style={styles.textTitles}>{location} </Text>
+          <Text style={styles.textTitles}>
+            {name} | {boatName}
+            <Text style={styles.textTitles}>{location} </Text>
+          </Text>
+          <Text style={styles.text}>
+            {date} at {time}
+          </Text>
+
+          <Text style={styles.textSubTitles}>Your Featured Photo: </Text>
+          <View
+            style={{
+              width: ITEM_WIDTH / 1.1,
+              height: 300,
+              marginTop: 0,
+              alignSelf: "center",
+            }}
+          >
+            {editPhoto == "" ? (
+              <Image
+                style={styles.image}
+                source={require("../../assets/Trips/imsunset.jpg")}
+              />
+            ) : (
+              <Image style={styles.image} source={{ uri: editPhoto }} />
+            )}
+
+            {editComment == "" ? (
+              <Text style={styles.textComment} /*Comentário da viagem */>
+                {comment}
+              </Text>
+            ) : (
+              <Text style={styles.textComment}>{editComment}</Text>
+            )}
+          </View>
+          <View style={styles.RatingBox}>
+            {editRating != "" ? (
+              <Rating
+                style={{ marginTop: 0, alignSelf: "center" }}
+                showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
+                type="star"
+                startingValue={editRating}
+                readonly
+                imageSize={22}
+              ></Rating>
+            ) : (
+              <Rating
+                style={{ marginTop: 0, alignSelf: "center" }}
+                readonly
+                showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
+                type="star"
+                startingValue={3}
+                imageSize={22}
+              ></Rating>
+            )}
+          </View>
+
+          <View style={styles.textBoxPostCard}>
+            <Text style={styles.textIcons}>Edit PostCard to share</Text>
+
+            <View
+              style={{
+                height: 45,
+                width: 50,
+                marginTop: 5,
+                alignSelf: "center",
+              }}
+            >
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("EditCard", { tripId: tripId })
+                }
+              >
+                <FontAwesome name="edit" size={50} color="#12AEB7" />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+
+        <View>
           <Text style={styles.textSubTitles}>Your Gallery: </Text>
 
           <View style={{ height: 150, marginTop: 0 }}>
@@ -332,86 +410,7 @@ const PostCardPreview = ({ navigation, route }) => {
               </TouchableOpacity>
             </ScrollView>
           </View>
-          <View style={{ flex: 1, paddingTop: 20 }}>
-            <Text style={styles.textTitles}>
-              {name} | {boatName}
-            </Text>
-            <Text style={styles.text}>
-              {date} at {time}
-            </Text>
 
-            <View style={styles.RatingBox}>
-              {editRating != "" ? (
-                <Rating
-                  style={{ marginTop: 0, alignSelf: "center" }}
-                  showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
-                  type="star"
-                  startingValue={editRating}
-                  readonly
-                  imageSize={22}
-                ></Rating>
-              ) : (
-                <Rating
-                  style={{ marginTop: 0, alignSelf: "center" }}
-                  readonly
-                  showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
-                  type="star"
-                  startingValue={3}
-                  imageSize={22}
-                ></Rating>
-              )}
-            </View>
-            <Text style={styles.textSubTitles}>Your Featured Photo: </Text>
-            <View
-              style={{
-                width: ITEM_WIDTH / 1.1,
-                height: 300,
-                marginTop: 0,
-                alignSelf: "center",
-              }}
-            >
-              {editPhoto == "" ? (
-                <Image
-                  style={styles.image}
-                  source={require("../../assets/Trips/imsunset.jpg")}
-                />
-              ) : (
-                <Image style={styles.image} source={{ uri: editPhoto }} />
-              )}
-
-              {editComment == "" ? (
-                <Text style={styles.textComment} /*Comentário da viagem */>
-                  {comment}
-                </Text>
-              ) : (
-                <Text style={styles.textComment}>{editComment}</Text>
-              )}
-            </View>
-
-            <View style={styles.textBoxPostCard}>
-              <Text style={styles.textIcons}>Edit PostCard to share</Text>
-
-              <View
-                style={{
-                  height: 45,
-                  width: 50,
-                  marginTop: 5,
-                  alignSelf: "center",
-                }}
-              >
-                <TouchableOpacity
-                  onPress={() =>
-                    navigation.navigate("EditCard", { tripId: tripId })
-                  }
-                >
-                  <FontAwesome name="edit" size={50} color="#12AEB7" />
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-        </View>
-
-        <View>
           <Text style={styles.textTitles}> Sighted Species: </Text>
 
           {sightedSpecies.map((specie, key) => {
@@ -584,12 +583,12 @@ const styles = StyleSheet.create({
   textBoxPostCard: {
     backgroundColor: "rgba(0, 0, 0, 0.33)",
     margin: 20,
-    marginTop: 40,
+    marginTop: 10,
     borderRadius: 15,
     padding: 5,
     width: ITEM_WIDTH / 1.1,
     alignSelf: "center",
-    height: 100,
+    height: 90,
   },
   imageBackground: {
     flex: 1,

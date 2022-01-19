@@ -328,142 +328,137 @@ const PostCardEdited = ({ navigation, route }) => {
 
       <ScrollView scrollEventThrottle={16} /*Scrollview da página toda */>
         <View style={{ flex: 1, paddingTop: 20 }}>
-          <Text style={styles.textTitles}>{location} </Text>
-          <Text style={styles.textSubTitles}>Your Gallery: </Text>
+          <Text style={styles.textTitles}>
+            {name} | {boatName}
+            <Text style={styles.textTitles}>{location} </Text>
+          </Text>
+          <Text style={styles.text}>
+            {date} at {time}
+          </Text>
 
-          <View style={{ height: 150, marginTop: 0 }}>
-            <ScrollView horizontal={true}>
-              <TouchableOpacity onPress={openImagePickerAsync1}>
-                {selectedImage1 == undefined ? (
-                  <Category
-                    imageUri={require("../../assets/Icons/addImage.png")}
-                  />
-                ) : (
-                  <Category imageUri={{ uri: selectedImage1.localUri }} />
-                )}
-              </TouchableOpacity>
+          <Text style={styles.textSubTitles}>Your Featured Photo: </Text>
+          <View
+            style={{
+              width: ITEM_WIDTH / 1.1,
+              height: 300,
+              marginTop: 0,
+              alignSelf: "center",
+            }}
+          >
+            {editPhoto == "" ? (
+              <Image
+                style={styles.image}
+                source={require("../../assets/Trips/imsunset.jpg")}
+              />
+            ) : (
+              <Image style={styles.image} source={{ uri: editPhoto }} />
+            )}
 
-              <TouchableOpacity onPress={openImagePickerAsync2}>
-                {selectedImage2 == undefined ? (
-                  <Category
-                    imageUri={require("../../assets/Icons/addImage.png")}
-                  />
-                ) : (
-                  <Category imageUri={{ uri: selectedImage2.localUri }} />
-                )}
-              </TouchableOpacity>
-
-              <TouchableOpacity onPress={openImagePickerAsync3}>
-                {selectedImage3 == undefined ? (
-                  <Category
-                    imageUri={require("../../assets/Icons/addImage.png")}
-                  />
-                ) : (
-                  <Category imageUri={{ uri: selectedImage3.localUri }} />
-                )}
-              </TouchableOpacity>
-
-              <TouchableOpacity onPress={openImagePickerAsync4}>
-                {selectedImage4 == undefined ? (
-                  <Category
-                    imageUri={require("../../assets/Icons/addImage.png")}
-                  />
-                ) : (
-                  <Category imageUri={{ uri: selectedImage4.localUri }} />
-                )}
-              </TouchableOpacity>
-            </ScrollView>
+            {editComment == "" ? (
+              <Text style={styles.textComment} /*Comentário da viagem */>
+                {comment}
+              </Text>
+            ) : (
+              <Text style={styles.textComment}>{editComment}</Text>
+            )}
           </View>
-          <View style={{ flex: 1, paddingTop: 20 }}>
-            <Text style={styles.textTitles}>
-              {name} | {boatName}
-            </Text>
-            <Text style={styles.text}>
-              {date} at {time}
-            </Text>
 
-            <View style={styles.RatingBox}>
-              {editRating != "" ? (
-                <Rating
-                  style={{ marginTop: 0, alignSelf: "center" }}
-                  readonly
-                  showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
-                  type="star"
-                  startingValue={editRating}
-                  imageSize={22}
-                ></Rating>
-              ) : (
-                <Rating
-                  style={{ marginTop: 0, alignSelf: "center" }}
-                  readonly
-                  showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
-                  type="star"
-                  startingValue={3}
-                  imageSize={22}
-                ></Rating>
-              )}
+          <View style={styles.RatingBox}>
+            {editRating != "" ? (
+              <Rating
+                style={{ marginTop: 0, alignSelf: "center" }}
+                readonly
+                showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
+                type="star"
+                startingValue={editRating}
+                imageSize={22}
+              ></Rating>
+            ) : (
+              <Rating
+                style={{ marginTop: 0, alignSelf: "center" }}
+                readonly
+                showRating /*Podemos apagar se quisermos isto simplesmente imprime o valor do rating */
+                type="star"
+                startingValue={3}
+                imageSize={22}
+              ></Rating>
+            )}
+          </View>
+          <TouchableOpacity
+            style={styles.icon}
+            onPress={() => openShareDialogAsync()}
+          >
+            <View style={styles.textBoxSocial}>
+              <Text style={styles.textIcons}>Share on social </Text>
             </View>
-            <TouchableOpacity
-              style={styles.icon}
-              onPress={() => openShareDialogAsync()}
-            >
-              <View style={styles.textBoxSocial}>
-                <Text style={styles.textIcons}>Share on social </Text>
-              </View>
-            </TouchableOpacity>
+          </TouchableOpacity>
 
-            <Text style={styles.textSubTitles}>Your Featured Photo: </Text>
+          <View style={styles.textBoxPostCard}>
+            <Text style={styles.textIcons}>Edit PostCard</Text>
 
             <View
               style={{
-                width: ITEM_WIDTH / 1.1,
-                height: 300,
-                marginTop: 0,
+                height: 45,
+                width: 50,
+                marginTop: 5,
                 alignSelf: "center",
               }}
             >
-              {editPhoto == "" ? (
-                <Image
-                  style={styles.image}
-                  source={require("../../assets/Trips/imsunset.jpg")}
-                />
-              ) : (
-                <Image style={styles.image} source={{ uri: editPhoto }} />
-              )}
-
-              {editComment == "" ? (
-                <Text style={styles.textComment} /*Comentário da viagem */>
-                  {" "}
-                  {comment}
-                </Text>
-              ) : (
-                <Text style={styles.textComment}> {editComment}</Text>
-              )}
-            </View>
-
-            <View style={styles.textBoxPostCard}>
-              <Text style={styles.textIcons}>Edit PostCard</Text>
-
-              <View
-                style={{
-                  height: 45,
-                  width: 50,
-                  marginTop: 5,
-                  alignSelf: "center",
-                }}
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("EditCard", { tripId: tripId })
+                }
               >
-                <TouchableOpacity
-                  onPress={() =>
-                    navigation.navigate("EditCard", { tripId: tripId })
-                  }
-                >
-                  <FontAwesome name="edit" size={50} color="#12AEB7" />
-                </TouchableOpacity>
-              </View>
+                <FontAwesome name="edit" size={50} color="#12AEB7" />
+              </TouchableOpacity>
             </View>
           </View>
         </View>
+        <Text style={styles.textSubTitles}>Your Gallery: </Text>
 
+        <View style={{ height: 150, marginTop: 0 }}>
+          <ScrollView horizontal={true}>
+            <TouchableOpacity onPress={openImagePickerAsync1}>
+              {selectedImage1 == undefined ? (
+                <Category
+                  imageUri={require("../../assets/Icons/addImage.png")}
+                />
+              ) : (
+                <Category imageUri={{ uri: selectedImage1.localUri }} />
+              )}
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={openImagePickerAsync2}>
+              {selectedImage2 == undefined ? (
+                <Category
+                  imageUri={require("../../assets/Icons/addImage.png")}
+                />
+              ) : (
+                <Category imageUri={{ uri: selectedImage2.localUri }} />
+              )}
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={openImagePickerAsync3}>
+              {selectedImage3 == undefined ? (
+                <Category
+                  imageUri={require("../../assets/Icons/addImage.png")}
+                />
+              ) : (
+                <Category imageUri={{ uri: selectedImage3.localUri }} />
+              )}
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={openImagePickerAsync4}>
+              {selectedImage4 == undefined ? (
+                <Category
+                  imageUri={require("../../assets/Icons/addImage.png")}
+                />
+              ) : (
+                <Category imageUri={{ uri: selectedImage4.localUri }} />
+              )}
+            </TouchableOpacity>
+          </ScrollView>
+        </View>
         <View>
           <Text style={styles.textTitles}> Sighted Species: </Text>
 
@@ -562,13 +557,12 @@ const styles = StyleSheet.create({
     textShadowColor: "rgba(0, 0, 0, 1)",
   },
   image: {
+    alignSelf: "center",
+    marginTop: 15,
     flex: 1,
-    height: null,
-    width: null,
-    resizeMode: "cover",
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: "#dddddd",
+    width: ITEM_WIDTH - 30,
+    height: ITEM_WIDTH / 1.5,
+    borderRadius: 15,
   },
   imageSpecies: {
     marginTop: 10,
@@ -627,7 +621,6 @@ const styles = StyleSheet.create({
     height: 50,
     alignSelf: "center",
     justifyContent: "center",
-    flex: 1,
   },
   RatingBox: {
     backgroundColor: "white",
@@ -640,22 +633,12 @@ const styles = StyleSheet.create({
   textBoxPostCard: {
     backgroundColor: "rgba(0, 0, 0, 0.33)",
     margin: 20,
-    marginTop: 40,
+    marginTop: 10,
     borderRadius: 15,
     padding: 5,
     width: ITEM_WIDTH / 1.1,
     alignSelf: "center",
-    height: 100,
-  },
-  textBoxSpecies: {
-    flex: 1,
-    flexDirection: "column",
-    backgroundColor: "rgba(0, 0, 0, 0.33)",
-    marginTop: 10,
-    borderRadius: 15,
-    width: ITEM_WIDTH / 1.1,
-    paddingBottom: 10,
-    alignSelf: "center",
+    height: 90,
   },
   imageBackground: {
     flex: 1,
@@ -666,6 +649,16 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     alignContent: "center",
     alignItems: "center",
+  },
+  textBoxSpecies: {
+    flex: 1,
+    flexDirection: "column",
+    backgroundColor: "rgba(0, 0, 0, 0.33)",
+    marginTop: 10,
+    borderRadius: 15,
+    width: ITEM_WIDTH / 1.1,
+    paddingBottom: 10,
+    alignSelf: "center",
   },
   textBoxMap: {
     flex: 1,
