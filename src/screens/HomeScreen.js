@@ -277,6 +277,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.33)",
     marginTop: 16,
     marginHorizontal: 15,
+    width: ITEM_WIDTH / 1.1,
     borderRadius: 15,
     paddingVertical: 15,
   },
