@@ -172,7 +172,7 @@ export default function DesertasScreen({ route, navigation }) {
               <View width={ITEM_WIDTH / 2 - 30}>
                 <Text style={styles.textSubTitle}>Francisco Vasconcelos:</Text>
                 <Text style={styles.textCrew}>
-                  Francisco is your tour guide. He will guide you throug your
+                  Francisco is your tour guide. He will guide you through your
                   trip and identify all the important landmarks.
                 </Text>
               </View>
@@ -204,7 +204,7 @@ export default function DesertasScreen({ route, navigation }) {
                 <Text style={styles.textSubTitle}>Marcos Silva:</Text>
                 <Text style={styles.textCrew}>
                   Marcos will be your barman. He knows everything about your
-                  drinks. You can be asured that you will serve you very well.
+                  drinks. You can be assured that you will serve you very well.
                 </Text>
               </View>
               <Image
