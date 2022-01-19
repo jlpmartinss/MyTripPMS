@@ -4,6 +4,7 @@ import {
   View,
   Text,
   TextInput,
+  Image,
   TouchableOpacity,
   StyleSheet,
   Alert,
@@ -90,14 +91,22 @@ export default function EditPostCard({ route, navigation }) {
             </TouchableOpacity>
           </View>
         </View>
-        <ScrollView>
-          <Text style={styles.textSubTitle}>Select photo</Text>
 
-          <TouchableOpacity
-            onPress={openImagePickerAsync}
-            style={styles.buttom}
-          >
-            <Text style={styles.textButton}>Pick a photo</Text>
+        <ScrollView>
+          <Text style={styles.textSubTitle}>Select a photo</Text>
+
+          <TouchableOpacity onPress={openImagePickerAsync}>
+            {selectedImage == undefined ? (
+              <Image
+                style={styles.image}
+                source={require("../../assets/Icons/addImage.png")}
+              />
+            ) : (
+              <Image
+                style={styles.image}
+                source={{ uri: selectedImage.localUri }}
+              />
+            )}
           </TouchableOpacity>
 
           <Text style={styles.textSubTitle}>Leave a comment of your Trip</Text>
@@ -112,21 +121,13 @@ export default function EditPostCard({ route, navigation }) {
           <Text style={styles.textSubTitle}>Rate your Trip</Text>
 
           <Rating
-            style={{ paddingHorizontal: 130 }}
+            style={{ alignSelf: "center", marginBottom: 40 }}
             rating={rating}
             max={5}
-            iconWidth={24}
-            iconHeight={24}
+            iconWidth={40}
+            iconHeight={40}
             onRate={setRating}
           />
-
-          <Text
-            style={
-              styles.textSubTitle
-            } /* passar este valor para o json da viagem (para depois aparecer no postcard preview) */
-          >
-            Selected Rating: {rating} stars
-          </Text>
 
           <TouchableOpacity
             style={styles.buttom}
@@ -158,14 +159,14 @@ const styles = StyleSheet.create({
     margin: 15,
     borderRadius: 8,
     textAlign: "center",
-    marginTop: 30,
+    marginTop: 10,
     alignSelf: "center",
   },
   textSubTitle: {
     color: "white",
     fontWeight: "bold",
     fontSize: 22,
-    marginTop: 20,
+    marginTop: 40,
     textShadowColor: "rgba(0, 0, 0, 1)",
     textAlign: "center",
     justifyContent: "center",
@@ -189,7 +190,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 8,
     backgroundColor: "#12AEB7",
-    marginTop: 20,
+    marginTop: 10,
     alignSelf: "center",
   },
   textButton: {
@@ -200,6 +201,7 @@ const styles = StyleSheet.create({
   imageBackground: {
     flex: 1,
     width: ITEM_WIDTH,
+    justifyContent: "space-evenly",
   },
   textHeader: {
     flex: 1,
@@ -240,5 +242,13 @@ const styles = StyleSheet.create({
     fontSize: 28,
     backgroundColor: "rgba(0, 0, 0, 0.33)",
     zIndex: 10,
+  },
+  image: {
+    alignSelf: "center",
+    marginTop: 15,
+    flex: 1,
+    width: ITEM_WIDTH / 2,
+    height: ITEM_WIDTH / 2,
+    borderRadius: 15,
   },
 });

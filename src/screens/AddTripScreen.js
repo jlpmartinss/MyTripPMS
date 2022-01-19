@@ -52,7 +52,7 @@ const AddTripScreen = ({ route, navigation }) => {
       console.log("dataatual" + dataAtual);
       console.log("tripTime:" + tripTime);
       if (dataAtual > tripTime) {
-        //Alert.alert(idTrip);
+        Alert.alert("You have successfully added trip " + idTrip);
         setData();
       } else {
         console.log("Your trip is not over yet!");
