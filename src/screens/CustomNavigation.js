@@ -28,11 +28,12 @@ const HomeTabs = () => {
         },
         tabBarStyle: {
           height: ITEM_HEIGHT / 16,
+          paddingLeft: 35,
+          paddingRight: 35,
         },
 
         tabBarActiveTintColor: "#12AEB7",
         tabBarInactiveBackgroundColor: "white",
-        tabBarActiveBackgroundColor: "#EBEBEB",
       }}
     >
       <Tab.Screen
@@ -49,7 +50,7 @@ const HomeTabs = () => {
         component={SpeciesScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <MaterialCommunityIcons name="fish" size={30} color={color} />
+            <MaterialCommunityIcons name="fish" size={38} color={color} />
           ),
         }}
       />

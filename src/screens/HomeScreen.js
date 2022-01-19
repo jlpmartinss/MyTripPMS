@@ -113,20 +113,12 @@ const Home = ({ route, navigation }) => {
                 navigation.navigate("Login");
               }}
             >
-              <MaterialCommunityIcons name="logout" size={30} color="#fff" />
+              <MaterialCommunityIcons name="logout" size={38} color="#fff" />
             </TouchableOpacity>
           </View>
         </View>
 
         <ScrollView>
-          <View style={styles.textBox}>
-            <Text style={styles.welcomeText}>
-              Hello {username}!{"\n"}
-              {"\n"}
-              Here you can see your trips. If you haven't done one yet, join!
-            </Text>
-          </View>
-
           <TouchableOpacity
             style={styles.buttom}
             onPress={() => {
@@ -135,6 +127,14 @@ const Home = ({ route, navigation }) => {
           >
             <Text style={styles.textButton}>Add a New Trip</Text>
           </TouchableOpacity>
+
+          <View style={styles.textBox}>
+            <Text style={styles.welcomeText}>
+              Hello {username}!{"\n"}
+              {"\n"}
+              Here you can see your trips. If you haven't done one yet, join!
+            </Text>
+          </View>
 
           {!isEmpty(Data[idTrip])
             ? array_.map((idTrip, key) => {
@@ -213,15 +213,13 @@ const styles = StyleSheet.create({
   },
   headerbox: {
     width: ITEM_WIDTH,
-    paddingTop: 32,
+    paddingTop: 39,
     flex: 1,
   },
   buttonBack: {
-    flex: 1,
-    flexDirection: "row",
     alignSelf: "flex-end",
-    width: 35,
-    height: 30,
+    width: 45,
+    height: 50,
     position: "absolute",
     zIndex: 15,
   },
@@ -235,13 +233,13 @@ const styles = StyleSheet.create({
     textShadowColor: "rgba(0, 0, 0, 1)",
     textShadowRadius: 2,
     fontWeight: "bold",
-    fontSize: 22,
+    fontSize: 28,
     backgroundColor: "rgba(0, 0, 0, 0.33)",
     zIndex: 10,
   },
   image: {
     marginTop: 0,
-    marginLeft: 15,
+    alignSelf: "center",
     flex: 1,
     width: ITEM_WIDTH / 1.1,
     height: ITEM_WIDTH / 1.5,
@@ -261,7 +259,7 @@ const styles = StyleSheet.create({
   buttom: {
     width: ITEM_WIDTH / 2,
     height: 40,
-    marginTop: 30,
+    marginTop: 20,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 8,
@@ -275,8 +273,10 @@ const styles = StyleSheet.create({
   },
   textBox: {
     flex: 1,
+    alignSelf: "center",
     backgroundColor: "rgba(0, 0, 0, 0.33)",
-    margin: 15,
+    marginTop: 16,
+    marginHorizontal: 15,
     borderRadius: 15,
     paddingVertical: 15,
   },

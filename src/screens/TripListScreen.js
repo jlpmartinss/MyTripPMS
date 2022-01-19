@@ -104,9 +104,15 @@ const styles = StyleSheet.create({
   },
   headerbox: {
     width: ITEM_WIDTH,
-    paddingTop: 32,
+    paddingTop: 39,
     flex: 1,
-    fontSize: 20,
+  },
+  buttonBack: {
+    alignSelf: "flex-end",
+    width: 45,
+    height: 50,
+    position: "absolute",
+    zIndex: 15,
   },
   textHeader: {
     flex: 1,
@@ -118,13 +124,12 @@ const styles = StyleSheet.create({
     textShadowColor: "rgba(0, 0, 0, 1)",
     textShadowRadius: 2,
     fontWeight: "bold",
-    fontSize: 22,
+    fontSize: 28,
     backgroundColor: "rgba(0, 0, 0, 0.33)",
     zIndex: 10,
   },
   image: {
-    marginTop: 15,
-    marginLeft: 15,
+    alignSelf: "center",
     flex: 1,
     width: ITEM_WIDTH - 35,
     height: ITEM_WIDTH / 1.5,

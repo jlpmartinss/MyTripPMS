@@ -36,7 +36,7 @@ export default function DesertasScreen({ route, navigation }) {
                 navigation.goBack();
               }}
             >
-              <AntDesign name="arrowleft" size={30} color="#fff" />
+              <AntDesign name="arrowleft" size={40} color="#fff" />
             </TouchableOpacity>
           </View>
         </View>
@@ -256,13 +256,13 @@ const styles = StyleSheet.create({
   },
   headerbox: {
     width: ITEM_WIDTH,
-    paddingTop: 32,
+    paddingTop: 39,
     flex: 1,
   },
   buttonBack: {
     alignSelf: "flex-end",
-    width: 35,
-    height: 30,
+    width: 45,
+    height: 50,
     position: "absolute",
     zIndex: 15,
   },
@@ -276,7 +276,7 @@ const styles = StyleSheet.create({
     textShadowColor: "rgba(0, 0, 0, 1)",
     textShadowRadius: 2,
     fontWeight: "bold",
-    fontSize: 22,
+    fontSize: 28,
     backgroundColor: "rgba(0, 0, 0, 0.33)",
     zIndex: 10,
   },
