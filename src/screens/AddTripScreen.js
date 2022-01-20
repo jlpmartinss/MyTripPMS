@@ -62,7 +62,7 @@ const AddTripScreen = ({ route, navigation }) => {
             console.log("This trip id does not exist");
             Alert.alert("This trip id does not exist");        
         }
-    }
+    } 
 
     const setData = async () => {
         if (idTrip.length == 0 || isNaN(idTrip)){
