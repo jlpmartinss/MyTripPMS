@@ -16,7 +16,7 @@ function isEmpty(obj) {
             return false;
     }
     return true;
-}
+} 
 
 const array = [];
 

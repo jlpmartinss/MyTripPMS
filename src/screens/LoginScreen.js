@@ -48,7 +48,7 @@ const LoginScreen = ({ route, navigation }) => {
         getData();
     }, []);
 
-
+ 
     return (
         <ImageBackground blurRadius={50} source={require("../../assets/welcomeimage/welcome2.png")} resizeMode="cover" style={styles.imageBackground}>
             <View style={styles.darkerimage}>
