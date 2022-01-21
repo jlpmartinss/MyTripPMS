@@ -444,7 +444,9 @@ const PostCardPreview = ({ navigation, route }) => {
               captureEvent={true}
             >
               <Text style={styles.textTitles}>Route</Text>
+
               <Image style={styles.imageMap} source={getRouteImage(name)} />
+              <Text style={styles.zoomText}>Double tap to zoom</Text>
             </ReactNativeZoomableView>
           </View>
         </View>
@@ -495,6 +497,15 @@ const styles = StyleSheet.create({
     margin: 10,
     marginLeft: 0,
     textShadowColor: "rgba(0, 0, 0, 1)",
+  },
+  zoomText: {
+    color: "white",
+    fontSize: 14,
+    fontWeight: "500",
+    paddingHorizontal: 20,
+    margin: 10,
+    marginLeft: 0,
+    textShadowRadius: 8,
   },
   textSubTitles: {
     color: "white",

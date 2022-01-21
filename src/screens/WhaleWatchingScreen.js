@@ -102,6 +102,7 @@ export default function WhaleWatchingScreen({ navigation }) {
                 style={styles.imageRoute}
                 source={require("../../assets/Trips/mapasVMT_cetaceos.png")}
               />
+              <Text style={styles.zoomText}>Double tap to zoom</Text>
             </ReactNativeZoomableView>
           </View>
 
@@ -297,6 +298,14 @@ const styles = StyleSheet.create({
   imageRoute: {
     width: ITEM_WIDTH - 30,
     height: ITEM_WIDTH / 1.5,
+  },
+  zoomText: {
+    color: "white",
+    fontSize: 14,
+    fontWeight: "500",
+    marginHorizontal: 10,
+    marginVertical: 10,
+    textShadowRadius: 8,
   },
   imageFace: {
     flex: 1,
